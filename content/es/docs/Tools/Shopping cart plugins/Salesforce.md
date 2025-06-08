@@ -33,10 +33,18 @@ Antes de comenzar la integración, asegúrate de contar con lo siguiente:
 * Acceso al entorno de desarrollo de tu tienda SFCC, incluyendo permisos para instalar y configurar catridges.
 * Acceso al repositorio del cartridge de PayU.
 
+{{% alert title="Nota" color="info"%}}
+
+No necesitas credenciales de producción de PayU para probar esta integración. Puedes usar las credenciales proporcionadas en <a href="https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html" target="_blank">Probar tu solución</a>. Si estás probando con 3DSecure, consulta las credenciales mostradas en <a href="https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#probar-la-autenticaci%C3%B3n-3ds" target="_blank">Prueba de autenticación 3DS</a>.
+
+{{% /alert %}}
+
 ## Compatibilidad con SFCC {#sfcc-compatibility}
 
-* El cartridge es compatible con SFRA versión 7.0.1 o superior.
-* Debe estar instalada la versión 8.9.4 o superior de Node.js en tu entorno de desarrollo.
+Para asegurar la compatibilidad, ten en cuenta los siguientes requisitos y consideraciones técnicas:
+
+* El cartridge es compatible con **SFRA versión 7.0.1 o superior**.
+* Debes instalar la **versión 8.9.4 o superior de Node.js** en tu entorno de desarrollo.
 
 {{% alert title="Nota" color="info"%}}
 
@@ -146,6 +154,7 @@ La siguiente tabla muestra la disponibilidad del cartridge de PayU por país, ju
 
 ### Consideraciones {#considerations}
 
+Revisa las siguientes consideraciones clave para garantizar una integración fluida y conforme en los países compatibles.
 - Todos los países admiten procesamiento de pagos en un solo paso o en dos pasos: autorización y captura en una sola solicitud, o autorización y captura en pasos separados. En Colombia, el flujo de dos pasos solo es compatible con MasterCard y Visa.
 - Se admiten las siguientes operaciones financieras: Cargo, Autorización, Captura, Anulación y Reembolso.
 - Todos los países admiten análisis de fraude y los procesos de validación manual de PayU.
@@ -162,8 +171,9 @@ Para comenzar, regístrate en el <a href="https://control.paymentsos.com/signup"
 
 De forma predeterminada, las cuentas nuevas están configuradas en modo de prueba. Para habilitar las transacciones en vivo, contacta a tu gerente de cuenta y envía una solicitud con los siguientes datos:
 
-* **Merchant ID:** Localiza el Merchant ID de tu cuenta LATAM en el <a href="https://developers.payulatam.com/latam/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids" target="_blank">Panel de Administración de PayU</a>.
-* **Account ID:** Encuentra tu Account ID en el panel de control de PayU Enterprise haciendo clic en tu nombre de usuario en la esquina superior derecha.
+* **Merchant ID de PayU Latam:** Localiza el Merchant ID de tu cuenta LATAM en el <a href="https://developers.payulatam.com/latam/es/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids" target="_blank">Panel de Administración de PayU</a>.
+* **Account ID de PayU Enterprise:** Encuentra tu Account ID en el panel de control de PayU Enterprise haciendo clic en tu nombre de usuario en la esquina superior derecha.
+
 <p>
 
 <img src="/assets/VTEX/vtex01es.png" alt="PrintScreen" style="width: 800px; height: auto;">
@@ -171,7 +181,8 @@ De forma predeterminada, las cuentas nuevas están configuradas en modo de prueb
 
 ### Configuración de tu cuenta PayU Enterprise {#setting-up-your-payu-enterprise-account}
 
-PayU Enterprise (PaymentsOS) conecta tu cuenta de PayU Latam con tu tienda de Salesforce Commerce Cloud (SFCC).  
+PayU Enterprise (PaymentsOS) conecta tu cuenta de PayU Latam con tu tienda de Salesforce Commerce Cloud (SFCC).
+
 Para comenzar, debes configurar lo siguiente en tu cuenta de PayU Enterprise:
 
 - El proveedor de pagos de PayU Latam  
@@ -180,13 +191,15 @@ Para comenzar, debes configurar lo siguiente en tu cuenta de PayU Enterprise:
 
 {{% alert title="Nota" color="info"%}}
 
-Repite los pasos de las secciones [Configuración del proveedor de pagos](#payment-provider-configuration), [Configuración de la unidad de negocio](#business-unit-configuration) y [Configuración del webhook](#webhook-configuration) para cada uno de tus sitios y cuentas de PayU Latam.
+Repite los pasos de las secciones [Configuración del proveedor de pagos](#configuring-a-payment-provider), [Configuración de la unidad de negocio](#configuring-a-business-unit) y [Configuración del webhook](#configuring-a-webhook) para cada uno de tus sitios y cuentas de PayU Latam.
 
 {{% /alert %}}
 
-#### Configuración del proveedor de pagos {#payment-provider-configuration}
+#### Configuración del proveedor de pagos {#configuring-a-payment-provider}
 
-Una instancia de proveedor de pagos en PayU Enterprise almacena tus credenciales de procesamiento de pagos de PayU Latam. Sigue estos pasos para configurarla:
+Una instancia de proveedor de pagos en PayU Enterprise almacena tus credenciales de procesamiento de pagos de PayU Latam. 
+
+Sigue estos pasos para configurar un proveedor:
 
 1. En el <a href="https://control.paymentsos.com/login" target="_blank">Panel de Control de PayU Enterprise</a>, selecciona el entorno **TEST** o **LIVE** en la parte superior. Luego, navega a **Configuraciones > Servicios**, busca y selecciona el proveedor **PayULatam**.
 
@@ -216,13 +229,15 @@ Los campos **apiLogin**, **apiKey**, **accountId** y **merchantId** son diferent
 
 3. Una vez completado el formulario, haz clic en **Crear** para finalizar.
 
-#### Configuración de la unidad de negocio {#business-unit-configuration}
+#### Configuración de la unidad de negocio {#configuring-a-business-unit}
 
-Una unidad de negocio vincula la configuración del proveedor creada en la sección anterior con tus credenciales de API de PayU Enterprise, permitiendo el procesamiento de transacciones en tu sitio Salesforce Commerce Cloud (SFCC). Sigue estos pasos:
+Una unidad de negocio vincula la configuración del proveedor creada en la sección anterior con tus credenciales de API de PayU Enterprise, permitiendo el procesamiento de transacciones en tu sitio Salesforce Commerce Cloud (SFCC). 
+
+Sigue estos pasos para configurar la unidad de negocio:
 
 1. En el <a href="https://control.paymentsos.com/login" target="_blank">Panel de Control de PayU Enterprise</a>, selecciona el entorno **TEST** o **LIVE** en la parte superior. Luego ve a **Configuraciones > Unidades de Negocio** y haz clic en **Crear una Unidad de Negocio**.
 
-2. Completa la siguiente información para crear la unidad de negocio:
+2. Completa la siguiente información:
 
 | Campo                         | Descripción |
 |-------------------------------|-------------|
@@ -239,7 +254,7 @@ En la opción para seleccionar un **proveedor por defecto** para la unidad de ne
 
 <img src="/assets/Salesforce/salesforce03_es.png" alt="PrintScreen" style="width: 800px; height: auto;">
 
-#### Configuración del webhook {#webhook-configuration}
+#### Configuración del webhook {#configuring-a-webhook}
 
 El webhook permite que tu sitio reciba notificaciones automáticas de PayU cada vez que cambia el estado de una transacción. Esto es útil para actualizar pagos pendientes en tiempo real, como por ejemplo:
 
@@ -267,15 +282,15 @@ Para habilitar el webhook, sigue estos pasos:
 
 ## Instalación del cartridge de PayU en tu sitio {#installing-the-payu-cartridge-on-your-site}
 
-Para habilitar el procesamiento de pagos con PayU en tu sitio de Salesforce Commerce Cloud (SFCC), debes instalar y configurar el cartridge de PayU. Esta sección guía a los desarrolladores a través de los pasos necesarios para integrar el cartridge en el código base del storefront.
+Para habilitar el procesamiento de pagos con PayU en tu sitio de Salesforce Commerce Cloud (SFCC), debes instalar y configurar el cartridge de PayU. Esta sección te guía a través de los pasos necesarios para integrar el cartridge en el código base del storefront.
 
 {{% alert title="Nota" color="info"%}}
 
-Este procedimiento debe ser realizado por un desarrollador con experiencia en Salesforce Commerce Cloud (SFCC).
+Para llevar a cabo este procedimiento, debes estar familiarizado con la programación de Salesforce Commerce Cloud (SFCC).
 
 {{% /alert %}}
 
-1. Clona el repositorio `PayU-Cartridges` (reemplaza con `link_payu`) e intégralo en la base de código de tu proyecto.
+1. Clona el repositorio `PayU-Cartridges` e intégralo en la base de código de tu proyecto.
 
 2. Dentro de la carpeta `PayU-Cartridges`, localiza el archivo `package.json` y asegúrate de que la propiedad `paths` apunte correctamente a `app_storefront_base`:
 
@@ -302,10 +317,10 @@ Este procedimiento debe ser realizado por un desarrollador con experiencia en Sa
 <ul class="custom-bullet">
   <li>Tener habilitada la autenticación en dos pasos (2FA) en tu cuenta de GitHub.</li>
   <li>Iniciar sesión con tus credenciales de SFCC.</li>
-  <li>Seguir las instrucciones de acceso proporcionadas en la <a href="https://developer.salesforce.com/docs/commerce/sfra/guide/sfra-overview.html" target="_blank">Guía SFRA</a> y la documentación de acceso al repositorio de SFCC.</li>
+  <li>Seguir las instrucciones de acceso proporcionadas en la <a href="https://developer.salesforce.com/docs/commerce/sfra/guide/sfra-overview.html" target="_blank">Guía SFRA</a> y la <a href="https://github.com/SalesforceCommerceCloud/storefront-reference-architecture" target="_blank">documentación de acceso al repositorio de SFCC</a>.</li>
 </ul>
 
-3. Asegúrate de tener instalada la versión 8.9.4 o superior de Node.js en tu equipo.
+3. Asegúrate de tener instalada la **versión 8.9.4 o superior de Node.js** en tu equipo.
 
 4. Abre una terminal y navega a la raíz del repositorio. Ejecuta los siguientes comandos:
 
@@ -315,20 +330,36 @@ Este procedimiento debe ser realizado por un desarrollador con experiencia en Sa
 
 * `npm run compile:scss`
 
-5. En el mismo directorio donde se descargó el código fuente, crea un archivo llamado dw.json con la siguiente estructura:
+{{% alert title="Importante" color="warning"%}}
+
+Debes ejecutar estos comandos en el repositorio base de Salesforce Storefront antes de construir el cartridge de PayU.
+
+{{% /alert %}}
+
+5. En el mismo directorio donde descargaste el código fuente, crea un archivo llamado dw.json con la siguiente estructura:
 
 ```json
 {
-  "hostname": "your-sandbox-hostname",
-  "username": "your-username",
-  "password": "your-password",
-  "code-version": "version_to_upload"
+  "hostname": "your_sandbox_hostname", // La dirección de tu servidor sandbox.
+  "username": "your_username", // Tu nombre de usuario de inicio de sesión de SFCC.
+  "password": "your_password", // Tu contraseña de inicio de sesión de SFCC.
+  "code-version": "version_to_upload" // Etiqueta que quieres subir. Ej: "payu_latam"
 }
 ```
+
+{{% alert title="Nota" color="info"%}}
+
+Para sincronizar tu entorno local con tu sitio en la nube, puedes usar la **extensión Prophet** (por ejemplo: `Clean Project / Upload All`). Asegúrate de que la `code-version` en tu archivo `dw.json` coincida con la que se muestra en **Administration > Site Development > Code Deployment** en tu sitio.
+
+{{% /alert %}}
+
+<img src="/assets/Salesforce/salesforce42.png" alt="PrintScreen" style="width: 800px; height: auto;">
 
 ## Activación del cartridge en Business Manager {#activating-the-cartridge-in-business-manager}
 
 Debes agregar el cartridge de PayU a la ruta de cartridges de tu sitio en Business Manager antes de continuar con la configuración.
+
+Para activar el cartridge, sigues los pasos a continuación:
 
 1. Inicia sesión en **Business Manager**.
 
@@ -350,19 +381,26 @@ Repite los pasos 3 al 6 para cada sitio en el que desees utilizar el cartridge d
 
 {{% /alert %}}
 
-## Configuración del cartridge {#configuración-del-cartridge}
+## Configuración del cartridge {#configuring-the-cartridge}
 
-Esta sección describe el proceso para integrar PayU con tu sitio SFRA (Storefront Reference Architecture) en Salesforce Commerce Cloud.
+Esta sección describe el proceso de configuración del cartridge de PayU.
 
 ### Importación de metadatos con una importación de sitio único {#importing-metadata-with-a-single-site-import}
 
-Todos los archivos de metadatos se encuentran en la carpeta `metadata` del paquete de instalación del cartridge.
+Todos los metadatos necesarios para la integración con PayU se encuentran en la carpeta `metadata` ubicada en la raíz del paquete del cartridge descargado desde GitHub. Esta carpeta incluye elementos esenciales de configuración, como:
+
+* Preferencias personalizadas  
+* Definiciones de trabajos  
+* Configuraciones de servicios  
+* Configuraciones específicas por país
 
 {{% alert title="Nota" color="info"%}}
 
 El paquete del cartridge es el archivo descargado desde GitHub. La ruta relativa es: `link-payu-master/metadata`.
 
 {{% /alert %}}
+
+Sigue los pasos a continuación para importar la metadata:
 
 1. Abre la carpeta `metadata` desde el repositorio.
 
@@ -406,7 +444,13 @@ El paquete del cartridge es el archivo descargado desde GitHub. La ruta relativa
 
 &nbsp;&nbsp;&nbsp;&nbsp;Después de una importación exitosa, todas las configuraciones de PayU estarán disponibles de acuerdo con tu cuenta.
 
-9. Para verificar, ve a **Site > Ordering > Order**. Abre cualquier pedido, cambia a la pestaña **Attributes** y confirma que los datos se hayan importado correctamente.
+9. Para verificar, ve a **Site > Ordering > Order**, abre cualquier pedido, cambia a la pestaña **Attributes** y confirma que los datos se hayan importado correctamente.
+
+{{% alert title="Importante" color="warning"%}}
+
+Una importación exitosa de los metadatos es fundamental para que la integración con PayU funcione correctamente. Después de completar la importación, verifica los valores importados en **Business Manager > Administration > Site Development > Import & Export**.
+
+{{% /alert %}}
 
 ### Gestión de preferencias personalizadas del sitio {#managing-custom-site-preferences}
 
@@ -420,7 +464,7 @@ Para administrar las preferencias personalizadas del sitio para PayU:
 
 <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Necesitarás las **credenciales de PayU Enterprise** generadas en la sección [Configuración de la Unidad de Negocio](#business-unit-configuration).
+&nbsp;&nbsp;&nbsp;&nbsp;Necesitarás las **credenciales de PayU Enterprise** generadas en la sección [Configuración de la unidad de negocio](#configuring-a-business-unit).
 
 <img src="/assets/Salesforce/salesforce10.png" alt="PrintScreen" style="width: 550px; height: auto;">
 
@@ -428,25 +472,25 @@ Para administrar las preferencias personalizadas del sitio para PayU:
 
 3. Edita los atributos según la configuración de tu cuenta de PayU.
 
-| Preferencia | Descripción | Valor por defecto |
+| Preferencia | Descripción | Valor predeterminado |
 | --- | --- | --- |
-| `payUPublicKey` | Clave pública de la unidad de negocio creada en PayU Enterprise. | – |
-| `payUPrivateKey` | Clave privada de la unidad de negocio creada en PayU Enterprise. | – |
-| `payUAppId` | ID de la aplicación de la unidad de negocio creada en PayU Enterprise. | – |
+| `payUPublicKey` | Clave pública de tu unidad de negocio en PayU Enterprise. Requerida para autenticación. | – |
+| `payUPrivateKey` | Clave privada de tu unidad de negocio en PayU Enterprise. Requerida para autenticación. | – |
+| `payUAppId` | ID de la aplicación de tu unidad de negocio en PayU Enterprise. Requerido para autenticación. | – |
 | `payUProvider` | Proveedor configurado en tu cuenta de PayU Enterprise. | `PayULatam` |
 | `payUApiVersion` | Versión de la API de PayU. | `1.3.0` |
-| `payUCountry` | País de procesamiento: `ARG`, `BRA`, `CHL`, `COL`, `MEX`, `PAN` o `PER`. | Específico del país |
-| `payULanguage` | Idioma usado en los correos enviados por PayU al comprador y al vendedor. Opciones: `English`, `Spanish`, `Portuguese`. Habilitar esta función en PayU Latam es opcional. | `English` |
-| `payUEnvironment` | Define el entorno de PayU (por ejemplo, `Test` o `Live`). | `Test` |
-| `payUPaymentFlowType` | Tipo de flujo de pago a utilizar:<br>• `One Step (Charge)`<br>• `Two Step (Authorization & Capture)` | `One Step (Charge)` |
-| `enableImmediateCapture` | Controla si el pago se captura inmediatamente después de la autorización (aplica solo para el flujo de dos pasos). | `Yes` |
+| `payUCountry` | País donde se procesan los pagos en la integración (`ARG`, `BRA`, `CHL`, `COL`, `MEX`, `PAN`, `PER`). Debe coincidir con el país de tu cuenta de comercio para garantizar la localización y el procesamiento adecuados. | Específico por país |
+| `payULanguage` | Idioma que la integración usa en correos electrónicos y mensajes de error (opciones: `English`, `Spanish`, `Portuguese`). Se incluye en las solicitudes para generar recibos y mensajes localizados. Funcionalidad opcional en PayU Latam. | `English` |
+| `payUEnvironment` | Define el entorno de PayU que se usará (`Test` o `Live`). | `Test` |
+| `payUPaymentFlowType` | Tipo de flujo de pago:<br>• <b>One Step (Charge):</b> Autorización y captura en una sola solicitud.<br>• <b>Two Step (Authorization & Capture):</b> Pasos separados para aprobación y captura. | `One Step (Charge)` |
+| `enableImmediateCapture` | Para el flujo en dos pasos, controla si la captura ocurre inmediatamente después de la autorización.<br>• `Yes`: Captura inmediata.<br>• `No`: Utiliza el trabajo programado `PAYU_CAPTURE_PAYMENT`. | `Yes` |
 | `payUVoidAllowed` | Habilita o deshabilita la opción de anular pagos. | `No` |
-| `payUSupportedDocumentTypes` | Documentos soportados para el checkout en formato JSON.<br><b>Ejemplo:</b><br><code>{  "ARG": [{ "type": "DNI", "description": "Documento Nacional de Identidad", "value": "DNI", "enabled": true }, { "type": "CI", "description": "Cédula de Identidad", "value": "CI", "enabled": true }, { "type": "CUIL", "description": "Código Único de Identificación Laboral", "value": "CUIL", "enabled": true }, { "type": "CUIT", "description": "Código Único de Identificación Tributaria", "value": "CUIT", "enabled": true }, { "type": "OTHER", "description": "Otro", "value": "", "enabled": true }, { "type": "DNIE", "description": "Documento Nacional de Identidad - Electrónico", "value": "DNIE", "enabled": false }, { "type": "LC", "description": "Libreta Cívica", "value": "LC", "enabled": false }, { "type": "LE", "description": "Libreta de Enrolamiento", "value": "LE", "enabled": false }]}</code><br><b>Nota:</b> Asegúrate de que el valor sea un JSON válido. | Específico del país |
-| `payUEnableInstallments` | Habilita o deshabilita el pago en cuotas en el checkout. Si se habilita, debes configurar `payUInstallments`. | `No` |
-| `payUCardWiseInstallments` | Cuotas permitidas por tipo de tarjeta en formato JSON.<br><b>Ejemplo:</b><br><code>{  "ARG": { "Amex": [1,3,6,9,12,18], "Argencard": [1,3,6,9,12,18], "Cabal": [1,3,6,9,12,18], "Cencosud": [1,3,6,9,12,18], "Diners": [1,3,6,9,12,18], "Master Card": [1,6,12,18], "Naranja": [1,6,12], "Visa": [1,3,6,9,12,18] }}</code><br><b>Nota:</b> Asegúrate de que el valor sea un JSON válido. | Específico del país |
-| `payUInstallments` | Configura la cantidad de cuotas permitidas para pagos con tarjeta de crédito a nivel general del sitio. | Específico del país |
-| `payu3DSConfiguration` | Define el tipo de autenticación 3DS a utilizar. | `DISABLED` |
-| `payUCashExpiryDays` | Número de días de expiración para métodos de pago en efectivo. | `7` |
+| `payUSupportedDocumentTypes` | Define los tipos de documento admitidos en el checkout, en formato JSON válido, por país. Deben cumplir con los formatos específicos de cada país. Los documentos se validan con un límite de 20 caracteres, con algunas excepciones: por ejemplo, el DNI en Perú debe tener 8 dígitos, el CPF en Brasil debe tener 11 dígitos (por ejemplo: `123.123.123-12`) y el CNPJ debe tener 14 dígitos.<br><b>Ejemplo:</b><br><code>{  "ARG": [{ "type": "DNI", "description": "Documento Nacional de Identidad", "value": "DNI", "enabled": true }, { "type": "CI", "description": "Cédula de Identidad", "value": "CI", "enabled": true }, { "type": "CUIL", "description": "Código Único de Identificación Laboral", "value": "CUIL", "enabled": true }, { "type": "CUIT", "description": "Código Único de Identificación Tributaria", "value": "CUIT", "enabled": true }, { "type": "OTHER", "description": "Otro", "value": "", "enabled": true }, { "type": "DNIE", "description": "Documento Nacional de Identidad - Electrónico", "value": "DNIE", "enabled": false }, { "type": "LC", "description": "Libreta Cívica", "value": "LC", "enabled": false }, { "type": "LE", "description": "Libreta de Enrolamiento", "value": "LE", "enabled": false }]}</code><br><b>Nota:</b> Asegúrate de que el valor sea un JSON válido. | Específico por país |
+| `payUEnableInstallments` | Habilita o deshabilita el pago en cuotas durante el checkout.<br>• <b>Enabled:</b> Los usuarios pueden seleccionar cuotas.<br>• <b>Disabled:</b> La opción de cuotas no se muestra. | `No` |
+| `payUCardWiseInstallments` | Cuotas permitidas por tipo de tarjeta, en formato JSON.<br><b>Ejemplo:</b><br><code>{  "ARG": { "Amex": [1,3,6,9,12,18], "Argencard": [1,3,6,9,12,18], "Cabal": [1,3,6,9,12,18], "Cencosud": [1,3,6,9,12,18], "Diners": [1,3,6,9,12,18], "Master Card": [1,6,12,18], "Naranja": [1,6,12], "Visa": [1,3,6,9,12,18] }}</code><br><b>Nota:</b> Asegúrate de que el valor sea un JSON válido. | Específico por país |
+| `payUInstallments` | Configura el número de cuotas permitidas para pagos con tarjeta de crédito a nivel general del sitio. | Específico por país |
+| `payu3DSConfiguration` | Controla el uso de autenticación 3D Secure:<br>• <b>Enable:</b> Aplica 3DS a todas las transacciones elegibles.<br>• <b>Disable:</b> No usa 3DS.<br>• <b>Internal:</b> PayU decide según análisis de riesgo. | `DISABLED` |
+| `payUCashExpiryDays` | Número de días antes de que expiren los pagos en efectivo. | `7` |
 
 ### Verifición de tus procesadores de pago {#verifying-your-payment-processors}
 
@@ -458,7 +502,7 @@ Una vez que hayas cargado el archivo de metadatos, los detalles del procesador d
 
 <img src="/assets/Salesforce/salesforce11.png" alt="PrintScreen" style="width: 600px; height: auto;">
 
-### Métodos de pago {#payment-methods}
+### Habilitación de los métodos de pago {#enabling-the-payment-methods}
 
 El paquete de integración incluye una definición de métodos de pago en el archivo `payment-methods.xml`, ubicado en la carpeta `metadata` que importaste anteriormente. Para habilitarlos:
 
@@ -572,9 +616,9 @@ El paquete de integración incluye una definición de métodos de pago en el arc
   </tbody>
 </table>
 
-### Configuración del webhook – Preferencias del sitio (Órdenes)
+### Conceder acceso del webhook a las órdenes {#granting-webhook-access-to-orders}
 
-Antes de continuar con esta configuración, asegúrate de haber completado la sección [Configuración del Webhook]{#configuración-del-webhook} de PayU Enterprise.
+Antes de continuar con esta configuración, asegúrate de haber completado la sección [Configuración del webhook](#configuring-a-webhook) de PayU Enterprise.
 
 Verifica que el controlador del webhook tenga acceso al objeto de orden. Para hacerlo:
 
@@ -584,25 +628,25 @@ Verifica que el controlador del webhook tenga acceso al objeto de orden. Para ha
 
 <img src="/assets/Salesforce/salesforce14.png" alt="PrintScreen" style="width: 600px; height: auto;">
 
-#### Consideraciones importantes
+#### Consideraciones importantes {#important-considerations}
+
+Antes de activar la integración en producción, revisa los siguientes puntos para asegurar una configuración correcta y evitar problemas con la comunicación de webhooks y el procesamiento de pedidos.
 
 - Si esta configuración no se aplica correctamente, las solicitudes de webhook de PayU llegarán al controlador pero no tendrán permiso para actualizar las órdenes. Esto puede causar errores críticos al actualizar los estados de las órdenes y procesar pagos.
 - Después de completar la configuración, realiza un pago de prueba para confirmar que las notificaciones del webhook se están recibiendo correctamente. Este paso es esencial para garantizar que la integración funcione como se espera.
 - Si tu configuración incluye múltiples tiendas para diferentes países, asegúrate de validar esta configuración para cada sitio individualmente, utilizando la URL correspondiente para cada uno.
 
-### Configuración del servicio
+### Verificación de la configuración del servicio {#verifying-the-service-configuration}
 
 Para verificar que el servicio HTTP de PayU (`https.payment.payu`) esté correctamente configurado en Business Manager, navega a **Administration > Operations > Services**.
 
 <img src="/assets/Salesforce/salesforce15.png" alt="PrintScreen" style="width: 600px; height: auto;">
 
-### Jobs disponibles
+### Configuración de los jobs {#configuring-the-jobs}
 
 PayU proporciona varios jobs para automatizar tareas clave relacionadas con el procesamiento de pagos. El archivo `jobs.xml` incluido en el cartridge define los jobs disponibles.
 
-Para gestionar los jobs, ve a **Business Manager > Administration > Operations > Jobs**.
-
-A continuación, se muestra un resumen de los jobs disponibles. Para información detallada sobre cada uno, consulta la guía técnica de Salesforce.
+A continuación, se muestra un resumen de los jobs disponibles.
 
 | Nombre del job            | Descripción |
 |-------------------------------|-------------|
@@ -611,7 +655,7 @@ A continuación, se muestra un resumen de los jobs disponibles. Para informació
 | **PAYU_REFUND**               | Procesa un reembolso total para una orden específica. El ID de la orden debe establecerse en el paso del job. |
 | **PAYU_VOID (ORDER_SPECIFIC)**| Anula el pago de una orden específica. El ID de la orden debe establecerse en el paso del job. |
 
-#### Asignación de jobs a sitios
+#### Asignación de jobs a un sitio único {#assigning-jobs-to-a-single-site}
 
 Asegúrate de asignar los jobs a cada uno de tus sitios. Para hacerlo:
 
@@ -635,10 +679,72 @@ Para habilitar o deshabilitar un job, cambiar su programación o modificar otras
 
 <img src="/assets/Salesforce/salesforce17.png" alt="PrintScreen" style="width: 600px; height: auto;">
 
-#### Job de PAYU_CAPTURE_PAYMENT
+<br>
 
-Este job captura pagos previamente autorizados cuando el sitio utiliza un flujo de pago en dos pasos (Autorización y Captura como pasos separados).  
-Para usar este job, asegúrate de que tus preferencias para `payUPaymentFlowType` y `enableImmediateCapture` estén configuradas de la siguiente manera:
+Asegúrate de vincular cada job al sitio correspondiente. Por ejemplo, si el sitio es payu-argentina, el job se ejecutará únicamente para Argentina y procesará las autorizaciones de ese país.
+
+#### Asignar jobs a múltiples sitios {#assigning-jobs-to-multiple-sites}
+
+Si gestionas múltiples tiendas en diferentes países, configura un job separado para cada sitio con un ID de job único. Esto garantiza que las operaciones de captura, reembolso y anulación se manejen correctamente por sitio.
+
+Para habilitar cualquier job de PayU para un sitio específico (por ejemplo, `PAYU_CAPTURE_PAYMENT` para Brasil):
+
+1. Ve a **Administration > Operations > Jobs** y haz clic en **New Job**.
+
+<img src="/assets/Salesforce/salesforce43.png" alt="PrintScreen" style="width: 600px; height: auto;">
+
+<br>
+
+2. Ingresa un ID de job único usando el formato: `[JOB_NAME]_[SITE_ID_COUNTRY]`.
+
+- **Ejemplos de IDs de Job:**
+    - `PAYU_CAPTURE_PAYMENT_BRAZIL`  
+    - `PAYU_PARTIAL_REFUND_ARGENTINA`
+    - `PAYU_REFUND_MEXICO`
+    - `PAYU_VOID_COLOMBIA`
+
+3. Proporciona una descripción clara y relevante para el job y luego haz clic en **Create**.
+
+<img src="/assets/Salesforce/salesforce44.png" alt="PrintScreen" style="width: 350px; height: auto;">
+
+<br>
+
+4. Abre la sección **Job Steps** y haz clic en **Configure a Step**.
+
+<img src="/assets/Salesforce/salesforce45.png" alt="PrintScreen" style="width: 600px; height: auto;">
+
+<br>
+
+5. Busca y selecciona el ID del step personalizado correspondiente:
+
+- Para `PAYU_CAPTURE_PAYMENT`: `custom.payuPaymentCapture`
+- Para `PAYU_PARTIAL_REFUND`: `custom.payuPartialRefund`
+- Para `PAYU_REFUND`: `custom.payuRefund`
+- Para `PAYU_VOID`: `custom.payuPaymentVoid`
+
+<img src="/assets/Salesforce/salesforce46.png" alt="PrintScreen" style="width: 600px; height: auto;">
+
+<br>
+
+6. Asigna el ID del step seleccionado y haz clic en **Assign**.
+
+<img src="/assets/Salesforce/salesforce47.png" alt="PrintScreen" style="width: 600px; height: auto;">
+
+<br>
+
+7. Define el ámbito del sitio correspondiente para garantizar que el job se ejecute únicamente en esa storefront específica.
+
+<img src="/assets/Salesforce/salesforce48.png" alt="PrintScreen" style="width: 600px; height: auto;">
+
+### Ejecución de jobs de pago {#running-payment-jobs}
+
+Esta sección explica cómo ejecutar correctamente cada job, incluyendo los parámetros requeridos y consejos de configuración para garantizar su correcto funcionamiento.
+
+#### Job PAYU_CAPTURE_PAYMENT
+
+Este job captura pagos previamente autorizados cuando el sitio utiliza un flujo de pago en dos pasos (Autorización y Captura como pasos separados).
+
+Para utilizar este job, asegúrate de que las preferencias `payUPaymentFlowType` y `enableImmediateCapture` estén configuradas de la siguiente manera:
 
 <img src="/assets/Salesforce/salesforce18.png" alt="PrintScreen" style="width: 550px; height: auto;">
 
@@ -646,114 +752,114 @@ Para usar este job, asegúrate de que tus preferencias para `payUPaymentFlowType
 
 Este job escanea todas las órdenes con estado de pago **"Authorized"** e intenta capturarlas. Los resultados de cada ejecución se registran en los logs del job.
 
-### Parámetro requerido
-- **ID:** `custom.payUPaymentCapture`
+##### Pasos para la ejecución
 
-### Pasos de ejecución
-
-1. Ve a **Administration > Operations > Jobs**.  
-2. Selecciona **PAYU_CAPTURE_PAYMENT** de la lista de jobs.  
-3. Ajusta los parámetros según tus necesidades.  
-4. Define la frecuencia de ejecución (por ejemplo, cada hora).  
-5. Habilita o deshabilita el job según sea necesario.
+1. Ve a **Administration > Operations > Jobs**.
+2. Selecciona **PAYU_CAPTURE_PAYMENT** de la lista de jobs.
+3. Completa los campos de parámetros según tus necesidades.
+    - Ten en cuenta que el parámetro **ID** es obligatorio para este job: `custom.payUPaymentCapture`
+4. Define la frecuencia de ejecución (por ejemplo, cada hora).
+5. Habilita o desactiva el job según sea necesario.
 
 <img src="/assets/Salesforce/salesforce19.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-#### Job de PAYU_PARTIAL_REFUND
+#### Job PAYU_PARTIAL_REFUND
 
 Este job te permite emitir reembolsos parciales de forma manual, especificando el monto a devolver.
 
-##### Parámetros requeridos
-
-- **ID:** `custom.payUPartialRefund`  
-- **orderId:** ID de la orden a reembolsar.  
-- **refundAmount:** Monto a reembolsar.  
-- **refundReason** *(opcional)*: Motivo del reembolso.
-
 ##### Consideraciones importantes
 
-- El estado del pago debe ser **"Captured"**.  
-- El monto reembolsado no debe exceder el monto total capturado de la orden.
+- El estado del pago debe ser **"Captured"**.
+- El monto reembolsado no debe exceder el total capturado para la orden.
 
-##### Pasos de ejecución
+##### Pasos para la ejecución
 
-1. Ve a **Administration > Operations > Jobs**.  
-2. Selecciona **PAYU_PARTIAL_REFUND** de la lista de jobs.  
-3. Haz clic en **Job Steps** y selecciona `custom.payUPartialRefund`.  
-4. Ingresa los parámetros requeridos.
+1. Ve a **Administration > Operations > Jobs**.
+2. Selecciona **PAYU_PARTIAL_REFUND** de la lista de jobs.
+3. Haz clic en **Job Steps** y selecciona `custom.payUPartialRefund`.
+4. Completa los siguientes campos de parámetros:
+
+    - **ID:** `custom.payUPartialRefund`
+    - **orderId:** ID de la orden a reembolsar.
+    - **amount:** Monto a reembolsar.
+    <br>
+    - _(Opcional)_ **refundReason:** Explicación del motivo del reembolso (útil para auditorías).
+
+Luego, haz clic en **Assign**.
 
 <img src="/assets/Salesforce/salesforce20.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
 <br>
 
-5. Haz clic en **Assign** y ejecuta el job.
+5. Haz clic en **Run Now** para ejecutar el job. Puedes usar el botón **Refresh** para actualizar el historial de ejecución.
 
 <img src="/assets/Salesforce/salesforce21.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-#### Job de PAYU_REFUND
+#### Job PAYU_REFUND
 
 Este job reembolsa el monto total del pago de una orden específica.
 
-##### Parámetros requeridos
-
-- **ID:** `custom.payURefund`  
-- **orderId:** ID de la orden a reembolsar.  
-- **refundReason** *(opcional)*: Motivo del reembolso (útil para auditoría).
-
 ##### Consideraciones importantes
 
-- Este job solo es aplicable si el estado del pago es **"Captured"**.  
+- Este job solo aplica si el estado del pago es **"Captured"**.
 - El reembolso será por el **100% del monto pagado**.
 
-### Pasos de ejecución
+##### Pasos para la ejecución
 
-1. Ve a **Administration > Operations > Jobs**.  
-2. Selecciona **PAYU_REFUND** de la lista de jobs.  
-3. Haz clic en **Job Steps** y selecciona `custom.payURefund`.  
-4. Ingresa los parámetros requeridos.
+1. Ve a **Administration > Operations > Jobs**.
+2. Selecciona **PAYU_REFUND** de la lista de jobs.
+3. Haz clic en **Job Steps** y selecciona `custom.payURefund`.
+4. Completa los siguientes campos de parámetros:
+
+    - **ID:** `custom.payURefund`
+    - **orderId:** ID de la orden a reembolsar.
+    - _(Opcional)_ **refundReason:** Explicación del motivo del reembolso (útil para auditorías).
+
+Luego, haz clic en **Assign**.
 
 <img src="/assets/Salesforce/salesforce22.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
 <br>
 
-5. Haz clic en **Assign** y ejecuta el job.
+5. Haz clic en **Run Now** para ejecutar el job. Puedes usar el botón **Refresh** para actualizar el historial de ejecución.
 
 <img src="/assets/Salesforce/salesforce23.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-#### Job de PAYU_VOID (ORDER_SPECIFIC)
+#### Job PAYU_VOID (ORDER_SPECIFIC)
 
 Este job se utiliza para anular un pago autorizado antes de que haya sido capturado.
 
-##### Parámetros requeridos
-
-- **ID:** `custom.payUPaymentVoid`  
-- **orderId:** ID de la orden con el pago autorizado.
-
 ##### Consideraciones importantes
 
-- Este job solo puede ejecutarse si el estado del pago es **"Authorized"**.  
-- Los pagos que ya han sido capturados **no pueden anularse**.  
-- El sitio debe estar configurado para usar el **flujo de pago en dos pasos** (Autorización y Captura por separado).  
-  - Para usar este job, los campos `payUPaymentFlowType`, `enableImmediateCapture` y `payUVoidAllowed` deben estar configurados de la siguiente forma:
+- Este job solo puede ejecutarse si el estado del pago es **"Authorized"**.
+- Los pagos que ya hayan sido capturados **no pueden ser anulados**.
+- El sitio debe estar configurado para usar el **flujo de pago en dos pasos** (Autorización y Captura por separado).
+- Para usar este job, los campos `payUPaymentFlowType`, `enableImmediateCapture` y `payUVoidAllowed` deben estar configurados de la siguiente forma:
 
+<br>
 <img src="/assets/Salesforce/salesforce24.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-##### Pasos de ejecución
+##### Pasos para la ejecución
 
-1. Ve a **Administration > Operations > Jobs**.  
-2. Selecciona **PAYU_VOID (ORDER_SPECIFIC)**.  
-3. Haz clic en **Job Steps** y selecciona `custom.payUPaymentVoid`.  
-4. Ingresa los parámetros requeridos.
+1. Ve a **Administration > Operations > Jobs**.
+2. Selecciona **PAYU_VOID (ORDER_SPECIFIC)**.
+3. Haz clic en **Job Steps** y selecciona `custom.payUPaymentVoid`.
+4. Completa los siguientes campos de parámetros:
+
+    - **ID:** `custom.payUPaymentVoid`
+    - **orderId:** ID de la orden con el pago autorizado.
+
+Luego, haz clic en **Assign**.
 
 <img src="/assets/Salesforce/salesforce25.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
 <br>
 
-5. Haz clic en **Assign** y ejecuta el job.
+5. Haz clic en **Run Now** para ejecutar el job. Puedes usar el botón **Refresh** para actualizar el historial de ejecución.
 
 <img src="/assets/Salesforce/salesforce26.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-## Habilitar o deshabilitar la integración con PayU
+## Habilitar o deshabilitar la integración con PayU {#enabling-or-disabling-the-payu-integration}
 
 Puedes deshabilitar temporalmente o volver a habilitar la integración de pagos con PayU según las necesidades de tu negocio. Los pasos a continuación te guiarán para actualizar las configuraciones del método de pago en Business Manager y desactivar o reactivar a PayU como procesador de pagos.
 
@@ -770,17 +876,17 @@ Puedes deshabilitar temporalmente o volver a habilitar la integración de pagos 
 
 Cambia nuevamente los procesadores a `PAY_U` para los métodos de pago correspondientes.
 
-## Probar la integración
+## Probar la integración {#testing-the-integration}
 
 Una vez que hayas completado los pasos iniciales de configuración, instalación y ajustes, te recomendamos enfáticamente que pruebes la integración antes de procesar transacciones reales.
 
 ### Requisitos previos
 
 - Asegúrate de que la preferencia `payUEnvironment` esté configurada en modo **Test** y ajusta las preferencias de acuerdo con el flujo de pago y los métodos de pago que deseas probar.  
-- Utiliza las credenciales adecuadas para el entorno de prueba: `payUPublicKey`, `payUPrivateKey` y `payUAppId`. Estas se encuentran en la sección [Configuración de Unidad de Negocio](#business-unit-configuration).  
+- Utiliza las credenciales adecuadas para el entorno de prueba: `payUPublicKey`, `payUPrivateKey` y `payUAppId`. Estas se encuentran en la sección [Configuración de la unidad de negocio](#configuring-a-business-unit).  
 - Una vez finalizadas las pruebas, actualiza las preferencias con las credenciales de producción.
 
-### Ejecutar una transacción de prueba
+### Ejecutar una transacción de prueba {#running-a-test-transaction}
 
 1. Inicia sesión en **Business Manager** en Salesforce Commerce Cloud y selecciona tu sitio desde el menú desplegable.
 
@@ -804,52 +910,56 @@ Una vez que hayas completado los pasos iniciales de configuración, instalación
 
 <img src="/assets/Salesforce/salesforce30.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-### Verificación de la transacción
+### Verificación de la transacción {#verifying-a-transaction}
 
 Una vez que la compra sea aprobada, puedes verificar la transacción en los siguientes lugares:
 
-- En SFCC, ve a **Business Manager > Merchant Tools > Ordering > Orders** y busca la orden que acabas de realizar.
+- En el **Business Manager** de SFCC, ve a  **Merchant Tools > Ordering > Orders** y busca la orden que acabas de realizar.
 
 <img src="/assets/Salesforce/salesforce31.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
 <br>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Puedes revisar los detalles de la orden.
+La orden seleccionada mostrará toda la información del pago procesado a través de PayU, incluyendo el estado de la transacción, el método de pago, los detalles de la autorización y otros datos relevantes. Esto garantiza transparencia y te permite hacer seguimiento de cada transacción.
 
 <img src="/assets/Salesforce/salesforce32.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
 <br>
 
-- En PayU Enterprise, ve a **Pagos > Buscar** y busca la transacción.
+- En **PayU Enterprise**, ve a **Pagos > Buscar** y busca la transacción.
 
-<img src="/assets/Salesforce/salesforce33.png" alt="PrintScreen" style="width: 700px; height: auto;">
+<img src="/assets/Salesforce/salesforce33_es.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-### Depuración del checkout con PayU
+### Depuración del checkout con PayU {#debugging-the-checkout-with-payu}
 
 Si recibes una transacción rechazada durante las pruebas, puedes identificar la razón de la siguiente manera:
 
-#### Revisar los registros en Business Manager
+#### 1) Revisar los registros en Business Manager
 
-- Ve a **Request Log** (esquina superior izquierda).  
-- Busca la solicitud relacionada con el intento de pago.  
-- Desplázate hasta el final del registro para ver el mensaje de error o la razón del rechazo devuelto por PayU.
+Revisa los registros para encontrar datos importantes de la transacción. Para hacerlo:
+
+1. Ve a **Request Log** (esquina superior izquierda).  
+2. Busca la solicitud relacionada con el intento de pago.  
+3. Desplázate hasta el final del registro para ver el mensaje de error o la razón del rechazo devuelto por PayU.
 
 <img src="/assets/Salesforce/salesforce34.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-#### Verificar los Atributos de la Orden
+#### 2) Verificar los atributos de la orden
 
-- Abre la orden desde **Merchant Tools > Orders > Search**.  
-- En la pestaña **Attributes**, revisa la respuesta de la API de PayU.
+Revisa los atributos del pedido para verificar que no haya inconsistencias. Para hacerlo:
+
+1. Abre la orden desde **Merchant Tools > Orders > Search**.  
+2. En la pestaña **Attributes**, revisa la respuesta de la API de PayU.
 
 <img src="/assets/Salesforce/salesforce35.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-#### Resumen del pago
+#### 3) Revisar el resumen del pago
 
-Dentro de la orden, accede a la pestaña **Payment** para ver un resumen del intento de pago, incluyendo el estado y los mensajes clave.
+Revisa el resumen de pago para verificar los detalles de la transacción. Para hacerlo, abre el pedido y navega a la pestaña **Payment**. Allí encontrarás un resumen del intento de pago, incluyendo su estado y los mensajes clave.
 
 <img src="/assets/Salesforce/salesforce36.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
-### Jobs
+### Solución de problemas para errores de jobs de PayU {#troubleshooting-payu-job-errors}
 
 Si recibes un estado de error al ejecutar un job de PayU, puedes obtener más información siguiendo estos pasos:
 
@@ -873,7 +983,7 @@ Esta información puede ayudarte a identificar si el problema está relacionado 
 - Monto incorrecto  
 - Falla de conexión  
 
-## Habilitar promociones con cuotas
+## Habilitar promociones con cuotas {#enabling-installment-promotions}
 
 A través de esta integración, puedes ofrecer cuotas promocionales o meses sin intereses (MSI) a tus clientes finales, con base en reglas definidas en el motor de decisiones de PayU Enterprise.
 
@@ -883,9 +993,9 @@ A través de esta integración, puedes ofrecer cuotas promocionales o meses sin 
   Debes solicitar a PayU Latam la creación de una cuenta espejo adicional para tu comercio. Esta cuenta solo debe tener habilitados los métodos de pago aplicables para MSI o cuotas promocionales.
 
 - **Proveedor configurado en el panel de control de PayU Enterprise para la cuenta espejo**:  
-  Debes registrar un proveedor adicional en el panel de control de PayU Enterprise, usando las credenciales de tu cuenta espejo. Sigue los mismos pasos utilizados para configurar el proveedor de tu cuenta principal en [Configuración del Proveedor de Pagos](#payment-provider-configuration).
+  Debes registrar un proveedor adicional en el panel de control de PayU Enterprise, usando las credenciales de tu cuenta espejo. Sigue los mismos pasos utilizados para configurar el proveedor de tu cuenta principal en [Configuración del proveedor de pagos](#configuring-a-payment-provider).
 
-### Configuración del motor de decisiones
+### Configuración del motor de decisiones {#configuring-a-decision-engine}
 
 Define las reglas que se aplicarán para enrutar las transacciones a tu cuenta principal o a la cuenta espejo habilitada para meses sin intereses o cuotas promocionales, siguiendo estos pasos:
 
@@ -893,13 +1003,13 @@ Define las reglas que se aplicarán para enrutar las transacciones a tu cuenta p
 2. En el menú lateral, selecciona **Motor de Decisión**.  
 3. Elige la **Unidad de Negocio** asociada al sitio donde actualmente procesas pagos y deseas ofrecer promociones.
 
-<img src="/assets/Salesforce/salesforce38.png" alt="PrintScreen" style="width: 800px; height: auto;">
+<img src="/assets/Salesforce/salesforce38_es.png" alt="PrintScreen" style="width: 800px; height: auto;">
 
 <br>
 
 4. Desde la sección **Optimiza tu flujo de pagos**, selecciona **Enrutamiento de pagos**.
 
-<img src="/assets/Salesforce/salesforce39.png" alt="PrintScreen" style="width: 800px; height: auto;">
+<img src="/assets/Salesforce/salesforce39_es.png" alt="PrintScreen" style="width: 800px; height: auto;">
 
 {{% alert title="Nota" color="info"%}}
 
@@ -911,27 +1021,44 @@ En la parte inferior de esta sección, bajo **Proveedor por defecto**, deberías
    Necesitarás ingresar:
    - Un nombre para la regla de enrutamiento.  
    - Las condiciones que permitirán a PayU enrutar las transacciones a la cuenta de PayU Latam habilitada para procesar promociones o MSI.
+   - Una condición requerida, por ejemplo:
 
-   Una condición requerida es la siguiente:
+   | **Detalles adicionales de la transacción** | |
+   |-----------------------------------|-----|
+   | **Key:** `number_of_installments` |  |
+   | **Value type:** `String` | |
+   | **Equals:** Ingrese el número de cuotas deseado |  |
 
-   **Detalles Adicionales de la Transacción**  
-   - **Clave**: `number_of_installments`  
-   - **Tipo de valor**: `String`  
-   - **Igual a**: Ingresa el número deseado de cuotas
+{{% alert title="Nota" color="info"%}}
 
-Puedes agregar condiciones adicionales si es necesario, como la marca de la tarjeta, el país emisor, el tipo de tarjeta, el emisor, el BIN, la moneda o el monto de la transacción. Estas ayudan a identificar y procesar correctamente la transacción financiera.
+En este ejemplo, la configuración garantiza que solo las transacciones que solicitan un número específico de cuotas (por ejemplo, 3, 6, 12) se enruten a la cuenta espejo configurada para planes promocionales.
 
-La decisión de enrutamiento se activará cuando una transacción cumpla con los criterios definidos para la promoción, según lo acordado con tu ejecutivo de cuenta de PayU Latam.
+{{% /alert %}}
 
-La regla de enrutamiento puede verse así:
+Puedes agregar condiciones adicionales según sea necesario para refinar la validación y evitar un enrutamiento incorrecto, incluyendo filtros como:
 
-<img src="/assets/Salesforce/salesforce40.png" alt="PrintScreen" style="width: 800px; height: auto;">
+- Marca de la tarjeta  
+- País emisor de la tarjeta  
+- Tipo de tarjeta  
+- Emisor de la tarjeta o BIN  
+- Moneda de pago  
+- Monto del pago  
+
+Estos ayudan a identificar las transacciones elegibles y aplicar la promoción de cuotas solo cuando se cumplan todos los criterios definidos.
+
+La decisión de enrutamiento se activará cuando una transacción cumpla con los criterios definidos para la promoción, según lo acordado con tu gerente de cuenta de PayU Latam.
+
+La decisión de enrutamiento podría verse así:
+
+<img src="/assets/Salesforce/salesforce40_es.png" alt="PrintScreen" style="width: 800px; height: auto;">
 
 <br>
 
 {{% alert title="Importante" color="warning"%}}
 
-Asegúrate de que las preferencias `payUInstallments` y `payUCardWiseInstallments` estén alineadas con las opciones de cuotas que deseas ofrecer, como se define en [Gestión de Preferencias Personalizadas del Sitio](#managing-custom-site-preferences). Estas preferencias deben estar configuradas correctamente tanto para las transacciones de tu cuenta principal como para las cuotas promocionales o sin intereses.
+- La decisión de enrutamiento se considera válida cuando todas las condiciones se cumplen durante la solicitud de la transacción. Estas reglas deben estar alineadas con el acuerdo que tengas con tu gerente de cuenta de PayU Latam.
+
+- Asegúrate de que las preferencias `payUInstallments` y `payUCardWiseInstallments` estén alineadas con las opciones de cuotas que deseas ofrecer, tal como se establece en [Gestión de Preferencias Personalizadas del Sitio](#managing-custom-site-preferences). Estas preferencias deben estar configuradas correctamente tanto para las transacciones de tu cuenta principal como para las opciones de cuotas sin interés o promocionales.
 
 {{% /alert %}}
 
