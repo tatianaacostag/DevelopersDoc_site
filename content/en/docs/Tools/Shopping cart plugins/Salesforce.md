@@ -35,7 +35,7 @@ Before beginning the integration, ensure you have the following:
 
 {{% alert title="Note" color="info"%}}
 
-You don’t need PayU production credentials to test this integration. You can use the credentials provided in <a href="https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html" target="_blank">Testing Your Solution</a>. If you're testing with 3DSecure, refer to the credentials listed in <a href="https://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">Testing the 3DS Authentication</a>.
+For testing this solution, you don’t need production credentials from PayU Latam or PayU Enterprise. Use the test credentials provided in <a href="https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html" target="_blank">Testing Your Solution</a>. If testing with 3DSecure, refer to the credentials in <a href="https://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">Testing the 3DS Authentication</a>. For account setup, see [Setting Up Your PayU Enterprise Account](#setting-up-your-payu-enterprise-account)</a>.   
 
 {{% /alert %}}
 
@@ -61,7 +61,7 @@ The following table shows the availability of the PayU cartridge by country, alo
     <tr>
       <th>Country</th>
       <th>Payment Method Type</th>
-      <th>Payment Method Name in SFCC</th>
+      <th>Payment Method Name in SFCC</th>      
     </tr>
   </thead>
   <tbody>
@@ -71,7 +71,7 @@ The following table shows the availability of the PayU cartridge by country, alo
         <img src="/assets/Argentina.png" width="20px"/>
       </td>
       <td>Card</td>
-      <td>American Express, Argencard, Cabal, Cencosud, DINERS, Master Card, Naranja, Visa</td>
+      <td>American Express, Argencard, Cabal, Cencosud, DINERS, Master Card, Naranja, Visa<br><br><strong>Notes: </strong><li>Mastercard-supported cards include: CRM Falabella, Nativa, Cordial, Cordobesa, and Nexo.<br><li>Visa-supported cards include: Shopping, Nativa, Credimas, and Nevada.</td>      
     </tr>
     <tr style="background-color: #F2F2F2;">
       <td>Cash</td>
@@ -107,7 +107,7 @@ The following table shows the availability of the PayU cartridge by country, alo
     </tr>
     <tr style="background-color: #FFFFFF;">
       <td>Cash</td>
-      <td>BANK REFERENCED, EFECTY, OTHERS CASH</td>
+      <td>BANK REFERENCED, EFECTY, OTHERS CASH <br><br><strong>Notes:</strong><br> <li>BANK REFERENCED includes the Banco de Bogotá, Bancolombia, and Davivienda payment networks.  <li>OTHERS CASH includes the Su Red payment network, which in turn comprises the following financial service providers: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, and JER.</td>      
     </tr>
     <tr style="background-color: #F2F2F2;">
       <td rowspan="3" style="text-align: center;">
@@ -119,7 +119,7 @@ The following table shows the availability of the PayU cartridge by country, alo
     </tr>
     <tr>
       <td>Cash</td>
-      <td>BANK REFERENCED, OXXO, OTHERS CASH MX, SEVEN ELEVEN</td>
+      <td>BANK REFERENCED, OXXO, OTHERS CASH MX, SEVEN ELEVEN <br><br><strong>Notes:</strong><br> <li>BANK REFERENCED includes the BBVA Bancomer payment network. <li>OTHERS CASH MX includes the payment networks of Farmacias Benavides and Farmacias del Ahorro.</td>      
     </tr>
     <tr style="background-color: #F2F2F2;">
       <td>Bank Transfer</td>
@@ -139,7 +139,7 @@ The following table shows the availability of the PayU cartridge by country, alo
         <img src="/assets/Peru.png" width="20px"/>
       </td>
       <td>Card</td>
-      <td>American Express, Master Card, Visa</td>
+      <td>American Express, DINERS, Master Card, Visa</td>
     </tr>
     <tr>
       <td>Cash</td>
@@ -169,7 +169,7 @@ This section outlines the necessary steps to properly install and configure the 
 
 To get started, register on the <a href="https://control.paymentsos.com/signup" target="_blank">PayU Enterprise (PaymentsOS) official website</a>. Please provide your name, your company's name and website, and the email address of the administrator user. Once you've completed the registration, you'll receive an email to set your password. After that, you'll be able to access the PayU Enterprise Control Center.
 
-By default, new accounts are set to test mode. To enable live transactions, contact your account manager and submit a request with the following details:
+By default, new accounts are set to test mode. **To enable live transactions, contact your account manager and submit a request with the following details**:
 
 * **PayU Latam Merchant ID:** Locate your LATAM account’s Merchant ID in the <a href="https://developers.payulatam.com/latam/en/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids" target="_blank">PayU Management Panel</a>.
 * **PayU Enterprise Account ID:** Find your Account ID in the PayU Enterprise control panel by clicking your username in the upper-right corner.
@@ -317,7 +317,7 @@ To carry out this procedure, you should be familiar with Salesforce Commerce Clo
 <ul class="custom-bullet">
   <li>Two-Factor Authentication (2FA) enabled on your GitHub account.</li>
   <li>Logging in with your SFCC credentials.</li>
-  <li>Following the access instructions provided in the <a href="https://developer.salesforce.com/docs/commerce/sfra/guide/sfra-overview.html" target="_blank">SFRA Guide</a> and <a href="https://github.com/SalesforceCommerceCloud/storefront-reference-architecture" target="_blank">SFCC Repository Access documentation</a>.</li>
+  <li>Following the access instructions provided in the <a href="https://developer.salesforce.com/docs/commerce/sfra/guide/sfra-overview.html" target="_blank">SFRA Guide</a> and <a href="https://developer.salesforce.com/docs/commerce/b2c-commerce/guide/b2c-github-repo-access.html" target="_blank">SFCC Repository Access documentation</a>.</li>
 </ul>
 
 3. Ensure you have **Node.js version 8.9.4 or higher** installed on your machine.
@@ -332,11 +332,11 @@ To carry out this procedure, you should be familiar with Salesforce Commerce Clo
 
 {{% alert title="Important" color="warning"%}}
 
-You must run these commands in the Salesforce Storefront Base repository before building the PayU cartridge.
+You must run these commands in the <a href="https://github.com/SalesforceCommerceCloud/storefront-reference-architecture" target="_blank">Salesforce Storefront Base repository</a> before building the PayU cartridge.
 
 {{% /alert %}}
 
-5. In the same directory where you downloaded the source code, create a file named dw.json with the following structure:
+5. In the same directory where you downloaded the source code, create a file named **`dw.json`** with the following structure:
 
 ```json
 {
@@ -485,12 +485,12 @@ To manage the custom site preferences for PayU:
 | `payUPaymentFlowType` | Type of payment flow:<br>• <b>One Step (Charge):</b> Authorization and capture in a single request.<br>• <b>Two Step (Authorization & Capture):</b> Separate steps for approval and capture. | `One Step (Charge)` |
 | `enableImmediateCapture` | For Two Step flow, controls if capture happens immediately after authorization.<br>• `Yes`: Capture immediately.<br>• `No`: Use the scheduled `PAYU_CAPTURE_PAYMENT` job. | `Yes` |
 | `payUVoidAllowed` | Enables or disables the option to void payments. | `No` |
-| `payUSupportedDocumentTypes` | Defines supported document types for checkout in valid JSON format, per country. These must adhere to country-specific formats. Documents are validated with a 20-character limit, with some exceptions: for instance, DNI in Peru must be 8 digits, and CPF in Brazil must be 11 digits (e.g., `123.123.123-12`), while CNPJ in Brazil must be 14 digits. <br><b>Example:</b> <br><code>{  "ARG": [{ "type": "DNI", "description": "Documento Nacional de Identidad", "value": "DNI", "enabled": true }, { "type": "CI", "description": "Cédula de Identidad", "value": "CI", "enabled": true }, { "type": "CUIL", "description": "Código Único de Identificación Laboral", "value": "CUIL", "enabled": true }, { "type": "CUIT", "description": "Código Único de Identificación Tributaria", "value": "CUIT", "enabled": true }, { "type": "OTHER", "description": "Otro", "value": "", "enabled": true }, { "type": "DNIE", "description": "Documento Nacional de Identidad - Electrónico", "value": "DNIE", "enabled": false }, { "type": "LC", "description": "Libreta Cívica", "value": "LC", "enabled": false }, { "type": "LE", "description": "Libreta de Enrolamiento", "value": "LE", "enabled": false }]}</code> <br><b>Note:</b> Ensure the value is valid JSON. | Country-specific |
+| `payUSupportedDocumentTypes` | Defines supported document types for checkout in valid JSON format, per country. These must adhere to country-specific formats. Documents are validated with a 20-character limit, with some exceptions: for instance, DNI in Peru must be 8 digits, and CPF in Brazil must be 11 digits (e.g., `123.123.123-12`), while CNPJ in Brazil must be 14 digits. For more information, refer to the <a href="https://developers.payulatam.com/latam/en/docs/getting-started/response-codes-and-variables.html#document-types" target="_blank">Document Types documentation</a>. <br><b>Example:</b> <br><code>{  "ARG": [{ "type": "DNI", "description": "Documento Nacional de Identidad", "value": "DNI", "enabled": true }, { "type": "CI", "description": "Cédula de Identidad", "value": "CI", "enabled": true }, { "type": "CUIL", "description": "Código Único de Identificación Laboral", "value": "CUIL", "enabled": true }, { "type": "CUIT", "description": "Código Único de Identificación Tributaria", "value": "CUIT", "enabled": true }, { "type": "OTHER", "description": "Otro", "value": "", "enabled": true }, { "type": "DNIE", "description": "Documento Nacional de Identidad - Electrónico", "value": "DNIE", "enabled": false }, { "type": "LC", "description": "Libreta Cívica", "value": "LC", "enabled": false }, { "type": "LE", "description": "Libreta de Enrolamiento", "value": "LE", "enabled": false }]}</code> <br><b>Note:</b> Ensure the value is valid JSON. | Country-specific |
 | `payUEnableInstallments` | Enables or disables installment payments at checkout.<br>• <b>Enabled:</b> Users can select installments.<br>• <b>Disabled:</b> Installment selection is hidden. | `No` |
 | `payUCardWiseInstallments` | Allowed installments by card type in JSON format. <br><b>Example:</b> <br><code>{  "ARG": { "Amex": [1,3,6,9,12,18], "Argencard": [1,3,6,9,12,18], "Cabal": [1,3,6,9,12,18], "Cencosud": [1,3,6,9,12,18], "Diners": [1,3,6,9,12,18], "Master Card": [1,6,12,18], "Naranja": [1,6,12], "Visa": [1,3,6,9,12,18] }} </code> <br><b>Note:</b> Ensure the value is valid JSON. | Country-specific |
 | `payUInstallments` | Configures the number of allowed installments for credit card payments at a general site level. | Country-specific |
 | `payu3DSConfiguration` | Controls the use of 3D Secure authentication:<br>• <b>Enable:</b> Enforce 3DS for all eligible transactions.<br>• <b>Disable:</b> Do not use 3DS.<br>• <b>Internal:</b> PayU decides based on risk analysis. | `DISABLED` |
-| `payUCashExpiryDays` | Number of days before cash payments expire. | `7` |
+| `payUCashExpiryDays` | Number of days before cash payments expire.<br><br>**Default values per country:**<br><table><tr><td>Argentina</td><td>15 days</td></tr><tr><td>Brazil</td><td>4 days</td></tr><tr><td>Chile</td><td>None</td></tr><tr><td>Colombia</td><td>5 days</td></tr><tr><td>Mexico</td><td>7 days</td></tr><tr><td>Panama</td><td>None</td></tr><tr><td>Peru</td><td>7 days</td></tr></table> | `7` |
 
 ### Verifying Your Payment Processors
 
@@ -872,7 +872,7 @@ You can temporarily disable or re-enable the PayU payment integration depending 
    - If the processor is set to `PAY_U`, replace it with another one, such as `BASIC_CREDIT`.
 4. Enable the payment methods you want to use with the new processor.
 
-**Re-Enabling PayU:**
+**Re-Enabling PayU Integration:**
 
 Switch the processors back to `PAY_U` for the corresponding payment methods.
 
@@ -924,6 +924,14 @@ Once the purchase is approved, you can verify the transaction in the following p
 The selected order will display full payment information processed through PayU, including transaction status, payment method, authorization details, and other relevant data. This ensures transparency and allows you to track each transaction.
 
 <img src="/assets/Salesforce/salesforce32.png" alt="PrintScreen" style="width: 700px; height: auto;">
+
+<br>
+
+<img src="/assets/Salesforce/salesforce49.png" alt="PrintScreen" style="width: 700px; height: auto;">
+
+<br>
+
+<img src="/assets/Salesforce/salesforce50.png" alt="PrintScreen" style="width: 700px; height: auto;">
 
 <br>
 

@@ -512,9 +512,12 @@ Cuando configuras un método de pago en efectivo, los clientes son redirigidos a
 
 * Asegúrate de que todos los métodos de pago y billeteras digitales que deseas configurar estén habilitados en tu cuenta de PayU, y que **sus nombres coincidan exactamente con los registrados en PayU**. Los métodos que no estén habilitados o con nombres incorrectos generarán errores en las transacciones. Si necesitas ayuda para habilitar métodos de pago o billeteras específicas,  
   <a href="https://colombia.support.payu.com/s/?language=es" target="_blank" rel="noopener noreferrer">contáctanos</a>.
-* Para habilitar **Yape** como método de pago en Perú, asegúrate de que tu tienda VTEX esté desarrollada con VTEX IO o Faststore, y que tengas instalada la siguiente aplicación: <a href="https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup" target="_blank" rel="noopener noreferrer">
-  Yape Payment App for PayU V2</a>
 * Para **Boleto Bancário** en Brasil, este procedimiento no es necesario. Simplemente localiza y configura este método de pago como una condición de pago.
+* Para habilitar **Yape** como método de pago en Perú, asegúrate de que tu tienda VTEX esté desarrollada con **VTEX IO** o **FastStore**. Luego, instala la aplicación **Pop-up for Online Payment with Yape** accediendo a la URL de configuración. Reemplaza `{vtexaccount}` en la URL con el nombre de tu cuenta de VTEX (es decir, el subdominio que usas para ingresar al panel de administración de VTEX):
+    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+    <br>**Ejemplo:**
+    <br>Si tu cuenta de VTEX es `payulatam`, la URL sería:
+    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
 
 **Paso a Paso:**
 

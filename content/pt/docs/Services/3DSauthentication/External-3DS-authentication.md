@@ -12,7 +12,7 @@ tags: ["subtopic"]
 Se você possui seu próprio serviço de autenticação 3DS, pode integrá-lo perfeitamente com a PayU. Essa abordagem também é conhecida como **passthrough** e permite que você gerencie o processo de autenticação diretamente com o Merchant Plug-in (MPI) ou servidor 3DS escolhido.
 
 {{% alert title="Observações" color="info"%}}
-* A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia** e **Peru**.
+* A autenticação 3DS para PayU Latam está disponível apenas para **Argentina**, **Brasil**, **Colômbia**, **México** e **Peru**.
 * Esse recurso requer uma integração via API e não está disponível para integração com Webcheckout.
 * **Redes atualmente suportadas:** Visa e Mastercard
 {{% /alert %}}
@@ -31,16 +31,19 @@ Para obter instruções detalhadas sobre como incluir parâmetros de resposta de
 
 <div style="display: flex;">
   <div style="float: left;width: 50%;text-align: center;">
-    <a href='{{< ref "Payments-API-Argentina.md#considerations" >}}'><img src="/assets/Argentina.png" width="20%"/></a>
+    <a href='{{< ref "Payments-API-Argentina.md#considerations" >}}'><img src="/assets/Argentina.png" width="16%"/></a>
   </div>
   <div style="float: left;width: 50%;text-align: center;">
-    <a href='{{< ref "Payments-API-Brazil.md#considerations" >}}'><img src="/assets/Brasil.png" width="20%"/></a>
+    <a href='{{< ref "Payments-API-Brazil.md#considerations" >}}'><img src="/assets/Brasil.png" width="16%"/></a>
   </div>
   <div style="float: left;width: 50%;text-align: center;">
-    <a href='{{< ref "Payments-API-Colombia.md#considerations" >}}'><img src="/assets/Colombia.png" width="20%"/></a>
+    <a href='{{< ref "Payments-API-Colombia.md#considerations" >}}'><img src="/assets/Colombia.png" width="16%"/></a>
   </div>
   <div style="float: left;width: 50%;text-align: center;">
-    <a href='{{< ref "Payments-API-Peru.md#considerations" >}}'><img src="/assets/Peru.png" width="20%"/></a>
+      <a href='{{< ref "Payments-API-Mexico.md#considerations" >}}'><img src="/assets/Mexico.png" width="16%"/></a>
+    </div>
+  <div style="float: left;width: 50%;text-align: center;">
+    <a href='{{< ref "Payments-API-Peru.md#considerations" >}}'><img src="/assets/Peru.png" width="16%"/></a>
   </div>
 </div>
 <br>
