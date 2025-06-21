@@ -30,14 +30,12 @@ Para garantizar que tu servidor reciba solicitudes y notificaciones de PayU Lata
 
 **Entorno de producción**
 
-* 198.61.156.98
-* 190.216.203.233
 * 34.233.144.154
+* 184.73.94.138
+* 52.73.124.136
 
 **Entorno de pruebas (sandbox)**
 
-* 50.56.9.170
-* 74.205.10.14
 * 54.158.171.129
  
 ## Parámetros {#parameters}

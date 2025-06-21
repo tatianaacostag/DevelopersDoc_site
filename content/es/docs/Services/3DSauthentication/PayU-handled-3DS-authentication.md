@@ -13,6 +13,7 @@ Para habilitar la autenticación 3DS, contacta a tu representante de PayU o al s
 {{% alert title="Notas" color="info"%}}
 
 * La autenticación 3DS con PayU Latam está disponible únicamente en **Argentina**, **Brasil**, **Colombia**, **México** y **Perú**.
+* Al utilizar la autenticación 3DS en integraciones por API, es **obligatorio** establecer un `RESPONSE_URL`. Si no se incluye, la transacción devolverá un error.
 * Si utilizas una <a href="https://developers.payulatam.com/latam/es/docs/integrations/webcheckout-integration.html" target="_blank">integración WebCheckout</a>, contacta a tu representante de PayU o al soporte técnico para confirmar si la autenticación 3DS está disponible para tus transacciones.
 * **Redes compatibles:** Visa y Mastercard.
 
@@ -25,7 +26,7 @@ Este parámetro te permite especificar si una transacción requiere autenticaci�
 * `"true"`: Exige la autenticación 3DS para la transacción.
 * `"false"`: Desactiva la autenticación 3DS para la transacción.
 
-**Si tu solicitud no incluye `req3DSAuthentication`,** el motor de riesgos de PayU determinará si la transacción requiere autenticación 3DS en función de su evaluación de riesgos.
+**Si tu solicitud no incluye `req3DSAuthentication`**, el motor de riesgos de PayU determinará si la transacción requiere autenticación 3DS en función de su evaluación de riesgos.
 
 #### Parámetros para la Autenticación 3DS 
 
@@ -35,7 +36,7 @@ La siguiente tabla describe los parámetros clave asociados con la autenticació
 |-|-|-|-|
 | `transaction > req3DSAuthentication` | Booleano | 4-5 caracteres | Especifica si se exige (`true`) o no (`false`) la autenticación 3DS. Si se omite, el motor de riesgos de PayU decide si se requiere autenticación. |
 | `transaction > order > notifyUrl` | Alfanumérico | Hasta 255 caracteres | URL de webhook que tu integración utiliza para recibir el estado final de la transacción (por ejemplo, aprobada o rechazada) desde PayU. Para ver una lista detallada de los posibles estados, consulta la <a href="https://developers.payulatam.com/latam/es/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" target="_blank">documentación de códigos de respuesta</a> |
-| `transaction > extraParameters > RESPONSE_URL` | Alfanumérico| Hasta 255 caracteres | URL a la que la integración redirige al usuario después de la autenticación, generalmente el sitio web del comercio. Si se omite, la integración redirige al usuario a la página predeterminada de estado de la transacción de PayU. Para una lista detallada de los posibles estados, consulta la <a href="https://developers.payulatam.com/latam/es/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page" target="_blank">documentación de códigos de respuesta</a>. |
+| `transaction > extraParameters > RESPONSE_URL` | Alfanumérico| Hasta 255 caracteres | URL a la que se redirige al usuario después de completar la autenticación 3DS, normalmente una página en el sitio web del comercio. **Para integraciones por API, este parámetro es obligatorio**. Si no se incluye, la transacción puede fallar porque PayU no podrá redirigir al usuario después del desafío de autenticación. Para una lista detallada de los posibles estados, consulta la <a href="https://developers.payulatam.com/latam/es/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page" target="_blank">documentación de códigos de respuesta</a>. |
 
 #### Ejemplo de una Solicitud
 
@@ -403,10 +404,3 @@ Como se muestra en el diagrama, una vez que el pagador complete la autenticació
 
 * **Completada:** Si la autenticación es exitosa.
 * **Rechazada:** Si la autenticación falla.
-
-### Redireccionamiento Después de la Autenticación
-
-Siguiendo la redirección del pagador desde la `THREEDS_AUTH_REDIRECT_URL`, se le dirigirá a:
-
-* **Página de estado de la transacción de PayU Checkout:** De forma predeterminada, este es el comportamiento si el comercio no ha especificado una URL de retorno personalizada.
-* **URL de retorno personalizada del comercio:** Si se proporciona, el pagador será redirigido a la página designada por el comercio después de la autenticación.

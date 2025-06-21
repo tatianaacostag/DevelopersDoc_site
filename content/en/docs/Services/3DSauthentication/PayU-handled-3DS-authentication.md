@@ -13,6 +13,7 @@ To enable 3DS authentication, contact your PayU representative or technical supp
 {{% alert title="Notes" color="info"%}}
 
 * 3DS authentication with PayU Latam is only available in **Argentina**, **Brazil**, **Colombia**, **Mexico**, and **Peru**.
+* When using 3DS authentication in API integrations, setting a `RESPONSE_URL` is **mandatory**. If not provided, the transaction will return an error.
 * If you use a <a href="https://developers.payulatam.com/latam/en/docs/integrations/webcheckout-integration.html" target="_blank">WebCheckout integration</a>, contact your PayU representative or technical support to confirm whether 3DS authentication is available for your transactions. 
 * **Supported networks:** Visa and Mastercard.
 
@@ -25,7 +26,7 @@ This parameter enables you to specify whether a transaction requires 3DS authent
 * `"true"`: Enforces 3DS authentication for the transaction.
 * `"false"`: Disables 3DS authentication for the transaction.
 
-**If your request doesn't include `req3DSAuthentication`,** PayU's risk engine will determine whether the transaction requires 3DS authentication based on its risk assessment.
+**If your request doesn't include `req3DSAuthentication`**, PayU's risk engine will determine whether the transaction requires 3DS authentication based on its risk assessment.
 
 #### Parameters for 3DS Authentication 
 
@@ -35,7 +36,7 @@ The table below outlines the key parameters associated with 3DS authentication. 
 |-|-|-|-|
 | `transaction > req3DSAuthentication` | Boolean | 4-5 characters | Specifies whether 3DS authentication is enforced (`true` or `false`). If omitted, PayU's risk engine decides whether authentication is required. |
 | `transaction > order > notifyUrl` | Alphanumeric | Up to 255 characters | Webhook URL that your integration uses to receive the final transaction status (e.g., approved or rejected) from PayU. For a detailed list of possible statuses, refer to the <a href="https://developers.payulatam.com/latam/en/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" target="_blank">response codes documentation</a>. |
-| `transaction > extraParameters > RESPONSE_URL` | Alphanumeric | Up to 255 characters | URL where the integration redirects the user after authentication, typically the merchant's website. If omitted, the integration redirects the user to PayU's default transaction status page. For a detailed list of possible statuses, refer to the <a href="https://developers.payulatam.com/latam/en/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page" target="_blank">response codes documentation</a>. |
+| `transaction > extraParameters > RESPONSE_URL` | Alphanumeric | Up to 255 characters | URL where the user is redirected after completing the 3DS authentication, typically a page on the merchant’s website. **For API integrations, this parameter is mandatory**. If not provided, the transaction may fail because PayU cannot redirect the user after the authentication challenge. For a detailed list of possible statuses, refer to the <a href="https://developers.payulatam.com/latam/en/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page" target="_blank">response codes documentation</a>. |
 
 
 #### Request Example
@@ -403,10 +404,3 @@ As shown in the diagram, once the payer completes the 3DS authentication (if req
 
 * **Completed:** If the authentication is successful.
 * **Declined:** If the authentication fails.
-
-### Redirection After Authentication
-
-Following the payer's redirection from the `THREEDS_AUTH_REDIRECT_URL`, they will be directed to:
-
-* **PayU Checkout transaction status page:** By default, this is the behavior if the merchant hasn't specified a custom return URL.  
-* **Merchant's custom return URL:** If provided, the payer will be redirected to the merchant's designated page after authentication.

@@ -1,99 +1,41 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.6">
-  <diagram name="Page-1" id="Q7fAwdDV4ESacsW7LS1n">
-    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="27.1.6">
+  <diagram name="Page-1" id="6iL-IbI7YEmq0DZORB_5">
+    <mxGraphModel dx="1412" dy="729" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;" parent="1" source="YcNsE4wuTBjSfJi-bFuw-15" target="YcNsE4wuTBjSfJi-bFuw-2" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="380" y="160" as="sourcePoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;" parent="1" source="YcNsE4wuTBjSfJi-bFuw-2" target="YcNsE4wuTBjSfJi-bFuw-4" edge="1">
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;" parent="1" source="A9AV7UKq8lN9NTH1w0oA-1" target="A9AV7UKq8lN9NTH1w0oA-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;A PayU processa a transação e solicita autenticação (ex.: desafio 3DS).&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="280" y="180" width="200" height="100" as="geometry" />
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-1" value="&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 14px;&quot;&gt;O usuário&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 14px; background-color: transparent;&quot;&gt;&amp;nbsp;inicia um&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 14px; background-color: transparent;&quot;&gt;pagamento no&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;site&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;background-color: transparent; color: rgb(255, 255, 255);&quot;&gt;do lojista&lt;/font&gt;&lt;/font&gt;&lt;font style=&quot;background-color: transparent; color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;.&lt;/font&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#BCD245;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="320" y="80" width="120" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-4" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;A integração verifica se o comerciante definiu uma&lt;font style=&quot;&quot; face=&quot;Arial, sans-serif&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;&quot; face=&quot;Lucida Console&quot;&gt;RESPONSE_URL&lt;/font&gt;&lt;font style=&quot;&quot; face=&quot;Arial, sans-serif&quot;&gt;.&lt;/font&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="270" y="320" width="220" height="95" as="geometry" />
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;strokeColor=#BCD245;" parent="1" source="A9AV7UKq8lN9NTH1w0oA-2" target="A9AV7UKq8lN9NTH1w0oA-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" parent="1" source="YcNsE4wuTBjSfJi-bFuw-18" target="YcNsE4wuTBjSfJi-bFuw-4" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="260" y="497" as="sourcePoint" />
-            <Array as="points">
-              <mxPoint x="110" y="460" />
-              <mxPoint x="380" y="460" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-2" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;&quot;&gt;A PayU processa a transação e solicita a&amp;nbsp;&lt;br&gt;&lt;/font&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;autenticação (por exemplo, um desafio 3DS)&lt;/span&gt;.&lt;/font&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="220" y="240" width="320" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-15" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 16px;&quot;&gt;O usuário inicia um pagamento no site do comerciante.&lt;/span&gt;&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#BCD245;fillColor=#BCD245;" parent="1" vertex="1">
-          <mxGeometry x="320" y="20" width="127.5" height="127.5" as="geometry" />
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;" parent="1" source="A9AV7UKq8lN9NTH1w0oA-3" target="A9AV7UKq8lN9NTH1w0oA-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YcNsE4wuTBjSfJi-bFuw-18" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#ffffff&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Lucida Console&quot;&gt;RESPONSE_URL&lt;/font&gt;&lt;font style=&quot;&quot; face=&quot;Arial, sans-serif&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;/font&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-family: Arial, sans-serif; font-size: 16px;&quot;&gt;está definida:&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#ffffff&quot;&gt;&lt;br style=&quot;font-family: Arial, sans-serif;&quot;&gt;O usuário é redirecionado de volta ao site do comerciante após a autenticação&lt;/font&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); font-size: 16px; background-color: transparent;&quot;&gt;.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;" parent="1" vertex="1">
-          <mxGeometry x="10" y="500" width="200" height="150" as="geometry" />
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-3" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;A PayU retorna a URL de autenticação no campo&amp;nbsp;&lt;font face=&quot;Lucida Console&quot;&gt;THREEDS_AUTH_REDIRECT_URL&lt;/font&gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;da&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;resposta do pagamento&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Em seguida, a integração do lojista redireciona&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;o usuário para essa URL. A página contém um&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot; data-end=&quot;586&quot; data-start=&quot;578&quot;&gt;iframe&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;que carrega a interface do&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;banco,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;onde o usuário completa o&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;desafio de autenticação&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); font-size: 14px;&quot;&gt;.&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="220" y="350" width="320" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;endArrow=none;endFill=0;strokeWidth=2;exitX=0.5;exitY=0;exitDx=0;exitDy=0;startArrow=classic;startFill=1;" parent="1" source="iZpOtUYKphx9t9l1RsEH-5" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="500" y="497" as="sourcePoint" />
-            <mxPoint x="380" y="420" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="650" y="460" />
-              <mxPoint x="380" y="460" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;" parent="1" source="A9AV7UKq8lN9NTH1w0oA-4" target="A9AV7UKq8lN9NTH1w0oA-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-5" value="&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#ffffff&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Lucida Console&quot;&gt;RESPONSE_URL&lt;/font&gt;&lt;font style=&quot;&quot; face=&quot;Arial, sans-serif&quot;&gt;&amp;nbsp;&lt;/font&gt;não está definida&lt;font style=&quot;&quot; face=&quot;Arial, sans-serif&quot;&gt;:&lt;/font&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#ffffff&quot;&gt;&lt;br style=&quot;font-family: Arial, sans-serif;&quot;&gt;O usuário é redirecionado para a página padrão de status da transação da PayU&lt;span style=&quot;font-family: Arial, sans-serif;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;fillColor=#BCD245;" parent="1" vertex="1">
-          <mxGeometry x="550" y="500" width="200" height="150" as="geometry" />
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#BCD245;dashed=1;endArrow=none;startFill=0;" parent="1" source="A9AV7UKq8lN9NTH1w0oA-4" target="A9AV7UKq8lN9NTH1w0oA-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-7" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp;O comerciante exibe o resultado do pagamento ao usuário em seu site.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="150" y="704" width="210" height="95" as="geometry" />
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-4" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Uma vez que a&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;autenticação&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;esteja completa, a integração redireciona o&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;usuário para a URL definida pelo lojista&amp;nbsp;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;no parâmetro&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot; face=&quot;Lucida Console&quot;&gt;RESPONSE_URL&lt;/font&gt;&lt;span style=&quot;font-size: 14px; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="240" y="560" width="280" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="YcNsE4wuTBjSfJi-bFuw-18" target="iZpOtUYKphx9t9l1RsEH-7" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="230" y="640" as="sourcePoint" />
-            <mxPoint x="229" y="688" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="110" y="680" />
-              <mxPoint x="255" y="680" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-5" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;color: rgb(255, 255, 255); background-color: transparent;&quot;&gt;O lojista exibe o resultado do pagamento ao usuário em seu site&lt;/span&gt;&lt;span style=&quot;color: light-dark(rgb(255, 255, 255), rgb(18, 18, 18)); background-color: transparent;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=none;strokeWidth=2;fillColor=#BCD245;" parent="1" vertex="1">
+          <mxGeometry x="260" y="700" width="240" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-11" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;O usuário visualiza o resultado da transação na página de status da PayU.&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#BCD245;strokeWidth=2;" parent="1" vertex="1">
-          <mxGeometry x="400" y="704" width="210" height="95" as="geometry" />
-        </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#BCD245;strokeWidth=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="iZpOtUYKphx9t9l1RsEH-5" target="iZpOtUYKphx9t9l1RsEH-11" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="730" y="640" as="sourcePoint" />
-            <mxPoint x="729" y="688" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="650" y="680" />
-              <mxPoint x="505" y="680" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-13" value="&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#ffffff&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Lucida Console&quot;&gt;notifyUrl&lt;/font&gt;&lt;span style=&quot;font-family: Arial, sans-serif;&quot;&gt;:&lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif;&quot;&gt; &lt;/strong&gt;&lt;/font&gt;&lt;font style=&quot;font-size: 16px;&quot; color=&quot;#ffffff&quot;&gt;Simultaneamente ao redirecionamento, a integração envia um webhook para o servidor do comerciante com o status final da transação (aprovada ou rejeitada).&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#666666;strokeWidth=2;fillColor=#666666;" parent="1" vertex="1">
-          <mxGeometry x="265" y="500" width="230" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;startArrow=none;startFill=0;" parent="1" source="YcNsE4wuTBjSfJi-bFuw-18" target="iZpOtUYKphx9t9l1RsEH-13" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="240" y="728" as="sourcePoint" />
-            <mxPoint x="540" y="641" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="250" y="574" />
-              <mxPoint x="250" y="574" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="iZpOtUYKphx9t9l1RsEH-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#BCD245;endArrow=none;endFill=0;dashed=1;strokeWidth=2;startArrow=none;startFill=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="iZpOtUYKphx9t9l1RsEH-13" target="iZpOtUYKphx9t9l1RsEH-5" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="505" y="670" as="sourcePoint" />
-            <mxPoint x="585" y="672" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="510" y="574" />
-              <mxPoint x="555" y="574" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="A9AV7UKq8lN9NTH1w0oA-10" value="&lt;div&gt;&lt;font style=&quot;font-size: 14px; color: rgb(255, 255, 255);&quot;&gt;&lt;font face=&quot;Lucida Console&quot;&gt;notifyUrl&lt;/font&gt;:&lt;/font&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 14px; color: rgb(255, 255, 255);&quot;&gt;&amp;nbsp;&lt;/font&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;background-color: transparent;&quot;&gt;Simultaneamente&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;ao redirecionamento, a integração envia um&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot; data-end=&quot;604&quot; data-start=&quot;595&quot;&gt;webhook&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;ao servidor do lojista com&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;o status final da transação&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;(aprovada ou rejeitada)&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=none;strokeWidth=2;fillColor=#808080;" parent="1" vertex="1">
+          <mxGeometry x="590" y="550" width="260" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

@@ -31,7 +31,7 @@ Antes de comenzar la integración, asegúrate de contar con lo siguiente:
 * Una <a href="https://control.paymentsos.com/signup" target="_blank">cuenta activa de PayU Enterprise (PaymentsOS)</a> en modo producción/live. Para obtener detalles sobre cómo habilitar el modo live, consulta [Activar tu cuenta de PayU Enterprise](#activating-your-payu-enterprise-account).
 * Una instancia de Salesforce Commerce Cloud (Business Manager) con acceso de administrador.
 * Acceso al entorno de desarrollo de tu tienda SFCC, incluyendo permisos para instalar y configurar catridges.
-* Acceso al repositorio del cartridge de PayU.
+* Acceso al <a href="https://github.com/PayU/link_payu" target="_blank">repositorio del cartridge de PayU</a>.
 
 {{% alert title="Nota" color="info"%}}
 

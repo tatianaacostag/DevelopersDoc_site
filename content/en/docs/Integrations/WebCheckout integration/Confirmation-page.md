@@ -29,14 +29,12 @@ To ensure that your server receives requests and notifications from PayU Latam, 
 
 **Production Environment**
 
-* 198.61.156.98
-* 190.216.203.233
 * 34.233.144.154
+* 184.73.94.138
+* 52.73.124.136
 
 **Sandbox Environment**
 
-* 50.56.9.170
-* 74.205.10.14
 * 54.158.171.129
 
 ## Parameters
