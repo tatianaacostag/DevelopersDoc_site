@@ -492,6 +492,25 @@ To manage the custom site preferences for PayU:
 | `payu3DSConfiguration` | Controls the use of 3D Secure authentication:<br>• <b>Enable:</b> Enforce 3DS for all eligible transactions.<br>• <b>Disable:</b> Do not use 3DS.<br>• <b>Internal:</b> PayU decides based on risk analysis. | `DISABLED` |
 | `payUCashExpiryDays` | Number of days before cash payments expire.<br><br>**Default values per country:**<br><table><tr><td>Argentina</td><td>15 days</td></tr><tr><td>Brazil</td><td>4 days</td></tr><tr><td>Chile</td><td>None</td></tr><tr><td>Colombia</td><td>5 days</td></tr><tr><td>Mexico</td><td>7 days</td></tr><tr><td>Panama</td><td>None</td></tr><tr><td>Peru</td><td>7 days</td></tr></table> | `7` |
 
+### Changing the Cartridge Properties Language
+
+To change the checkout language, you must configure the locales before uploading the cartridge to your site. This process involves some SFCC locale setup, which may take time. Please refer to the official <a href="https://trailhead.salesforce.com/es/content/learn/modules/b2c-localization/b2c-configure-locales" target="_blank">Salesforce documentation for configuring locales</a>.
+
+As a **temporary workaround**, you can rename the property files directly within the PayU cartridge. Follow these steps:
+
+1. Navigate to the PayU cartridge path:  
+`link_payu/cartridges/int_payu/cartridge/templates/resources`
+2. In this folder, locate the `.properties` files that define various text strings.
+3. Edit or customize these files as needed. For example, to use a Spanish (Peru) file, locate `account_es_PE.properties`, rename it to `account.properties`.
+4. Apply this same renaming convention to all other relevant property files.
+5. Once you have completed this, you can proceed with the installation on your site.
+
+{{% alert title="Important" color="warning"%}}
+
+This temporary solution is only viable for sites built from scratch with no existing customizations. If your SFCC site is already live or has custom implementations, developers will need to integrate these changes carefully to ensure compatibility with their existing code.
+
+{{% /alert %}}
+
 ### Verifying Your Payment Processors
 
 Once you’ve uploaded the metadata file, the payment processor details are updated automatically. Next, verify that the processors are correctly configured:

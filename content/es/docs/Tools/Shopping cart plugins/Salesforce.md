@@ -498,6 +498,25 @@ Para administrar las preferencias personalizadas del sitio para PayU:
 | `payu3DSConfiguration` | Controla el uso de autenticación 3D Secure:<br>• <b>Enable:</b> Aplica 3DS a todas las transacciones elegibles.<br>• <b>Disable:</b> No usa 3DS.<br>• <b>Internal:</b> PayU decide según análisis de riesgo. | `DISABLED` |
 | `payUCashExpiryDays` | Número de días antes de que expiren los pagos en efectivo.<br><br>**Valores predeterminados por país:**<br><table><tr><td>Argentina</td><td>15 días</td></tr><tr><td>Brasil</td><td>4 días</td></tr><tr><td>Chile</td><td>Ninguno</td></tr><tr><td>Colombia</td><td>5 días</td></tr><tr><td>México</td><td>7 días</td></tr><tr><td>Panamá</td><td>Ninguno</td></tr><tr><td>Perú</td><td>7 días</td></tr></table> | `7` |
 
+### Cambiar el idioma de las propiedades del cartridge {#changing-the-cartridge-properties-language}
+
+Para cambiar el idioma del checkout, debes configurar los *locales* antes de cargar el cartridge en tu sitio. Este proceso implica algunas configuraciones en SFCC que pueden tomar tiempo. Consulta la <a href="https://trailhead.salesforce.com/es/content/learn/modules/b2c-localization/b2c-configure-locales" target="_blank">documentación oficial de Salesforce sobre cómo configurar locales</a>.
+
+Como **solución temporal**, puedes cambiar el nombre de los archivos de propiedades directamente dentro del cartridge de PayU. Sigue estos pasos:
+
+1. Navega a la ruta del cartridge de PayU:  
+`link_payu/cartridges/int_payu/cartridge/templates/resources`
+2. En esta carpeta, ubica los archivos `.properties` que definen varios textos.
+3. Edita o personaliza estos archivos según sea necesario. Por ejemplo, para usar un archivo en español (Perú), ubica `account_es_PE.properties` y cámbiale el nombre a `account.properties`.
+4. Aplica esta misma convención de cambio de nombre a todos los demás archivos de propiedades relevantes.
+5. Una vez que termines, puedes proceder con la instalación en tu sitio.
+
+{{% alert title="Importante" color="warning"%}}
+
+Esta solución temporal solo es viable para sitios creados desde cero sin personalizaciones existentes. Si tu sitio SFCC ya está en producción o tiene implementaciones personalizadas, los desarrolladores deberán integrar estos cambios cuidadosamente para garantizar la compatibilidad con el código existente.
+
+{{% /alert %}}
+
 ### Verificar tus procesadores de pago {#verifying-your-payment-processors}
 
 Una vez que hayas cargado el archivo de metadatos, los detalles del procesador de pagos se actualizan automáticamente. A continuación, verifica que los procesadores estén configurados correctamente:
