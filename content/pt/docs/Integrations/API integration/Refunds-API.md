@@ -68,10 +68,7 @@ Antes de usar a API de Anulações e Reembolsos, leve em conta as seguintes cons
 
 ### México
 
-- Uma solicitação de anulação deve ser enviada **pelo menos 10 minutos após a autorização** e até:
-  - **30 dias** para a maioria das transações.
-  - **7 dias** para transações feitas com **American Express**.
-  - Se nenhuma anulação ou captura for enviada dentro do prazo, a transação será automaticamente anulada.
+- Uma solicitação de anulação deve ser enviada **pelo menos 10 minutos após a autorização** e até **7 dias**. Se nenhuma anulação ou captura for enviada dentro do prazo, a transação será automaticamente anulada.
 - Reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até:
   - **175 dias** para a maioria das transações.
   - **40 dias** se processadas pelo **Bancomer**.

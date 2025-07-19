@@ -20,9 +20,9 @@ To integrate with the Payments API, direct your requests to the following URLs b
 
 {{% /alert %}}
 
-## Available Methods
+## Available Features
 
-Payments API includes the following methods:
+Payments API includes the following features:
 
 * [Submit Transactions Using Credit or Debit Cards]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}})
 * [Submit Transactions Using Bank Transfer (PSE)]({{< ref "Payments-API-Colombia.md#submit-transactions-using-bank-transfer-pse" >}})
@@ -30,7 +30,8 @@ Payments API includes the following methods:
 * [Submit Transactions Using Nequi]({{< ref "Payments-API-Colombia.md#submit-transactions-using-nequi" >}})
 * [Submit Transactions Using Bancolombia Button]({{< ref "#submit-transactions-using-bancolombia-button" >}})
 * [Submit Transactions Using Cash or Bank Reference]({{< ref "Payments-API-Colombia.md#submit-transactions-using-cash-or-bank-reference" >}})
-* [Process Payments as an Airline or Travel Agency]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}}) 
+* [Process Payments as an Airline or Travel Agency]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}})
+* [Include Passenger Name Record Information]({{< ref "#include-passenger-name-record-information-optional" >}})
 * [Available Payment Methods Query]({{< ref "Payments-API-Colombia.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Colombia.md#ping" >}})
 
@@ -3606,11 +3607,11 @@ Request Example:
 
 {{< /tabs >}}
 
-### Include Passenger Name Record Information (Optional)
+## Include Passenger Name Record Information (Optional)
 
-In addition to the previously provided transaction details, the API allows the inclusion of Passenger Name Record (PNR) data. This feature is particularly valuable when using PayU's anti-fraud tools to enhance transaction risk analysis tailored to your business activities.
+In addition to the previously provided transaction details, the API allows for the optional inclusion of Passenger Name Record (PNR) data. While particularly valuable for airlines and travel agencies, this feature extends its utility to any merchant using PayU's services across Latin American countries, even when not directly processing flight payments. The core benefit of PNR data is to significantly enhance transaction risk analysis through PayU's anti-fraud tools, providing a more comprehensive view of the transaction beyond just payment details.
 
-The following parameters relate to PNR data and are optional. They are available in all Latin American countries where PayU operates. These fields are not sufficient on their own to complete a transaction request but are complementary for specific use cases.
+The following parameters relate to PNR data and are optional. They are available in all Latin American countries where PayU operates. These fields are not sufficient on their own to complete a transaction request but are complementary for specific use cases where knowing details about the passenger and their travel itinerary can aid in fraud detection.
 
 <details>
 <summary>Request</summary>

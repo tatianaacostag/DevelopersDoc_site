@@ -68,10 +68,7 @@ Before using the Voids and Refunds API, keep the following country-specific cons
 
 ### Mexico
 
-- A void request must be sent **at least 10 minutes after authorization** and up to:
-  - **30 days** for most transactions.
-  - **7 days** for transactions made with **American Express**.
-  - If no void or capture is sent within the timeframe, the transaction is automatically voided.
+- A void request must be sent **at least 10 minutes after authorization** and up to **7 days**. If no void or capture is sent within the timeframe, the transaction is automatically voided.
 - Refunds can be requested **at least 10 minutes after approval** and up to:
   - **175 days** for most transactions.
   - **40 days** if processed by **Bancomer**.

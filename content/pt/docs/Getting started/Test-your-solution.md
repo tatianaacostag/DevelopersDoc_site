@@ -19,6 +19,7 @@ weight: 40
   }
   window.addEventListener('DOMContentLoaded', openTarget);
 </script>
+
 Para conduzir testes com a PayU, use as credenciais fornecidas abaixo em suas solicitações, dependendo do país ao qual sua conta está associada.  
 
 {{< testaccounts/accounts_pt >}}
@@ -32,7 +33,15 @@ Para conduzir testes com a PayU, use as credenciais fornecidas abaixo em suas so
 
 ## Cartões de Teste {#test-Cartãos}
 
-Você pode usar os seguintes cartões para teste:
+Abaixo, você encontrará os dados de cartões que podem ser utilizados para simular transações no ambiente de testes da PayU.
+
+{{% alert title="Importante" color="warning" %}}
+
+Os cartões de crédito exibidos nesta seção são exclusivamente para testes e foram habilitados apenas para uso dentro desta plataforma. Eles não são válidos fora deste ambiente e não podem ser usados para realizar transações reais. Qualquer tentativa de uso externo será inválida e não gerará transações reais em estabelecimentos da PayU Latam.
+
+{{% /alert %}}
+
+Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 <details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
@@ -213,6 +222,21 @@ Ao testar pagamentos, use os seguintes valores na sua requisição conforme o st
 * **Para testar transferências bancárias via PSE** (disponível na Colômbia) no ambiente Sandbox da PayU, consulte o [Guia de Testes PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 
 * **Para testar cartões no Chile**, use os valores de nome do titular, CVV e data de validade mostrados nas <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">cartões de exemplo</a>.
+
+### Testar Cenários com o Módulo Antifraude
+
+Para testar diferentes cenários usando o nosso módulo antifraude, utilize um dos seguintes endereços de e-mail juntamente com os dados apropriados de cartão de teste. O sistema antifraude atribuirá um status específico à transação com base no e-mail que você utilizar:
+
+- `approved@payu.com` → O sistema antifraude atribui o status **APPROVED** à transação.
+- `rejected@payu.com` → O sistema antifraude atribui o status **REJECTED** à transação.
+- `pending_approved@payu.com` → O sistema antifraude atribui inicialmente o status **PENDING**. Após 5 minutos, ele altera o status para **APPROVED**.
+- `pending_rejected@payu.com` → O sistema antifraude atribui inicialmente o status **PENDING**. Após 5 minutos, ele altera o status para **REJECTED** por prevenção à fraude.
+
+{{% alert title="Observação" color="info"%}}
+
+Lembre-se de que o status **APPROVED** atribuído pelo sistema antifraude **não garante a aprovação final** da transação. O resultado também depende do cartão utilizado e de outros valores descritos na documentação que são necessários para simular uma autorização bancária bem-sucedida ou rejeitada.
+
+{{% /alert %}}
 
 ## Importando a Coleção {#importing-the-collection}
 

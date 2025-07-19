@@ -20,14 +20,15 @@ Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL segú
 
 {{% /alert %}}
 
-## Métodos Disponibles {#available-methods}
+## Funcionalidades Disponibles {#available-features}
 
-La API de Pagos incluye los siguiente métodos:
+La API de Pagos incluye las siguientes funcionalidades:
 
 * [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
 * [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}})
 * [Enviar Transacciones Utilizando Transferencia Bancaria]({{< ref "#submit-transactions-using-bank-transfer" >}})
 * [Enviar Transacciones Utilizando Referencia Bancaria]({{< ref "#submit-transactions-using-bank-reference" >}})
+* [Incluir Información de Registro de Nombre del Pasajero]({{< ref "#include-passenger-name-record-information-optional" >}})
 * [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
@@ -2182,6 +2183,273 @@ Ejemplo de una Respuesta:
 ```
 
 {{< /tab >}}
+{{< /tabs >}}
+
+## Incluir Información de Registro de Nombre del Pasajero (Opcional) {#include-passenger-name-record-information-optional}
+
+Además de los detalles de transacción previamente suministrados, la API permite la inclusión opcional de datos de Registro de Nombre de Pasajero (PNR). Aunque es particularmente valiosa para aerolíneas y agencias de viajes, esta función extiende su utilidad a cualquier comercio que utilice los servicios de PayU en toda América Latina, incluso cuando no procese directamente pagos de vuelos. El beneficio principal de los datos PNR es mejorar significativamente el análisis de riesgo de las transacciones a través de las herramientas antifraude de PayU, proporcionando una visión más completa de la transacción más allá de los simples detalles de pago.
+
+Los siguientes parámetros se refieren a los datos PNR y son opcionales. Están disponibles en todos los países de América Latina donde opera PayU. Estos campos no son suficientes por sí solos para completar una solicitud de transacción, pero son complementarios para casos de uso específicos donde conocer los detalles sobre el pasajero y su itinerario de viaje puede ayudar en la detección de fraude.
+
+<details>
+<summary>Solicitud</summary>
+<br>
+<div class="variables"></div>
+
+| **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
+|-|-|-|-|-|
+| transaction > pnr > id | alfanumérico | 32 | ID del registro de nombre del pasajero (PNR). | `PNR123456` |
+| transaction > pnr > reservationAgent > id | alfanumérico | 32 | ID del agente de reservas. | `AGENT123` |
+| transaction > pnr > reservationAgent > firstName | alfanumérico | 255 | Nombre(s) del agente de reservas. | `John` |
+| transaction > pnr > reservationAgent > lastName | alfanumérico | 255 | Apellido(s) del agente de reservas. | `Doe` |
+| transaction > pnr > reservationAgent > email | alfanumérico | 255 | Correo electrónico del agente de reservas. | `agent@example.com` |
+| transaction > pnr > reservationAgent > officePhoneNumber | alfanumérico | 50 | Teléfono de oficina del agente de reservas.| `+573001234567` |
+| transaction > pnr > reservationOffice > id | alfanumérico | 9 | ID de la oficina de reservas.| `OFFICE123`|
+| transaction > pnr > reservationOffice > country | alfanumérico | 2 | País de la oficina de reservas (Código ISO). | `CO` |
+| transaction > pnr > saleOffice > id | alfanumérico | 9 | ID de la oficina de ventas. | `SALEOFF123`                |
+| transaction > pnr > saleOffice > country | alfanumérico | 2 | País de la oficina de ventas (Código ISO). | `US` |
+| transaction > pnr > passengers[] > id | alfanumérico | 32 | ID del pasajero. | `PASS12345` |
+| transaction > pnr > passengers[] > country | alfanumérico | 2 | País del pasajero (Código ISO). | `AR`                        |
+| transaction > pnr > passengers[] > level | alfanumérico | 32 | Nivel del pasajero. | `GOLD`                      |
+| transaction > pnr > passengers[] > firstName | alfanumérico | 255 | Nombre(s) del pasajero. | `Maria`                     |
+| transaction > pnr > passengers[] > lastName | alfanumérico | 255 | Apellido(s) del pasajero. | `Gonzalez` |
+| transaction > pnr > passengers[] > documentType | numérico | 2 | Tipo de documento. Los valores posibles son:<br>`0` = No especificado<br>`1` = Cédula de ciudadanía<br>`2` = Cédula de extranjería<br>`3` = Número de identificación tributaria<br>`4` = Tarjeta de identidad<br>`5` = Pasaporte<br>`6` = Tarjeta de seguridad social<br>`7` = Sociedad extranjera sin NIT<br>`8` = Fideicomiso<br>`9` = Registro civil<br>`10` = Carnet diplomático | `5` |
+| transaction > pnr > passengers[] > documentNumber | alfanumérico | 50 | Número de documento del pasajero. | `P12345678` |
+| transaction > pnr > passengers[] > email | alfanumérico | 255 | Dirección de correo electrónico del pasajero. | `passenger@example.com` |
+| transaction > pnr > passengers[] > officePhoneNumber | alfanumérico | 50 | Teléfono de oficina del pasajero. | `+573008765432`             |
+| transaction > pnr > passengers[] > homePhoneNumber | alfanumérico | 50 | Teléfono de casa del pasajero. | `+573002345678`             |
+| transaction > pnr > passengers[] > mobilePhoneNumber | alfanumérico | 50 | Teléfono móvil del pasajero. | `+573001234567` |
+| transaction > pnr > passengers[] > address > country | alfanumérico | 2 | País de la dirección del pasajero (Código ISO). | `BR` |
+| transaction > pnr > passengers[] > address > city | alfanumérico | 65 | Ciudad de la dirección del pasajero. | `São Paulo` |
+| transaction > pnr > passengers[] > address > street | alfanumérico | 255 | Dirección (calle) del pasajero. | `Rua das Flores, 123` |
+| transaction > pnr > itinerary[] > departureDate | alfanumérico | 19 | Fecha de salida en formato UTC. | `2022-01-01T23:59:59` |
+| transaction > pnr > itinerary[] > arrivalDate | alfanumérico | 19 | Fecha de llegada en formato UTC. | `2022-01-02T23:59:59` |
+| transaction > pnr > itinerary[] > flightNumber | alfanumérico | 12 | Número de vuelo. | `FL1234` |
+| transaction > pnr > itinerary[] > origin | alfanumérico | 8 | Origen. | `BOG` |
+| transaction > pnr > itinerary[] > destination | alfanumérico | 8 | Destino. | `MIA` |
+| transaction > pnr > itinerary[] > travelClass | alfanumérico | 2 | Clase de viaje en el segmento de reserva. | `Y` |
+| transaction > pnr > itinerary[] > ticketType | alfanumérico | 50 | Tipo de boleto. | `E-TICKET` |
+
+</details>
+
+{{% alert title="Nota" color="info"%}}
+
+Al usar el formato XML, los parámetros del itinerario aparecen bajo `transaction > pnr > itinerary > segment` con la misma estructura pero ajustados en anidamiento.
+
+{{% /alert %}}
+
+#### Llamado a la API {#api-call-9}
+
+A continuación, se presentan ejemplos de una solicitud para este método.
+
+{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```JSON
+{
+  "transaction": {
+    "order": {
+      ...
+    },
+    "creditCard": {
+      ...
+    },
+    "extraParameters": {
+      ...
+    },
+    "pnr": {
+      "id": "abc123",
+      "reservationAgent": {
+        "id": "def456",
+        "firstName": "CO",
+        "lastName": "CO",
+        "email": "first.last@example.org",
+        "officePhoneNumber": "123456789"
+      },
+      "reservationOffice": {
+        "id": "ghi789",
+        "country": "CO"
+      },
+      "saleOffice": {
+        "id": "jkl012",
+        "country": "CO"
+      },
+      "passengers": [
+        {
+          "id": "mno345",
+          "country": "CO",
+          "level": "1",
+          "firstName": "Firts Name",
+          "lastName": "Last Name",
+          "documentType": 0,
+          "documentNumber": "987654321",
+          "email": "first.last@example.com",
+          "officePhoneNumber": "234567891",
+          "homePhoneNumber": "345678912",
+          "mobilePhoneNumber": "456789123",
+          "address": {
+            "country": "CO",
+            "city": "Bogota D.C.",
+            "street": "Calle 1 # 2 - 3"
+          }
+        },
+        {
+          "id": "mno346",
+          "country": "CO",
+          "level": "1",
+          "firstName": "Firts Name",
+          "lastName": "Last Name",
+          "documentType": 0,
+          "documentNumber": "55545151515",
+          "email": "first.last@example.com",
+          "officePhoneNumber": "336259",
+          "homePhoneNumber": "2156668",
+          "mobilePhoneNumber": "3001234123",
+          "address": {
+            "country": "CO",
+            "city": "Bogota D.C.",
+            "street": "Calle 3 # 2 - 1"
+          }
+        }
+      ],
+      "itinerary": [
+        {
+          "departureDate": "2022-01-01T23:59:59",
+          "arrivalDate": "2025-01-01T23:59:59",
+          "flightNumber": "PQR345",
+          "origin": "BOGOTA",
+          "destination": "MADRID",
+          "travelClass": "BU",
+          "ticketType": "RT"
+        },
+        {
+          "departureDate": "2022-01-01T23:59:59",
+          "arrivalDate": "2025-01-01T23:59:59",
+          "flightNumber": "ARF2525",
+          "origin": "MADRID",
+          "destination": "LONDRES",
+          "travelClass": "EC",
+          "ticketType": "RT"
+        }
+      ]
+    }
+  }
+}
+
+
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Ejemplo de una Solicitud:
+```XML
+<request>
+  ...
+  <transaction>
+    <order>
+      ...
+    </order>
+    <payer>
+      ...
+    </payer>
+    <creditCard>
+      ...
+    </creditCard>
+    <extraParameters>
+      ...
+    </extraParameters>
+    <pnr>
+      <id>abc123</id>
+      <reservationAgent>
+        <id>def456</id>
+        <firstName>First Name</firstName>
+        <lastName>Last Name</lastName>
+        <email>first.last@example.org</email>
+        <officePhoneNumber>123456789</officePhoneNumber>
+      </reservationAgent>
+      <reservationOffice>
+        <id>ghi789</id>
+        <country>CO</country>
+      </reservationOffice>
+      <saleOffice>
+        <id>jkl012</id>
+        <country>CO</country>
+      </saleOffice>
+      <passengers>
+        <!-- Passenger 1 -->
+        <passenger>
+          <id>mno345</id>
+          <country>CO</country>
+          <level>1</level>
+          <firstName>First Name</firstName>
+          <lastName>Last Name</lastName>
+          <documentType>0</documentType>
+          <documentNumber>987654321</documentNumber>
+          <email>first.last@example.com</email>
+          <officePhoneNumber>234567891</officePhoneNumber>
+          <homePhoneNumber>345678912</homePhoneNumber>
+          <mobilePhoneNumber>456789123</mobilePhoneNumber>
+          <address>
+            <country>CO</country>
+            <city>Bogota D.C.</city>
+            <street>Calle 1 # 2 - 3</street>
+          </address>
+        </passenger>
+        <!-- Passenger 2 -->
+        <passenger>
+          <id>mno346</id>
+          <country>CO</country>
+          <level>1</level>
+          <firstName>First Name</firstName>
+          <lastName>Last Name</lastName>
+          <documentType>0</documentType>
+          <documentNumber>55545151515</documentNumber>
+          <email>first.last@example.com</email>
+          <officePhoneNumber>336259</officePhoneNumber>
+          <homePhoneNumber>2156668</homePhoneNumber>
+          <mobilePhoneNumber>3001234123</mobilePhoneNumber>
+          <address>
+            <country>CO</country>
+            <city>Bogota D.C.</city>
+            <street>Calle 3 # 2 - 1</street>
+          </address>
+        </passenger>
+      </passengers>
+      <itinerary>
+        <!-- Flight Journey 1 -->
+        <segment>
+          <departureDate>2022-01-01T23:59:59</departureDate>
+          <arrivalDate>2025-01-01T23:59:59</arrivalDate>
+          <flightNumber>PQR345</flightNumber>
+          <origin>BOGOTA</origin>
+          <destination>MADRID</destination>
+          <travelClass>U</travelClass>
+        </segment>
+        <!-- Flight Journey 2 -->
+        <segment>
+          <departureDate>2022-01-01T23:59:59</departureDate>
+          <arrivalDate>2025-01-01T23:59:59</arrivalDate>
+          <flightNumber>ARF2525</flightNumber>
+          <origin>MADRID</origin>
+          <destination>LONDRES</destination>
+          <travelClass>EC</travelClass>
+        </segment>
+      </itinerary>
+    </pnr>
+    <isTest>false</isTest>
+  </transaction>
+</request>
+
+```
+
+{{< /tab >}}
+
 {{< /tabs >}}
 
 ## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}

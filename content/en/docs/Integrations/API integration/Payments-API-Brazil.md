@@ -20,15 +20,16 @@ To integrate the Payments API, direct your requests to the following URLs accord
 
 {{% /alert %}}
 
-## Available Methods
+## Available Features
 
-Payments API includes the following methods:
+Payments API includes the following features:
 
 * [Submit Transactions Using Credit Cards]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) 
 * [Submit Transactions Using Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Submit Transactions Using PIX]({{< ref "Payments-API-Brazil.md#submit-transactions-using-pix" >}})
 * [Submit Transactions Using Cash]({{< ref "Payments-API-Brazil.md#submit-transactions-using-cash" >}})
 * [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Brazil.md#submit-transactions-using-bank-transfer" >}})
+* [Include Passenger Name Record Information]({{< ref "#include-passenger-name-record-information-optional" >}})
 * [Available Payment Methods Query]({{< ref "Payments-API-Brazil.md#available-payment-methods-query" >}})
 * [Ping]({{< ref "Payments-API-Brazil.md#ping" >}})
 
@@ -365,8 +366,8 @@ Find the description of the object `transaction.networkToken` and its parameters
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
-| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
+| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the payer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
+| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the payer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
 | transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > networkToken | Object |  | Information of the token. Include this parameter when the transaction is done using a tokenized card using the VTS or MDES Tokenization. For more information, refer to [Pay with MDES or VTS tokens]({{< ref "#pay-with-mdes-or-vts-tokens" >}}). <br><sup>\*</sup>When sending this object, all its parameters are mandatory.| No |
 | transaction > networkToken > tokenPan | Alphanumeric | Max:32 | Token number generated either by MDES or VTS. | Yes<sup>\*</sup> |
@@ -1634,9 +1635,9 @@ Pix has two parts:
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | Yes |
-| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | Yes |
-| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
-| transaction > payer > dniType | Alphanumeric |2| Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
+| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the payer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | Yes |
+| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the payer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
+| transaction > payer > dniType | Alphanumeric |2| Identification type of the payer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
 | transaction > type | Alphanumeric |32| As PIX payments are performed using the payer mobile phone, the only available transaction type is `AUTHORIZATION_AND_CAPTURE`. | Yes |
 | transaction > paymentMethod | Alphanumeric |32| Set `PIX` for this payment method. If you want to see other payment method, refer to [Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric |2| Set `BR` for Brazil. | Yes |
@@ -1954,8 +1955,8 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > order > buyer > fullName | Alphanumeric | Max:150 | Full name of the buyer. | Yes |
 | transaction > order > buyer > emailAddress | Alphanumeric | Max:255 | E-mail of the buyer. | Yes |
 | transaction > order > buyer > contactPhone | Alphanumeric | Max:20 | Phone number of the buyer. | Yes |
-| transaction > order > buyer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | Yes |
-| transaction > order > buyer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | Yes |
+| transaction > order > buyer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer (CPF). **This parameter is mandatory only if the buyer is a natural person**. Validate the number using a CPF algorithm and format it as `XXX.XXX.XXX-XX` (e.g., `811.807.405-64`). If the buyer is a legal person or legal entity, this parameter is not required. | *Yes |
+| transaction > order > buyer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (CNPJ). **This parameter is mandatory only if the buyer is a legal person or legal entity**. Validate the number using a CNPJ algorithm and format it as `XXXXXXXXXXXXXX` (e.g., `32593371000110`). If the buyer is a natural person, this parameter is not required. | *Yes |
 | transaction > order > buyer > shippingAddress | Alphanumeric |  | Shipping address of the buyer. | Yes |
 | transaction > order > buyer > shippingAddress > street1 | Alphanumeric | Max:150 | Buyer's shipping address Line 1. |  Yes |
 | transaction > order > buyer > shippingAddress > city | Alphanumeric | Max:50 | Buyer's shipping address city. | Yes |
@@ -1987,9 +1988,9 @@ This method lets you process the payments in cash of your customers. To integrat
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
-| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the buyer (For Legal person in Brazil). You must use an algorithm to validate the CNPJ and must be set using the format `XXXXXXXXXXXXXX`. Example: `32593371000110`. | No |
-| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the payer (CPF). **This parameter is mandatory only if the payer is a natural person**. Validate the number using a CPF algorithm and format it as `XXX.XXX.XXX-XX` (e.g., `811.807.405-64`). If the payer is a legal person or legal entity, this parameter is not required. | *Yes |
+| transaction > payer > cnpj | Alphanumeric | Max:14 | Identification number of the payer (CNPJ). **This parameter is mandatory only if the payer is a legal person or legal entity**. Validate the number using a CNPJ algorithm and format it as `XXXXXXXXXXXXXX` (e.g., `32593371000110`). If the payer is a natural person, this parameter is not required. | *Yes |
+| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the payer. **This parameter is mandatory if you send either `dniNumber` (CPF) or `cnpj` (CNPJ)**. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | *Yes |
 | transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in cash. [See the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
@@ -2314,8 +2315,8 @@ To integrate with these transactions, you must redirect the customer to the URL 
 | transaction > payer > billingAddress > phone | Alphanumeric | Max:20 | Billing address phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
 | transaction > payer > birthdate | Alphanumeric | Max:10 | Payer's date of birth. Format `YYYY-MM-DD`. | No |
 | transaction > payer > contactPhone | Alphanumeric | Max:20 | Payer's phone number. For Brazil, use the format `ddd(2)+number(7-9)`. Example: `(11)756312633`. | No |
-| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the buyer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
-| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| transaction > payer > dniNumber | Alphanumeric | Max:20 | Identification number of the payer. You must use an algorithm to validate the CPF and must be set using the format `XXX.XXX.XXX-XX`. Example: `811.807.405-64`. | No |
+| transaction > payer > dniType | Alphanumeric | 2 | Identification type of the payer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
 | transaction > type | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid Payment Method in Bank transfer. [See the available Payment Methods for Brazil]({{< ref "select-your-payment-method.html#Brazil" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set `BR` for Brazil. | Yes |
@@ -2570,6 +2571,273 @@ Response Example:
 ```
 
 {{< /tab >}}
+{{< /tabs >}}
+
+## Include Passenger Name Record Information (Optional)
+
+In addition to the previously provided transaction details, the API allows for the optional inclusion of Passenger Name Record (PNR) data. While particularly valuable for airlines and travel agencies, this feature extends its utility to any merchant using PayU's services across Latin American countries, even when not directly processing flight payments. The core benefit of PNR data is to significantly enhance transaction risk analysis through PayU's anti-fraud tools, providing a more comprehensive view of the transaction beyond just payment details.
+
+The following parameters relate to PNR data and are optional. They are available in all Latin American countries where PayU operates. These fields are not sufficient on their own to complete a transaction request but are complementary for specific use cases where knowing details about the passenger and their travel itinerary can aid in fraud detection.
+
+<details>
+<summary>Request</summary>
+<br>
+<div class="variables"></div>
+
+| **Field** | **Type** | **Size** | **Description** | **Example** |
+|-|-|-|-|-|
+| transaction > pnr > id | alphanumeric | 32 | Passenger Name Record ID. | `PNR123456` |
+| transaction > pnr > reservationAgent > id | alphanumeric | 32 | Reservation agent ID. | `AGENT123` |
+| transaction > pnr > reservationAgent > firstName | alphanumeric | 255 | Reservation agent's first name(s). | `John` |
+| transaction > pnr > reservationAgent > lastName | alphanumeric   | 255 | Reservation agent's last name(s). | `Doe` |
+| transaction > pnr > reservationAgent > email | alphanumeric | 255 | Reservation agent's email address. | `agent@example.com` |
+| transaction > pnr > reservationAgent > officePhoneNumber | alphanumeric | 50 | Reservation agent's office phone number.| `+573001234567` |
+| transaction > pnr > reservationOffice > id | alphanumeric | 9 | Reservation office ID.| `OFFICE123`|
+| transaction > pnr > reservationOffice > country | alphanumeric | 2 | Reservation office country (ISO Code). | `CO` |
+| transaction > pnr > saleOffice > id | alphanumeric | 9 | Sale office ID. | `SALEOFF123`                |
+| transaction > pnr > saleOffice > country | alphanumeric | 2 | Sale office country (ISO Code). | `US` |
+| transaction > pnr > passengers[] > id | alphanumeric | 32 | Passenger ID. | `PASS12345` |
+| transaction > pnr > passengers[] > country | alphanumeric | 2 | Passenger country (ISO Code). | `AR`                        |
+| transaction > pnr > passengers[] > level | alphanumeric | 32 | Passenger level. | `GOLD`                      |
+| transaction > pnr > passengers[] > firstName | alphanumeric | 255 | Passenger first name(s). | `Maria`                     |
+| transaction > pnr > passengers[] > lastName | alphanumeric | 255 | Passenger last name(s). | `Gonzalez` |
+| transaction > pnr > passengers[] > documentType | number | 2 | Document type. Possible values are:<br>`0` = Not specified<br>`1` = Citizenship card (Cédula de ciudadanía)<br>`2` = Foreign citizenship card (Cédula de extranjería)<br>`3` = Tax identification number (Número de identificación tributaria)<br>`4` = Identity card (Tarjeta de identidad)<br>`5` = Passport (Pasaporte)<br>`6` = Social security number (Tarjeta de seguridad social)<br>`7` = Foreign identification number (Sociedad extranjera sin NIT)<br>`8` = Escrow (Fideicomiso)<br>`9` = Birth certificate (Registro civil)<br>`10` = Diplomatic card (Carnet diplomático) | `5` |
+| transaction > pnr > passengers[] > documentNumber | alphanumeric | 50 | Passenger document number. | `P12345678` |
+| transaction > pnr > passengers[] > email | alphanumeric | 255 | Passenger email address. | `passenger@example.com` |
+| transaction > pnr > passengers[] > officePhoneNumber | alphanumeric | 50 | Passenger office phone number. | `+573008765432`             |
+| transaction > pnr > passengers[] > homePhoneNumber | alphanumeric | 50 | Passenger home phone number. | `+573002345678`             |
+| transaction > pnr > passengers[] > mobilePhoneNumber | alphanumeric | 50 | Passenger mobile phone number. | `+573001234567` |
+| transaction > pnr > passengers[] > address > country | alphanumeric | 2 | Passenger address country (ISO Code). | `BR` |
+| transaction > pnr > passengers[] > address > city | alphanumeric | 65 | Passenger address city. | `São Paulo` |
+| transaction > pnr > passengers[] > address > street | alphanumeric | 255 | Passenger street address. | `Rua das Flores, 123` |
+| transaction > pnr > itinerary[] > departureDate | alphanumeric | 19 | Departure date in UTC format. | `2022-01-01T23:59:59` |
+| transaction > pnr > itinerary[] > arrivalDate | alphanumeric | 19 | Arrival date in UTC format. | `2022-01-02T23:59:59` |
+| transaction > pnr > itinerary[] > flightNumber | alphanumeric | 12 | Flight number. | `FL1234` |
+| transaction > pnr > itinerary[] > origin | alphanumeric | 8 | Origin. | `BOG` |
+| transaction > pnr > itinerary[] > destination | alphanumeric | 8 | Destination. | `MIA` |
+| transaction > pnr > itinerary[] > travelClass | alphanumeric | 2 | Reservation segment class. | `Y` |
+| transaction > pnr > itinerary[] > ticketType | alphanumeric | 50 | Ticket type. | `E-TICKET` |
+
+</details>
+
+{{% alert title="Note" color="info"%}}
+
+When using XML format, itinerary parameters appear under `transaction > pnr > itinerary > segment` with the same structure but adjusted nesting.
+
+{{% /alert %}}
+
+#### API Call {#api-call-9}
+
+The following are examples of the request for this method.
+
+{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request Example:
+```JSON
+{
+  "transaction": {
+    "order": {
+      ...
+    },
+    "creditCard": {
+      ...
+    },
+    "extraParameters": {
+      ...
+    },
+    "pnr": {
+      "id": "abc123",
+      "reservationAgent": {
+        "id": "def456",
+        "firstName": "CO",
+        "lastName": "CO",
+        "email": "first.last@example.org",
+        "officePhoneNumber": "123456789"
+      },
+      "reservationOffice": {
+        "id": "ghi789",
+        "country": "CO"
+      },
+      "saleOffice": {
+        "id": "jkl012",
+        "country": "CO"
+      },
+      "passengers": [
+        {
+          "id": "mno345",
+          "country": "CO",
+          "level": "1",
+          "firstName": "Firts Name",
+          "lastName": "Last Name",
+          "documentType": 0,
+          "documentNumber": "987654321",
+          "email": "first.last@example.com",
+          "officePhoneNumber": "234567891",
+          "homePhoneNumber": "345678912",
+          "mobilePhoneNumber": "456789123",
+          "address": {
+            "country": "CO",
+            "city": "Bogota D.C.",
+            "street": "Calle 1 # 2 - 3"
+          }
+        },
+        {
+          "id": "mno346",
+          "country": "CO",
+          "level": "1",
+          "firstName": "Firts Name",
+          "lastName": "Last Name",
+          "documentType": 0,
+          "documentNumber": "55545151515",
+          "email": "first.last@example.com",
+          "officePhoneNumber": "336259",
+          "homePhoneNumber": "2156668",
+          "mobilePhoneNumber": "3001234123",
+          "address": {
+            "country": "CO",
+            "city": "Bogota D.C.",
+            "street": "Calle 3 # 2 - 1"
+          }
+        }
+      ],
+      "itinerary": [
+        {
+          "departureDate": "2022-01-01T23:59:59",
+          "arrivalDate": "2025-01-01T23:59:59",
+          "flightNumber": "PQR345",
+          "origin": "BOGOTA",
+          "destination": "MADRID",
+          "travelClass": "BU",
+          "ticketType": "RT"
+        },
+        {
+          "departureDate": "2022-01-01T23:59:59",
+          "arrivalDate": "2025-01-01T23:59:59",
+          "flightNumber": "ARF2525",
+          "origin": "MADRID",
+          "destination": "LONDRES",
+          "travelClass": "EC",
+          "ticketType": "RT"
+        }
+      ]
+    }
+  }
+}
+
+
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request Example:
+```XML
+<request>
+  ...
+  <transaction>
+    <order>
+      ...
+    </order>
+    <payer>
+      ...
+    </payer>
+    <creditCard>
+      ...
+    </creditCard>
+    <extraParameters>
+      ...
+    </extraParameters>
+    <pnr>
+      <id>abc123</id>
+      <reservationAgent>
+        <id>def456</id>
+        <firstName>First Name</firstName>
+        <lastName>Last Name</lastName>
+        <email>first.last@example.org</email>
+        <officePhoneNumber>123456789</officePhoneNumber>
+      </reservationAgent>
+      <reservationOffice>
+        <id>ghi789</id>
+        <country>CO</country>
+      </reservationOffice>
+      <saleOffice>
+        <id>jkl012</id>
+        <country>CO</country>
+      </saleOffice>
+      <passengers>
+        <!-- Passenger 1 -->
+        <passenger>
+          <id>mno345</id>
+          <country>CO</country>
+          <level>1</level>
+          <firstName>First Name</firstName>
+          <lastName>Last Name</lastName>
+          <documentType>0</documentType>
+          <documentNumber>987654321</documentNumber>
+          <email>first.last@example.com</email>
+          <officePhoneNumber>234567891</officePhoneNumber>
+          <homePhoneNumber>345678912</homePhoneNumber>
+          <mobilePhoneNumber>456789123</mobilePhoneNumber>
+          <address>
+            <country>CO</country>
+            <city>Bogota D.C.</city>
+            <street>Calle 1 # 2 - 3</street>
+          </address>
+        </passenger>
+        <!-- Passenger 2 -->
+        <passenger>
+          <id>mno346</id>
+          <country>CO</country>
+          <level>1</level>
+          <firstName>First Name</firstName>
+          <lastName>Last Name</lastName>
+          <documentType>0</documentType>
+          <documentNumber>55545151515</documentNumber>
+          <email>first.last@example.com</email>
+          <officePhoneNumber>336259</officePhoneNumber>
+          <homePhoneNumber>2156668</homePhoneNumber>
+          <mobilePhoneNumber>3001234123</mobilePhoneNumber>
+          <address>
+            <country>CO</country>
+            <city>Bogota D.C.</city>
+            <street>Calle 3 # 2 - 1</street>
+          </address>
+        </passenger>
+      </passengers>
+      <itinerary>
+        <!-- Flight Journey 1 -->
+        <segment>
+          <departureDate>2022-01-01T23:59:59</departureDate>
+          <arrivalDate>2025-01-01T23:59:59</arrivalDate>
+          <flightNumber>PQR345</flightNumber>
+          <origin>BOGOTA</origin>
+          <destination>MADRID</destination>
+          <travelClass>U</travelClass>
+        </segment>
+        <!-- Flight Journey 2 -->
+        <segment>
+          <departureDate>2022-01-01T23:59:59</departureDate>
+          <arrivalDate>2025-01-01T23:59:59</arrivalDate>
+          <flightNumber>ARF2525</flightNumber>
+          <origin>MADRID</origin>
+          <destination>LONDRES</destination>
+          <travelClass>EC</travelClass>
+        </segment>
+      </itinerary>
+    </pnr>
+    <isTest>false</isTest>
+  </transaction>
+</request>
+
+```
+
+{{< /tab >}}
+
 {{< /tabs >}}
 
 ## Available Payment Methods Query

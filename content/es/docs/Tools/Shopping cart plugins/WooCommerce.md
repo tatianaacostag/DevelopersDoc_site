@@ -66,16 +66,16 @@ Guarda los cambios.
 
 La siguiente tabla explica los valores:
 
-| Campo                            | Valor                                                                                      |
-|----------------------------------|--------------------------------------------------------------------------------------------|
-| Habilitar / Deshabilitar         | Marca esta casilla para activar la pasarela de pago en WooCommerce.                        |
-| Título                           | Titulo mostrado para el Medio de Pago. El valor por defecto es _PayU Latam_.               |
-| Merchant ID                      | Identificador de tu comercio en PayU Latam.                                                |
-| Account ID                       | Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender.           |
-| API key                          | Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU.             |
-| Gateway URL                      | URL de la pasarela de pago.<br>Para pruebas, utiliza https://sandbox.gateway.payulatam.com/ppp-web-gateway y para producción https://gateway.payulatam.com/ppp-web-gateway/                                                |
-| Transacciones en modo de prueba  | Marca esta casilla para hacer transacciones de prueba.                                     |
-| Página de respuesta              | URL de la página de respuesta.<br>Por defecto, la URL es https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php, debes reemplazar https://tu.dominio.com con el dominio de tu sitio.                |
-| Página de confirmación           | URL de la página de confirmación.<br>Por defecto, la URL es https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, debes reemplazar https://tu.dominio.com con el dominio de tu sitio. |
+| Campo | Valor |
+|---|---|
+| Habilitar / Deshabilitar | Marca esta casilla para activar la pasarela de pago en WooCommerce. |
+| Título | Titulo mostrado para el Medio de Pago. El valor por defecto es _PayU Latam_. |
+| Merchant ID | Identificador de tu comercio en PayU Latam. |
+| Account ID | Identificador de la cuenta PayU de acuerdo con el país en el que quieres vender. |
+| API key | Llave única de tu comercio, puedes obtener esta información en tu Módulo PayU. |
+| Gateway URL | URL de la pasarela de pago.<br>Para pruebas, utiliza https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu y para producción https://checkout.payulatam.com/ppp-web-gateway-payu |
+| Transacciones en modo de prueba  | Marca esta casilla para hacer transacciones de prueba. |
+| Página de respuesta | URL de la página de respuesta.<br>Por defecto, la URL es https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/response.php, debes reemplazar https://tu.dominio.com con el dominio de tu sitio. |
+| Página de confirmación | URL de la página de confirmación.<br>Por defecto, la URL es https://tu.dominio.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php, debes reemplazar https://tu.dominio.com con el dominio de tu sitio. |
 
 5. Por último, haz clic en el botón _**Guardar cambios**_. En este punto, tus clientes pueden pagar con PayU Latam en el carrito de compras de WooCommerce. 

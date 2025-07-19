@@ -19,6 +19,7 @@ weight: 40
   }
   window.addEventListener('DOMContentLoaded', openTarget);
 </script>
+
 To conduct tests with PayU, use the credentials provided below in your requests, depending on the country your account is associated with.  
 
 {{< testaccounts/accounts >}}
@@ -32,7 +33,15 @@ To conduct tests with PayU, use the credentials provided below in your requests,
 
 ## Test Cards
 
-You can use the following cards for testing:
+Below you’ll find card data that you can use to simulate transactions in PayU’s testing environment.
+
+{{% alert title="Important" color="warning" %}}
+
+The credit cards shown in this section are for testing purposes only and have been enabled solely for use within this platform. They are not valid outside this environment and cannot be used to perform real transactions. Any attempt to use them elsewhere will be invalid and will not generate real transactions at PayU Latam merchants.
+
+{{% /alert %}}
+
+You can use the following test cards, organized by country:
 
 <details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
@@ -214,6 +223,20 @@ When testing payments, use the following values in your request based on the sta
 
 * **To test cards in Chile**, use the cardholder name, CVV, and expiration date values shown in the <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">example cards</a>.
 
+### Testing Scenarios with the Antifraud Module
+
+To test different scenarios using our antifraud module, use one of the following email addresses along with the appropriate test card data. The antifraud system will assign a specific status to the transaction based on the email you use:
+
+- `approved@payu.com` → The antifraud system assigns the **APPROVED** status to the transaction.
+- `rejected@payu.com` → The antifraud system assigns the **REJECTED** status to the transaction.
+- `pending_approved@payu.com` → The antifraud system first assigns the **PENDING** status. After 5 minutes, it changes the status to **APPROVED**.
+- `pending_rejected@payu.com` → The antifraud system first assigns the **PENDING** status. After 5 minutes, it changes the status to **REJECTED** due to fraud prevention.
+
+{{% alert title="Note" color="info"%}}
+
+Keep in mind that the antifraud system’s **APPROVED** status does not guarantee the final approval of the transaction. The outcome also depends on the card you use and other values described in the documentation that are required to simulate a successful or failed bank authorization.
+
+{{% /alert %}}
 
 ## Importing the Collection
 

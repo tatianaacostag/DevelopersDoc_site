@@ -20,9 +20,9 @@ Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL segú
 
 {{% /alert %}}
 
-## Métodos Disponibles {#available-methods}
+## Funcionalidades Disponibles {#available-features}
 
-La API de Pagos incluye los siguiente métodos:
+La API de Pagos incluye las siguientes funcionalidades:
 
 * [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
 * [Enviar Transacciones Utilizando Transferencia Bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
@@ -31,6 +31,7 @@ La API de Pagos incluye los siguiente métodos:
 * [Enviar Transacciones Utilizando Botón Bancolombia]({{< ref "#submit-transactions-using-bancolombia-button" >}})
 * [Enviar Transacciones Utilizando Efectivo o Referencia Bancaria]({{< ref "#submit-transactions-using-cash-or-bank-reference" >}})
 * [Procesar Pagos como Aerolínea o Agencia de Viajes]({{< ref "#process-payments-as-an-airline-or-travel-agency" >}})
+* [Incluir Información de Registro de Nombre del Pasajero]({{< ref "#include-passenger-name-record-information-optional" >}})
 * [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
@@ -3602,11 +3603,11 @@ Ejemplo de una Solicitud:
 
 {{< /tabs >}}
 
-### Incluir Información de Registro de Nombre del Pasajero (Opcional) {#include-passenger-name-record-information-optional}
+## Incluir Información de Registro de Nombre del Pasajero (Opcional) {#include-passenger-name-record-information-optional}
 
-Además de los detalles de la transacción proporcionados previamente, la API permite incluir datos del Passenger Name Record (PNR). Esta funcionalidad es particularmente útil al utilizar las herramientas antifraude de PayU para mejorar el análisis de riesgo de las transacciones, adaptándose a las actividades específicas de su negocio.
+Además de los detalles de transacción previamente suministrados, la API permite la inclusión opcional de datos de Registro de Nombre de Pasajero (PNR). Aunque es particularmente valiosa para aerolíneas y agencias de viajes, esta función extiende su utilidad a cualquier comercio que utilice los servicios de PayU en toda América Latina, incluso cuando no procese directamente pagos de vuelos. El beneficio principal de los datos PNR es mejorar significativamente el análisis de riesgo de las transacciones a través de las herramientas antifraude de PayU, proporcionando una visión más completa de la transacción más allá de los simples detalles de pago.
 
-Los siguientes parámetros están relacionados con los datos PNR y son opcionales. Están disponibles en todos los países de América Latina donde opera PayU. Estos campos no son suficientes por sí solos para completar una solicitud de transacción, pero son complementarios para casos de uso específicos.
+Los siguientes parámetros se refieren a los datos PNR y son opcionales. Están disponibles en todos los países de América Latina donde opera PayU. Estos campos no son suficientes por sí solos para completar una solicitud de transacción, pero son complementarios para casos de uso específicos donde conocer los detalles sobre el pasajero y su itinerario de viaje puede ayudar en la detección de fraude.
 
 <details>
 <summary>Solicitud</summary>
@@ -3868,7 +3869,6 @@ Ejemplo de una Solicitud:
 {{< /tab >}}
 
 {{< /tabs >}}
-
 
 ## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}
 
