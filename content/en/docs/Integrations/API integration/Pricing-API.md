@@ -1,28 +1,47 @@
 ---
-title: "Promotions API"
-linkTitle: "Promotions API"
-date: 2021-06-29T12:38:41-05:00
+title: "Pricing API"
+linkTitle: "Pricing API"
+date: 2025-06-29T12:38:41-05:00
 description: >
-    The Promotions API allows you to retrieve available promotions, including their associated costs, characteristics, and other relevant details for your customers.
+    The Pricing API allows you to query all available financing options and associated costs for your transactions. This includes the pricing configuration of your PayU virtual account, such as standard installments, [Interest-Free Installments](https://developers.payulatam.com/latam/en/docs/services/promotions.html) plans, and other features relevant to your customers.
 weight: 50
 tags: ["subtopic"]
 ---
 
-The Promotions API is available in the following countries:
+## Pricing Options
 
-<table style="width: 50%; min-width: 300px; border-collapse: collapse;">
+Each pricing option, whether it is a standard plan or a promotion with Interest-Free Installments, includes the applicable payment methods, the days of the week when it is available, the list of participating banks (if applicable), as well as the start and end dates of the promotions.
+
+The following table shows the countries where standard installments, Specific Interest-Free Installments, and General Interest-Free Installments (MSI) are available. For more information, see the [Interest-Free Installments](https://developers.payulatam.com/latam/en/docs/services/promotions.html) document.
+
+<table style="width: 65%; min-width: 300px; border-collapse: collapse;">
     <tr>
-        <th style="width: 40%; text-align: left;">Country</th>
-        <th style="width: 30%; text-align: center;">Promotions</th>
-        <th style="width: 30%; text-align: center;">Interest-Free Months (MSI)</th>
+        <th style="width: 20%; text-align: left;">Country</th>
+        <th style="width: 15%; text-align: center;">Standard Installments</th>
+        <th style="width: 15%; text-align: center;">Specific Interest-Free Installments (Promotions)</th>
+        <th style="width: 15%; text-align: center;">General Interest-Free Installments (MSI)</th>
     </tr>
     <tr>
         <td style="text-align: left;"><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brazil</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Chile.png" width="25px"/> &nbsp;Chile</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
     </tr>
     <tr>
         <td style="text-align: left;"><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
     </tr>
@@ -30,9 +49,17 @@ The Promotions API is available in the following countries:
         <td style="text-align: left;"><img src="/assets/Mexico.png" width="25px"/> &nbsp;Mexico</td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+    </tr>
+    <tr>
+        <td style="text-align: left;"><img src="/assets/Panama.png" width="25px"/> &nbsp;Panama</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
+        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
     </tr>
     <tr>
         <td style="text-align: left;"><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</td>
+        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
     </tr>
@@ -40,17 +67,15 @@ The Promotions API is available in the following countries:
 
 {{% alert title="Note" color="info"%}}
 
-To configure installments and promotions based on your agreements with banking entities, contact your sales representative.
+To configure Interest-Free Installments according to your agreements with issuing banks, contact your sales representative.
 
 {{% /alert %}}
 
-## Promotions
+The following diagram shows the complete flow, from querying the Pricing API to transaction approval:
 
-Use this feature to query active promotions through the API and retrieve detailed information to tailor the shopping experience for your customers.
+{{< promotions/pricingApi >}}
 
-Each promotion includes applicable payment methods, eligible days of the week, a list of participating banks, and its start and end dates.
-
-### Authentication for Promotions
+### Authentication for Requests
 
 To authenticate API requests, you must use an HMAC-based mechanism. You need your `MerchantPublicKey`, which can be found in your PayU Management Panel under **_Settings_** > **_Technical Configuration_** > **_Public Key_**.
 
@@ -141,9 +166,9 @@ If REST client restrictions prevent using `Date`, you may alternatively send `x-
 Mon, 11 May 2015 21:14:41 GMT
 ```
 
-### Querying Available Promotions
+### Querying the Available Interest-Free Installments Plans
 
-To retrieve promotions, send a `GET` request to the appropriate URL based on the environment.
+To retrieve the Interest-Free Installment plans, send a `GET` request to the appropriate URL based on the environment.
 
 {{% alert title="API Endpoints" color="info"%}}
 
@@ -185,64 +210,70 @@ As this is a RESTful service, we strongly recommend against strict schema valida
 
 | Field Name | Type | Description |
 |------------|------|-------------|
-| `amount` | Object | Transaction amount details. |
+| `amount` | Object | Details of the transaction amount. |
 | `amount` > `value` | Number | Total value of the transaction. |
-| `amount` > `tax` | Number | Tax amount included in the transaction. |
-| `amount` > `purchaseValue` | Number | Purchase value before tax. |
+| `amount` > `tax` | Number | Amount of tax included in the transaction. |
+| `amount` > `purchaseValue` | Number | Purchase value before taxes. |
+| `amount` > `adminFeeValue` | Number | Administrative fee amount included in the transaction. |
+| `amount` > `adminFeeTax` | Number | Tax amount applied to the administrative fee. |
+| `amount` > `adminFeeTaxableBase` | Number | Taxable base used to calculate taxes on the administrative fee. |
 | `amount` > `currency` | String | Currency code of the original transaction. |
-| `amount` > `taxableBase` | Number | Value of the transaction used as the base for tax calculation. |
-| `convertedAmount` | Object | Contains the transaction amount converted into another currency (if applicable). |
-| `convertedAmount` > `value` | Number | Total converted transaction amount. |
+| `amount` > `taxableBase` | Number | Value of the transaction used as the tax base. |
+| `convertedAmount` | Object | Contains the transaction amount converted to another currency (if applicable). |
+| `convertedAmount` > `value` | Number | Converted total transaction amount. |
 | `convertedAmount` > `tax` | Number | Converted tax amount. |
-| `convertedAmount` > `purchaseValue` | Number | Converted purchase value before tax. |
+| `convertedAmount` > `purchaseValue` | Number | Converted purchase value before taxes. |
+| `convertedAmount` > `adminFeeValue` | Number | Converted administrative fee value. |
+| `convertedAmount` > `adminFeeTaxableBase` | Number | Converted taxable base for calculating administrative fee taxes. |
 | `convertedAmount` > `currency` | String | Currency code of the converted amount. |
-| `convertedAmount` > `taxableBase` | Number | Converted value used as the base for tax calculation. |
-| `paymentMethodFee` | List | Contains the breakdown of costs assumed by the merchant based on the payment method. |
-| `paymentMethodFee` > `paymentMethod` | String | Payment method name. |
+| `convertedAmount` > `taxableBase` | Number | Converted value used as the tax base. |
+| `paymentMethodFee` | List | Breakdown of costs incurred by the merchant based on the payment method. |
+| `paymentMethodFee` > `paymentMethod` | String | Name of the payment method. |
 | `paymentMethodFee` > `pricingFees` | Object | Contains pricing details by payment method and installment range. |
-| `paymentMethodFee` > `pricingFees` > `installments` | String | Number of installments, either a single value (e.g., `1`) or, for applicable countries, a range (e.g., `1-36`). |
+| `paymentMethodFee` > `pricingFees` > `installments` | String | Number of installments, either a single value (e.g., `1`) or, in applicable countries, a range (e.g., `1-36`). |
 | `paymentMethodFee` > `pricingFees` > `pricing` | Object | Contains pricing details for the transaction. |
 | `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` | Object | Breakdown of interest and fees charged to the payer. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` > `commission` | Number | Total fee amount (including tax) charged to the payer. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` > `interests` | Number | Total interest (including tax) charged to the payer. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` > `total` | Number | Total amount payable by the payer, including interest and fees. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` > `commission` | Number | Total commission amount (including taxes) charged to the payer. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` > `interests` | Number | Total interest amount (including taxes) charged to the payer. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `payerDetail` > `total` | Number | Total amount to be paid by the payer, including interest and fees. |
 | `paymentMethodFee` > `pricingFees` > `pricing` > `merchantDetail` | Object | Breakdown of interest and fees charged to the merchant. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `merchantDetail` > `commission` | Number | Total fee amount (including tax) charged to the merchant. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `merchantDetail` > `interests` | Number | Total interest (including tax) charged to the merchant. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `merchantDetail` > `commission` | Number | Total commission amount (including taxes) charged to the merchant. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `merchantDetail` > `interests` | Number | Total interest amount (including taxes) charged to the merchant. |
 | `paymentMethodFee` > `pricingFees` > `pricing` > `merchantDetail` > `total` | Number | Total cost incurred by the merchant, including interest and fees. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `totalValue` | Number | Overall transaction value including interest and fees. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `totalIncomeTransaction` | Number | Total income generated from the transaction. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `additionalInfo` | Object | Includes financial information such as the Annual Effective Interest Rate (TEA) and Total Financial Cost (CFT). Applicable to Argentina only. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `totalValue` | Number | Total value of the transaction including interest and fees. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `totalIncomeTransaction` | Number | Total income generated by the transaction. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `additionalInfo` | Object | Includes financial information such as the Annual Effective Rate (TEA) and Total Financial Cost (CFT). Applies only to Argentina. |
 | `paymentMethodFee` > `pricingFees` > `pricing` > `additionalInfo` > `cft` | Number | Total Financial Cost (CFT) applied to the transaction. |
-| `paymentMethodFee` > `pricingFees` > `pricing` > `additionalInfo` > `tea` | Number | Annual Effective Interest Rate (TEA) applied to the transaction. |
+| `paymentMethodFee` > `pricingFees` > `pricing` > `additionalInfo` > `tea` | Number | Annual Effective Rate (TEA) applied to the transaction. |
 | `paymentMethodFee` > `pricingFees` > `promos` | Array | List of available promotions applicable to the pricing configuration. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `id` | Integer | Unique identifier of the promotion in the PayU system. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `id` | Integer | Unique promotion ID in the PayU system. |
 | `paymentMethodFee` > `pricingFees` > `promos` > `pricing` | Object | Contains pricing details for the specific promotion. |
 | `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` | Object | Breakdown of interest and fees for the payer under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` > `commission` | Number | Commission amount charged to the payer under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` > `interests` | Number | Interest amount charged to the payer under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` > `total` | Number | Total payable amount by the payer, including fees and interest, under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` > `commission` | Number | Commission charged to the payer under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` > `interests` | Number | Interest charged to the payer under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `payerDetail` > `total` | Number | Total amount to be paid by the payer, including commissions and interest, under the promotion. |
 | `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` | Object | Breakdown of interest and fees for the merchant under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` > `commission` | Number | Commission amount charged to the merchant under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` > `interests` | Number | Interest amount charged to the merchant under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` > `total` | Number | Total cost for the merchant, including fees and interest, under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `totalValue` | Number | Total transaction value with fees and interest under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `totalIncomeTransaction` | Number | Total income generated from the transaction under the promotion. |
-| `paymentMethodFee` > `pricingFees` > `promos` > `priority` | Number | Priority level of the promotion within the pricing configuration. |
-| `promotions` | Object | Contains details about any applied promotion. |
-| `promotions` > `id` | Integer | Unique identifier of the promotion in the PayU system. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` > `commission` | Number | Commission charged to the merchant under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` > `interests` | Number | Interest charged to the merchant under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `merchantDetail` > `total` | Number | Total cost for the merchant, including commissions and interest, under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `totalValue` | Number | Total transaction value including commissions and interest under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `pricing` > `totalIncomeTransaction` | Number | Total income generated by the transaction under the promotion. |
+| `paymentMethodFee` > `pricingFees` > `promos` > `priority` | Number | Promotion priority level within the pricing configuration. |
+| `promotions` | Object | Contains details about the applied promotion (if applicable). |
+| `promotions` > `id` | Integer | Unique promotion ID in the PayU system. |
 | `promotions` > `title` | String | Promotion title (maximum 50 characters). |
 | `promotions` > `termsAndConditions` | String | Terms and conditions applicable to the promotion (maximum 250 characters). |
 | `promotions` > `paymentMethod` | String | Payment method associated with the promotion. |
 | `promotions` > `subFranchise` | String | Sub-brand or sub-franchise associated with the promotion. |
-| `promotions` > `banksNames` | List | List of banks where the promotion is valid. |
-| `promotions` > `iins` | List | List of IIN/BIN numbers of cards eligible for the promotion. |
-| `promotions` > `days` | List | Days of the week on which the promotion is available. |
-| `promotions` > `startDate` | Datetime | Promotion start date and time. |
-| `promotions` > `endDate` | Datetime | Promotion end date and time. |
-| `promotions` > `priority` | Number | Priority level of the promotion. |
-| `promotions` > `type` | String | Type of the promotion. Possible values are:<br><br>**PRICING** – The promotion is automatically applied based on the configured pricing rules. For example, in Mexico, if interest-free installments (meses sin intereses) are configured, the merchant only needs to send the number of installments in `transaction > extraParameters > INSTALLMENTS_NUMBER`. The system will apply the interest-free conditions by default without requiring a promotion ID.<br><br>**MSI** – Requires the merchant to explicitly send both the promotion ID and the number of installments. This applies when the promotion must match a specific combination of payment method, installment, and promotion ID. To apply this type, the following fields must be sent:<br>- `transaction > extraParameters > INSTALLMENTS_NUMBER`<br>- `transaction > extraParameters > PROMOTION_ID`<br><br>**Note:** If the promotion ID is not provided when required, the transaction will be processed without the promotion, using the default pricing settings available for the selected installment option. |
-| `paymentTaxesDetails` | Object | Contains details about applied taxes (structure depends on tax service response). |
+| `promotions` > `banksNames` | List | List of banks where the promotion applies. |
+| `promotions` > `paymentMethodMain` | String | Main payment method associated with the promotion. |
+| `promotions` > `iin` | List | List of eligible card IIN/BIN numbers for the promotion. |
+| `promotions` > `days` | List | Days of the week the promotion is available. |
+| `promotions` > `startDate` | DateTime | Promotion start date and time. |
+| `promotions` > `endDate` | DateTime | Promotion end date and time. |
+| `promotions` > `priority` | Number | Promotion priority level. |
+| `promotions` > `type` | String | Type of promotion. Possible values:<br><br>**PRICING** – The promotion is automatically applied based on configured pricing rules. For example, in Mexico, if interest-free installments are configured, the merchant only needs to send the number of installments in `transaction > extraParameters > INSTALLMENTS_NUMBER`. The system will automatically apply the interest-free condition without requiring a promotion ID.<br><br>**MSI** – Requires the merchant to explicitly send both the promotion ID and number of installments. This applies when the promotion must match a specific combination of payment method, installments, and promotion ID. To apply this type, the following fields must be sent:<br>- `transaction > extraParameters > INSTALLMENTS_NUMBER`<br>- `transaction > extraParameters > PROMOTION_ID`<br><br>**Note:** If the promotion ID is not sent when required, the transaction will be processed without the promotion, using the default pricing configuration for the selected installment option. |
+| `paymentTaxesDetails` | Object | Contains details of applied taxes (structure depends on the tax service response). |
 | `taxesServiceFailed` | Boolean | Indicates whether the tax calculation service failed. |
 
 </details>
@@ -1152,9 +1183,9 @@ https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=51663
 {{< /tab >}}
 {{< /tabs >}}
 
-### Executing a Transaction with Promotions
+### Executing a Transaction with Interest-Free Installments
 
-Once you have selected a promotion, include the `PROMOTION_ID` and the `INSTALLMENTS_NUMBER` as extra parameters in your request:
+Once you have selected an Interest-Free Installments plan, include the `PROMOTION_ID` and the `INSTALLMENTS_NUMBER` as extra parameters in your request:
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
@@ -1195,9 +1226,9 @@ For more details on including these extra parameters, refer to the corresponding
 
 {{% /alert %}}
 
-## Months Without Interest (MSI - Meses Sin Intereses){#msi}
+## MSI - Interest-Free Months
 
-For accounts in Mexico, you can offer customers the option to pay in a set number of interest-free installments. To enable this feature, contact your sales representative.
+In Mexico, General Interest-Free Installments are commonly known as **Meses sin Intereses (MSI)**. This option allows you to offer fixed payment plans (3, 6, 9, 12, or 18 months) without interest, without the need to reference a promotion ID.
 
 ### Considerations
 
@@ -1209,7 +1240,13 @@ For accounts in Mexico, you can offer customers the option to pay in a set numbe
     - 12 months → $1200 MXN
     - 18 months → $1800 MXN
 * MSI is available with the following banks: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer.
-* When using MSI, always display the phrase **"PAGOS DIFERIDOS"** during the payment process.
+* When using the promotion always display the phrase **MESES SIN INTERESES** during the payment process. For standard installments (no promotional installments), use **PAGOS DIFERIDOS**.
+
+{{% alert title="Note" color="info"%}}
+
+To enable MSI plans in your account, contact your sales representative.
+
+{{% /alert %}}
 
 ### MSI Request Parameters
 

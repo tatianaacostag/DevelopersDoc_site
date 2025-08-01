@@ -227,14 +227,14 @@ Ao testar pagamentos, use os seguintes valores na sua requisição conforme o st
 
 Para testar diferentes cenários usando o nosso módulo antifraude, utilize um dos seguintes endereços de e-mail juntamente com os dados apropriados de cartão de teste. O sistema antifraude atribuirá um status específico à transação com base no e-mail que você utilizar:
 
-- `approved@payu.com` → O sistema antifraude atribui o status **APPROVED** à transação.
-- `rejected@payu.com` → O sistema antifraude atribui o status **REJECTED** à transação.
-- `pending_approved@payu.com` → O sistema antifraude atribui inicialmente o status **PENDING**. Após 5 minutos, ele altera o status para **APPROVED**.
-- `pending_rejected@payu.com` → O sistema antifraude atribui inicialmente o status **PENDING**. Após 5 minutos, ele altera o status para **REJECTED** por prevenção à fraude.
+- `approved@payu.com` → O sistema determina que a transação pode continuar.
+- `rejected@payu.com` → O sistema identifica a transação como arriscada e atribui o status **REJECTED** por motivos de prevenção à fraude.
+- `pending_approved@payu.com` → O sistema antifraude atribui inicialmente o status **PENDING**. Após 5 minutos, determina que a transação pode continuar.
+- `pending_rejected@payu.com` → O sistema antifraude atribui inicialmente o status **PENDING**. Passados 5 minutos, altera o status para **REJECTED** por motivos de prevenção à fraude.
 
 {{% alert title="Observação" color="info"%}}
 
-Lembre-se de que o status **APPROVED** atribuído pelo sistema antifraude **não garante a aprovação final** da transação. O resultado também depende do cartão utilizado e de outros valores descritos na documentação que são necessários para simular uma autorização bancária bem-sucedida ou rejeitada.
+Tenha em mente que, mesmo que o sistema antifraude determine que a transação pode continuar, isso não garante a aprovação final da transação. O resultado também depende do cartão utilizado e de outros valores indicados na documentação que são necessários para simular uma autorização bancária bem-sucedida ou recusada.
 
 {{% /alert %}}
 

@@ -227,14 +227,14 @@ Al probar pagos, utiliza los siguientes valores en tu solicitud según el estado
 
 Para probar diferentes escenarios utilizando nuestro módulo antifraude, utiliza una de las siguientes direcciones de correo electrónico junto con los datos de tarjetas de prueba apropiados. El sistema antifraude asignará un estado específico a la transacción según el correo que utilices:
 
-- `approved@payu.com` → El sistema antifraude asigna el estado **APPROVED** a la transacción.
-- `rejected@payu.com` → El sistema antifraude asigna el estado **REJECTED** a la transacción.
-- `pending_approved@payu.com` → El sistema antifraude asigna inicialmente el estado **PENDING**. Después de 5 minutos, cambia el estado a **APPROVED**.
-- `pending_rejected@payu.com` → El sistema antifraude asigna inicialmente el estado **PENDING**. Después de 5 minutos, cambia el estado a **REJECTED** por prevención de fraude.
+- `approved@payu.com` → El sistema determina que la transacción puede continuar.
+- `rejected@payu.com` → El sistema identifica la transacción como riesgosa y, por motivos de prevención antifraude, le asigna el estado **REJECTED**.
+- `pending_approved@payu.com` → El sistema antifraude asigna inicialmente el estado **PENDING**. Después de 5 minutos, determina que la transacción puede continuar.
+- `pending_rejected@payu.com` → El sistema antifraude asigna inicialmente el estado **PENDING**. Pasados 5 minutos, cambia el estado a **REJECTED** por motivos de prevención de fraude.
 
 {{% alert title="Nota" color="info"%}}
 
-Ten en cuenta que el estado **APPROVED** asignado por el sistema antifraude **no garantiza la aprobación final** de la transacción. El resultado también depende de la tarjeta utilizada y de otros valores indicados en la documentación que son necesarios para simular una autorización bancaria exitosa o fallida.
+Ten en cuenta que aunque el sistema antifraude determine que la transacción puede proceder, no garantiza la aprobación final de la transacción. El resultado también depende de la tarjeta utilizada y de otros valores indicados en la documentación que son necesarios para simular una autorización bancaria exitosa o fallida.
 
 {{% /alert %}}
 

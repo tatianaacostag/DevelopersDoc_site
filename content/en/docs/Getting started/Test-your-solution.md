@@ -227,14 +227,14 @@ When testing payments, use the following values in your request based on the sta
 
 To test different scenarios using our antifraud module, use one of the following email addresses along with the appropriate test card data. The antifraud system will assign a specific status to the transaction based on the email you use:
 
-- `approved@payu.com` → The antifraud system assigns the **APPROVED** status to the transaction.
-- `rejected@payu.com` → The antifraud system assigns the **REJECTED** status to the transaction.
-- `pending_approved@payu.com` → The antifraud system first assigns the **PENDING** status. After 5 minutes, it changes the status to **APPROVED**.
-- `pending_rejected@payu.com` → The antifraud system first assigns the **PENDING** status. After 5 minutes, it changes the status to **REJECTED** due to fraud prevention.
+- `approved@payu.com` → The system determines that the transaction can proceed.
+- `rejected@payu.com` → The system identifies the transaction as risky and assigns it the **REJECTED** status for fraud prevention purposes.
+- `pending_approved@payu.com` → The antifraud system initially assigns the **PENDING** status. After 5 minutes, it determines that the transaction can proceed.
+- `pending_rejected@payu.com` → The antifraud system initially assigns the **PENDING** status. After 5 minutes, it changes the status to **REJECTED** for fraud prevention purposes.
 
 {{% alert title="Note" color="info"%}}
 
-Keep in mind that the antifraud system’s **APPROVED** status does not guarantee the final approval of the transaction. The outcome also depends on the card you use and other values described in the documentation that are required to simulate a successful or failed bank authorization.
+Keep in mind that even if the anti-fraud system determines that the transaction can proceed, it does not guarantee the final approval of the transaction. The result also depends on the card used and other values specified in the documentation that are required to simulate a successful or failed bank authorization.
 
 {{% /alert %}}
 

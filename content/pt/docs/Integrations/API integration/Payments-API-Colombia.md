@@ -144,9 +144,9 @@ O fluxo em duas etapas está disponível somente sob solicitação, entre em con
 | transaction > cookie | Alfanumérico | Máx:255 | Cookie armazenado pelo dispositivo onde o cliente faz a transação. | Sim |
 | transaction > userAgent | Alfanumérico | Máx:1024 | O agente do usuário do navegador onde o cliente faz a transação. | Sim |
 | transaction > extraParameters | Objeto | | Parâmetros ou dados adicionais associados a pedido. O tamanho máximo de cada nome _extraParameters_ é de 64 caracteres.<br>Em JSON, o parâmetro _extraParameters_ segue esta estrutura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>Em XML, o parâmetro _extraParameters_ segue esta estrutura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | Não |
-| transaction > extraParameters > EXTRA1 | Alfanumérico | Máx:255 | Campo adicional para enviar informações extras sobre a compra. | Não |
-| transaction > extraParameters > EXTRA2 | Alfanumérico | Máx:255 | Campo adicional para enviar informações extras sobre a compra. | Não |
-| transaction > extraParameters > EXTRA3 | Alfanumérico | Máx:255 | Campo adicional para enviar informações extras sobre a compra. | Não |
+| transaction > extraParameters > EXTRA1 | Alfanumérico | Máx:512 | Campo adicional para enviar informações extras sobre a compra. | Não |
+| transaction > extraParameters > EXTRA2 | Alfanumérico | Máx:512 | Campo adicional para enviar informações extras sobre a compra. | Não |
+| transaction > extraParameters > EXTRA3 | Alfanumérico | Máx:512 | Campo adicional para enviar informações extras sobre a compra. | Não |
 | transaction > threeDomainSecure | Objeto | | Este objeto contém as informações do 3DS 2.0. | Não |
 | transaction > threeDomainSecure > embedded | Boolean |  | Definir `true` se você deseja usar um MPI integrado para o processo de autorização. Por padrão, este valor é definido como `false`. | Não |
 | transaction > threeDomainSecure > eci | Número | Máx:2 | Indicador de comércio eletrônico.<br>Valor fornecido pelos servidores de diretório mostrando a tentativa de autenticação.<br>Este parâmetro é obrigatório quando `transaction.threeDomainSecure.embedded` is `false` e `transaction.threeDomainSecure.xid` for definido. | Não |
