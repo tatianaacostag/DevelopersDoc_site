@@ -1183,6 +1183,22 @@ https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=51663
 {{< /tab >}}
 {{< /tabs >}}
 
+## Procesamiento de transacciones con cuotas
+
+La siguiente tabla resume las opciones de cuotas, los campos requeridos y cómo se gestionan los intereses en cada caso.
+
+| Tipo de cuotas | Parámetros requeridos | ¿Quién asume los intereses? | Notas |
+| --- | --- | --- | --- |
+| **Cuotas Estándar** | `INSTALLMENTS_NUMBER` | Pagador | Valor predeterminado si no se envía `PROMOTION_ID` y el pricing no activa MSI. |
+| **Cuotas sin Intereses Específicas** | `PROMOTION_ID`, `INSTALLMENTS_NUMBER` | Comercio | Utiliza un acuerdo promocional específico. |
+| **Cuotas sin Intereses Generales (MSI)** | `INSTALLMENTS_NUMBER` | Comercio | La configuración de MSI debe estar habilitada en la cuenta del comercio. |
+
+**Consideraciones:**
+
+* Si solo se envía `INSTALLMENTS_NUMBER` y MSI no está activo, la transacción se procesa como cuotas estándar y se le cobrará interés al pagador.
+
+* Para asegurar que se apliquen Cuotas sin Intereses, siempre verifica si tu cuenta tiene habilitado MSI o si estás usando una promoción específica.
+
 ### Realizar una transacción con Cuotas sin Intereses {#executing-a-transaction-with-interest-free-installments}
 
 Una vez que hayas seleccionado un plan de Cuotas sin Intereses, incluye el `PROMOTION_ID` y el `INSTALLMENTS_NUMBER` como parámetros adicionales en tu solicitud:
