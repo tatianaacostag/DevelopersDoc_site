@@ -1146,30 +1146,6 @@ Response Example:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Installments
-
-When processing transactions with credit cards, you need to show the following aspects to your customer when processing installments:
-
-![PrintScreen](/assets/Payments/Installments_en.png)
-
-Where:
-
-| Number in the screen | Option         | Description                                       |
-|:--------------------:|----------------|---------------------------------------------------|
-|           1          | Total purchase | Total amount of the purchase without financing.   |
-|           2          | Total payment  | Total amount financed of the purchase.            |
-|           3          | Installments   | Number of installments and their amount.          |
-|           4          | TEA            | The annual effective interest rate (TEA) applied. |
-|           5          | CFT            | The total financial cost (CFT).                   |
-
-The information of the total financial cost (CFT) must comply with the following directions:
-
-1. Must be located next to the reported variables.
-
-2. Must appear in a prominent color typeface using the same font and size of at least five times bigger than the one used to inform the annual effective interest rate (TEA), the number of installments, and their amount.
-
-According to the current regulations, you cannot use the phrase without interest (in Spanish, "sin interés") or any other similar phrase, when the financial cost of the product or service is transferred to the customer's selling price.
-
 ## Submit Transactions Using Cash
 
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.

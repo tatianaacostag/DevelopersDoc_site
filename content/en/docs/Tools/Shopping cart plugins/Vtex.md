@@ -385,8 +385,8 @@ Configure the payment methods that will be displayed on the website during check
 
 {{% alert title="Important" color="warning"%}}
 
-* PIX is not available for Brazil when using VTEX.
 * Changes to payment conditions may take up to 10 minutes to reflect in the checkout flow.
+* PIX is not available for Brazil when using VTEX.
 
 {{% /alert %}}
 
@@ -504,7 +504,7 @@ Once activated, Google Pay will be available as a payment option at your store�
 
 For more information and best practices, refer to VTEX’s official guide on enabling digital wallets on the  <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">VTEX Help Center</a>.
 
-##### Configuring Cash Payment Methods and Wallets
+##### Configuring Cash Payment Methods
 
 Since cash payments require customers to pay at physical locations, you can configure this payment method in VTEX as promissory notes (Notes Payables). 
 
@@ -512,13 +512,8 @@ When you configure a cash payment method, customers are redirected to PayU's che
 
 **Considerations:**
 
-* Ensure that all payment methods and digital wallets you intend to configure are enabled in your PayU account, and that **their names exactly match the ones registered with PayU**. Mismatched or inactive methods will cause transaction errors. If you need assistance enabling specific payment methods or wallets, <a href="https://colombia.support.payu.com/s/?language=en_US" target="_blank" rel="noopener noreferrer">contact us</a>.
+* Ensure that all payment methods you intend to configure are enabled in your PayU account, and that **their names exactly match the ones registered with PayU**. Mismatched or inactive methods will cause transaction errors. If you need assistance enabling specific payment methods, <a href="https://colombia.support.payu.com/s/?language=en_US" target="_blank" rel="noopener noreferrer">contact us</a>.
 * For **Boleto Bancário** in Brazil, this procedure is not required. Simply locate and configure this payment method as a payment condition.
-* To enable **Yape** as a payment method in Peru, ensure your VTEX store is built with **VTEX IO** or **FastStore**. Then, install the **Pop-up for Online Payment with Yape** app by accessing the setup URL. Replace `{vtexaccount}` in the URL below with the name of your VTEX account (i.e., the subdomain you use to access your VTEX Admin panel):
-    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
-    <br>**Example:**
-    <br>If your VTEX account is `payulatam`, the URL would be:
-    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
 
 **Step by Step:**
 
@@ -538,15 +533,78 @@ When you configure a cash payment method, customers are redirected to PayU's che
    * **Description**: Enter a description to display when the customer selects this payment method (optional).
    * **Notes Payable Expiration Date**: Specify the number of days before the cash payment expires. The default is 7 days. Ensure this value matches the **Payment Expiration (days)** setting configured in the VTEX affiliation to prevent processing issues.
 
-    {{% alert title="Note" color="info"%}} 
-
-For Yape or Nequi, make sure to enter the **Name** in uppercase letters exactly as follows: `YAPE`, `NEQUI`.
-
-{{% /alert %}}
-
 Leave the remaining fields with their default values. 
 
 5. Click **Save**. Once the custom payment is created, you will be redirected to set up a new **Payment Condition**. Follow the instructions in the [Configuring Credit or Debit Cards](#configuring-credit-or-debit-cards) section.
+
+##### Configuring Nequi
+
+Adding Nequi as a payment method allows your business to reach millions of users who prefer digital wallets, offering them a faster, safer, and more convenient way to pay. This can help boost sales, strengthen customer loyalty, and ensure secure transactions. 
+
+Before you begin, make sure that Nequi is enabled in your PayU account and that **the payment method name matches exactly as registered with PayU**. Any mismatch or inactive status will result in transaction errors. If you need help enabling Nequi, please <a href="https://colombia.support.payu.com/s/?language=en_US" target="_blank" rel="noopener noreferrer">contact us</a>.
+
+**Step by Step:**
+
+1. Log in to the VTEX administration panel and go to **Transactions > Payments > Settings**. 
+
+2. Select the **Payment Conditions** tab and click the **plus** icon.
+
+![PrintScreen](/assets/VTEX/vtex11.png)
+
+3. Search for **NequiPayu** using the search bar, then select it to open the settings interface.
+
+![PrintScreen](/assets/VTEX/vtex35.png)
+
+4. In the settings interface:
+   * Set **NEQUI** as the condition name
+   * Choose the provider
+   * Enable the payment method
+
+![PrintScreen](/assets/VTEX/vtex36.png)
+
+5. Click **Save**. Confirm that Nequi appears in the **Payment Conditions** tab.
+
+![PrintScreen](/assets/VTEX/vtex37.png)
+
+6. Once configured, Nequi will be available as a payment option at VTEX checkout. Please note that it may take up to **10 minutes** for the option to become visible.
+
+##### Configuring Yape
+
+Yape as a payment method connects your business with millions of users in Peru who prefer digital wallets, offering them a simple, secure, and convenient way to pay with just their phone number—helping you boost sales, attract new customers, and provide trusted transactions backed by BCP (Banco de Crédito del Perú).
+
+**Considerations:**
+
+* Ensure that Yape is enabled in your PayU account and that **the payment method name matches exactly as registered with PayU**. Any mismatch or inactive status will result in transaction errors. If you need help enabling Yape, please <a href="https://colombia.support.payu.com/s/?language=en_US" target="_blank" rel="noopener noreferrer">contact us</a>.
+* Ensure your VTEX store is built with **VTEX IO** or **FastStore**. Then, install the **Pop-up for Online Payment with Yape** app by accessing the setup URL. Replace `{vtexaccount}` in the URL below with the name of your VTEX account (i.e., the subdomain you use to access your VTEX Admin panel):
+    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+    <br>**Example:**
+    <br>If your VTEX account is `payulatam`, the URL would be:
+    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+
+**Step by Step:**
+
+1. Log in to the VTEX administration panel and go to **Transactions > Payments > Settings**. 
+
+2. Select the **Payment Conditions** tab and click the **plus** icon.
+
+![PrintScreen](/assets/VTEX/vtex11.png)
+
+3. Search for **YapePayu** using the search bar, then select it to open the settings interface.
+
+![PrintScreen](/assets/VTEX/vtex38.png)
+
+4. In the settings interface:
+   * Set **YAPE** as the condition name
+   * Choose the provider
+   * Enable the payment method
+
+![PrintScreen](/assets/VTEX/vtex39.png)
+
+5. Click **Save**. Confirm that Yape appears in the **Payment Conditions** tab.
+
+![PrintScreen](/assets/VTEX/vtex40.png)
+
+6. Once configured, Yape will be available as a payment option at VTEX checkout. Please note that it may take up to **10 minutes** for the option to become visible.
 
 ##### Configuring PSE
 

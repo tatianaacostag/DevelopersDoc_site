@@ -3,85 +3,93 @@ title: "Pricing API"
 linkTitle: "Pricing API"
 date: 2025-06-29T12:38:41-05:00
 description: >
-    The Pricing API allows you to query all available financing options and associated costs for your transactions. This includes the pricing configuration of your PayU virtual account, such as standard installments, [Interest-Free Installments](https://developers.payulatam.com/latam/en/docs/services/promotions.html) plans, and other features relevant to your customers.
+    The Pricing API lets you query all available financing options and associated costs for your transactions. This includes the pricing configuration of your PayU virtual account, such as standard installments, interest-free installments, and other features relevant to your customers.
 weight: 50
 tags: ["subtopic"]
 ---
 
 ## Pricing Options
 
-Each pricing option, whether it is a standard plan or a promotion with Interest-Free Installments, includes the applicable payment methods, the days of the week when it is available, the list of participating banks (if applicable), as well as the start and end dates of the promotions.
+The Pricing API allows you to retrieve financing options available for a given transaction, including standard installment plans and interest-free promotions. Each option specifies the applicable payment methods, eligible banks (if any), the days of the week it is available, and the validity period of any promotional program.
 
-The following table shows the countries where standard installments, Specific Interest-Free Installments, and General Interest-Free Installments (MSI) are available. For more information, see the [Interest-Free Installments](https://developers.payulatam.com/latam/en/docs/services/promotions.html) document.
+The table below shows where each type of installment option is available across PayU Latam countries. For more details, see the [Interest-Free Installments](https://developers.payulatam.com/latam/en/docs/services/promotions.html) documentation.
 
-<table style="width: 65%; min-width: 300px; border-collapse: collapse;">
-    <tr>
-        <th style="width: 20%; text-align: left;">Country</th>
-        <th style="width: 15%; text-align: center;">Standard Installments</th>
-        <th style="width: 15%; text-align: center;">Specific Interest-Free Installments (Promotions)</th>
-        <th style="width: 15%; text-align: center;">General Interest-Free Installments (MSI)</th>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Brasil.png" width="25px"/> &nbsp;Brazil</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Chile.png" width="25px"/> &nbsp;Chile</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Mexico.png" width="25px"/> &nbsp;Mexico</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Panama.png" width="25px"/> &nbsp;Panama</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-    </tr>
+<table style="width: 60%; min-width: 300px; border-collapse: collapse;">
+  <tr>
+    <th style="width: 40%; text-align: left;">Installment Type</th>
+    <th colspan="2" style="width: 60%; text-align: left;">Available Countries</th> 
+  </tr>
+  <tr>
+    <td><strong>Standard Installments</strong></td>
+    <td style="width: 30%;" >
+      <img src="/assets/Argentina.png" width="15px"/> &nbsp;Argentina<br>
+      <img src="/assets/Brasil.png" width="15px"/> &nbsp;Brazil<br>
+      <img src="/assets/Chile.png" width="15px"/> &nbsp;Chile<br>      
+    </td>
+    <td style="width: 70%;" >
+      <img src="/assets/Colombia.png" width="15px"/> &nbsp;Colombia<br>
+      <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico<br>      
+      <img src="/assets/Peru.png" width="15px"/> &nbsp;Peru
+    </td>
+  </tr>
+  <tr>
+    <td><strong>Specific Interest-Free Installments</strong></td>
+    <td style="width: 30%;" >
+      <img src="/assets/Argentina.png" width="15px"/> &nbsp;Argentina<br>
+      <img src="/assets/Colombia.png" width="15px"/> &nbsp;Colombia
+    </td>  
+    <td style="width: 70%;" >    
+      <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico<br>
+      <img src="/assets/Peru.png" width="15px"/> &nbsp;Peru
+    </td>
+  </tr>
+  <tr>
+    <td><strong>General Interest-Free Installments (MSI)</strong></td>
+    <td style="width: 30%;" >
+      <img src="/assets/Argentina.png" width="15px"/> &nbsp;Argentina
+    </td>  
+    <td style="width: 70%;" >      
+      <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico
+    </td>
+  </tr>  
 </table>
 
 {{% alert title="Note" color="info"%}}
 
-To configure Interest-Free Installments according to your agreements with issuing banks, contact your sales representative.
+To enable an interest-free installment plan according to your agreements with local issuers, contact your PayU sales representative.
 
 {{% /alert %}}
 
-The following diagram shows the complete flow, from querying the Pricing API to transaction approval:
+The following diagram illustrates the full process, from querying the Pricing API to transaction approval:
 
 {{< promotions/pricingApi >}}
+
+## Querying the Available Pricing Options
+
+To retrieve the pricing information, send a `GET` request to the appropriate URL based on the environment.
+
+{{% alert title="API Endpoints" color="info"%}}
+
+* Test: ```GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing```
+* Production: ```GET https://api.payulatam.com/payments-api/rest/v4.9/pricing```
+
+{{% /alert %}}
+
+As this is a RESTful service, we strongly recommend against strict schema validation. Avoiding schema validation ensures seamless integration, minimizing changes when updates are made to the Web Service.
 
 ### Authentication for Requests
 
 To authenticate API requests, you must use an HMAC-based mechanism. You need your `MerchantPublicKey`, which can be found in your PayU Management Panel under **_Settings_** > **_Technical Configuration_** > **_Public Key_**.
 
+{{% alert title="Note" color="info"%}}
+
+To test in the sandbox environment, use the credentials listed in the [Test Your Solution](https://developers.payulatam.com/latam/en/docs/getting-started/test-your-solution.html) documentation.
+
+{{% /alert %}}
+
 ![PrintScreen](/assets/Promotions/PublicKey.png)
 
-### Configuring the Authentication
+#### Configuring the Authentication
 
 Include the `Authorization` and `Date` headers in your request. The `Authorization` header follows this structure:
 
@@ -166,20 +174,9 @@ If REST client restrictions prevent using `Date`, you may alternatively send `x-
 Mon, 11 May 2015 21:14:41 GMT
 ```
 
-### Querying the Available Interest-Free Installments Plans
+### Parameters for Request and Response
 
-To retrieve the Interest-Free Installment plans, send a `GET` request to the appropriate URL based on the environment.
-
-{{% alert title="API Endpoints" color="info"%}}
-
-* Test: ```GET https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing```
-* Production: ```GET https://api.payulatam.com/payments-api/rest/v4.9/pricing```
-
-{{% /alert %}}
-
-As this is a RESTful service, we strongly recommend against strict schema validation. Avoiding schema validation ensures seamless integration, minimizing changes when updates are made to the Web Service.
-
-#### Parameters for Request and Response
+This section describes the parameters used in the API request and the fields returned in the response. The request parameters define the input values required to retrieve pricing, promotions, and tax details. The response parameters outline the structure and meaning of the data returned, including transaction amounts, payment method fees, installment breakdowns, promotions, and applicable taxes.
 
 <details>
 
@@ -193,7 +190,7 @@ As this is a RESTful service, we strongly recommend against strict schema valida
 |-|-|:-:|
 | `accountId` | Unique identifier of your account. | Yes |
 | `currency` | Currency associated with your account. | No |
-| `amount` | Total amount of the purchase. | Yes |
+| `amount` | Total amount of the purchase. Used to calculate the fees shown in the response. Does not filter promotions by amount. | Yes |
 | `paymentMethod` | Optional parameter to filter promotions by payment method. | No |
 | `tax` | Amount of tax included in the transaction. Applicable only in Argentina and Colombia. | No |
 | `taxReturnBase` | Base value used to calculate the tax. Applicable only in Argentina and Colombia. | No |
@@ -264,10 +261,11 @@ As this is a RESTful service, we strongly recommend against strict schema valida
 | `promotions` > `title` | String | Promotion title (maximum 50 characters). |
 | `promotions` > `termsAndConditions` | String | Terms and conditions applicable to the promotion (maximum 250 characters). |
 | `promotions` > `paymentMethod` | String | Payment method associated with the promotion. |
-| `promotions` > `subFranchise` | String | Sub-brand or sub-franchise associated with the promotion. |
-| `promotions` > `banksNames` | List | List of banks where the promotion applies. |
+| `promotions` > `subFranchise` | String | Sub-brand or sub-franchise associated with the promotion. If `subFranchise` is not provided, the promotion is not tied to a local card (such as Naranja), but instead applies to an international brand (e.g., Mastercard), as defined by `paymentMethodMain`. |
+| `promotions` > `banksNames` | List | List of banks where the promotion applies. If `banksNames` is not provided, the promotion applies to the entire payment method, with `paymentMethodMain` taking precedence. |
 | `promotions` > `paymentMethodMain` | String | Main payment method associated with the promotion. |
 | `promotions` > `iin` | List | List of eligible card IIN/BIN numbers for the promotion. |
+| `promotions` > `iins` | List | List of eligible card IIN/BIN numbers for the promotion. If `iins` is not provided, the promotion is available for all cards under the payment method specified in `paymentMethodMain`. |
 | `promotions` > `days` | List | Days of the week the promotion is available. |
 | `promotions` > `startDate` | DateTime | Promotion start date and time. |
 | `promotions` > `endDate` | DateTime | Promotion end date and time. |
@@ -278,9 +276,9 @@ As this is a RESTful service, we strongly recommend against strict schema valida
 
 </details>
 
-#### API Call
+### API Call
 
-To retrieve available promotions, send a `GET` request using the following format:
+To retrieve available pricing options, send a `GET` request using the following format:
 
 ```JAVASCRIPT
 GET
@@ -1183,11 +1181,368 @@ https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=51663
 {{< /tab >}}
 {{< /tabs >}}
 
-### Executing a Transaction with Interest-Free Installments
+## Processing Transactions with Installments
 
-Once you have selected an Interest-Free Installments plan, include the `PROMOTION_ID` and the `INSTALLMENTS_NUMBER` as extra parameters in your request:
+This section explains how to use and apply the different installment plans.
+
+### Installment Types
+
+The table below summarizes the available installment types, their required parameters, and who covers the interest.
+
+| Installment Type | Applicable Countries | Required Parameters | Who Covers the Interest? | Notes |
+| --- | --- | --- | --- | --- |
+| **Standard Installments** | Argentina, Brazil, Chile, Colombia, Mexico, Peru | `INSTALLMENTS_NUMBER` | Payer | Default installment plan with interest. |
+| **Specific Interest-Free Installments** | Argentina, Colombia, Mexico, Peru | `PROMOTION_ID` + `INSTALLMENTS_NUMBER` | Merchant | Linked to a specific promotion or agreement. |
+| **General Interest-Free Installments (MSI)** | Argentina, Mexico | `INSTALLMENTS_NUMBER` | Merchant | Must be enabled in your PayU account. No promotion ID required. In Mexico, the promotion ID 9999 is not required. |
+
+**Considerations:**
+
+* Confirm that interest-free or MSI plans are enabled in your PayU account to ensure the system applies them correctly.
+* If you send only `INSTALLMENTS_NUMBER` without an active General Interest-Free Installments plan, the system applies standard installments and charges interest to the payer.
+
+### Displaying Eligible Installments at Checkout
+
+When displaying available installment options during checkout, validate eligibility using the following rules:
+
+1. Match the card's BIN with the values in `promotions[].iin`.
+2. If no BINs are specified, check whether the user’s bank matches any in `promotions[].banksNames`.
+3. If no banks are specified, fall back to the payment method (card brand) defined in `paymentMethodFee[].paymentMethod`.
+
+Use the following fields from the Pricing API response to determine eligibility and display the correct installment options:
+
+* `paymentMethodFee[].pricingFees[].installments` → Number of installments available
+* `paymentMethodFee[].pricingFees[].promos[].id` → Associated promotion ID
+* `promotions[].id, promotions[].iin, promotions[].banksNames` → Promotion eligibility criteria
+* `paymentMethodFee[].paymentMethod` → Card brand (e.g., Visa, Mastercard)
+
+By validating this hierarchy, you ensure that users only see installment options that apply to their card.
+
+#### Displaying CFT and TEA in Argentina
+
+According to Resolution E 51/2017 of the Secretaría de Comercio (Argentina), merchants must clearly display financing information when processing credit or debit card transactions with installments.
+
+Specifically, you must:
+
+- Differentiate the cash price from the financing cost in both interest-bearing and interest-free installments.  
+- Display the **Total Financial Cost (CFT)** prominently next to the cash price.  
+  - Use a highlighted color and a font size at least five times larger than the one used for TEA, the number of installments, and their amount.  
+  - The CFT must include interest and applicable taxes (such as VAT).  
+- Display the **Annual Effective Rate (TEA)**, which shows the difference between the cash price and the financed price.  
+- Avoid using the phrase *“sin interés”* (without interest) or similar wording if the financial cost is incorporated into the product or service price.
+
+This information is available in the API response fields:
+
+- `paymentMethodFee[].pricingFees[].pricing.additionalInfo`  
+- `paymentMethodFee[].pricingFees[].promos[].pricing.additionalInfo`
+
+##### Example Display
+
+When showing installment options to customers, include the following elements:
+
+![PrintScreen](/assets/Payments/Installments_en.png)
+
+Where: 
+
+| Number in the screen | Option         | Description                                       |
+|:--------------------:|----------------|---------------------------------------------------|
+|           1          | Total purchase | Total amount of the purchase without financing.   |
+|           2          | Total payment  | Total amount financed of the purchase.            |
+|           3          | Installments   | Number of installments and their amount.          |
+|           4          | TEA            | The annual effective interest rate (TEA) applied. |
+|           5          | CFT            | The total financial cost (CFT).                   |
+
+{{% alert title="Note" color="info"%}}
+
+For interest-free installments, you must still display TEA and CFT, but set their values to **0%**.
+
+{{% /alert %}}
+
+### Identifying Installment Types by Interest Allocation
+
+The table below shows how to identify the installment type based on how the system allocates interest between the payer and the merchant, using fields from the Pricing API response.
+
+<table style="width:100%; border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th style="text-align:left;">Installment Type</th>
+      <th style="text-align:center;">Payer Interest</th>
+      <th style="text-align:center;">Merchant Interest</th>
+      <th style="text-align:left;">Who Assumes the Interest?</th>
+      <th style="text-align:left;">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Standard Installment (No Interest)</strong></td>
+      <td style="text-align:left;">
+        Values in: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> pricing.payerDetail</code> = <code>0</code><p>
+        <br>In Mexico: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.payerDetail</code> = <code>0</code>
+      </td>
+      <td style="text-align:left;">
+        Values in: <br>
+        <code>paymentMethodFee[].pricingFees[] <br> .pricing.merchantDetail</code> = <code>0</code><p>
+        <br>In Mexico: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.merchantDetail</code> = <code>0</code><p>
+      </td>
+      <td>Bank (outside the promotion system)</td>
+      <td>Interest-free from PayU's perspective; any fees come directly from the bank.</td>
+    </tr>
+    <tr>
+      <td><strong>Standard Installment (With Interest)</strong></td>
+      <td style="text-align:left;">
+        Values in: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> pricing.payerDetail</code> > <code>0</code><p>
+        <br>In Mexico: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.payerDetail</code> > <code>0</code><p>
+      </td>
+      <td style="text-align:left;">
+        Values in: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> pricing.merchantDetail</code> = <code>0</code><p>
+        <br>In Mexico: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.merchantDetail</code> = <code>0</code><p>
+      </td>
+      <td>Payer</td>
+      <td>Merchant does not cover interest.</td>
+    </tr>
+    <tr>
+      <td><strong>General Interest-Free Installments</strong></td>
+      <td style="text-align:left;">
+        Values in: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> pricing.payerDetail</code> = <code>0</code><p>
+        <br>In Mexico: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.payerDetail</code> = <code>0</code>
+      </td>
+      <td style="text-align:left;">
+        Values in: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> pricing.merchantDetail</code> > <code>0</code><p>
+        <br>In Mexico: <br>
+        <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.merchantDetail</code> > <code>0</code><p>
+      </td>
+      <td>Merchant</td>
+      <td>Applies to the entire payment method or card brand.</td>
+    </tr>
+  </tbody>
+</table>
+
+### Identifying Specific Interest-Free Installments
+
+When you query the Pricing API, you can identify a specific promotional installment if the `promos` array contains a promotion where:
+
+- The **payer** pays **0 interest**.
+- The **merchant** covers the full cost (commission or interest is greater than `0`).
+
+This type of promotion may apply to specific banks or BINs tied to a particular card brand.
+
+**Validation example:**
+- Values in `paymentMethodFee[].pricingFees[].promos[].pricing.payerDetail` = `0`
+- Values in `paymentMethodFee[].pricingFees[].promos[].pricing.merchantDetail` > `0`
+
+To fully understand a promotion’s conditions, check the `promotions[]` object that matches the promotion ID from:  
+- `paymentMethodFee[].pricingFees[].promos[].id`
+
+<table style="width: 60%; min-width: 300px; border-collapse: collapse;">
+  <tr>
+    <th colspan="2" style="text-align: left;">Key fields in <code>promotions[]</code> to review:</th>
+  </tr>
+  <tr>
+    <td><code>promotions[].id</code></td>
+    <td><code>promotions[].banksNames</code></td>
+  </tr>
+  <tr>
+    <td><code>promotions[].title</code></td>
+    <td><code>promotions[].iins</code></td>
+  </tr>
+  <tr>
+    <td><code>promotions[].termsAndConditions</code></td>
+    <td><code>promotions[].days</code></td>
+  </tr>
+  <tr>
+    <td><code>promotions[].paymentMethod</code></td>
+    <td><code>promotions[].startDate</code></td>
+  </tr>
+  <tr>
+    <td><code>promotions[].subFranchise</code></td>
+    <td><code>promotions[].endDate</code></td>
+  </tr>
+  <tr>
+    <td><code>promotions[].priority</code></td>
+    <td><code>promotions[].type</code></td>
+  </tr>
+</table>
+
+### Differentiating Standard vs. Specific Interest-Free Installments
+
+When you use the Pricing API, you need to know how the system distinguishes standard installments from promotional ones.
+
+Use the following structure to identify the installment type:
+
+- `paymentMethodFee[].pricingFees[].pricing{}` → Standard installments (no promotion ID)  
+- `paymentMethodFee[].pricingFees[].promos[].pricing{}` → Installments linked to a specific `PROMOTION_ID`
+
+**Key Notes**
+
+- The `pricingFees[]` array may include entries with or without a `pricing{}` object.
+- The `pricingFees[]` array may include entries with or without a `promos[]` array.
+- The `promos[]` array can contain multiple individual promotions.
+
+Depending on which elements are present, you can determine the installment type:
+
+1. **Standard + Promotional:**  
+   The installment plan includes both a standard `pricing{}` object and one or more entries in the `promos[]` array.  
+   **Example:** A 3-installment Mastercard plan may include a standard pricing option with interest, plus two different interest-free promotions targeting specific BINs.
+
+2. **Standard-Only:**  
+   The installment plan includes `pricing{}` but no `promos[]` array.  
+   **Example:** A 6-installment Visa plan offers only standard pricing with no available promotions.
+
+3. **Promotional-Only:**  
+   The installment plan includes only the `promos[]` array with no `pricing{}` object.  
+   **Example:** A 3-installment AMEX plan offers interest-free terms through a promotion that applies to all AMEX cards, with no standard pricing available.
+
+By checking these elements in the API response, you can programmatically decide which promotions to display and how to process each installment correctly.
+
+### Handling Missing Fields in Promotions
+
+In some cases, promotions do not include certain fields. The absence of a field defines how the promotion applies.
+
+| Missing Field | Meaning |
+|---------------|---------|
+| `promotions[].subFranchise` | The promotion is **not** tied to a local card (e.g., Naranja). Instead, it applies to an international brand (e.g., Mastercard) as defined by `paymentMethodMain`. |
+| `promotions[].banksNames` | The promotion applies to **all banks** for the payment method, with `paymentMethodMain` taking priority. |
+| `promotions[].iins` | The promotion applies to **all cards** under the payment method specified in `paymentMethodMain`. |
+
+### Processing a Transaction with Standard Installments
+
+To process a transaction using standard installments, specify the number of months in the `extraParameters` field:
 
 {{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+```JSON
+"extraParameters": {
+    "INSTALLMENTS_NUMBER": (number of months)
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+```XML
+<extraParameters>
+    <entry>
+        <string>INSTALLMENTS_NUMBER</string>
+        <string>Number of months</string>
+    </entry>
+</extraParameters>
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+### Processing a Transaction with General Interest-Free Installments
+
+General Interest-Free Installments plan **do not require a** `PROMOTION_ID`. Once you configure this plan in your PayU account, submit the request with the number of months in the `extraParameters` field:
+
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+```JSON
+"extraParameters": {
+    "INSTALLMENTS_NUMBER": (number of months)
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+```XML
+<extraParameters>
+    <entry>
+        <string>INSTALLMENTS_NUMBER</string>
+        <string>Number of months</string>
+    </entry>
+</extraParameters>
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+#### Interest-Free Months (MSI) in Mexico
+
+In Mexico, **General Interest-Free Installments** are commonly known as **Meses sin Intereses (MSI)**. This option allows you to offer fixed payment plans (3, 6, 9, 12, or 18 months) without interest.
+
+MSI transactions use the same structure as standard installments by specifying the number of months in the `INSTALLMENTS_NUMBER` field of the `extraParameters` object. Unlike promotional installments, MSI does not require a `PROMOTION_ID`. Valid MSI durations are 3, 6, 9, 12, or 18 months.
+
+**Fields to check:**
+- `paymentMethodFee[].pricingFees[].promos[9999].pricing.payerDetail` → has interest.
+- `paymentMethodFee[].pricingFees[].promos[9999].pricing.merchantDetail` → no interest.
+- `promotions[9999].type` = `PRICING`
+
+{{% alert title="Note" color="info"%}}
+
+Because this promotion is of type `PRICING`, PayU does not require including the `9999` promotion ID to create the transaction or authorization.
+
+{{% /alert %}}
+
+Once you configure this plan in your PayU account, submit the request with the number of months in the `extraParameters` field:
+
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+```JSON
+"extraParameters": {
+    "INSTALLMENTS_NUMBER": (number of months)
+}
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+```XML
+<extraParameters>
+    <entry>
+        <string>INSTALLMENTS_NUMBER</string>
+        <string>Number of months</string>
+    </entry>
+</extraParameters>
+```
+{{< /tab >}}
+{{< /tabs >}}
+<br>
+
+##### Considerations
+
+* Supported options: 3, 6, 9, 12, or 18 months.
+* Minimum purchase amounts:
+    - 3 months → $300 MXN
+    - 6 months → $600 MXN
+    - 9 months → $900 MXN
+    - 12 months → $1200 MXN
+    - 18 months → $1800 MXN
+* MSI is available with the following banks: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer.
+* When using the promotion always display the phrase **MESES SIN INTERESES** during the payment process. For standard installments (no promotional installments), use **PAGOS DIFERIDOS**.
+
+{{% alert title="Notes" color="info"%}}
+
+* To enable MSI plans in your account, contact your sales representative.
+
+* For additional details, see the [Payments API for Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}}).
+
+{{% /alert %}}
+
+#### Identifying General vs. Specific Interest-Free Installments Plans in Mexico
+
+Because the API handles **General Interest-Free Installments** differently in Mexico, you may confuse them with **Specific Interest-Free Installments**. Use the `promotions[].type` field in the API response to distinguish them:
+
+| Installment type | `promotions[].type` | Description | 
+|:----------------:|----------------|---------------------------------------------------|
+| Specific Interest-Free Installments | `MSI` | The term MSI is common in Mexico, but the API returns `MSI` for all countries offering Specific Interest-Free Installments: Argentina, Colombia, Peru, and Mexico. |
+| General Interest-Free Installments **(Mexico)** | `PRICING`   | In Mexico, the API uses `PRICING` for General Interest-Free Installments, even though they are known locally as Meses Sin Intereses (MSI). |
+
+### Processing a Transaction with Specific Interest-Free Installments
+
+When using a Specific Interest-Free Installments plan, include both the `PROMOTION_ID` and `INSTALLMENTS_NUMBER` inside the `extraParameters` object in your request:
+
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
@@ -1217,7 +1572,7 @@ Once you have selected an Interest-Free Installments plan, include the `PROMOTIO
 
 {{% alert title="Note" color="info"%}}
 
-For more details on including these extra parameters, refer to the corresponding Payments API documentation for your country:
+For more details on these extra parameters, see the Payments API documentation for your country:
 
 * [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}}) 
 * [Colombia]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}) 
@@ -1225,54 +1580,3 @@ For more details on including these extra parameters, refer to the corresponding
 * [Peru]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}}) 
 
 {{% /alert %}}
-
-## MSI - Interest-Free Months
-
-In Mexico, General Interest-Free Installments are commonly known as **Meses sin Intereses (MSI)**. This option allows you to offer fixed payment plans (3, 6, 9, 12, or 18 months) without interest, without the need to reference a promotion ID.
-
-### Considerations
-
-* Supported installment options: 3, 6, 9, 12, or 18 months.
-* Minimum purchase amounts required for MSI:
-    - 3 months → $300 MXN
-    - 6 months → $600 MXN
-    - 9 months → $900 MXN
-    - 12 months → $1200 MXN
-    - 18 months → $1800 MXN
-* MSI is available with the following banks: BANAMEX, BANCO REGIONAL DE MONTERREY S.A, BANCOPPEL, BANCO AZTECA, SCOTIABANK, HSBC, INBURSA, BANCA MIFEL SA, BANCO MULTIVA, BAJIO, CI BANCO, Afirme, Banregio, Banjercito, Banorte, Famsa, Invex, Premium Card Liverpool, Santander, and Bancomer.
-* When using the promotion always display the phrase **MESES SIN INTERESES** during the payment process. For standard installments (no promotional installments), use **PAGOS DIFERIDOS**.
-
-{{% alert title="Note" color="info"%}}
-
-To enable MSI plans in your account, contact your sales representative.
-
-{{% /alert %}}
-
-### MSI Request Parameters
-
-To apply MSI, include the number of months in the `extraParameters` field:
-
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-```JSON
-"extraParameters": {
-    "INSTALLMENTS_NUMBER": (number of months)
-}
-```
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-```XML
-<extraParameters>
-    <entry>
-        <string>INSTALLMENTS_NUMBER</string>
-        <string>Number of months</string>
-    </entry>
-</extraParameters>
-```
-{{< /tab >}}
-{{< /tabs >}}
-<br>
-
-For additional details on using MSI, refer to the [Payments API for Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}}).

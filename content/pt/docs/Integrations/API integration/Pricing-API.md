@@ -50,13 +50,7 @@ A tabela a seguir mostra os países onde estão disponíveis os parcelamentos pa
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-    </tr>
-    <tr>
-        <td style="text-align: left;"><img src="/assets/Panama.png" width="25px"/> &nbsp;Panamá</td>
-        <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-        <td style="text-align: center;"><span style="color: red; font-size: 16px;">❌</span></td>
-    </tr>
+    </tr>    
     <tr>
         <td style="text-align: left;"><img src="/assets/Peru.png" width="25px"/> &nbsp;Peru</td>
         <td style="text-align: center;"><span style="color: #008000; font-size: 20px; font-weight: bold;">✓</span></td>

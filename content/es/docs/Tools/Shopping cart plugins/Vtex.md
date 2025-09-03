@@ -383,8 +383,8 @@ Configura los métodos de pago que se mostrarán en el sitio web durante el proc
 
 {{% alert title="Importante" color="warning"%}}
 
-* PIX no está disponible para Brasil cuando se utiliza VTEX.
 * Los cambios en las condiciones de pago pueden tardar hasta 10 minutos en reflejarse en el flujo de pago.
+* PIX no está disponible para Brasil cuando se utiliza VTEX.
 
 {{% /alert %}}
 
@@ -502,7 +502,7 @@ Una vez activado, Google Pay estará disponible como opción de pago en el check
 
 Para más información y buenas prácticas, consulta la guía oficial de VTEX sobre cómo habilitar billeteras digitales en el <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">Centro de ayuda de VTEX</a>.
 
-##### Configuración de Métodos de Pago en Efectivo y Billeteras {#configuring-cash-payment-methods-and-wallets}
+##### Configuración de Métodos de Pago en Efectivo {#configuring-cash-payment-methods}
 
 Dado que los pagos en efectivo requieren que los clientes realicen el pago en ubicaciones físicas, puedes configurar este método de pago en VTEX como notas promisorias (_Notes Payables_).
 
@@ -510,14 +510,9 @@ Cuando configuras un método de pago en efectivo, los clientes son redirigidos a
 
 **Consideraciones:**
 
-* Asegúrate de que todos los métodos de pago y billeteras digitales que deseas configurar estén habilitados en tu cuenta de PayU, y que **sus nombres coincidan exactamente con los registrados en PayU**. Los métodos que no estén habilitados o con nombres incorrectos generarán errores en las transacciones. Si necesitas ayuda para habilitar métodos de pago o billeteras específicas,  
+* Asegúrate de que todos los métodos de pago que deseas configurar estén habilitados en tu cuenta de PayU, y que **sus nombres coincidan exactamente con los registrados en PayU**. Los métodos que no estén habilitados o con nombres incorrectos generarán errores en las transacciones. Si necesitas ayuda para habilitar métodos de pago o billeteras específicas,  
   <a href="https://colombia.support.payu.com/s/?language=es" target="_blank" rel="noopener noreferrer">contáctanos</a>.
 * Para **Boleto Bancário** en Brasil, este procedimiento no es necesario. Simplemente localiza y configura este método de pago como una condición de pago.
-* Para habilitar **Yape** como método de pago en Perú, asegúrate de que tu tienda VTEX esté desarrollada con **VTEX IO** o **FastStore**. Luego, instala la aplicación **Pop-up for Online Payment with Yape** accediendo a la URL de configuración. Reemplaza `{vtexaccount}` en la URL con el nombre de tu cuenta de VTEX (es decir, el subdominio que usas para ingresar al panel de administración de VTEX):
-    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
-    <br>**Ejemplo:**
-    <br>Si tu cuenta de VTEX es `payulatam`, la URL sería:
-    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
 
 **Paso a Paso:**
 
@@ -537,15 +532,78 @@ Cuando configuras un método de pago en efectivo, los clientes son redirigidos a
    * **Descripción**: Ingresa una descripción que se mostrará cuando el cliente seleccione este método de pago (opcional).
    * **Fecha de vencimiento de la nota promisoria**: Especifica el número de días antes de que expire el pago en efectivo. El valor predeterminado es de 7 días. Asegúrate de que este valor coincida con la configuración **Expiración pago (días)** en la afiliación de VTEX para evitar problemas de procesamiento.
 
-    {{% alert title="Nota" color="info"%}} 
-
-Para Yape o Nequi, asegúrate de ingresar el **Nombre** en letras mayúsculas exactamente así: `YAPE`, `NEQUI`.
-
-{{% /alert %}}
-
 Deja los demás campos con sus valores predeterminados.
 
 5. Haz clic en **Guardar**. Una vez creado el pago personalizado, serás redirigido para configurar una nueva **Condición de pago**. Sigue las instrucciones en la sección [Configuración de Tarjetas de Crédito o Débito](#configuring-credit-or-debit-cards).
+
+##### Configuración de Nequi {#configuring-nequi}
+
+Agregar Nequi como método de pago le permite a tu negocio llegar a millones de usuarios que prefieren billeteras digitales, ofreciéndoles una forma de pago más rápida, segura y conveniente. Esto puede ayudarte a incrementar las ventas, fortalecer la lealtad de los clientes y garantizar transacciones seguras.  
+
+Antes de comenzar, asegúrate de que Nequi esté habilitado en tu cuenta de PayU y de que **el nombre del método de pago coincida exactamente con el registrado en PayU**. Cualquier discrepancia o estado inactivo generará errores en las transacciones. Si necesitas ayuda para habilitar Nequi, por favor <a href="https://colombia.support.payu.com/s/?language=es" target="_blank" rel="noopener noreferrer">contáctanos</a>.  
+
+**Paso a paso:**
+
+1. Ingresa al panel de administración de VTEX y dirígete a **Transacciones > Pagos > Configuración**.  
+
+2. Selecciona la pestaña **Condiciones de Pago** y haz clic en el ícono de **más**.  
+
+   ![PrintScreen](/assets/VTEX/vtex11es.png)  
+
+3. Busca **NequiPayu** usando la barra de búsqueda y selecciónalo para abrir la interfaz de configuración.
+
+![PrintScreen](/assets/VTEX/vtex35.png)
+
+4. En la interfaz de configuración:
+   - Define **NEQUI** como el nombre de la condición
+   - Selecciona el proveedor
+   - Habilita el método de pago
+
+![PrintScreen](/assets/VTEX/vtex36es.png)
+
+5. Haz clic en **Guardar**. Verifica que Nequi aparezca en la pestaña **Condiciones de Pago**.  
+
+   ![PrintScreen](/assets/VTEX/vtex37es.png)  
+
+6. Una vez configurado, Nequi estará disponible como opción de pago en el checkout de VTEX. Ten en cuenta que puede tardar hasta **10 minutos** en hacerse visible.  
+
+##### Configuración de Yape {#configuring-yape}
+
+Agregar Yape como método de pago conecta tu negocio con millones de usuarios en Perú que prefieren billeteras digitales, ofreciéndoles una forma de pago simple, segura y conveniente usando solo su número de teléfono. Esto te ayuda a incrementar las ventas, atraer nuevos clientes y ofrecer transacciones respaldadas por el BCP (Banco de Crédito del Perú).  
+
+**Consideraciones:**  
+
+* Asegúrate de que Yape esté habilitado en tu cuenta de PayU y de que **el nombre del método de pago coincida exactamente con el registrado en PayU**. Cualquier discrepancia o estado inactivo generará errores en las transacciones. Si necesitas ayuda para habilitar Yape, por favor <a href="https://colombia.support.payu.com/s/?language=es" target="_blank" rel="noopener noreferrer">contáctanos</a>.  
+* Verifica que tu tienda en VTEX esté construida con **VTEX IO** o **FastStore**. Luego, instala la aplicación **Pop-up for Online Payment with Yape** accediendo a la URL de configuración. Reemplaza `{vtexaccount}` en la URL con el nombre de tu cuenta VTEX (es decir, el subdominio que usas para acceder al panel de administración de VTEX):
+    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+    <br>**Ejemplo:**
+    <br>Si tu cuenta VTEX es `payulatam`, la URL sería:
+    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+
+**Paso a paso:**  
+
+1. Ingresa al panel de administración de VTEX y dirígete a **Transacciones > Pagos > Configuración**.  
+
+2. Selecciona la pestaña **Condiciones de Pago** y haz clic en el ícono de **más**.  
+
+   ![PrintScreen](/assets/VTEX/vtex11es.png)  
+
+3. Busca **YapePayu** usando la barra de búsqueda y selecciónalo para abrir la interfaz de configuración.  
+
+   ![PrintScreen](/assets/VTEX/vtex38.png)  
+
+4. En la interfaz de configuración:
+   - Define **YAPE** como el nombre de la condición
+   - Selecciona el proveedor
+   - Habilita el método de pago
+
+   ![PrintScreen](/assets/VTEX/vtex39es.png)  
+
+5. Haz clic en **Guardar**. Verifica que Yape aparezca en la pestaña **Condiciones de Pago**.  
+
+   ![PrintScreen](/assets/VTEX/vtex40es.png)  
+
+6. Una vez configurado, Yape estará disponible como opción de pago en el checkout de VTEX. Ten en cuenta que puede tardar hasta **10 minutos** en hacerse visible.  
 
 ##### Configuración de PSE {#configuring-pse}
 

@@ -385,8 +385,8 @@ Configure os métodos de pagamento que serão exibidos no site durante o checkou
 
 {{% alert title="Importante" color="warning"%}}
 
-* O PIX não está disponível para o Brasil ao usar a VTEX.
 * As alterações nas condições de pagamento podem levar até 10 minutos para serem refletidas no fluxo de checkout.
+* O PIX não está disponível para o Brasil ao usar a VTEX.
 
 {{% /alert %}}
 
@@ -504,7 +504,7 @@ Após a ativação, o Google Pay estará disponível como uma opção de pagamen
 
 Para mais informações e boas práticas, consulte o guia oficial da VTEX sobre como ativar carteiras digitais no <a href="https://help.vtex.com/en/tracks/digital-wallet-e-wallet" target="_blank">Centro de Ajuda da VTEX</a>.
 
-##### Configurando Métodos de Pagamento em Dinheiro e Carteiras {#configuring-cash-payment-methods-and-wallets}
+##### Configurando Métodos de Pagamento em Dinheiro {#configuring-cash-payment-methods}
 
 Como os pagamentos em dinheiro exigem que os clientes efetuem o pagamento em locais físicos, você pode configurar esse método de pagamento na VTEX como notas promissórias (_Notes Payables_). 
 
@@ -512,14 +512,8 @@ Ao configurar um método de pagamento em dinheiro, os clientes são redirecionad
 
 **Considerações:**
 
-* Certifique-se de que todos os meios de pagamento e carteiras digitais que você pretende configurar estejam habilitados na sua conta PayU, e que **os nomes correspondam exatamente aos registrados na PayU**. Métodos inativos ou com nomes incorretos podem causar falhas nas transações. Se precisar de ajuda para habilitar meios de pagamento ou carteiras específicas,  
-  <a href="https://colombia.support.payu.com/s/?language=pt_BR" target="_blank" rel="noopener noreferrer">entre em contato conosco</a>.
+* Certifique-se de que todos os meios de pagamento que você pretende configurar estejam habilitados na sua conta PayU, e que **os nomes correspondam exatamente aos registrados na PayU**. Métodos inativos ou com nomes incorretos podem causar falhas nas transações. Se precisar de ajuda para habilitar meios de pagamento ou carteiras específicas, <a href="https://colombia.support.payu.com/s/?language=pt_BR" target="_blank" rel="noopener noreferrer">entre em contato conosco</a>.
 * Para o **Boleto Bancário** no Brasil, este procedimento não é necessário. Basta localizar e configurar este meio de pagamento como uma condição de pagamento.  
-* Para habilitar o **Yape** como método de pagamento no Peru, verifique se a sua loja VTEX foi desenvolvida com **VTEX IO** ou **FastStore**. Em seguida, instale o aplicativo **Pop-up for Online Payment with Yape** acessando a URL de configuração. Substitua `{vtexaccount}` na URL pelo nome da sua conta VTEX (ou seja, o subdomínio que você usa para acessar o painel administrativo da VTEX):
-    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
-    <br>**Exemplo:**
-    <br>Se a sua conta VTEX for `payulatam`, a URL será:
-    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
 
 **Passo a Passo:**
 
@@ -539,15 +533,78 @@ Ao configurar um método de pagamento em dinheiro, os clientes são redirecionad
    * **Descrição**: Insira uma descrição para exibição quando o cliente selecionar esse método de pagamento (opcional).
    * **Data de Expiração da Nota Promissória**: Especifique o número de dias antes do vencimento do pagamento em dinheiro. O padrão é 7 dias. Certifique-se de que esse valor corresponde à configuração **Expiração do Pagamento (dias)** configurada na afiliação da VTEX para evitar problemas de processamento.
 
-    {{% alert title="Nota" color="info"%}} 
-
-Para Yape ou Nequi, certifique-se de inserir o **Nome** em letras maiúsculas exatamente da seguinte forma: `YAPE`, `NEQUI`.
-
-{{% /alert %}}
-
 Deixe os demais campos com seus valores padrão. 
 
 5. Clique em **Salvar**. Depois que o pagamento personalizado for criado, você será redirecionado para configurar uma nova **Condição de Pagamento**. Siga as instruções na seção [Configurando Cartões de Crédito ou Débito](#configuring-credit-or-debit-cards).
+
+##### Configuração do Nequi {#configuring-nequi}
+
+Adicionar Nequi como método de pagamento permite que sua empresa alcance milhões de usuários que preferem carteiras digitais, oferecendo uma forma de pagamento mais rápida, segura e conveniente. Isso pode ajudar a aumentar as vendas, fortalecer a fidelidade dos clientes e garantir transações seguras.  
+
+Antes de começar, certifique-se de que o Nequi esteja habilitado em sua conta PayU e que **o nome do método de pagamento corresponda exatamente ao registrado na PayU**. Qualquer divergência ou status inativo resultará em erros de transação. Se precisar de ajuda para habilitar o Nequi, por favor <a href="https://colombia.support.payu.com/s/?language=pt_BR" target="_blank" rel="noopener noreferrer">entre em contato conosco</a>.  
+
+**Passo a passo:**
+
+1. Acesse o painel de administração da VTEX e vá até **Transações > Pagamentos > Configurações**.  
+
+2. Selecione a aba **Condições de Pagamento** e clique no ícone de **mais**.  
+
+   ![PrintScreen](/assets/VTEX/vtex11pt.png)  
+
+3. Procure por **NequiPayu** usando a barra de pesquisa e selecione-o para abrir a interface de configuração.  
+
+   ![PrintScreen](/assets/VTEX/vtex35.png)
+
+4. Na interface de configuração:
+   - Defina **NEQUI** como o nome da condição
+   - Escolha o provedor
+   - Habilite o método de pagamento
+
+![PrintScreen](/assets/VTEX/vtex36pt.png)  
+
+5. Clique em **Salvar**. Confirme que o Nequi aparece na aba **Condições de Pagamento**.  
+
+   ![PrintScreen](/assets/VTEX/vtex37pt.png)  
+
+6. Uma vez configurado, o Nequi estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.  
+
+##### Configuração do Yape {#configuring-yape}
+
+Adicionar Yape como método de pagamento conecta sua empresa a milhões de usuários no Peru que preferem carteiras digitais, oferecendo uma forma simples, segura e conveniente de pagar usando apenas o número de telefone. Isso ajuda a aumentar as vendas, atrair novos clientes e fornecer transações confiáveis respaldadas pelo BCP (Banco de Crédito do Perú).
+
+**Considerações:**  
+
+* Certifique-se de que o Yape esteja habilitado em sua conta PayU e que **o nome do método de pagamento corresponda exatamente ao registrado na PayU**. Qualquer divergência ou status inativo resultará em erros de transação. Se precisar de ajuda para habilitar o Yape, por favor <a href="https://colombia.support.payu.com/s/?language=pt_BR" target="_blank" rel="noopener noreferrer">entre em contato conosco</a>.  
+* Verifique se sua loja VTEX foi criada com **VTEX IO** ou **FastStore**. Em seguida, instale o aplicativo **Pop-up for Online Payment with Yape** acessando a URL de configuração. Substitua `{vtexaccount}` na URL abaixo pelo nome da sua conta VTEX (isto é, o subdomínio que você usa para acessar o painel de administração da VTEX):
+    `https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+    <br>**Exemplo:**
+    <br>Se sua conta VTEX for `payulatam`, a URL será:
+    <br>`https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup`
+
+**Passo a passo:**  
+
+1. Acesse o painel de administração da VTEX e vá até **Transações > Pagamentos > Configurações**.  
+
+2. Selecione a aba **Condições de Pagamento** e clique no ícone de **mais**.  
+
+   ![PrintScreen](/assets/VTEX/vtex11pt.png)  
+
+3. Procure por **YapePayu** usando a barra de pesquisa e selecione-o para abrir a interface de configuração.  
+
+   ![PrintScreen](/assets/VTEX/vtex38.png)  
+
+4. Na interface de configuração:
+   - Defina **YAPE** como o nome da condição
+   - Escolha o provedor
+   - Habilite o método de pagamento
+
+![PrintScreen](/assets/VTEX/vtex39pt.png)  
+
+5. Clique em **Salvar**. Confirme que o Yape aparece na aba **Condições de Pagamento**.  
+
+   ![PrintScreen](/assets/VTEX/vtex40pt.png)  
+
+6. Uma vez configurado, o Yape estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.  
 
 ##### Configurando PSE {#configuring-pse}
 
