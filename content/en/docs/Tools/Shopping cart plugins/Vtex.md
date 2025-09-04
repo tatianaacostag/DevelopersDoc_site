@@ -568,9 +568,13 @@ Before you begin, make sure that Nequi is enabled in your PayU account and that 
 
 6. Once configured, Nequi will be available as a payment option at VTEX checkout. Please note that it may take up to **10 minutes** for the option to become visible.
 
+###### Testing in Sandbox
+
+For information on how to simulate Nequi transactions in the Sandbox environment, refer to the <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-colombia.html#sandbox-environment-testing" target="_blank" rel="noopener noreferrer">Payments API documentation</a>.
+
 ##### Configuring Yape
 
-Yape as a payment method connects your business with millions of users in Peru who prefer digital wallets, offering them a simple, secure, and convenient way to pay with just their phone number—helping you boost sales, attract new customers, and provide trusted transactions backed by BCP (Banco de Crédito del Perú).
+Adding Yape as a payment method allows your business to connect with millions of users in Peru who prefer digital wallets. With Yape, customers can pay easily and securely using only their phone number—helping you increase sales, attract new customers, and ensure trusted transactions backed by BCP (Banco de Crédito del Perú).
 
 **Considerations:**
 
@@ -605,6 +609,10 @@ Yape as a payment method connects your business with millions of users in Peru w
 ![PrintScreen](/assets/VTEX/vtex40.png)
 
 6. Once configured, Yape will be available as a payment option at VTEX checkout. Please note that it may take up to **10 minutes** for the option to become visible.
+
+###### Testing in Sandbox
+
+For information on how to simulate Yape transactions in the Sandbox environment, refer to the <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-peru.html#testing-in-sandbox-environment" target="_blank" rel="noopener noreferrer">Payments API documentation</a>.
 
 ##### Configuring PSE
 

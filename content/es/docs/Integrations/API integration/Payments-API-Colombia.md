@@ -652,7 +652,7 @@ La lista de documentos disponibles es:
 
 * Para probar las transferencias bancarias PSE en el ambiente de Sandbox de PayU, consulta la [Guía de pruebas de PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
 * Todos los valores de pago deben estar formateados en miles sin excepción (p.ej., 1,200.00 o 1,200).
-* Si la solicitud de pago es exitosa, el estado de la transacción es pendiente (`PENDING`) y el responseCode es `PENDING_TRANSACTION_CONFIRMATION`; esto es debido a que el pagador es redirigido al naco seleccionado para completar el pago; debes redirigir al pagador a la URL retornada en el extra parámetro `BANK_URL`.
+* Si la solicitud de pago es exitosa, el estado de la transacción es pendiente (`PENDING`) y el `responseCode` es `PENDING_TRANSACTION_CONFIRMATION`; esto es debido a que el pagador es redirigido al banco seleccionado para completar el pago; debes redirigir al pagador a la URL retornada en el extra parámetro `BANK_URL`.
 * La URL retornada en el extra parámetro `BANK_URL` se configura en el Modulo PayU y debe mostrar la siguiente información:<br><br>![PrintScreen](/assets/Payments/PSEresponse-es.png)<br>Los parámetros que empiezan con el símbolo $ se envían vía `GET`.
 * Una vez el cliente hace clic en el botón de pago, debe desactivarse para evitar enviar una nueva solicitud sobre el mismo pago.
 * No muestres la página del banco en contenedores (frames, panel, iframes, etc). El proceso de pago debe ser fluido. Además, evita abrir la página del banco en una nueva pestaña o en una nueva ventana del navegador. Si necesitas utilizar una nueva pestaña o ventana, bloquea la página de origen para evitar enviar una nueva solicitud sobre el mismo pago.

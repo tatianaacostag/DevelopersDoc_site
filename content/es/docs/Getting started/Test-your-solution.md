@@ -24,12 +24,11 @@ Para realizar pruebas con PayU, utiliza las credenciales proporcionadas a contin
 
 {{< testaccounts/accounts_es >}}
 
-{{% alert title="Notas" color="info"%}}
+## Consideraciones {#considerations}
 
+* Al realizar pruebas, siempre **envía montos de transacción equivalentes a al menos 1 USD**, sin importar la moneda que utilices en el país donde operas. Los montos menores pueden resultar en pruebas fallidas o inválidas.
 * Consulta la documentación de <a href="https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#probar-la-autenticaci%C3%B3n-3ds" target="_blank">Autenticación 3DS Gestionada por PayU</a> para encontrar las credenciales para probar 3DS.
 * El entorno de prueba no replica los datos de tu cuenta de producción.
-
-{{% /alert %}}
 
 ## Tarjetas de Prueba {#test-cards}
 

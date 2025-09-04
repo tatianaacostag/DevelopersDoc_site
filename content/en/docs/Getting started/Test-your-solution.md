@@ -24,12 +24,11 @@ To conduct tests with PayU, use the credentials provided below in your requests,
 
 {{< testaccounts/accounts >}}
 
-{{% alert title="Notes" color="info"%}}
+## Considerations
 
+* When testing, always **submit transaction amounts equivalent to at least 1 USD**, regardless of the currency you use in the country where you are operating. Lower amounts may result in failed or invalid tests.
 * Refer to the <a href="https://developers.payulatam.com/latam/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testing-the-3ds-authentication" target="_blank">PayU-Handled 3DS Authentication</a> documentation to find the credentials for testing 3DS.
 * The test environment does not replicate data from your production account.
-
-{{% /alert %}}
 
 ## Test Cards
 

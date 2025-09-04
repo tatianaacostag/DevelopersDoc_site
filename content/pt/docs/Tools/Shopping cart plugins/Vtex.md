@@ -566,11 +566,15 @@ Antes de começar, certifique-se de que o Nequi esteja habilitado em sua conta P
 
    ![PrintScreen](/assets/VTEX/vtex37pt.png)  
 
-6. Uma vez configurado, o Nequi estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.  
+6. Uma vez configurado, o Nequi estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.
+
+###### Testes em Sandbox
+
+Para obter informações sobre como simular transações do Nequi no ambiente Sandbox, consulte a <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-colombia.html#sanbox-environment-testing" target="_blank" rel="noopener noreferrer">documentação da API de Pagamentos</a>.
 
 ##### Configuração do Yape {#configuring-yape}
 
-Adicionar Yape como método de pagamento conecta sua empresa a milhões de usuários no Peru que preferem carteiras digitais, oferecendo uma forma simples, segura e conveniente de pagar usando apenas o número de telefone. Isso ajuda a aumentar as vendas, atrair novos clientes e fornecer transações confiáveis respaldadas pelo BCP (Banco de Crédito do Perú).
+Adicionar Yape como método de pagamento permite que sua empresa se conecte a milhões de usuários no Peru que preferem carteiras digitais. Com o Yape, os clientes podem pagar de forma fácil e segura usando apenas o número de telefone — ajudando você a aumentar as vendas, atrair novos clientes e garantir transações confiáveis respaldadas pelo BCP (Banco de Crédito do Perú).
 
 **Considerações:**  
 
@@ -605,6 +609,10 @@ Adicionar Yape como método de pagamento conecta sua empresa a milhões de usuá
    ![PrintScreen](/assets/VTEX/vtex40pt.png)  
 
 6. Uma vez configurado, o Yape estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.  
+
+###### Testes em Sandbox
+
+Para obter informações sobre como simular transações do Yape no ambiente Sandbox, consulte a <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-peru.html#testando-no-ambiente-de-sandbox" target="_blank" rel="noopener noreferrer">documentação da API de Pagamentos</a>.
 
 ##### Configurando PSE {#configuring-pse}
 

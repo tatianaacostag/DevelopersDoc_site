@@ -565,11 +565,15 @@ Antes de comenzar, asegúrate de que Nequi esté habilitado en tu cuenta de PayU
 
    ![PrintScreen](/assets/VTEX/vtex37es.png)  
 
-6. Una vez configurado, Nequi estará disponible como opción de pago en el checkout de VTEX. Ten en cuenta que puede tardar hasta **10 minutos** en hacerse visible.  
+6. Una vez configurado, Nequi estará disponible como opción de pago en el checkout de VTEX. Ten en cuenta que puede tardar hasta **10 minutos** en hacerse visible.
+
+###### Pruebas en Sandbox
+
+Para obtener información sobre cómo simular transacciones de Nequi en el entorno Sandbox, consulta la <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-colombia.html#sanbox-environment-testing" target="_blank" rel="noopener noreferrer">documentación de la API de Pagos</a>.
 
 ##### Configuración de Yape {#configuring-yape}
 
-Agregar Yape como método de pago conecta tu negocio con millones de usuarios en Perú que prefieren billeteras digitales, ofreciéndoles una forma de pago simple, segura y conveniente usando solo su número de teléfono. Esto te ayuda a incrementar las ventas, atraer nuevos clientes y ofrecer transacciones respaldadas por el BCP (Banco de Crédito del Perú).  
+Agregar Yape como método de pago permite que tu negocio se conecte con millones de usuarios en Perú que prefieren billeteras digitales. Con Yape, los clientes pueden pagar de manera fácil y segura usando solo su número de teléfono, lo que te ayuda a incrementar las ventas, atraer nuevos clientes y garantizar transacciones confiables respaldadas por el BCP (Banco de Crédito del Perú).
 
 **Consideraciones:**  
 
@@ -604,6 +608,10 @@ Agregar Yape como método de pago conecta tu negocio con millones de usuarios en
    ![PrintScreen](/assets/VTEX/vtex40es.png)  
 
 6. Una vez configurado, Yape estará disponible como opción de pago en el checkout de VTEX. Ten en cuenta que puede tardar hasta **10 minutos** en hacerse visible.  
+
+###### Pruebas en Sandbox
+
+Para obtener información sobre cómo simular transacciones de Yape en el entorno Sandbox, consulta la <a href="https://developers.payulatam.com/latam/es/docs/integrations/api-integration/payments-api-peru.html#pruebas-en-ambiente-sandbox" target="_blank" rel="noopener noreferrer">documentación de la API de Pagos</a>.
 
 ##### Configuración de PSE {#configuring-pse}
 
