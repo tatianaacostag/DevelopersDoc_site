@@ -24,12 +24,12 @@ The table below outlines VTEX’s availability by country and the supported paym
 
 | Country | Credit Cards | Cash Payments | Other Methods |
 |-|-|-|-|
-| <img src="/assets/Argentina.png" width="20px"/> &nbsp;Argentina &nbsp; | Credit cards | Cash payments | - |
+| <img src="/assets/Argentina.png" width="20px"/> &nbsp;Argentina &nbsp; | Credit cards, Google Pay | Cash payments | - |
 | <img src="/assets/Brasil.png" width="20px"/> &nbsp;Brazil | AMEX, MasterCard, Visa, Google Pay | Boleto Bancário | - |
 | <img src="/assets/Colombia.png" width="20px"/> &nbsp;Colombia &nbsp; | AMEX, Codensa, Diners, MasterCard, Visa, Google Pay | Efecty, Su Red, bank reference | PSE, Nequi |
-| <img src="/assets/Chile.png" width="20px"/> &nbsp;Chile | Credit cards | Cash payments | - |
-| <img src="/assets/Mexico.png" width="20px"/> &nbsp;Mexico | Credit cards | Cash payments | SPEI |
-| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa | - | Yape |
+| <img src="/assets/Chile.png" width="20px"/> &nbsp;Chile | Credit cards, Google Pay | Cash payments | - |
+| <img src="/assets/Mexico.png" width="20px"/> &nbsp;Mexico | Credit cards, Google Pay | Cash payments | SPEI |
+| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa, Google Pay | - | Yape |
 
 ## Activating Your PayU Enterprise Account (Live Mode)
 
@@ -568,6 +568,8 @@ Before you begin, make sure that Nequi is enabled in your PayU account and that 
 
 6. Once configured, Nequi will be available as a payment option at VTEX checkout. Please note that it may take up to **10 minutes** for the option to become visible.
 
+![PrintScreen](/assets/VTEX/vtex41en.png)
+
 ###### Testing in Sandbox
 
 For information on how to simulate Nequi transactions in the Sandbox environment, refer to the <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-colombia.html#sandbox-environment-testing" target="_blank" rel="noopener noreferrer">Payments API documentation</a>.
@@ -609,6 +611,8 @@ Adding Yape as a payment method allows your business to connect with millions of
 ![PrintScreen](/assets/VTEX/vtex40.png)
 
 6. Once configured, Yape will be available as a payment option at VTEX checkout. Please note that it may take up to **10 minutes** for the option to become visible.
+
+![PrintScreen](/assets/VTEX/vtex42en.png)
 
 ###### Testing in Sandbox
 

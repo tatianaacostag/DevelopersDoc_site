@@ -24,12 +24,12 @@ A tabela abaixo mostra a disponibilidade da VTEX por país e os métodos de paga
 
 | País | Cartões de Crédito | Pagamentos em Dinheiro | Outros Métodos |
 |-|-|-|-|
-| <img src="/assets/Argentina.png" width="20px"/> &nbsp;Argentina &nbsp; | Cartões de crédito | Pagamentos em dinheiro | - |
+| <img src="/assets/Argentina.png" width="20px"/> &nbsp;Argentina &nbsp; | Cartões de crédito, Google Pay | Pagamentos em dinheiro | - |
 | <img src="/assets/Brasil.png" width="20px"/> &nbsp;Brasil | AMEX, MasterCard, Visa, Google Pay | Boleto Bancário | - |
 | <img src="/assets/Colombia.png" width="20px"/> &nbsp;Colômbia &nbsp; | AMEX, Codensa, Diners, MasterCard, Visa, Google Pay | Efecty, Su Red, referência bancária | PSE, Nequi |
-| <img src="/assets/Chile.png" width="20px"/> &nbsp;Chile | Cartões de crédito | Pagamentos em dinheiro | - |
-| <img src="/assets/Mexico.png" width="20px"/> &nbsp;México | Cartões de crédito | Pagamentos em dinheiro | SPEI |
-| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa | - | Yape |
+| <img src="/assets/Chile.png" width="20px"/> &nbsp;Chile | Cartões de crédito, Google Pay | Pagamentos em dinheiro | - |
+| <img src="/assets/Mexico.png" width="20px"/> &nbsp;México | Cartões de crédito, Google Pay | Pagamentos em dinheiro | SPEI |
+| <img src="/assets/Peru.png" width="20px"/> &nbsp;Peru | AMEX, MasterCard, Visa, Google Pay | - | Yape |
 
 ## Ativando sua Conta PayU Enterprise (Modo Ativo) {#activating-your-payu-enterprise-account-live-mode}
 
@@ -568,6 +568,8 @@ Antes de começar, certifique-se de que o Nequi esteja habilitado em sua conta P
 
 6. Uma vez configurado, o Nequi estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.
 
+![PrintScreen](/assets/VTEX/vtex41en.png)
+
 ###### Testes em Sandbox
 
 Para obter informações sobre como simular transações do Nequi no ambiente Sandbox, consulte a <a href="https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-colombia.html#sanbox-environment-testing" target="_blank" rel="noopener noreferrer">documentação da API de Pagamentos</a>.
@@ -606,9 +608,11 @@ Adicionar Yape como método de pagamento permite que sua empresa se conecte a mi
 
 5. Clique em **Salvar**. Confirme que o Yape aparece na aba **Condições de Pagamento**.  
 
-   ![PrintScreen](/assets/VTEX/vtex40pt.png)  
+![PrintScreen](/assets/VTEX/vtex40pt.png)  
 
-6. Uma vez configurado, o Yape estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.  
+6. Uma vez configurado, o Yape estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até **10 minutos** para que a opção fique visível.
+
+![PrintScreen](/assets/VTEX/vtex42en.png)
 
 ###### Testes em Sandbox
 

@@ -1217,6 +1217,20 @@ Use the following fields from the Pricing API response to determine eligibility 
 
 By validating this hierarchy, you ensure that users only see installment options that apply to their card.
 
+#### Checkout Examples
+
+##### Example: Standard Installments in Argentina
+
+In this example, the payer covers the interest. Values in `paymentMethodFee[].pricingFees[].pricing.payerDetail` are greater than `0`.
+
+![PrintScreen](/assets/Promotions/promo2.png)
+
+##### Example: Specific Interest-Free Installments in Argentina
+
+In this example, the merchant covers the interest. Values in `paymentMethodFee[].pricingFees[].promos[].pricing.merchantDetail` are greater than `0`.
+
+![PrintScreen](/assets/Promotions/promo3.png)
+
 #### Displaying CFT and TEA in Argentina
 
 According to Resolution E 51/2017 of the Secretaría de Comercio (Argentina), merchants must clearly display financing information when processing credit or debit card transactions with installments.
@@ -1335,7 +1349,8 @@ When you query the Pricing API, you can identify a specific promotional installm
 
 This type of promotion may apply to specific banks or BINs tied to a particular card brand.
 
-**Validation example:**
+#### Validating Specific Interest-Free Installments
+
 - Values in `paymentMethodFee[].pricingFees[].promos[].pricing.payerDetail` = `0`
 - Values in `paymentMethodFee[].pricingFees[].promos[].pricing.merchantDetail` > `0`
 
@@ -1371,6 +1386,78 @@ To fully understand a promotion’s conditions, check the `promotions[]` object 
     <td><code>promotions[].type</code></td>
   </tr>
 </table>
+
+{{% alert title="Important" color="warning"%}}
+
+When displaying **Specific Interest-Free Installments** at checkout, make sure to show them **only if the BIN, bank, or payment method matches the user’s card**.  
+If you display an ineligible promotion and the user selects it, the transaction will be declined because PayU cannot find a valid authorization route.
+
+{{% /alert %}}
+
+#### Response Example for Specific Interest-Free Installments
+
+The following example illustrates how a response may look when a promotion is tied to specific conditions such as **BIN ranges, banks, card brands, or days of the week**.  
+
+{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+
+{{< tab tabNum="1" >}}
+
+```JSON
+"promotions": [
+  {
+    "id": 1218,
+    "title": "ABC Bank",
+    "termsAndConditions": "6-month interest-free financing for cards with BIN 828076 from ABC Bank. Promotion valid from 08/20/2025 to 08/20/2025. Applies only on weekdays: Tuesday",
+    "iin": [
+      "828076"
+    ],
+    "paymentMethodMain": "VISA",
+    "startDate": "2025-08-20 00:00:00",
+    "endDate": "2025-08-20 23:59:00",
+    "days": [
+      "TUESDAY"
+    ],
+    "priority": 10,
+    "type": "MSI"
+  }
+]
+
+```
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+
+```XML
+<promotions>
+  <promotion>
+    <id>1218</id>
+    <title>ABC Bank</title>
+    <termsAndConditions>
+      6-month interest-free financing for cards with BIN 828076 from ABC Bank. Promotion valid from 08/20/2025 to 08/20/2025. Applies only on weekdays: Tuesday
+    </termsAndConditions>
+    <iin>
+      <value>828076</value>
+    </iin>
+    <paymentMethodMain>VISA</paymentMethodMain>
+    <startDate>2025-08-20 00:00:00</startDate>
+    <endDate>2025-08-20 23:59:00</endDate>
+    <days>
+      <day>TUESDAY</day>
+    </days>
+    <priority>10</priority>
+    <type>MSI</type>
+  </promotion>
+</promotions>
+```
+{{< /tab >}}
+
+{{< /tabs >}}
+
+##### Displaying the Terms and Conditions at Checkout
+
+You can use the `termsAndConditions` field to state the details for Specific Interest-Free Installments plans. Below is an example of how to show the payer the conditions at checkout using the response retrieved above:
+
+<img src="/assets/Promotions/promo4.png" style="display: block; margin: 0 auto; width: 550px;">
 
 ### Differentiating Standard vs. Specific Interest-Free Installments
 
@@ -1417,7 +1504,7 @@ In some cases, promotions do not include certain fields. The absence of a field 
 
 To process a transaction using standard installments, specify the number of months in the `extraParameters` field:
 
-{{< tabs tabTotal="2" tabID="2" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
@@ -1444,7 +1531,7 @@ To process a transaction using standard installments, specify the number of mont
 
 General Interest-Free Installments plan **do not require a** `PROMOTION_ID`. Once you configure this plan in your PayU account, submit the request with the number of months in the `extraParameters` field:
 
-{{< tabs tabTotal="2" tabID="3" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
@@ -1474,8 +1561,8 @@ In Mexico, **General Interest-Free Installments** are commonly known as **Meses 
 MSI transactions use the same structure as standard installments by specifying the number of months in the `INSTALLMENTS_NUMBER` field of the `extraParameters` object. Unlike promotional installments, MSI does not require a `PROMOTION_ID`. Valid MSI durations are 3, 6, 9, 12, or 18 months.
 
 **Fields to check:**
-- `paymentMethodFee[].pricingFees[].promos[9999].pricing.payerDetail` → has interest.
-- `paymentMethodFee[].pricingFees[].promos[9999].pricing.merchantDetail` → no interest.
+- `paymentMethodFee[].pricingFees[].promos[9999].pricing.payerDetail` → no interest.
+- `paymentMethodFee[].pricingFees[].promos[9999].pricing.merchantDetail` → has interest.
 - `promotions[9999].type` = `PRICING`
 
 {{% alert title="Note" color="info"%}}
@@ -1486,7 +1573,7 @@ Because this promotion is of type `PRICING`, PayU does not require including the
 
 Once you configure this plan in your PayU account, submit the request with the number of months in the `extraParameters` field:
 
-{{< tabs tabTotal="2" tabID="4" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
@@ -1542,7 +1629,7 @@ Because the API handles **General Interest-Free Installments** differently in Me
 
 When using a Specific Interest-Free Installments plan, include both the `PROMOTION_ID` and `INSTALLMENTS_NUMBER` inside the `extraParameters` object in your request:
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 ```JSON
 "extraParameters": {
