@@ -31,6 +31,15 @@ The table below shows where each type of installment option is available across 
       <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico<br>      
       <img src="/assets/Peru.png" width="15px"/> &nbsp;Peru
     </td>
+  </tr>  
+  <tr>
+    <td><strong>General Interest-Free Installments (MSI)</strong></td>
+    <td style="width: 30%;" >
+      <img src="/assets/Argentina.png" width="15px"/> &nbsp;Argentina
+    </td>  
+    <td style="width: 70%;" >      
+      <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico
+    </td>
   </tr>
   <tr>
     <td><strong>Specific Interest-Free Installments</strong></td>
@@ -41,15 +50,6 @@ The table below shows where each type of installment option is available across 
     <td style="width: 70%;" >    
       <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico<br>
       <img src="/assets/Peru.png" width="15px"/> &nbsp;Peru
-    </td>
-  </tr>
-  <tr>
-    <td><strong>General Interest-Free Installments (MSI)</strong></td>
-    <td style="width: 30%;" >
-      <img src="/assets/Argentina.png" width="15px"/> &nbsp;Argentina
-    </td>  
-    <td style="width: 70%;" >      
-      <img src="/assets/Mexico.png" width="15px"/> &nbsp;Mexico
     </td>
   </tr>  
 </table>
@@ -191,7 +191,7 @@ This section describes the parameters used in the API request and the fields ret
 | `accountId` | Unique identifier of your account. | Yes |
 | `currency` | Currency associated with your account. | No |
 | `amount` | Total amount of the purchase. Used to calculate the fees shown in the response. Does not filter promotions by amount. | Yes |
-| `paymentMethod` | Optional parameter to filter promotions by payment method. | No |
+| `paymentMethod` | Optional parameter to filter promotions by payment method. For more information about available methods, see the [Select your Payment Method](https://developers.payulatam.com/latam/en/docs/getting-started/select-your-payment-method.html) documentation. | No |
 | `tax` | Amount of tax included in the transaction. Applicable only in Argentina and Colombia. | No |
 | `taxReturnBase` | Base value used to calculate the tax. Applicable only in Argentina and Colombia. | No |
 
@@ -1185,6 +1185,15 @@ https://sandbox.api.payulatam.com/payments-api/rest/v4.9/pricing?accountId=51663
 
 This section explains how to use and apply the different installment plans.
 
+{{% alert title="Note" color="info"%}}
+
+Consider that the Pricing API only provides information about available installment options, to create and submit transactions, use the Payments API of the corresponding country:
+
+* [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Brazil]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) | [Chile]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) | [Colombia]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
+| [Peru]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}})
+
+{{% /alert %}}
+
 ### Installment Types
 
 The table below summarizes the available installment types, their required parameters, and who covers the interest.
@@ -1192,8 +1201,8 @@ The table below summarizes the available installment types, their required param
 | Installment Type | Applicable Countries | Required Parameters | Who Covers the Interest? | Notes |
 | --- | --- | --- | --- | --- |
 | **Standard Installments** | Argentina, Brazil, Chile, Colombia, Mexico, Peru | `INSTALLMENTS_NUMBER` | Payer | Default installment plan with interest. |
-| **Specific Interest-Free Installments** | Argentina, Colombia, Mexico, Peru | `PROMOTION_ID` + `INSTALLMENTS_NUMBER` | Merchant | Linked to a specific promotion or agreement. |
 | **General Interest-Free Installments (MSI)** | Argentina, Mexico | `INSTALLMENTS_NUMBER` | Merchant | Must be enabled in your PayU account. No promotion ID required. In Mexico, the promotion ID 9999 is not required. |
+| **Specific Interest-Free Installments** | Argentina, Colombia, Mexico, Peru | `PROMOTION_ID` + `INSTALLMENTS_NUMBER` | Merchant | Linked to a specific promotion or agreement. |
 
 **Considerations:**
 
@@ -1225,11 +1234,17 @@ In this example, the payer covers the interest. Values in `paymentMethodFee[].pr
 
 ![PrintScreen](/assets/Promotions/promo2.png)
 
+##### Example: General Interest-Free Installments in Argentina
+
+In this example, the merchant covers the interest. Values in `paymentMethodFee[].pricingFees[].pricing.merchantDetail` are greater than `0`.
+
+![PrintScreen](/assets/Promotions/promo3.png)
+
 ##### Example: Specific Interest-Free Installments in Argentina
 
 In this example, the merchant covers the interest. Values in `paymentMethodFee[].pricingFees[].promos[].pricing.merchantDetail` are greater than `0`.
 
-![PrintScreen](/assets/Promotions/promo3.png)
+![PrintScreen](/assets/Promotions/promo5.png)
 
 #### Displaying CFT and TEA in Argentina
 
@@ -1300,7 +1315,7 @@ The table below shows how to identify the installment type based on how the syst
         <br>In Mexico: <br>
         <code>paymentMethodFee[].pricingFees[]. <br> promos[9999].pricing.merchantDetail</code> = <code>0</code><p>
       </td>
-      <td>Bank (outside the promotion system)</td>
+      <td>Bank (outside PayU's Pricing API)</td>
       <td>Interest-free from PayU's perspective; any fees come directly from the bank.</td>
     </tr>
     <tr>
@@ -1389,8 +1404,7 @@ To fully understand a promotion’s conditions, check the `promotions[]` object 
 
 {{% alert title="Important" color="warning"%}}
 
-When displaying **Specific Interest-Free Installments** at checkout, make sure to show them **only if the BIN, bank, or payment method matches the user’s card**.  
-If you display an ineligible promotion and the user selects it, the transaction will be declined because PayU cannot find a valid authorization route.
+When displaying **Specific Interest-Free Installments** at checkout, make sure to show them **only if the BIN, bank, or payment method matches the user’s card**. If you display an ineligible promotion and the user selects it, the transaction will be declined because PayU cannot find a valid authorization route.
 
 {{% /alert %}}
 
@@ -1527,6 +1541,15 @@ To process a transaction using standard installments, specify the number of mont
 {{< /tabs >}}
 <br>
 
+{{% alert title="Note" color="info"%}}
+
+To create and submit the transactions, use the Payments API of the corresponding country:
+
+* [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Brazil]({{< ref "Payments-API-Brazil.md#submit-transactions-using-credit-cards" >}}) | [Chile]({{< ref "Payments-API-Chile.md#submit-transactions-using-credit-debit-or-prepaid-cards" >}}) | [Colombia]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
+| [Peru]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}})
+
+{{% /alert %}}
+
 ### Processing a Transaction with General Interest-Free Installments
 
 General Interest-Free Installments plan **do not require a** `PROMOTION_ID`. Once you configure this plan in your PayU account, submit the request with the number of months in the `extraParameters` field:
@@ -1553,6 +1576,14 @@ General Interest-Free Installments plan **do not require a** `PROMOTION_ID`. Onc
 {{< /tab >}}
 {{< /tabs >}}
 <br>
+
+{{% alert title="Note" color="info"%}}
+
+To create and submit the transactions, use the Payments API of the corresponding country:
+
+* [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
+
+{{% /alert %}}
 
 #### Interest-Free Months (MSI) in Mexico
 
@@ -1659,11 +1690,153 @@ When using a Specific Interest-Free Installments plan, include both the `PROMOTI
 
 {{% alert title="Note" color="info"%}}
 
-For more details on these extra parameters, see the Payments API documentation for your country:
+To create and submit the transactions, use the Payments API of the corresponding country:
 
-* [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}}) 
-* [Colombia]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}) 
-* [Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
-* [Peru]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}}) 
+* [Argentina]({{< ref "Payments-API-Argentina.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Colombia]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}) | [Mexico]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
+| [Peru]({{< ref "Payments-API-Peru.md#submit-transactions-using-credit-or-debit-cards" >}})
 
 {{% /alert %}}
+
+### Processing Transactions with Installments via PayU Enterprise
+
+When integrating **PayU Enterprise** with the **PayU Latam Pricing API**, you may encounter differences in naming conventions, structures, and field mappings.  
+To ensure installment plans and promotions are displayed and applied correctly, you need to:
+
+1. **Validate decimal separators** for consistent formatting between the APIs.
+2. **Map card vendors** to align naming conventions.
+3. **Match promotions** with the correct card or bank details using BINs, bank names, or payment methods.
+4. **Optionally:** Support tokenized cards while displaying installment options.
+5. **Optionally:** Send data in charge requests for transaction routing in Argentina
+
+The following sections describe these requirements in detail.
+
+#### Formatting Amounts Between PayU Enterprise and PayU Latam
+
+When retrieving amounts from the **PayU Enterprise API**, ensure that decimal formatting is compatible with the **Pricing API**. Format values as follows:
+
+* Use a maximum of two decimal places.
+* Remove any unnecessary separators.
+
+**Examples of valid formatting in the Pricing API:**
+
+* Send **$1000** as `1000.00` or `1000`.
+* Send **$50.25** as `50.25`.
+
+Also, ensure proper mapping when working with related fields between the two APIs:
+
+- In **PayU Enterprise**:  
+  - `order > tax_amount`  
+  - `order > sub_total`
+
+<p>
+
+- In **PayU Latam Pricing API**:  
+  - `tax`  
+  - `taxReturnBase`
+
+{{% alert title="Note" color="info"%}}
+
+The `tax` and `taxReturnBase` parameters are only applicable in **Argentina** and **Colombia**.
+
+{{% /alert %}}
+
+#### Mapping Card Vendors
+
+Card vendors may be named differently in the Pricing API and PayU Enterprise. To ensure installment options display correctly, map vendor values between the two systems.
+
+**Considerations:**
+* The **Pricing API** returns the card vendor in the `paymentMethodFee > paymentMethod` field.
+* The **PayU Enterprise API** returns the card vendor under the `vendor` field.
+
+The table below provides the mapping between the two sources:
+
+| Pricing API (`paymentMethodFee > paymentMethod`) | PayU Enterprise (`vendor`) | Notes |
+| --- | --- | --- |
+| `AMEX` | `AMERICAN EXPRESS` | Same brand, different naming convention |
+| `ARGENCARD` | `ARGENCARD` | Identical |
+| `CABAL` | `CABAL` | Identical |
+| `CENCOSUD` | `CENCOSUD CARD` | Same brand, “CARD” suffix in PayU Enterprise |
+| `DINERS` | `DINERS CLUB INTERNATIONAL` | Same brand, full name in PayU Enterprise |
+| `ELO` | `ELO` | Identical |
+| `MASTERCARD` | `MASTERCARD` | Identical |
+| `NARANJA` | `NARANJA CARD` | Same brand, “CARD” suffix in PayU Enterprise |
+| `VISA` | `VISA` | Identical |
+
+#### Matching a Promotion With the User’s Card
+
+The token issuer name that PayU Enterprise returns may not exactly match the bank name listed in the `promotions[]` array from the Pricing API.  
+To ensure accurate matching, it’s recommended to validate promotions using the BIN (IIN) defined in the promotion.
+
+When displaying installment options in checkout for promotion-based installments, follow the validation sequence below:
+
+| Step  | Condition                     | Validation Rule                                                          | API Fields to Check                |
+| ----- | ----------------------------- | ------------------------------------------------------------------------ | ----------------------------------- |
+| **1** | `promotions[].iin` is present | Match the user’s BIN (IIN) to one of the values in `promotions[].iin`.   | `promotions[].iin`                  |
+| **2** | No BINs are specified         | Match the user’s bank to one of the values in `promotions[].banksNames`. | `promotions[].banksNames`           |
+| **3** | No banks are specified        | Match the card vendor to the payment method in the promotion.            | `paymentMethodFee[].paymentMethod`  |
+
+#### Optional: Tokenized Cards and Installment Options
+
+When using card tokenization, you can display installment options by following this flow:
+
+1. Request card data from the user
+2. Tokenize the card
+3. Query the Pricing API
+4. Show available installment options
+
+**Example Display 1**
+
+The user enters card details, and the checkout displays available installment options:
+
+![PrintScreen](/assets/Promotions/promo6.png)
+
+**Example Display 2**
+
+The checkout includes two buttons: one for paying in full and another for paying in installments.
+
+![PrintScreen](/assets/Promotions/promo7.png)
+
+{{% alert title="Note" color="info"%}}
+
+Ensure compliance with local regulations in the country where you operate. Your checkout must display any information required by authorities.
+
+{{% /alert %}}
+
+#### Optional: Sending Data in Charge Requests for Transaction Routing (Argentina)
+
+When processing transactions in **Argentina**, include specific fields in the **Charge** request to ensure proper routing through PayU’s decision engine. By sending this data, the system can direct the transaction to the correct account, particularly when handling promotions with interest-free installments.  
+
+##### Required Fields
+
+- **Account ID**: The ID of the account from which you retrieved the promotion using the **Pricing API**.  
+- **Installments**: The installment option the user selected during checkout.  
+- **Promotion ID**: The ID of the promotion associated with the selected installment option.  
+
+##### Routing Setup
+
+To route transactions correctly:  
+1. Configure a new provider using the account that offers **interest-free installments** (this account follows a different settlement model from the standard account).  
+2. Create a routing rule in the decision engine as shown in the example image.  
+
+<img src="/assets/Promotions/promo8.png" style="display: block; margin: 0 auto; width: 550px;">
+
+{{% alert title="Note" color="info"%}}
+
+PayU can assist you with setting up the routing rule.
+
+{{% /alert %}}
+
+##### API Field Paths
+
+Use the following API paths when sending data in the **Charge** or **Authorization** request:  
+
+- Installments (user selection):  
+  `installments.number_of_installments`  
+- Installments (decision engine routing):  
+  `additional_details.number_of_installments`  
+- Promotion ID (provider-specific):  
+  `provider_specific_data.payu_latam.additional_details.promotion_id`  
+- Promotion ID (decision engine routing):  
+  `additional_details.promotion_id`  
+- Account ID (routing by Latam account):  
+  `additional_details.account_id`  
