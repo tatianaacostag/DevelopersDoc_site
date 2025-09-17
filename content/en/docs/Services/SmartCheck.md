@@ -7,7 +7,7 @@ description: >
 weight: 60
 ---
 
-With this feature, merchants update their information directly from the **Merchant Panel**, while the system automatically performs validations and screenings, reducing the manual workload of risk and compliance teams.
+With this feature, merchants update their information directly from the <a href="https://merchants.payulatam.com/login/auth" target="_blank">Merchant Panel</a>, while the system automatically performs validations and screenings, reducing the manual workload of risk and compliance teams.
 
 ## How does Smart Check work?
 

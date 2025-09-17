@@ -64,6 +64,7 @@ Before using the Voids and Refunds API, keep the following country-specific cons
 - The minimum refund amount is **100 COP**.
 - If a refund request is **not submitted on the same day** as the transaction capture (**before 9 PM UTC-5**), it is **manually processed** instead of being attempted online.
 - Once a refund is approved, the payer receives the funds **within 30 working days**.
+- **Only one partial refund is allowed per order**. If a customer requests an additional refund, the merchant must process it outside of PayU, for example through a gift card, discount, or bank transfer. You can also use our [Payouts API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) to send the amount directly from your PayU account balance. This is especially useful for Alternative Payment Methods such as Efecty or PSE. Please note that you will need to request the customer’s bank account details each time. This option is only available under the aggregator model.
 - **Partial refunds are not available** for international credit cards.
 
 ### Mexico

@@ -176,7 +176,9 @@ Mon, 11 May 2015 21:14:41 GMT
 
 ### Parameters for Request and Response
 
-This section describes the parameters used in the API request and the fields returned in the response. The request parameters define the input values required to retrieve pricing, promotions, and tax details. The response parameters outline the structure and meaning of the data returned, including transaction amounts, payment method fees, installment breakdowns, promotions, and applicable taxes.
+This section describes the parameters used in the API request and the fields returned in the response.
+
+The request parameters define the input values required to retrieve pricing, promotions, and tax details. The response parameters outline the structure and meaning of the data returned, including transaction amounts, payment method fees, installment breakdowns, promotions, and applicable taxes.
 
 <details>
 

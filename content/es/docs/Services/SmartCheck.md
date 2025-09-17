@@ -7,7 +7,7 @@ description: >
 weight: 60
 ---
 
-Con esta funcionalidad, los comercios actualizan su información directamente desde el **Merchant Panel**, mientras el sistema ejecuta de forma automática validaciones y screenings, reduciendo el trabajo manual de los equipos de riesgo y cumplimiento.
+Con esta funcionalidad, los comercios actualizan su información directamente desde el <a href="https://merchants.payulatam.com/login/auth" target="_blank">Merchant Panel</a>, mientras el sistema ejecuta de forma automática validaciones y screenings, reduciendo el trabajo manual de los equipos de riesgo y cumplimiento.
 
 ## ¿Cómo funciona Smart Check?
 

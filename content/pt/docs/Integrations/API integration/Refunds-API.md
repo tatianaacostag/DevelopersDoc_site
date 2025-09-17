@@ -64,6 +64,7 @@ Antes de usar a API de Anulações e Reembolsos, leve em conta as seguintes cons
 - O valor mínimo para reembolso é **100 COP**.
 - Se uma solicitação de reembolso **não for enviada no mesmo dia** da captura da transação (**antes das 21h UTC-5**), ela será **processada manualmente** em vez de tentada online.
 - Após a aprovação do reembolso, o pagador recebe os fundos **dentro de 30 dias úteis**.
+- **Apenas um reembolso parcial é permitido por pedido**. Se um cliente solicitar um reembolso adicional, o comerciante deve processá-lo fora do PayU, por exemplo, por meio de um vale-presente, desconto ou transferência bancária. Você também pode usar nossa [API de Payouts](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) para enviar o valor diretamente do saldo da sua conta PayU. Isso é especialmente útil para métodos de pagamento alternativos como Efecty ou PSE. Observe que será necessário solicitar os dados bancários do cliente a cada vez. Essa opção está disponível apenas no modelo de agregador.
 - **Reembolsos parciais não estão disponíveis** para cartões de crédito internacionais.
 
 ### México

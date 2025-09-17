@@ -64,6 +64,7 @@ Antes de usar la API de Anulaciones y Reembolsos, ten en cuenta las siguientes c
 - El monto mínimo para un reembolso es **100 COP**.
 - Si una solicitud de reembolso **no se envía el mismo día** de la captura de la transacción (**antes de las 9 PM UTC-5**), se **procesa manualmente** en lugar de intentarse en línea.
 - Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
+- **Solo se permite un reembolso parcial por pedido**. Si un cliente solicita un reembolso adicional, el comerciante debe procesarlo fuera de PayU, por ejemplo, mediante una tarjeta de regalo, un descuento o una transferencia bancaria. También puede usar nuestra [API de Payouts](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) para enviar el monto directamente desde el saldo de su cuenta PayU. Esto es especialmente útil para métodos de pago alternativos como Efecty o PSE. Tenga en cuenta que deberá solicitar los datos de la cuenta bancaria del cliente cada vez. Esta opción solo está disponible bajo el modelo agregador.
 - **Los reembolsos parciales no están disponibles** para tarjetas de crédito internacionales.
 
 ### México
