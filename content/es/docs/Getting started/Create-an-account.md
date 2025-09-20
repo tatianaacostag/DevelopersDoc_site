@@ -18,7 +18,7 @@ Para iniciar el proceso de registro, llámanos o visita el sitio web disponible 
 | <img src="/assets/Argentina.png" width="25px"/> &nbsp;Argentina | <a href="https://argentina.payu.com/contactanos" target="_blank">argentina.payu.com/contactanos</a> | (+54 11) 5984-2132 |
 | <img src="/assets/Brasil.png" width="25px"/> &nbsp;Brasil | <a href="https://brazil.payu.com/en/contact-us" target="_blank">brazil.payu.com/en/contact-us</a> | (+55 11) 4130-5311 |
 | <img src="/assets/Chile.png" width="25px"/> &nbsp;Chile | <a href="https://chile.payu.com/contactanos/" target="_blank">chile.payu.com/contactanos/</a> | (+56 2) 258-13949 |
-| <img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia | <a href="https://colombia.payulatam.com/crea-tu-cuenta" target="_blank">colombia.payulatam.com/crea-tu-cuenta</a> | (+57) 601 654-0721 |
+| <img src="/assets/Colombia.png" width="25px"/> &nbsp;Colombia | <a href="https://corporate.payu.com/colombia/es/" target="_blank">corporate.payu.com/colombia/es/</a> | (+57) 601 654-0721 |
 | <img src="/assets/Mexico.png" width="25px"/> &nbsp;México | <a href="https://mexico.payu.com/contactanos" target="_blank">mexico.payu.com/contactanos/</a> | (+52 55) 474-11439 |
 | <img src="/assets/Panama.png" width="25px"/> &nbsp;Panamá | <a href="https://centroamerica.payu.com/contactanos" target="_blank">centroamerica.payu.com/contactanos/</a> | (+50 7) 836-5577 |
 | <img src="/assets/Peru.png" width="25px"/> &nbsp;Perú | <li> Pequeñas empresas: <p><a href="https://peru.creatucuenta.payu.com" target="_blank">peru.creatucuenta.payu.com</a> <li> Grandes empresas: <p><a href="https://peru.payu.com/contactanos" target="_blank">peru.payu.com/contactanos</a> | (+57) 601 654-0721 |

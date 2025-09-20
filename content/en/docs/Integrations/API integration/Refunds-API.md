@@ -23,77 +23,69 @@ For a deeper understanding of voids and refunds, including key concepts and cons
 
 Before using the Voids and Refunds API, keep the following country-specific considerations in mind.
 
-### Argentina
 
-- A void request must be sent within **14 days**; otherwise, the transaction is automatically voided.
-- Refunds can be requested **at least 10 minutes after approval** and up to **357 days** after the transaction.
-- Refunds with decimal amounts are **not supported**.
-- Once a refund is approved, the payer receives the funds **within 30 working days**.
+<details id="argentina">
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
-### Brazil
+| Voids | Refunds |
+|-------|---------|
+| <ul><li>Send the request within **14 days**; otherwise, the system automatically voids the transaction.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval** and up to **357 days** after the transaction.</li><li>Do not include decimal amounts in refunds.</li><li>You can request more than one partial refund for payments made through **AMEX, Mastercard, Naranja, or Visa**.</li><li>Once approved, PayU transfers the funds to the payer within **30 working days**.</li></ul> |
 
-- A void request must be sent within **7 days**; otherwise, the transaction is canceled.
-- Refunds can be requested **at least 10 minutes after approval** and up to:
-  - **87 days** for transactions made with PIX.
-  - **172 days** for card transactions.
-- Multiple **partial refunds** are supported for PIX transactions.
-- Once approved:
-  - Refunds for **PIX transactions** are processed **immediately**.
-  - Refunds for **other payment methods** take up to **15 working days**.
+</details>
 
-### Chile
+<details id="brazil">
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brazil</b></summary>
 
-- Due to network restrictions, a **void request** can only be authorized **within 3 hours after the transaction**. If the void is not accepted or no capture is sent within **7 days**, the transaction is automatically voided.
-- Refunds can be requested **at least 10 minutes after approval** and up to **327 days**.  
-- Refunds are available for transactions processed through [WebPay Plus or Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
-- For **prepaid card transactions not processed by WebPay Plus**:
-  - Refunds requested **within the first hour** may be **approved or rejected** by the financial network.
-  - Refunds requested **after the first hour** are **automatically rejected**.
-- If a refund is rejected, PayU displays the corresponding [error code]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}).
-- Refunds with decimal amounts are **not supported**.
-- Once a refund is approved, the payer receives the funds **within 8 to 20 working days**.
-- **Partial refunds** for transactions with **installments** are received online but processed manually due to acquirer restrictions.
-- The minimum refund amount depends on the acquiring network:
-    - **More than 10 CLP** for transactions processed by the **TRANSBANK** network.
-    - **More than 50 CLP** for transactions processed by the **KLAP** network.
+| Voids | Refunds |
+|-------|---------|
+| <ul><li>Send the request within **7 days**; otherwise, the system automatically voids the transaction.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval**.</li><li>For transactions made with **PIX**, request refunds up to **87 days** after the transaction.</li><li>For card transactions, request refunds up to **172 days** after the transaction.</li><li>You can request more than one partial refund for payments made through **AMEX, Elo, Mastercard, PIX, or Visa**.</li><li>Once approved, refunds for **PIX transactions** are processed **immediately**.</li><li>Once approved, refunds for **other payment methods** take up to **15 working days**.</li></ul> |
 
-### Colombia
+</details>
 
-- **Voids are not supported**.
-- Refunds can be requested **at least 10 minutes after approval** and up to **357 days**.
-- The minimum refund amount is **100 COP**.
-- If a refund request is **not submitted on the same day** as the transaction capture (**before 9 PM UTC-5**), it is **manually processed** instead of being attempted online.
-- Once a refund is approved, the payer receives the funds **within 30 working days**.
-- **Only one partial refund is allowed per order**. If a customer requests an additional refund, the merchant must process it outside of PayU, for example through a gift card, discount, or bank transfer. You can also use our [Payouts API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) to send the amount directly from your PayU account balance. This is especially useful for Alternative Payment Methods such as Efecty or PSE. Please note that you will need to request the customer’s bank account details each time. This option is only available under the aggregator model.
-- **Partial refunds are not available** for international credit cards.
+<details id="chile">
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
-### Mexico
+| Voids | Refunds |
+|-------|---------|
+| <ul><li>Send the request within **3 hours after the transaction**; otherwise, the network does not authorize the void.</li><li>If the void is not accepted or no capture is sent within **7 days**, the system automatically voids the transaction.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval** and up to **327 days** after the transaction.</li><li>Refunds are also available for transactions processed through [WebPay Plus or Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).</li><li>For **prepaid card transactions not processed by WebPay Plus**: <ul><li>If you request a refund within the **first hour**, the financial network may approve or reject it.</li><li>If you request a refund **after the first hour**, the financial network automatically rejects it.</li></ul></li><li>If the financial network rejects a refund, PayU displays the corresponding [error code]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}).</li><li>Do not include decimal amounts in refunds.</li><li>Once approved, the payer receives the funds within **8 to 20 working days**.</li><li>You can submit partial refunds for transactions with **installments**; PayU receives them online but processes them manually due to acquirer restrictions.</li><li>Follow minimum refund amounts required by the acquiring network: <ul><li>More than **10 CLP** for transactions processed by **TRANSBANK**.</li><li>More than **50 CLP** for transactions processed by **KLAP**.</li></ul></li><li>You can request more than one partial refund for payments made through **AMEX, Mastercard, or Visa**.</li></ul> |
 
-- A void request must be sent **at least 10 minutes after authorization** and up to **7 days**. If no void or capture is sent within the timeframe, the transaction is automatically voided.
-- Refunds can be requested **at least 10 minutes after approval** and up to:
-  - **175 days** for most transactions.
-  - **40 days** if processed by **Bancomer**.
-- Once a refund is approved, the payer receives the funds **within 30 working days**.
-- Refunds with decimal amounts are **not supported**.
+</details>
 
-### Panama
+<details id="colombia">
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>
 
-- **Voids are not supported**.
-- Refunds can be requested **at least 10 minutes after approval** and up to **357 days**.
-- Once a refund is approved, the payer receives the funds **within 8 working days**.
+| Voids | Refunds |
+|----------|---------|
+| <ul><li>The integration does not support voids for transactions in Colombia.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval** and up to **357 days** after the transaction.</li><li>The minimum refund amount is **100 COP**.</li><li>If you do not submit the refund request on the same day as the transaction capture (**before 9 PM UTC-5**), PayU processes it manually instead of attempting it online.</li><li>Once approved, the payer receives the funds within **30 working days**.</li><li>Request only **one partial refund per order**. If the customer asks for an additional refund, process it outside of PayU (e.g., through a gift card, discount, or bank transfer). You can also use our [Payouts API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) to send the amount directly from your PayU account balance. This option is only available under the aggregator model and requires requesting the customer’s bank account details each time. This is especially useful for Alternative Payment Methods such as **Efecty** or **PSE**.</li><li>Partial refunds for international credit cards are **not available**.</li><li>Partial refunds (only one per order) are available for payments made through **AMEX, Codensa, Diners, Mastercard, or Visa**.</li></ul> |
 
-### Peru
+</details>
 
-- The maximum timeframe to void an authorization depends on the payment network:
-  - **Visa**: **21 days** → If no void or capture is sent, the transaction is **auto-captured**.
-  - **Mastercard**: **28 days** → If no void or capture is sent, the transaction is **auto-captured**.
-  - **American Express**: **30 days** → If no void or capture is sent, the transaction is **auto-voided**.
-  - **Diners**: **11 days** → If no void or capture is sent, the transaction is **auto-voided**.
-- Refunds can be requested **at least 10 minutes after approval** and up to **357 days**.
-- **Partial refunds** are supported for transactions **without installments** (including transactions with a single installment).
-- **Partial refunds with Visanet** must be sent **at least one day after the transaction**.
-- Once a refund is approved, the payer receives the funds **within 15 to 25 working days**.
-- The minimum refund amount is **1 USD or 1 PEN**.
+<details id="mexico">
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>Mexico</b></summary>
+
+| Voids | Refunds |
+|-------|---------|
+| <ul><li>Send the request **at least 10 minutes after authorization** and up to **7 days**.</li><li>If you do not send a void or capture within this timeframe, the system automatically voids the transaction.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval**.</li><li>For most transactions, request refunds up to **175 days** after the transaction.</li><li>For transactions processed by **Bancomer**, request refunds up to **40 days** after the transaction.</li><li>Once approved, the payer receives the funds within **30 working days**.</li><li>Do not include decimal amounts in refunds.</li><li>You can request more than one partial refund for payments made through **AMEX, Mastercard, or Visa**.</li></ul> |
+
+</details>
+
+<details id="panama">
+<summary><img src="/assets/Panama.png" width="25px"/> &nbsp; <b>Panama</b></summary>
+
+| Voids | Refunds |
+|-------|---------|
+| <ul><li>The integration does not support voids for transactions in Panama.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval** and up to **357 days** after the transaction.</li><li>Once approved, the payer receives the funds within **8 working days**.</li></ul> |
+
+</details>
+
+<details id="peru">
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Peru</b></summary>
+
+| Voids | Refunds |
+|-------|---------|
+| <ul><li>Follow the maximum timeframe allowed by each payment network:</li><ul><li>**Visa**: **21 days** → If you do not send a void or capture, the system auto-captures the transaction.</li><li>**Mastercard**: **28 days** → If you do not send a void or capture, the system auto-captures the transaction.</li><li>**American Express**: **30 days** → If you do not send a void or capture, the system auto-voids the transaction.</li><li>**Diners**: **11 days** → If you do not send a void or capture, the system auto-voids the transaction.</li></ul></ul> | <ul><li>Request a refund **at least 10 minutes after approval** and up to **357 days** after the transaction.</li><li>Request partial refunds only for transactions **without installments** (including single-installment transactions).</li><li>For **Visanet transactions**, send partial refunds **at least one day after the transaction**.</li><li>The minimum refund amount is **1 USD or 1 PEN**.</li><li>You can request more than one partial refund for payments made through **AMEX, Diners, Mastercard (credit or debit), or Visa (credit or debit)**.</li><li>Once approved, the payer receives the funds within **15 to 25 working days**.</li></ul> |
+
+</details>
 
 ## Void
 
