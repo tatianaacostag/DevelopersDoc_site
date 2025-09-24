@@ -1539,8 +1539,11 @@ To process a transaction using standard installments, specify the number of mont
     </entry>
 </extraParameters>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
+
 <br>
 
 {{% alert title="Note" color="info"%}}
@@ -1575,7 +1578,9 @@ General Interest-Free Installments plan **do not require a** `PROMOTION_ID`. Onc
     </entry>
 </extraParameters>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 <br>
 
@@ -1589,7 +1594,7 @@ To create and submit the transactions, use the Payments API of the corresponding
 
 #### Interest-Free Months (MSI) in Mexico
 
-In Mexico, **General Interest-Free Installments** are commonly known as **Meses sin Intereses (MSI)**. This option allows you to offer fixed payment plans (3, 6, 9, 12, or 18 months) without interest.
+In Mexico, **General Interest-Free Installments** are commonly known as **Interest-Free Months** (Meses sin Intereses or MSI). This option allows you to offer fixed payment plans (3, 6, 9, 12, or 18 months) without interest.
 
 MSI transactions use the same structure as standard installments by specifying the number of months in the `INSTALLMENTS_NUMBER` field of the `extraParameters` object. Unlike promotional installments, MSI does not require a `PROMOTION_ID`. Valid MSI durations are 3, 6, 9, 12, or 18 months.
 
@@ -1625,6 +1630,7 @@ Once you configure this plan in your PayU account, submit the request with the n
     </entry>
 </extraParameters>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 <br>
@@ -1766,16 +1772,17 @@ The table below provides the mapping between the two sources:
 
 #### Matching a Promotion With the User’s Card
 
-The token issuer name that PayU Enterprise returns may not exactly match the bank name listed in the `promotions[]` array from the Pricing API.  
+The token issuer name that PayU Enterprise returns may not exactly match the bank name listed in the `promotions[]` array from the Pricing API.
+
 To ensure accurate matching, it’s recommended to validate promotions using the BIN (IIN) defined in the promotion.
 
 When displaying installment options in checkout for promotion-based installments, follow the validation sequence below:
 
-| Step  | Condition                     | Validation Rule                                                          | API Fields to Check                |
-| ----- | ----------------------------- | ------------------------------------------------------------------------ | ----------------------------------- |
-| **1** | `promotions[].iin` is present | Match the user’s BIN (IIN) to one of the values in `promotions[].iin`.   | `promotions[].iin`                  |
-| **2** | No BINs are specified         | Match the user’s bank to one of the values in `promotions[].banksNames`. | `promotions[].banksNames`           |
-| **3** | No banks are specified        | Match the card vendor to the payment method in the promotion.            | `paymentMethodFee[].paymentMethod`  |
+| Step | Condition | Validation Rule | API Fields to Check                |
+| --- | --- | --- | --- |
+| **1** | `promotions[].iin` is present | Match the user’s BIN (IIN) to one of the values in `promotions[].iin`. | `promotions[].iin` |
+| **2** | No BINs are specified | Match the user’s bank to one of the values in `promotions[].banksNames`. | `promotions[].banksNames`           |
+| **3** | No banks are specified | Match the card vendor to the payment method in the promotion. | `paymentMethodFee[].paymentMethod` |
 
 #### Optional: Tokenized Cards and Installment Options
 
@@ -1830,15 +1837,15 @@ PayU can assist you with setting up the routing rule.
 
 ##### API Field Paths
 
-Use the following API paths when sending data in the **Charge** or **Authorization** request:  
+Use the following API paths when sending data in the **Charge** or **Authorization** request:
 
 - Installments (user selection):  
-  `installments.number_of_installments`  
+  `installments.number_of_installments`
 - Installments (decision engine routing):  
-  `additional_details.number_of_installments`  
+  `additional_details.number_of_installments`
 - Promotion ID (provider-specific):  
-  `provider_specific_data.payu_latam.additional_details.promotion_id`  
+  `provider_specific_data.payu_latam.additional_details.promotion_id`
 - Promotion ID (decision engine routing):  
-  `additional_details.promotion_id`  
+  `additional_details.promotion_id`
 - Account ID (routing by Latam account):  
-  `additional_details.account_id`  
+  `additional_details.account_id`

@@ -207,7 +207,7 @@ Los parámetros de la solicitud definen los valores de entrada requeridos para o
 
 <div class="variables"></div>
 
-| Nombre del Campo | Tipo | Descripción |
+| Nombre del campo | Tipo | Descripción |
 |------------------|------|-------------|
 | `amount` | Objeto | Detalles del monto de la transacción. |
 | `amount` > `value` | Número | Valor total de la transacción. |
@@ -1287,7 +1287,7 @@ Para las cuotas sin interés, igualmente debes mostrar TEA y CFT, pero con valor
 
 {{% /alert %}}
 
-### Identificación de tipos de cuotas según la asignación de intereses
+### Identificación de tipos de cuotas según la asignación de intereses {#identifying-installment-types-by-interest-allocation}
 
 La siguiente tabla muestra cómo identificar el tipo de cuota según la forma en que el sistema asigna los intereses entre el pagador y el comercio, utilizando los campos de la respuesta de la API de Pricing.
 
@@ -1356,7 +1356,7 @@ La siguiente tabla muestra cómo identificar el tipo de cuota según la forma en
   </tbody>
 </table>
 
-### Identificación de Cuotas Sin Intereses Específicas
+### Identificación de Cuotas Sin Intereses Específicas 
 
 Cuando consultas la API de Pricing, puedes identificar una cuota promocional específica si el arreglo `promos` contiene una promoción donde:
 
@@ -1539,8 +1539,11 @@ Para procesar una transacción utilizando cuotas estándar, especifica el númer
     </entry>
 </extraParameters>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
+
 <br>
 
 {{% alert title="Nota" color="info"%}}
@@ -1574,7 +1577,9 @@ El plan de Cuotas sin Intereses Generales **no requiere un** `PROMOTION_ID`. Una
     </entry>
 </extraParameters>
 ```
+
 {{< /tab >}}
+
 {{< /tabs >}}
 <br>
 
@@ -1624,6 +1629,7 @@ Una vez que configures este plan en tu cuenta de PayU, envía la solicitud con e
     </entry>
 </extraParameters>
 ```
+
 {{< /tab >}}
 {{< /tabs >}}
 <br>
@@ -1773,9 +1779,9 @@ Al mostrar opciones de cuotas en el checkout para promociones basadas en cuotas,
 
 | Paso | Condición | Regla de validación | Campos de la API a verificar |
 | --- | --- | --- | --- |
-| **1** | `promotions[].iin` está presente | Hacer coincidir el BIN (IIN) del usuario con uno de los valores en `promotions[].iin`.   | `promotions[].iin`                  |
-| **2** | No se especifican BINs       | Hacer coincidir el banco del usuario con uno de los valores en `promotions[].banksNames`. | `promotions[].banksNames`           |
-| **3** | No se especifican bancos     | Hacer coincidir el emisor de la tarjeta con el método de pago en la promoción.            | `paymentMethodFee[].paymentMethod`  |
+| **1** | `promotions[].iin` está presente | Hacer coincidir el BIN (IIN) del usuario con uno de los valores en `promotions[].iin`. | `promotions[].iin` |
+| **2** | No se especifican BINs | Hacer coincidir el banco del usuario con uno de los valores en `promotions[].banksNames`. | `promotions[].banksNames` |
+| **3** | No se especifican bancos | Hacer coincidir el emisor de la tarjeta con el método de pago en la promoción. | `paymentMethodFee[].paymentMethod` |
 
 #### Opcional: Tarjetas tokenizadas y opciones de cuotas
 
@@ -1830,15 +1836,15 @@ PayU puede asistirlo en la configuración de la regla de enrutamiento.
 
 ##### Rutas de campos de la API
 
-Use las siguientes rutas de la API al enviar datos en la solicitud de **Cobro** o **Autorización**:  
+Use las siguientes rutas de la API al enviar datos en la solicitud de **Cobro** o **Autorización**:
 
 - Cuotas (selección del usuario):  
-  `installments.number_of_installments`  
+  `installments.number_of_installments`
 - Cuotas (enrutamiento del motor de decisión):  
-  `additional_details.number_of_installments`  
+  `additional_details.number_of_installments`
 - Promotion ID (específico del proveedor):  
-  `provider_specific_data.payu_latam.additional_details.promotion_id`  
+  `provider_specific_data.payu_latam.additional_details.promotion_id`
 - Promotion ID (enrutamiento del motor de decisión):  
-  `additional_details.promotion_id`  
+  `additional_details.promotion_id`
 - Account ID (enrutamiento por cuenta de Latam):  
-  `additional_details.account_id`  
+  `additional_details.account_id`
