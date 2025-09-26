@@ -3,7 +3,7 @@ title: "Voids and Refunds API"
 linkTitle: "Voids and Refunds API"
 date: 2021-06-25T09:24:50-05:00
 description: >
-  The Voids and Refunds API allows you to cancel or refund transactions that have been authorized or charged. Depending on the transaction status, you can submit a request using either the `Void` or `Refund` methods. 
+  The Voids and Refunds API allows you to cancel or refund transactions that have already been authorized or charged. Depending on the transaction status, you can submit a request using either the `VOID` or `REFUND` methods. 
 weight: 50
 tags: ["subtopic"]
 ---
@@ -21,8 +21,7 @@ For a deeper understanding of voids and refunds, including key concepts and cons
 
 ## Considerations per Country
 
-Before using the Voids and Refunds API, keep the following country-specific considerations in mind.
-
+Before using the Voids and Refunds API, keep in mind the following country-specific considerations.
 
 <details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
@@ -89,7 +88,7 @@ Before using the Voids and Refunds API, keep the following country-specific cons
 
 ## Void
 
-The `VOID` method cancels a previously authorized transaction. This is an **automatic process**—as soon as the `VOID` request is sent, it does not follow any approval flow, and the transaction is **not charged** to the cardholder.
+The `VOID` method cancels a previously authorized transaction. This is an **automatic process**—as soon as the system submits a `VOID` request, it does not follow any approval flow, and the integration will not charge the transaction to the cardholder.
 
 ### Parameters for Request and Response
 
@@ -490,11 +489,11 @@ The following examples show the request and response bodies for this transaction
 
 ### Querying the Refund Status
 
-As mentioned earlier, refund requests go through an approval process where PayU takes between 1 to 3 days to process and either approve or reject the request. You can check the status of a refund using one of the following methods:
+As mentioned earlier, refund requests go through an approval process. PayU usually takes 1 to 3 days to review and either approve or reject the request. You can check the refund status using one of the following methods:
 
 #### Checking the Status via the PayU Management Panel
 
-1. Log in to your PayU module account. In the left panel, expand the **Transactions** menu and select **Sales Report**.
+1. Log in to the PayU Management Panel. In the left menu, expand the **Transactions** tab and select **Sales Report**.
 
    ![PrintScreen](/assets/Refunds/Refunds_en_01.png)
 
@@ -502,26 +501,109 @@ As mentioned earlier, refund requests go through an approval process where PayU 
 
    <img src="/assets/Refunds/Refunds_en_02.png" alt="PrintScreen" width="50%"/><br>
 
-3. The **Status** column indicates whether the refund has been approved, rejected or if it is pending.
+3. Check the **Status** column to see whether the refund is approved, rejected, or still pending.
 
    ![PrintScreen](/assets/Refunds/Refunds_en_03.png)
 
 #### Checking the Status via the Queries API
 
-You can also check the refund status using the [Queries API]({{< ref "Queries-API.md" >}}). To do so, send a request containing the **order ID**.
+You can also check the refund status using the [Queries API]({{< ref "Queries-API.md" >}}). To do so, send a request with the **order ID**.
 
-When querying an order, the system returns the latest transaction associated with it.
+When you query an order, the system returns the most recent transaction associated with it.
 
-The response can indicate one of three possible statuses:
+The response can indicate one of three statuses:
 
-- **Unresolved Request**: If the refund request is still under review, the order appears with a `CAPTURED` status (`result.payload.status` in the response).  
+- **Unresolved Request**: The refund request is still under review. The order shows a `CAPTURED` status (`result.payload.status` in the response).  
   - The first transaction type is `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` in the response).  
   - The first transaction status is `APPROVED` (`result.transactions.transactionResponse.state` in the response).
 
-- **Approved**: If the refund request is approved by a PayU customer service agent, the order appears with a `REFUNDED` status (`result.payload.status` in the response).  
+- **Approved**: A PayU customer service agent approved the refund request. The order shows a `REFUNDED` status (`result.payload.status` in the response).  
   - The first transaction type is `REFUND` (`result.transactions.type` in the response).  
   - The first transaction status is `APPROVED` (`result.transactions.transactionResponse.state` in the response).
 
-- **Declined**: If the refund request is rejected by a PayU customer service agent, the order appears with a `CAPTURED` status (`result.payload.status` in the response).  
+- **Declined**:  A PayU customer service agent rejected the refund request. The order shows a `CAPTURED` status (`result.payload.status` in the response).  
   - The first transaction type is `REFUND` (`result.transactions.type` in the response).  
   - The first transaction status is `DECLINED` (`result.transactions.transactionResponse.state` in the response).
+
+### Handling Pending Refunds with the PayU Cancellations Module
+
+This section will guide you on how to track the final status of a refund that you initiated through the PayU Cancellations Module, especially when you are relying on the Queries API for updates.
+
+#### Manual Cancellations Module and Pending Refund Updates
+
+When you request a refund through the Voids and Refunds API, PayU submits the request to the payment network. If the network rejects the refund, PayU initially returns a `PENDING` status in the `paymentResponse.transactionResponse.state` field.
+
+In this scenario, PayU automatically activates the **Cancellations Module** to retry the refund. This process may involve multiple attempts, each generating a new refund ID, until a final status is reached. This mechanism improves refund success rates and reduces the need for merchants to submit multiple manual attempts.
+
+To confirm whether the refund request submitted through the Voids and Refunds API has reached a final status (`APPROVED` or `DECLINED`), you should:
+
+- Query its status using the [Queries API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/queries-api.html) (by order ID), or
+- Wait for a notification via your configured webhook (`notifyUrl` for API integrations or [Confirmation Page](https://developers.payulatam.com/latam/en/docs/integrations/webcheckout-integration/confirmation-page.html) for WebCheckout).
+
+{{% alert title="Notes" color="info"%}}
+
+* If you do not want PayU to manage your refunds through the Cancellations Module, contact your account manager to disable this service. In that case, you will always receive the direct network response without PayU retries.
+* In many countries, up to 99% of refunds processed via the Cancellations Module are approved. For partial refunds, the approval rate can reach 97%.
+
+{{% /alert %}}
+
+#### Identifying the Final Refund Status in the Queries API
+
+To distinguish between your initial refund request and the attempts generated by the PayU Cancellations Module, use the **order ID** in the Queries API and check the following fields:
+
+- `result > payload > status` – General order status (`REFUNDED` if the full amount was refunded; `CAPTURED` may indicate partial refunds).
+- `result > payload > transactions[] > id` – Refund transaction ID.
+- `result > payload > transactions[] > type` – Transaction type (`REFUND` or `PARTIAL_REFUND`).
+- `result > payload > transactions[] > source` – Source (`EMPTY` = online refunds, `CANCELLATIONS_MODULE` = retries via PayU Cancellations Module).
+- `result > payload > transactions[] > transactionResponse > state` – Refund status (`PENDING`, `APPROVED`, `DECLINED`).
+- `result > payload > transactions[] > transactionResponse > operationDate` – Date and time when the refund was generated.
+- `result > payload > transactions[] > additionalValues > TX_VALUE > value` – Refund amount.
+- `result > payload > transactions[] > extraParameters > MANUAL_REFUND` – Indicates how the refund was processed (absent, `TRUE`, or `FALSE`).
+
+##### Rules for Updating Refund Status
+
+Follow these rules when updating your system:
+
+| `MANUAL_REFUND` | Refund status | Meaning | Recommended action |
+|---|---|---|---|
+| Absent | `PENDING` | Initial refund in process | Do not update |
+| Absent | `DECLINED` | Initial request rejected; Cancellations Module activated | Do not update |
+| `FALSE` | `APPROVED` | Refund processed automatically by the Cancellations Module | Update status |
+| `FALSE` | `DECLINED` | Refund attempt failed via the Cancellations Module | Do not update |
+| `TRUE` | `APPROVED` or `DECLINED`| Refund finalized via the Cancellations Module | Update status |
+
+##### Additional Considerations
+
+- If the final status is `DECLINED` after the Cancellations Module operation, you may submit a new refund request via the Refunds API. When doing so, avoid updating based on previous transaction attempts — use `operationDate` and `TX_VALUE` to track the correct refund attempt.  
+- Always register **one refund record per API request** in your system, even if the Cancellations Module created multiple transactions.  
+- Update your refund record **only when a final status is reached**, following the rules above.
+
+#### Identifying the Final Refund Status via Webhook
+
+PayU also notifies you of the final refund status through your configured **webhook** (`notifyUrl` for API integrations or [Confirmation Page](https://developers.payulatam.com/latam/en/docs/integrations/webcheckout-integration/confirmation-page.html) for WebCheckout).
+
+##### Webhook Logic
+
+- If the refund request status is `APPROVED` or `DECLINED`, PayU immediately sends a webhook notification.  
+- If the refund status is initially `PENDING`, no webhook is sent until a final status (`APPROVED` or `DECLINED`) is reached.  
+
+##### Webhook Update Rules
+
+- If the initial status is `PENDING`, **do not update** the refund until you receive the webhook.  
+- Once the webhook arrives, update the refund status accordingly (`APPROVED` or `DECLINED`).  
+- Use at least the following fields from the payload to identify the refund correctly:  
+  - `transaction_type` – Transaction type  
+  - `value` – Refund amount  
+  - `response_message_pol` – Response message  
+  - `transaction_date` – Date and time of the transaction  
+
+##### Webhook Considerations
+
+Unlike the Queries API, the webhook only notifies you once the refund reaches a **final status**. No notifications are sent for intermediate attempts (`PENDING`) or retries within the Cancellations Module.
+
+For this reason, we recommend implementing the webhook if you have not already done so. It allows you to update refund statuses automatically without applying the manual validation rules required for the Queries API.
+
+This behavior applies when the following account settings are enabled:
+- **Allow reversal transactions with pending state:** Off  
+- **Activate pending response for voids and refunds:** On
+> **Note:** This setup is commonly used by partners such as **PayU Enterprise** and **Adyen**. 

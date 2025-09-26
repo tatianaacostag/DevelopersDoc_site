@@ -19,81 +19,72 @@ Para integrarte con la API de Anulaciones y Reembolsos, dirige tus solicitudes a
 
 Para comprender mejor las anulaciones y reembolsos, incluidos los conceptos clave y consideraciones, consulta [este documento]({{< ref "Refunds.md" >}}).
 
-## Consideraciones por País
+## Consideraciones por país
 
 Antes de usar la API de Anulaciones y Reembolsos, ten en cuenta las siguientes consideraciones específicas por país.
 
-### Argentina
+<details id="argentina">
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
-- Una solicitud de anulación debe enviarse dentro de los **14 días**; de lo contrario, la transacción se anula automáticamente.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días** después de la transacción.
-- Los reembolsos con montos decimales **no están soportados**.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>Envía la solicitud dentro de **14 días**; de lo contrario, el sistema anula automáticamente la transacción.</li></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación** y hasta **357 días** después de la transacción.</li><li>No incluyas montos decimales en los reembolsos.</li><li>Puedes solicitar más de un reembolso parcial para pagos realizados con **AMEX, Mastercard, Naranja o Visa**.</li><li>Una vez aprobado, PayU transfiere los fondos al pagador dentro de **30 días hábiles**.</li></ul> |
 
-### Brasil
+</details>
 
-- Una solicitud de anulación debe enviarse dentro de **7 días**; de lo contrario, la transacción se cancela.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta:
-  - **87 días** para transacciones con PIX.
-  - **172 días** para transacciones con tarjeta.
-- Se admiten **reembolsos parciales múltiples** para transacciones con PIX.
-- Una vez aprobados:
-  - Los reembolsos de **transacciones con PIX** se procesan **de inmediato**.
-  - Los reembolsos de **otros métodos de pago** tardan hasta **15 días hábiles**.
+<details id="brazil">
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brasil</b></summary>
 
-### Chile
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>Envía la solicitud dentro de **7 días**; de lo contrario, el sistema anula automáticamente la transacción.</li></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación**.</li><li>Para transacciones realizadas con **PIX**, solicita reembolsos hasta **87 días** después de la transacción.</li><li>Para transacciones con tarjeta, solicita reembolsos hasta **172 días** después de la transacción.</li><li>Puedes solicitar más de un reembolso parcial para pagos realizados con **AMEX, Elo, Mastercard, PIX o Visa**.</li><li>Una vez aprobado, los reembolsos para **transacciones PIX** se procesan **inmediatamente**.</li><li>Una vez aprobado, los reembolsos para **otros métodos de pago** tardan hasta **15 días hábiles**.</li></ul> |
 
-- Debido a restricciones de la red, una **solicitud de anulación** solo puede autorizarse **dentro de las 3 horas posteriores a la transacción**. Si la anulación no es aceptada o no se envía la captura dentro de **7 días**, la transacción se anula automáticamente.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **327 días**.
-- Los reembolsos están disponibles para transacciones procesadas a través de [WebPay Plus o Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).
-- Para **transacciones con tarjeta prepago no procesadas por WebPay Plus**:
-  - Los reembolsos solicitados **dentro de la primera hora** pueden ser **aprobados o rechazados** por la red financiera.
-  - Los reembolsos solicitados **después de la primera hora** son **rechazados automáticamente**.
-- Si un reembolso es rechazado, PayU muestra el [código de error correspondiente]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}).
-- Los reembolsos con montos decimales **no están soportados**.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **entre 8 y 20 días hábiles**.
-- Los **reembolsos parciales** en transacciones con **cuotas** se reciben en línea pero se procesan manualmente debido a restricciones del adquirente.
-- El monto mínimo para realizar un reembolso depende de la red adquirente:
-    - **Más de 10 CLP** para transacciones procesadas por la red **TRANSBANK**.
-    - **Más de 50 CLP** para transacciones procesadas por la red **KLAP**.
+</details>
 
-### Colombia
+<details id="chile">
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
-- **Las anulaciones no están soportadas**.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
-- El monto mínimo para un reembolso es **100 COP**.
-- Si una solicitud de reembolso **no se envía el mismo día** de la captura de la transacción (**antes de las 9 PM UTC-5**), se **procesa manualmente** en lugar de intentarse en línea.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
-- **Solo se permite un reembolso parcial por pedido**. Si un cliente solicita un reembolso adicional, el comerciante debe procesarlo fuera de PayU, por ejemplo, mediante una tarjeta de regalo, un descuento o una transferencia bancaria. También puede usar nuestra [API de Payouts](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) para enviar el monto directamente desde el saldo de su cuenta PayU. Esto es especialmente útil para métodos de pago alternativos como Efecty o PSE. Tenga en cuenta que deberá solicitar los datos de la cuenta bancaria del cliente cada vez. Esta opción solo está disponible bajo el modelo agregador.
-- **Los reembolsos parciales no están disponibles** para tarjetas de crédito internacionales.
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>Envía la solicitud dentro de las **3 horas posteriores a la transacción**; de lo contrario, la red no autoriza la anulación.</li><li>Si la anulación no es aceptada o no se envía la captura dentro de **7 días**, el sistema anula automáticamente la transacción.</li></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación** y hasta **327 días** después de la transacción.</li><li>Los reembolsos también están disponibles para transacciones procesadas a través de [WebPay Plus o Redcompra]({{< ref "Payments-API-chile.md#submit-transactions-using-debit-and-prepaid-cards" >}}).</li><li>Para **transacciones con tarjetas prepago no procesadas por WebPay Plus**: <ul><li>Si solicitas un reembolso dentro de la **primera hora**, la red financiera puede aprobarlo o rechazarlo.</li><li>Si solicitas un reembolso **después de la primera hora**, la red financiera lo rechaza automáticamente.</li></ul></li><li>Si la red financiera rechaza un reembolso, PayU muestra el [código de error]({{< ref "Response-codes-and-variables.md#response-codes-for-transactions" >}}) correspondiente.</li><li>No incluyas montos decimales en los reembolsos.</li><li>Una vez aprobado, el pagador recibe los fondos dentro de **8 a 20 días hábiles**.</li><li>Puedes enviar reembolsos parciales para transacciones con **cuotas**; PayU los recibe en línea pero los procesa manualmente debido a restricciones del adquirente.</li><li>Sigue los montos mínimos de reembolso requeridos por la red adquirente: <ul><li>Más de **10 CLP** para transacciones procesadas por **TRANSBANK**.</li><li>Más de **50 CLP** para transacciones procesadas por **KLAP**.</li></ul></li><li>Puedes solicitar más de un reembolso parcial para pagos realizados con **AMEX, Mastercard o Visa**.</li></ul> |
 
-### México
+</details>
 
-- Una solicitud de anulación debe enviarse **al menos 10 minutos después de la autorización** y hasta **7 días**. Si no se envía una anulación o captura dentro del período establecido, la transacción se anula automáticamente.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta:
-  - **175 días** para la mayoría de las transacciones.
-  - **40 días** si son procesadas por **Bancomer**.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
-- Los reembolsos con montos decimales **no están soportados**.
+<details id="colombia">
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>
 
-### Panamá
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>La integración no admite anulaciones para transacciones en Colombia.</li></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación** y hasta **357 días** después de la transacción.</li><li>El monto mínimo de reembolso es **100 COP**.</li><li>Si no envías la solicitud de reembolso el mismo día de la captura de la transacción (**antes de las 9 PM UTC-5**), PayU lo procesa manualmente en lugar de intentarlo en línea.</li><li>Una vez aprobado, el pagador recibe los fondos dentro de **30 días hábiles**.</li><li>Solicita solo **un reembolso parcial por orden**. Si el cliente solicita un reembolso adicional, procésalo fuera de PayU (por ejemplo, a través de una tarjeta de regalo, descuento o transferencia bancaria). También puedes usar nuestra [API de Payouts](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) para enviar el monto directamente desde tu saldo en PayU. Esta opción solo está disponible bajo el modelo agregador y requiere solicitar los datos de la cuenta bancaria del cliente cada vez. Es especialmente útil para métodos de pago alternativos como **Efecty** o **PSE**.</li><li>Los reembolsos parciales para tarjetas de crédito internacionales **no están disponibles**.</li><li>Los reembolsos parciales (solo uno por orden) están disponibles para pagos realizados con **AMEX, Codensa, Diners, Mastercard o Visa**.</li></ul> |
 
-- **Las anulaciones no están soportadas**.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 8 días hábiles**.
+</details>
 
-### Perú
+<details id="mexico">
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>México</b></summary>
 
-- El tiempo máximo para anular una autorización depende de la red de pagos:
-  - **Visa**: **21 días** → Si no se envía una anulación o captura, la transacción se **auto-captura**.
-  - **Mastercard**: **28 días** → Si no se envía una anulación o captura, la transacción se **auto-captura**.
-  - **American Express**: **30 días** → Si no se envía una anulación o captura, la transacción se **auto-anula**.
-  - **Diners**: **11 días** → Si no se envía una anulación o captura, la transacción se **auto-anula**.
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
-- Se admiten **reembolsos parciales** para transacciones **sin cuotas** (incluidas las de una sola cuota).
-- Los **reembolsos parciales con Visanet** deben enviarse **al menos un día después de la transacción**.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **entre 15 y 25 días hábiles**.
-- El monto mínimo para un reembolso es **1 USD o 1 PEN**.
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>Envía la solicitud **al menos 10 minutos después de la autorización** y hasta **7 días**.</li><li>Si no envías una anulación o captura dentro de este plazo, el sistema anula automáticamente la transacción.</li></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación**.</li><li>Para la mayoría de las transacciones, solicita reembolsos hasta **175 días** después de la transacción.</li><li>Para transacciones procesadas por **Bancomer**, solicita reembolsos hasta **40 días** después de la transacción.</li><li>Una vez aprobado, el pagador recibe los fondos dentro de **30 días hábiles**.</li><li>No incluyas montos decimales en los reembolsos.</li><li>Puedes solicitar más de un reembolso parcial para pagos realizados con **AMEX, Mastercard o Visa**.</li></ul> |
+
+</details>
+
+<details id="panama">
+<summary><img src="/assets/Panama.png" width="25px"/> &nbsp; <b>Panamá</b></summary>
+
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>La integración no admite anulaciones para transacciones en Panamá.</li></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación** y hasta **357 días** después de la transacción.</li><li>Una vez aprobado, el pagador recibe los fondos dentro de **8 días hábiles**.</li></ul> |
+
+</details>
+
+<details id="peru">
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Perú</b></summary>
+
+| Anulaciones | Reembolsos |
+|-------------|------------|
+| <ul><li>Sigue el plazo máximo permitido por cada red de pago:</li><ul><li>**Visa**: **21 días** → Si no envías una anulación o captura, el sistema captura automáticamente la transacción.</li><li>**Mastercard**: **28 días** → Si no envías una anulación o captura, el sistema captura automáticamente la transacción.</li><li>**American Express**: **30 días** → Si no envías una anulación o captura, el sistema anula automáticamente la transacción.</li><li>**Diners**: **11 días** → Si no envías una anulación o captura, el sistema anula automáticamente la transacción.</li></ul></ul> | <ul><li>Solicita un reembolso **al menos 10 minutos después de la aprobación** y hasta **357 días** después de la transacción.</li><li>Solicita reembolsos parciales solo para transacciones **sin cuotas** (incluyendo transacciones de una sola cuota).</li><li>Para **transacciones Visanet**, envía reembolsos parciales **al menos un día después de la transacción**.</li><li>El monto mínimo de reembolso es **1 USD o 1 PEN**.</li><li>Puedes solicitar más de un reembolso parcial para pagos realizados con **AMEX, Diners, Mastercard (crédito o débito) o Visa (crédito o débito)**.</li><li>Una vez aprobado, el pagador recibe los fondos dentro de **15 a 25 días hábiles**.</li></ul> |
+
+</details>
 
 ## Anulación
 
