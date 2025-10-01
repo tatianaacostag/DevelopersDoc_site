@@ -236,11 +236,13 @@ The following codes applies for `payment_method_type` (Confirmation Page), `paym
 
 | Type                        | Description                                                |
 |-----------------------------|------------------------------------------------------------|
-| `AUTHORIZATION`             | Authorization transaction.                                 |
-| `AUTHORIZATION_AND_CAPTURE` | Charge transaction, Authorization and capture in one step. |
-| `CAPTURE`                   | Capture Transaction.                                       |
-| `VOID`                      | Cancellation transaction of an authorization.              |
-| `REFUND`                    | Refund transaction or cancellation of a capture.           |
+| `AUTHORIZATION`             | Reserves the transaction amount on the cardholder’s account without transferring the funds. |
+| `AUTHORIZATION_AND_CAPTURE` | Processes the payment in a single step by authorizing and capturing the funds simultaneously. |
+| `CAPTURE`                   | Completes a previously authorized transaction by transferring the reserved funds. |
+| `CHARGEBACK`                | A reversal usually initiated by the cardholder’s bank, returning the funds to the cardholder. |
+| `VOID`                      | Cancellation transaction of an authorization. |
+| `REFUND`                    | Returns the full amount of a captured transaction to the cardholder. |
+| `PARTIAL_REFUND`            | Returns a portion of the captured transaction amount to the cardholder. |
 
 ## Processing Countries
 

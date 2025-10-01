@@ -30,7 +30,7 @@ Para realizar pruebas con PayU, utiliza las credenciales proporcionadas a contin
 * Consulta la documentación de <a href="https://developers.payulatam.com/latam/es/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#probar-la-autenticaci%C3%B3n-3ds" target="_blank">Autenticación 3DS Gestionada por PayU</a> para encontrar las credenciales para probar 3DS.
 * El entorno de prueba no replica los datos de tu cuenta de producción.
 
-## Tarjetas de Prueba {#test-cards}
+## Tarjetas de prueba {#test-cards}
 
 A continuación, encontrarás los datos de tarjetas que puedes utilizar para simular transacciones en el entorno de pruebas de PayU.
 
@@ -43,7 +43,7 @@ Las tarjetas de crédito mostradas en esta sección son exclusivamente de prueba
 Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 <details id="argentina">
-<summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
 | Tarjeta                           | Número                              |
 |-----------------------------------|-------------------------------------|
@@ -60,10 +60,10 @@ Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 </details>
 <details id="brazil">
-<summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brasil</b></summary>
 
-| Tarjeta                   | Número                                   | Fecha de Expiración | CVV  | Tarjetahabiente |
-|---------------------------|------------------------------------------|---------------------|------|---|
+| Tarjeta | Número | Fecha de Expiración | CVV  | Tarjetahabiente |
+|---|---|---|---|---|
 | **Tarjeta de Crédito AMEX**       | 371341553758128 | 2035/01 | 1234 |
 | **Tarjeta de Crédito DINERS**     | 36490101441625 | 2035/01 | 123  |
 | **Tarjeta de Crédito ELO**        | 4389351648020055  <br> 4389358876174389 | 2035/01 | 123  |
@@ -75,7 +75,7 @@ Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 </details>
 <details id="chile">
-<summary><img src="/assets/Chile.png" width="25px"/> Chile</summary>
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
 <table>
 <thead>
@@ -144,23 +144,23 @@ Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 </details>
 <details id="colombia">
-<summary><img src="/assets/Colombia.png" width="25px"/> Colombia</summary>
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>
 
-| Tarjeta                           | Número                                                                |
-|-----------------------------------|-----------------------------------------------------------------------|
+| Tarjeta | Número |
+|---|---|
 | **Tarjeta de Crédito AMEX**       | 377813000000001 - 377847626810864 - 376402004977124 - 376414000000009 |
-| **Tarjeta de Crédito CODENSA**    | 5907120000000009                                                      |
-| **Tarjeta de Crédito CRM**        | 5282096712463427                                                      |
-| **Tarjeta de Crédito DAVIVIENDA** | 5247081012761500                                                      |
-| **Tarjeta de Crédito DINERS**     | 36032400000007 - 36032404150519 - 36032440201896                      |
-| **Tarjeta de Crédito MASTERCARD** | 5471300000000003 - 5120697176068275                                   |
-| **Tarjeta de Crédito NEQUI**      | 4093551018099251                                                      |
-| **Tarjeta de Crédito VISA**       | 4097440000000004 - 4037997623271984 - 4111111111111111                |
-| **Tarjeta Débito VISA**           | 4509420000000008                                                      |
+| **Tarjeta de Crédito CODENSA**    | 5907120000000009 |
+| **Tarjeta de Crédito CRM**        | 5282096712463427 |
+| **Tarjeta de Crédito DAVIVIENDA** | 5247081012761500 |
+| **Tarjeta de Crédito DINERS**     | 36032400000007 - 36032404150519 - 36032440201896 |
+| **Tarjeta de Crédito MASTERCARD** | 5471300000000003 - 5120697176068275 |
+| **Tarjeta de Crédito NEQUI**      | 4093551018099251 |
+| **Tarjeta de Crédito VISA**       | 4097440000000004 - 4037997623271984 - 4111111111111111 |
+| **Tarjeta Débito VISA**           | 4509420000000008 |
 
 </details>
 <details id="mexico">
-<summary><img src="/assets/Mexico.png" width="25px"/> México</summary>
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>México</b></summary>
 
 | Tarjeta                           | Número                               |
 |-----------------------------------|--------------------------------------|
@@ -172,7 +172,7 @@ Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 </details>
 <details id="panama">
-<summary><img src="/assets/Panama.png" width="25px"/> Panamá</summary>
+<summary><img src="/assets/Panama.png" width="25px"/> &nbsp; <b>Panamá</b></summary>
 
 | Tarjeta                           | Número                               |
 |-----------------------------------|--------------------------------------|
@@ -181,7 +181,7 @@ Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 </details>
 <details id="peru">
-<summary><img src="/assets/Peru.png" width="25px"/> Perú</summary>
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Perú</b></summary>
 
 | Tarjeta                           | Número                               |
 |-----------------------------------|--------------------------------------|
@@ -194,7 +194,7 @@ Puedes utilizar las siguientes tarjetas de prueba, organizadas por país:
 
 </details>
 
-### Probar Estados {#testing-statuses}
+### Probar estados {#testing-statuses}
 
 Al probar pagos, utiliza los siguientes valores en tu solicitud según el estado que desees simular:
 
@@ -206,23 +206,18 @@ Al probar pagos, utiliza los siguientes valores en tu solicitud según el estado
 
 * **Para simular transacciones _rechazadas_**:
   - Incluye `REJECTED` en el nombre del titular de la tarjeta.
-  - Usa **666** como el CVV de la tarjeta (para tarjetas AMEX, usa **666**).
+  - Usa **666** como el CVV de la tarjeta (para tarjetas AMEX, usa **6666**).
   - El parámetro `test` y la descripción de la transacción también pueden influir en el resultado. Si no funciona con `test` en _false_, intenta configurarlo en _true_.
   - Para la fecha de vencimiento de la tarjeta, usa un mes **mayor que** `6` y un año posterior al actual (por ejemplo, `07/202_`).
 
-* **Para simular transacciones _pendientes_**:
-  - Incluye `PENDING` en el nombre del titular de la tarjeta.
-  - Usa **777** como el CVV de la tarjeta (para tarjetas AMEX, usa **7777**).
-  - Configura el parámetro `test` en _true_.
-  - En la información del comprador y del pagador, utiliza la dirección de correo electrónico `manual-review-hub@email.com`.
+#### Consideraciones {#considerations-1}
 
+* **Para simular transacciones _pendientes_**, consulta [Probar escenarios con el Módulo Antifraude](#testing-scenarios-with-the-antifraud-module).
 * **Para el número de la tarjeta**, utiliza uno válido que corresponda a la franquicia enviada en el request. Puedes usar un generador en línea de tarjetas de crédito o seleccionar una de las tarjetas correspondientes a tu país mencionadas anteriormente.
-
 * **Para probar transferencias bancarias por PSE** (disponible en Colombia) en el ambiente Sandbox de PayU, consulta la [Guía de pruebas PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
-
 * **Para probar tarjetas en Chile**, utiliza los valores de nombre del tarjetahabiente, CVV y fecha de expiración indicados en las <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">tarjetas de ejemplo</a>.
 
-### Probar Escenarios con el Módulo Antifraude {#testing-scenarios-with-the-antifraud-module}
+### Probar escenarios con el Módulo Antifraude {#testing-scenarios-with-the-antifraud-module}
 
 Para probar diferentes escenarios utilizando nuestro módulo antifraude, utiliza una de las siguientes direcciones de correo electrónico junto con los datos de tarjetas de prueba apropiados. El sistema antifraude asignará un estado específico a la transacción según el correo que utilices:
 
@@ -237,7 +232,7 @@ Ten en cuenta que aunque el sistema antifraude determine que la transacción pue
 
 {{% /alert %}}
 
-## Importar la Colección {#importing-the-collection}
+## Importar la colección {#importing-the-collection}
 
 Haz clic en el siguiente botón para importar nuestra colección en Postman (puede que necesites refrescar la página si el botón no funciona). Ten en cuenta que creamos un ambiente cada vez que importas la colección.
 
@@ -246,13 +241,13 @@ Haz clic en el siguiente botón para importar nuestra colección en Postman (pue
 
 Luego de ejecutar la colección, necesitas configurar las variables de ambiente y los globales.
 
-### Configurar Tus Variables de Ambiente {#setting-your-environment-variables}
+### Configurar tus variables de ambiente {#setting-your-environment-variables}
 
 Nuestra colección tiene un ambiente llamado `PayU API Sandbox`. Recomendamos que invoques el request del API de la colección únicamente en el ambiente de Sandbox.
 
 Si quieres cambiar las cuentas de prueba de PayU, configura las variables `api_key`, `api_login`, `merchant_id` y `account-[country]`. Puedes dejar las demás variables con sus valores por defecto.
 
-### Importar los Globals {#importing-globals}
+### Importar los globals {#importing-globals}
 
 Los globales (Globals) son las variables que se necesitan para procesar las transacciones en nuestra pasarela de pagos como moneda (_currency_), valor de la transacción (_transaction amount_), página de confirmación (_confirmation page_), página de respuesta (_response pages_) y más.
 
@@ -266,6 +261,6 @@ Importa los globales de la colección para configurar las valores enviados en el
 
 Para cambiar el monto de la transacción, actualiza el valor de `tx_value_[País]` dependiendo del país donde quieras probar.
 
-## Ejecuta la Colección en el Orden Correcto {#running-the-requests-in-the-correct-order}
+## Ejecuta la colección en el orden correcto {#running-the-requests-in-the-correct-order}
 
 Ten en cuenta que el orden en el que ejecutes los requests es importante, debido a que algunos de los datos retornados por el request pueden ser utilizados en la siguiente invocación. 

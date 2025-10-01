@@ -43,7 +43,7 @@ The credit cards shown in this section are for testing purposes only and have be
 You can use the following test cards, organized by country:
 
 <details id="argentina">
-<summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
 | Card                       | Number                              |
 |----------------------------|-------------------------------------|
@@ -60,7 +60,7 @@ You can use the following test cards, organized by country:
 
 </details>
 <details id="brazil">
-<summary><img src="/assets/Brasil.png" width="25px"/> Brazil</summary>
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brazil</b></summary>
 
 | Card                       | Number               | Expiration Date | CVV  | Cardholder |
 |----------------------------|----------------------|-----------------|------|------|
@@ -75,7 +75,7 @@ You can use the following test cards, organized by country:
 
 </details>
 <details id="chile">
-<summary><img src="/assets/Chile.png" width="25px"/> Chile</summary>
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
 <table>
 <thead>
@@ -144,23 +144,23 @@ You can use the following test cards, organized by country:
 
 </details>
 <details id="colombia">
-<summary><img src="/assets/Colombia.png" width="25px"/> Colombia</summary>
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>
 
-| Card                       | Number                                                                |
-|----------------------------|-----------------------------------------------------------------------|
+| Card | Number |
+|---|---|
 | **AMEX Credit Card**       | 377813000000001 - 377847626810864 - 376402004977124 - 376414000000009 |
-| **CODENSA Credit Card**    | 5907120000000009                                                      |
-| **CRM Credit Card**        | 5282096712463427                                                      |
-| **DAVIVIENDA Credit Card** | 5247081012761500                                                      |
-| **DINERS Credit Card**     | 36032400000007 - 36032404150519 - 36032440201896                      |
-| **MASTERCARD Credit Card** | 5471300000000003 - 5120697176068275                                   |
-| **NEQUI Credit Card**      | 4093551018099251                                                      |
-| **VISA Credit Card**       | 4097440000000004 - 4037997623271984 - 4111111111111111                |
-| **VISA Debit Card**        | 4509420000000008                                                      |
+| **CODENSA Credit Card**    | 5907120000000009 |
+| **CRM Credit Card**        | 5282096712463427 |
+| **DAVIVIENDA Credit Card** | 5247081012761500 |
+| **DINERS Credit Card**     | 36032400000007 - 36032404150519 - 36032440201896 |
+| **MASTERCARD Credit Card** | 5471300000000003 - 5120697176068275 |
+| **NEQUI Credit Card**      | 4093551018099251 |
+| **VISA Credit Card**       | 4097440000000004 - 4037997623271984 - 4111111111111111 |
+| **VISA Debit Card**        | 4509420000000008 |
 
 </details>
 <details id="mexico">
-<summary><img src="/assets/Mexico.png" width="25px"/> Mexico</summary>
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>Mexico</b></summary>
 
 | Card                       | Number                               |
 |----------------------------|--------------------------------------|
@@ -172,7 +172,7 @@ You can use the following test cards, organized by country:
 
 </details>
 <details id="panama">
-<summary><img src="/assets/Panama.png" width="25px"/> Panama</summary>
+<summary><img src="/assets/Panama.png" width="25px"/> &nbsp; <b>Panama</b></summary>
 
 | Card                       | Number                               |
 |----------------------------|--------------------------------------|
@@ -181,7 +181,7 @@ You can use the following test cards, organized by country:
 
 </details>
 <details id="peru">
-<summary><img src="/assets/Peru.png" width="25px"/> Peru</summary>
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Peru</b></summary>
 
 | Card                       | Number                               |
 |----------------------------|--------------------------------------|
@@ -206,20 +206,15 @@ When testing payments, use the following values in your request based on the sta
 
 * **To simulate _declined_ transactions**:
   - Include `REJECTED` in the cardholder's name.
-  - Use **666** as the card's CVV (for AMEX cards, use **666**).
+  - Use **666** as the card's CVV (for AMEX cards, use **6666**).
   - The `test` parameter and the transaction description can also affect the outcome. If it doesn't work with `test` set to _false_, try setting it to _true_.
   - For the card expiration date, use a month **greater than** `6` and a year later than the current one (e.g., `07/202_`).
 
-* **To simulate _pending_ transactions**:
-  - Include `PENDING` in the cardholder's name.
-  - Use **777** as the card's CVV (for AMEX cards, use **7777**).
-  - Set the `test` parameter to _true_.
-  - In the buyer and payer information, use the email address `manual-review-hub@email.com`.
+#### Considerations
 
+* **To simulate _pending_ transactions**, refer to  [Testing Scenarios with the Antifraud Module](#testing-scenarios-with-the-antifraud-module).
 * **For the card number**, use a valid number corresponding to the brand sent in the request. You can use an online credit card generator or select one of the cards for your country mentioned earlier.
-
 * **To test bank transfers through PSE** (available in Colombia) in the PayU Sandbox environment, refer to the [PSE Test Guide (PDF)](/assets/pse-test-guide-v5-es.pdf).
-
 * **To test cards in Chile**, use the cardholder name, CVV, and expiration date values shown in the <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">example cards</a>.
 
 ### Testing Scenarios with the Antifraud Module

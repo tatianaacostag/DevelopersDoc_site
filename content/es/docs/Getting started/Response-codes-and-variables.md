@@ -232,17 +232,19 @@ Los siguientes códigos aplican para `payment_method_type` (Página de confirmac
 | `PENDING`   | Transacción pendiente o en validación                                      |
 | `SUBMITTED` | Transacción enviada a la entidad financiera y por algún motivo no terminó su procesamiento.<br>Sólo aplica para la API de reportes.|
 
-## Tipos de Transacción {#transaction-types} 
+## Tipos de Transacciones {#transaction-types}
 
-| Tipo                        | Descripción                                                |
-|-----------------------------|------------------------------------------------------------|
-| `AUTHORIZATION`             | Transacción de autorización.                               |
-| `AUTHORIZATION_AND_CAPTURE` | Transacción de cobro, Autorización y captura en un paso.   |
-| `CAPTURE`                   | Transacción de captura.                                    |
-| `VOID`                      | Transacción de cancelación de una autorización.            |
-| `REFUND`                    | Transacción de reembolso o cancelación de una captura.     |
+| Tipo                        | Descripción |
+|-----------------------------|-------------|
+| `AUTHORIZATION`             | Reserva el monto de la transacción en la cuenta del tarjetahabiente sin transferir los fondos. |
+| `AUTHORIZATION_AND_CAPTURE` | Procesa el pago en un solo paso al autorizar y capturar los fondos simultáneamente. |
+| `CAPTURE`                   | Completa una transacción previamente autorizada transfiriendo los fondos reservados. |
+| `CHARGEBACK`                | Reversión generalmente iniciada por el banco del tarjetahabiente, que devuelve los fondos al mismo. |
+| `VOID`                      | Transacción de cancelación de una autorización. |
+| `REFUND`                    | Devuelve el monto total de una transacción capturada al tarjetahabiente. |
+| `PARTIAL_REFUND`            | Devuelve una parte del monto de la transacción capturada al tarjetahabiente. |
 
-## Paises de Pago {#processing-countries}
+## Países de Pago {#processing-countries}
 
 | Código del país  | País   |
 |-------|---------------|

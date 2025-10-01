@@ -30,7 +30,7 @@ Para conduzir testes com a PayU, use as credenciais fornecidas abaixo em suas so
 * Consulte a documentação de <a href="https://developers.payulatam.com/latam/pt/docs/services/3dsauthentication/payu-handled-3ds-authentication.html#testando-a-autentica%C3%A7%C3%A3o-3ds" target="_blank">Autenticação 3DS Realizada pela PayU</a> para encontrar as credenciais para testar 3DS.
 * O ambiente de teste não replica os dados da sua conta de produção.
 
-## Cartões de Teste {#test-Cartãos}
+## Cartões de teste {#test-cards}
 
 Abaixo, você encontrará os dados de cartões que podem ser utilizados para simular transações no ambiente de testes da PayU.
 
@@ -43,7 +43,7 @@ Os cartões de crédito exibidos nesta seção são exclusivamente para testes e
 Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 <details id="argentina">
-<summary><img src="/assets/Argentina.png" width="25px"/> Argentina</summary>
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
 | Cartão                           | Número                              |
 |----------------------------------|-------------------------------------|
@@ -60,7 +60,7 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 </details>
 <details id="brazil">
-<summary><img src="/assets/Brasil.png" width="25px"/> Brasil</summary>
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brasil</b></summary>
 
 | Cartão                     | Número                                   | Data de Expiração  | CVV  | Nome do Titular |
 |----------------------------|------------------------------------------|--------------------|------|-----|
@@ -75,7 +75,7 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 </details>
 <details id="chile">
-<summary><img src="/assets/Chile.png" width="25px"/> Chile</summary>
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
 <table>
 <thead>
@@ -144,7 +144,7 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 </details>
 <details id="colombia">
-<summary><img src="/assets/Colombia.png" width="25px"/> Colômbia</summary>
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colômbia</b></summary>
 
 | Cartão                           | Número                                                                |
 |----------------------------------|-----------------------------------------------------------------------|
@@ -160,7 +160,7 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 </details>
 <details id="mexico">
-<summary><img src="/assets/Mexico.png" width="25px"/> México</summary>
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>México</b></summary>
 
 | Cartão                           | Número                               |
 |----------------------------------|--------------------------------------|
@@ -172,7 +172,7 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 </details>
 <details id="panama">
-<summary><img src="/assets/Panama.png" width="25px"/> Panama</summary>
+<summary><img src="/assets/Panama.png" width="25px"/> &nbsp; <b>Panama</b></summary>
 
 | Cartão                           | Número                               |
 |----------------------------------|--------------------------------------|
@@ -181,7 +181,7 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 
 </details>
 <details id="peru">
-<summary><img src="/assets/Peru.png" width="25px"/> Peru</summary>
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Peru</b></summary>
 
 | Cartão                           | Número                               |
 |----------------------------------|--------------------------------------|
@@ -206,23 +206,18 @@ Ao testar pagamentos, use os seguintes valores na sua requisição conforme o st
 
 * **Para simular transações _recusadas_**:
   - Inclua `REJECTED` no nome do titular do cartão.
-  - Use **666** como o CVV do cartão (para cartões AMEX, use **666**).
+  - Use **666** como o CVV do cartão (para cartões AMEX, use **6666**).
   - O parâmetro `test` e a descrição da transação também podem influenciar o resultado. Se não funcionar com `test` definido como _false_, tente definir como _true_.
   - Para a data de validade do cartão, use um mês **maior que** `6` e um ano posterior ao atual (exemplo: `07/202_`).
 
-* **Para simular transações _pendentes_**:
-  - Inclua `PENDING` no nome do titular do cartão.
-  - Use **777** como o CVV do cartão (para cartões AMEX, use **7777**).
-  - Defina o parâmetro `test` como _true_.
-  - Nas informações do comprador e do pagador, use o e-mail `manual-review-hub@email.com`.
+#### Considerações {#considerations-1}
 
+* **Para simular transações _pendentes_**, consulte [Testando cenários com o Módulo Antifraude](#testing-scenarios-with-the-antifraud-module).
 * **Para o número do cartão**, use um número válido que corresponda à bandeira enviada na requisição. Você pode usar um gerador online de cartões de crédito ou selecionar um dos cartões para seu país mencionados anteriormente.
-
 * **Para testar transferências bancárias via PSE** (disponível na Colômbia) no ambiente Sandbox da PayU, consulte o [Guia de Testes PSE (PDF)](/assets/pse-test-guide-v5-es.pdf).
-
 * **Para testar cartões no Chile**, use os valores de nome do titular, CVV e data de validade mostrados nas <a href="#chile" id="linkcl" onclick="document.getElementById('chile').open = true;">cartões de exemplo</a>.
 
-### Testar Cenários com o Módulo Antifraude
+### Testando cenários com o Módulo Antifraude {#testing-scenarios-with-the-antifraud-module}
 
 Para testar diferentes cenários usando o nosso módulo antifraude, utilize um dos seguintes endereços de e-mail juntamente com os dados apropriados de cartão de teste. O sistema antifraude atribuirá um status específico à transação com base no e-mail que você utilizar:
 
@@ -237,7 +232,7 @@ Tenha em mente que, mesmo que o sistema antifraude determine que a transação p
 
 {{% /alert %}}
 
-## Importando a Coleção {#importing-the-collection}
+## Importando a coleção {#importing-the-collection}
 
 Clique no botão abaixo para importar nossa coleção no Postman (pode ser necessário atualizar a página se o botão não funcionar para você). Observe que criamos um novo ambiente cada vez que você importa a coleção.
 
@@ -246,13 +241,13 @@ Clique no botão abaixo para importar nossa coleção no Postman (pode ser neces
 
 Depois de executar a coleção, você precisa definir os parâmetros globais e variáveis de ambiente.
 
-### Configurando Suas Variáveis ​​de Ambiente {#setting-your-environment-variables}
+### Configurando suas variáveis ​​de ambiente {#setting-your-environment-variables}
 
 Nossa coleção tem um ambiente chamado `PayU API Sandbox`. Recomendamos que você invoque as solicitações de API da coleção apenas em um ambiente Sandbox.
 
 Se você deseja alterar as contas de teste do PayU, configure as variáveis `api_key`, `api_login`, `merchant_id` e `account-[país]`. Você pode deixar todas as outras variáveis inalteradas.
 
-### Importando os Globals {#importing-globals}
+### Importando os globals {#importing-globals}
 
 As variáveis globais são necessárias para processar transações em nosso portal de pagamentos, como moeda, valor da transação, páginas de confirmação e resposta e muito mais.
 
@@ -266,6 +261,6 @@ Importe as variáveis globais da coleção para configurar os valores enviados �
 
 Para alterar o valor de uma transação, atualize o valor para o  `tx_value_[país]` de acordo com o país que você deseja testar.de acordo com o país que você deseja testar.
 
-## Execute as Solicitações na Ordem Correta {#running-the-requests-in-the-correct-order}
+## Execute as solicitações na ordem correta {#running-the-requests-in-the-correct-order}
 
 Observe que a ordem em que você executa as solicitações é importante, pois alguns dos dados retornados por uma solicitação podem ser usados na próxima invocação.

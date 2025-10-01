@@ -221,7 +221,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `REFUNDED`    | A última transação da ordem é um reembolso aprovado.            |
 | `CHARGEBACK`  | A última transação da ordem é um estorno. Ou seja, corresponde a uma [Disputa]({{< ref "Disputes.md" >}}) perdida. |
 
-## Transaction States {#transaction-states}
+## Estados de Transação {#transaction-states}
 
 | Estado      | Descrição                          |
 |-------------|-------------------------------------|
@@ -232,15 +232,17 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `PENDING`   | Transação pendente ou em validação                |
 | `SUBMITTED` | Transação enviada para a instituição financeira, mas o processamento não foi concluído.<br>API de consulta. |
 
-## Tipos de Transação {#transaction-types} 
+## Tipos de Transações {#transaction-types} 
 
-| Tipo                        | Descrição                                                     |
-|-----------------------------|---------------------------------------------------------------|
-| `AUTHORIZATION`             | Transação de autorização.                                     |
-| `AUTHORIZATION_AND_CAPTURE` | Transação de cobrança, autorização e captura em uma só etapa. |
-| `CAPTURE`                   | Transação de captura.                                         |
-| `VOID`                      | Transação de cancelamento de uma autorização.                 |
-| `REFUND`                    | Transação de reembolso ou cancelamento de uma captura.        |
+| Tipo                    | Descrição |
+|-------------------------|-----------|
+| `AUTHORIZATION`         | Reserva o valor da transação na conta do portador do cartão sem transferir os fundos. |
+| `AUTHORIZATION_AND_CAPTURE` | Processa o pagamento em uma única etapa, autorizando e capturando os fundos simultaneamente. |
+| `CAPTURE`               | Conclui uma transação previamente autorizada transferindo os fundos reservados. |
+| `CHARGEBACK`            | Uma reversão geralmente iniciada pelo banco do portador do cartão, que devolve os fundos ao mesmo. |
+| `VOID`                  | Transação de cancelamento de uma autorização. |
+| `REFUND`                | Devolve o valor total de uma transação capturada ao portador do cartão. |
+| `PARTIAL_REFUND`        | Devolve uma parte do valor da transação capturada ao portador do cartão. |
 
 ## Países de Processamento {#processing-countries}
 
