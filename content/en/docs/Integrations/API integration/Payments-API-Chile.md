@@ -145,7 +145,7 @@ Two-step flow is available upon request. Contact your sales representative for m
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
-| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. The maximum size of each _extraParameters_ name is 64 characters.<li>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<li>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
 
 </details>
 
@@ -172,7 +172,7 @@ Two-step flow is available upon request. Contact your sales representative for m
 | transactionResponse > authorizationCode | Alphanumeric | Max:12 | The authorization code returned by the financial network. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <li>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<li>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
@@ -1144,8 +1144,8 @@ To perform tests in the Khipu banking environment, you can use the following cre
 | transaction > payer > contactPhone | Alphanumeric | 20 | Payer's phone number. | Yes |
 | transaction > payer > dniNumber | Alphanumeric | 20 | Buyer's identification number. | Yes |
 | transaction > payer > dniType | Alphanumeric | 2 | Buyer's identification type. [See document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
-| transaction > extraParameters | Object | | Additional parameters or data associated with the request. For Khipu bank transfer payments, this includes: the response page of your commerce (required), the bank code (required), and the bank name (optional). <ul> In JSON, the `extraParameters` parameter is set as: `"extraParameters": {"RESPONSE_URL": "http://www.payu.com/response", "FINANCIAL_INSTITUTION_CODE": "Bawdf", "FINANCIAL_INSTITUTION_NAME": "DemoBank" }` </ul> <ul> In XML, the `extraParameters` parameter is set as: `<extraParameters> <entry> <string>RESPONSE_URL</string> <string>http://www.payu.com/response</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_CODE</string> <string>Bawdf</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_NAME</string> <string>DemoBank</string> </entry> </extraParameters>` | Yes |
-| transaction > type | Alphanumeric | 32 | As these payments are made on the PSE website, the only available transaction is `AUTHORIZATION_AND_CAPTURE` | Yes |
+| transaction > extraParameters | Object | | Additional parameters or data associated with the request. For Khipu bank transfer payments, this includes: the response page of your commerce (required), the bank code (required), and the bank name (optional). <li> In JSON, the `extraParameters` parameter is set as: `"extraParameters": {"RESPONSE_URL": "http://www.payu.com/response", "FINANCIAL_INSTITUTION_CODE": "Bawdf", "FINANCIAL_INSTITUTION_NAME": "DemoBank" }` </li> <li> In XML, the `extraParameters` parameter is set as: `<extraParameters> <entry> <string>RESPONSE_URL</string> <string>http://www.payu.com/response</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_CODE</string> <string>Bawdf</string> </entry> <entry> <string>FINANCIAL_INSTITUTION_NAME</string> <string>DemoBank</string> </entry> </extraParameters>` </li> | Yes |
+| transaction > type | Alphanumeric | 32 | As these payments are made on the Khipu website, the only available transaction is `AUTHORIZATION_AND_CAPTURE` | Yes |
 | transaction > paymentMethod | Alphanumeric | 32 | Select a valid payment method for bank transfer. [See available payment methods for Chile]({{< ref "payments-api-chile.html#available-payment-methods-query" >}}). | Yes |
 | transaction > paymentCountry | Alphanumeric | 2 | Set to `CL` for Chile. | Yes |
 | transaction > deviceSessionId | Alphanumeric | 255 | Session identifier of the device where the customer makes the transaction. For more information, refer to [this topic]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Yes |
@@ -1180,9 +1180,15 @@ To perform tests in the Khipu banking environment, you can use the following cre
 | transactionResponse > responseCode | Alphanumeric | Max: 64 | Response code associated with the state. In this case, for successful transactions, it is `PENDING_TRANSACTION_CONFIRMATION`. |
 | transactionResponse > responseMessage | Alphanumeric | Max: 2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date | | Date the response was created in the PayU system. |
-| transactionResponse > extraParameters | Object | | Additional parameters or data associated with the response. The `BANK_URL` is the URL you should use to redirect your payer to Khipu. In JSON, the `extraParameters` parameter follows this structure: `"extraParameters": { "BANK_URL": "xxxx" }` In XML, the `extraParameters` parameter follows this structure: `<extraParameters> <entry> <string>BANK_URL</string> <string>xxxx</string> </entry> </extraParameters>` |
+| transactionResponse > extraParameters | Object | | Additional parameters or data associated with the response. The `BANK_URL` is the URL you should use to redirect your payer to Khipu. <li>In JSON, the `extraParameters` parameter follows this structure: `"extraParameters": { "BANK_URL": "xxxx" }` <li>In XML, the `extraParameters` parameter follows this structure: `<extraParameters> <entry> <string>BANK_URL</string> <string>xxxx</string> </entry> </extraParameters>` |
 
 </details>
+
+{{% alert title="Note" color="info"%}}
+
+To simulate specific test outcomes (`OK`, `ERROR`, `WARNING`, `CONTINUE`), refer to the [Khipu Test Cases Documentation](https://docs.khipu.com/en/payment-solutions/instant-payments/khipu-client-test-cases).
+
+{{% /alert %}}
 
 ### Request and Response Examples
 
@@ -1722,7 +1728,7 @@ This method allows you to process payments using your customers' debit or prepai
 | transaction > ipAddress | Alphanumeric | Max:39 | IP address of the device where the customer performs the transaction. | Yes |
 | transaction > cookie | Alphanumeric | Max:255 | Cookie stored by the device where the customer performs the transaction. | Yes |
 | transaction > userAgent | Alphanumeric | Max:1024 | The User agent of the browser where the customer performs the transaction. | Yes |
-| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. For payments through WebPay plus, this is the response page of your commerce.<br>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"RESPONSE_URL": "http://www.test.com/response"`<br>`}`<br><br>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>RESPONSE_URL</string>`<br>&emsp;&emsp;`http://www.test.com/response`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
+| transaction > extraParameters | Object |  | Additional parameters or data associated with the request. For payments through WebPay plus, this is the response page of your commerce. <li>In JSON, the _extraParameters_ parameter is set as: <br>`"extraParameters": {`<br>&emsp;`"RESPONSE_URL": "http://www.test.com/response"`<br>`}` <li>In XML, the _extraParameters_ parameter is set as: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>RESPONSE_URL</string>`<br>&emsp;&emsp;`http://www.test.com/response`<br>&emsp;`</entry>`<br>`</extraParameters>` | No |
 
 </details>
 
@@ -1750,7 +1756,7 @@ This method allows you to process payments using your customers' debit or prepai
 | transactionResponse > responseCode | Alphanumeric | Max:64 | The response code associated with the status. In this case, for successful transactions is `PENDING_PAYMENT_IN_ENTITY`. |
 | transactionResponse > responseMessage | Alphanumeric | Max:2048 | Message associated with the response code. |
 | transactionResponse > operationDate | Date |  | Creation date of the response in the PayU´s system. |
-| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response.<br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"URL_PAYMENT_REDIRECT": "xxxx"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>URL_PAYMENT_REDIRECT</string>`<br>&emsp;&emsp;`<string>xxxx</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > extraParameters | Object |  | Additional parameters or data associated with the response. <li>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"URL_PAYMENT_REDIRECT": "xxxx"`<br>`}` <li>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>URL_PAYMENT_REDIRECT</string>`<br>&emsp;&emsp;`<string>xxxx</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
