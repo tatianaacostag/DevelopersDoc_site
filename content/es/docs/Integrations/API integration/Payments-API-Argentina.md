@@ -382,6 +382,28 @@ Encuentra la descripción del objeto `transaction.networkToken` y sus parámetro
 * La variable `transaction.threeDomainSecure` no reemplaza la información de la tarjeta o ninguno de los campos obligatorios de la transacción. Este objeto es adicional y no es obligatorio.
 * La variable `transaction.threeDomainSecure` corresponde a un escenario _Pass Through_ donde el comercio realiza la autenticación por su cuenta.
 
+<details>
+      <summary><strong>Consideración especial para tarjetas Naranja</strong></summary>
+      <p><strong>Consideración especial:</strong> Tarjetas de crédito Naranja X (BIN 589562)</p>
+      <p>Las tarjetas de crédito Naranja X tienen un comportamiento específico en su proceso de validación del número de tarjeta (OCR):</p>
+      <ul>
+        <li><strong>Hasta el 17 de abril de 2023:</strong> Las tarjetas físicas se emitían utilizando el algoritmo Luhn 11 para el dígito verificador.</li>
+        <li><strong>Actualmente:</strong> Todas las nuevas tarjetas se emiten utilizando el algoritmo estándar Luhn 10.</li>
+      </ul>
+      <p><strong>Estado actual:</strong></p>
+      <ul>
+        <li>Más del 80% de las tarjetas físicas activas ya utilizan Luhn 10.</li>
+        <li>Un pequeño porcentaje aún opera con Luhn 11, el cual se eliminará gradualmente a medida que se renueven las tarjetas.</li>
+        <li>Todas las tarjetas virtuales Naranja X dentro de la aplicación ya utilizan Luhn 10.</li>
+      </ul>
+      <p><strong>Recomendaciones para los integradores:</strong></p>
+      <ul>        
+        <li>Implementar una validación dual para el BIN 589562, admitiendo tanto los algoritmos Luhn 10 como Luhn 11.</li>
+        <li>Como alternativa, omitir la validación del dígito verificador para este BIN específico y validar únicamente el número BIN.</li>
+      </ul>
+      <p>Estas opciones ayudan a evitar rechazos innecesarios para transacciones válidas que aún utilizan el algoritmo Luhn 11.</p>
+    </details>
+
 ### Autorización {#authorization}
 
 Utiliza este método para realizar el paso de **Autorización** del flujo de dos pasos. En este paso, autorizas el pago pero el monto no se debita hasta que [captures]({{< ref "#capture" >}}) los fondos.<br>Los siguientes son los cuerpos de la petición y la respuesta para este tipo de transacción.

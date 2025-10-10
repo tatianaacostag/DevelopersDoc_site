@@ -385,6 +385,27 @@ Find the description of the object `transaction.networkToken` and its parameters
 * Due to Tax regulations, it is mandatory to send the parameters `payer.billingAddress.state` using format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR) and `payer.dnitype`.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
 * The variable `transaction.threeDomainSecure` corresponds to a _passthrough_ scenario where the commerce performs the authentication by their own.
+<details>
+      <summary><strong>Special consideration for Naranja cards</strong></summary>
+      <p><strong>Special consideration:</strong> Naranja X Credit Cards (BIN 589562)</p>
+      <p>Naranja X Credit Cards have a specific behavior in their OCR (card number) validation process:</p>
+      <ul>
+        <li><strong>Until April 17, 2023:</strong> Physical cards were issued using the Luhn 11 algorithm for the check digit.</li>
+        <li><strong>Currently:</strong> All new cards are issued using the standard Luhn 10 algorithm.</li>
+      </ul>
+      <p><strong>Current status:</strong></p>
+      <ul>
+        <li>More than 80% of active physical cards now use Luhn 10.</li>
+        <li>A small percentage still operate with Luhn 11, which will gradually phase out as cards are renewed.</li>
+        <li>All Naranja X in-app virtual cards already use Luhn 10.</li>
+      </ul>
+      <p><strong>Recommendations for integrators:</strong></p>
+      <ul>        
+        <li>Implement dual validation for BIN 589562, supporting both Luhn 10 and Luhn 11 algorithms.</li>
+        <li>Alternatively, skip checksum validation for this specific BIN and validate only the BIN number.</li>
+      </ul>
+      <p>These options help prevent unnecessary declines for valid transactions still using the Luhn 11 algorithm.</p>
+    </details>
 
 ### Authorization
 

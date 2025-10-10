@@ -25,7 +25,7 @@ Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL segú
 La API de Pagos incluye las siguientes funcionalidades:
 
 * [Enviar transacciones utilizando tarjetas de crédito o débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
-* [Enviar transacciones utilizando QR Bre-B]({{< ref "#submit-transactions-using-bre-b-qr-code" >}})
+* [Enviar transacciones utilizando QR Bre-B]({{< ref "#submit-transactions-using-bre-b-qr" >}})
 * [Enviar transacciones utilizando transferencia bancaria (PSE)]({{< ref "#submit-transactions-using-bank-transfer-pse" >}})
 * [Enviar transacciones utilizando Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Enviar transacciones utilizando Nequi]({{< ref "#submit-transactions-using-nequi" >}})
@@ -39,7 +39,7 @@ La API de Pagos incluye las siguientes funcionalidades:
 {{% alert title="Nota" color="info"%}}
 
 Para confirmar el estado de una transacción, puedes utilizar una de las siguientes opciones:
-* Navega a la URL configurada en la variable `transaction.notifyUrl` o la opción _**URL de confirmación**_ ubicada en el Módulo PayU en _**Configuración**_ > _**Configuración técnica**_.
+* Navega a la URL configurada en la variable `transaction.notifyUrl` o la opción **URL de confirmación** ubicada en el Módulo PayU en **Configuración** > **Configuración técnica**.
 * Utiliza la [API o SDK de Consultas]({{< ref "Queries.md" >}}).
 
 {{% /alert %}}
@@ -57,7 +57,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -157,7 +157,7 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -497,7 +497,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
 
 {{< /tabs >}}
 
-## Enviar transacciones utilizando QR Bre-B {#submit-transactions-using-bre-b-qr-code}
+## Enviar transacciones utilizando QR Bre-B {#submit-transactions-using-bre-b-qr}
 
 Este método te permite procesar pagos realizados por tus clientes a través de **QR Bre-B**. Para integrarte con este medio de pago, debes mostrar un código QR en tu checkout, para que el cliente pueda escanearlo con su aplicación bancaria o billetera digital y completar el pago.
 
@@ -513,7 +513,8 @@ Al ser un sistema interoperable, los pagadores pueden escanear el código QR con
 
 ### Disponibilidad
 
-QR Bre-B está disponible en diversas modalidades de integración, lo que te permite implementarlo fácilmente según el tipo de canal o flujo de pago que utilices.  
+QR Bre-B está disponible en diversas modalidades de integración, lo que te permite implementarlo fácilmente según el tipo de canal o flujo de pago que utilices.
+
 Puedes habilitarlo en cualquiera de las siguientes opciones:
 
 *	Modelo Agregador (PSP)
@@ -561,7 +562,7 @@ Antes de implementar **QR Bre-B**, ten en cuenta los siguientes aspectos técnic
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-1}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -636,7 +637,7 @@ Antes de implementar **QR Bre-B**, ten en cuenta los siguientes aspectos técnic
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -766,7 +767,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
     "extraParameters": {
       "EXPIRATION_DATE": 1742490236444,
       "URL_PAYMENT_RECEIPT_PDF": "http://ppp-web-gateway-payu.transactional.payu.preprod/ppp-web-gateway-payu/receipt?vid=1438936173Ybccc494c97bf4b7Y5f4bcef70c4d7b6",
-      "QRCODE_IMAGE_BASE64": "iVBORw0KGgoAAAANSUhEUgAAAJ4AAACeAQAAAADr/o7WAAAEG0lEQVR4Xn2XQYqjOwyEDd4KdBWDtwZfXaCtQFcxaCvQlPN2M/5faJLuD5K2paqS0urfR7a/SV0oLY96rhjU19nF2egNPb3x6LHdTsywYWVvaFQ1/JzJyZSHwuQT4gNGrDMikj34f2BsCunhkq0NSvqCntqnuk5eI2fFyN85H1Ca/fX43f0Bq06P4xa6WlaU/1fPBxTiIbO1tYPa9mwx1xtqHedR1ktOtVFl/gWT8Owtxt7cVWnKB7Teh5xjnc/IDGdxe0NfGw1xJllyNseZa71hTvyJS8bWUBqdU+gNqznXVp62Bxp3htL6gKH7GI/w1shPpfoHjDaXoNAsVglFtH7L94JV5CqxdPcTrtQW38a94Nni0Qf7WIfkTG3rA3aRLZEoXSTku+Ke8wUdqm6zZspV1gmOmW8IPy0V2/AMT1Y6Bv08oeY6Nd2moW8Dr9vpDYNnP1C1MhrDzUoh2yesRmvjiWIeOBfa5NujF3Q96a6+kzIVvdN8QydtcD6UsNLG0XVF+4TBEqPYqpakT2OWD+jCzK3xlN7a8Witf8BgNGOWoiYOMVDF/oBqshAsNfoqfIZDtPmGsttahbN36oqwQlTaG1ZjhBWc7yuLEZR8FfKCoSVm3jsjKgnZ9jvnC6Yd/B9Cw9bMrrZSPqD5gaA69I9A48A10eInrBOQt993zWLP0fVq/gF1qt2DByoYKB3cS2+IfsH7MadOZBAarTjSE4rXhrbPcrjm3oJvVD7h6ilw38HBahykqn9AWN944u0bHJbB2egNT1vJrQTF3koIP0KLn9A2xL2vo2++QuWR9oZHRrakWDLQN5lcPd/Qe66tQn0LKW868wuqMNUQDtk4nflunT6gSx+JJ1kr1+DtuMATJgbYPmS09PwKTD8tPSBcrQMjsoQwnw16uC5+wcBEhFXaYDmt3/Sjm8kPiAOd5ja41u4chnFCb2hDjBtCVW5o+ZSwLxiLcLvMmxg07sD6gIrJgD1GF4Y+ftcGQ3xAbAZatqbi4dPXtFvPBxRL3GBIbkwURJDfIfWESIcDnS4+aGGNyPyEGKWmAuusMFbZOr5goQ2+MUmooHKvhRY/oR/MnNFtSRy6EXSP9IQ1hy7BrMD8g9KYJ0r3hka01wmYGmGFXuiwN9QiyAuDl7GVwQ+8bjte0CVIkM4My/i19u+cL2iOBBI7ioREUtMvVJ8QVkmLmOwViQVlYvN4Q6gksJPY9DOpDv0s84SHJjzVkENYX5ordrp8wyqZpm59w308Ev2+e8gDCoSDvcgLEkRPvN8IekLH3saHscLlSMIP3xa/IOo/awunzoFixLmj/AOiylawKnakM6pjqH1B62eIz37HGdp4RfuEWLMFIS28FzwQtef67d7/QsHqarPbFHxrKIzypR/w7+8s9fVd5g+mOwIKMCFj8AAAAABJRU5ErkJggg==",
+      "QRCODE_IMAGE_BASE64": "iVBORw0KGgoAAAANSUhEUgAAAJ4AAACeAQAAAADr/o7WAAAEG0lEQVR4Xn2XQYqjOwyEDd4KdBWDtwZfXaCtQFcxaCvQlPN2M/5faJLuD5K2paqS0urfR7a/SV0oLY96rhjU19nF2egNPb3x6LHdTsywYWVvaFQ1/JzJyZSHwuQT4gNGrDMikj34f2BsCunhkq0NSvqCntqnuk5eI2fFyN85H1Ca/fX43f0Bq06P4xa6WlaU/1fPBxTiIbO1tYPa9mwx1xtqHedR1ktOtVFl/gWT8Owtxt7cVWnKB7Teh5xjnc/IDGdxe0NfGw1xJllyNseZa71hTvyJS8bWUBqdU+gNqznXVp62Bxp3htL6gKH7GI/w1shPpfoHjDaXoNAsVglFtH7L94JV5CqxdPcTrtQW38a94Nni0Qf7WIfkTG3rA3aRLZEoXSTku+Ke8wUdqm6zZspV1gmOmW8IPy0V2/AMT1Y6Bv08oeY6Nd2moW8Dr9vpDYNnP1C1MhrDzUoh2yesRmvjiWIeOBfa5NujF3Q96a6+kzIVvdN8QydtcD6UsNLG0XVF+4TBEqPYqpakT2OWD+jCzK3xlN7a8Witf8BgNGOWoiYOMVDF/oBqshAsNfoqfIZDtPmGsttahbN36oqwQlTaG1ZjhBWc7yuLEZR8FfKCoSVm3jsjKgnZ9jvnC6Yd/B9Cw9bMrrZSPqD5gaA69I9A48A10eInrBOQt993zWLP0fVq/gF1qt2DByoYKB3cS2+IfsH7MadOZBAarTjSE4rXhrbPcrjm3oJvVD7h6ilw38HBahykqn9AWN944u0bHJbB2egNT1vJrQTF3koIP0KLn9A2xL2vo2++QuWR9oZHRrakWDLQN5lcPd/Qe66tQn0LKW868wuqMNUQDtk4nflunT6gSx+JJ1kr1+DtuMATJgbYPmS09PwKTD8tPSBcrQMjsoQwnw16uC5+wcBEhFXaYDmt3/Sjm8kPiAOd5ja41u4chnFCb2hDjBtCVW5o+ZSwLxiLcLvMmxg07sD6gIrJgD1GF4Y+ftcGQ3xAbAZatqbi4dPXtFvPBxRL3GBIbkwURJDfIfWESIcDnS4==",
       "URL_PAYMENT_RECEIPT_HTML": "http://ppp-web-gateway-payu.transactional.payu.preprod/ppp-web-gateway-payu/app/v2?vid=1438936173Ybccc494c97bf4b7Y5f4bcef70c4d7b6"
     },
     "additionalInfo": null
@@ -785,8 +786,8 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
   <language>es</language>
   <command>SUBMIT_TRANSACTION</command>
   <merchant>
-    <apiKey>JpvjUo1H6B354e0z0ayts9nLNl</apiKey>
-    <apiLogin>RDjg503F3lqEHGm</apiLogin>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
   </merchant>
   <transaction>
     <order>
@@ -794,7 +795,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
       <referenceCode>Houston 123456789918</referenceCode>
       <description>Houston</description>
       <language>en</language>
-      <notifyUrl>http://www.tes.com/confirmation</notifyUrl>
+      <notifyUrl>http://www.test.com/confirmation</notifyUrl>
       <additionalValues>
         <TX_VALUE>
           <value>1000</value>
@@ -804,7 +805,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
       <buyer>
         <merchantBuyerId>1</merchantBuyerId>
         <fullName>APPROVED</fullName>
-        <emailAddress>juliana.diaz@payu.com</emailAddress>
+        <emailAddress>john.doe@payu.com</emailAddress>
         <contactPhone>7563126</contactPhone>
         <dniNumber>5415668464654</dniNumber>
         <shippingAddress>
@@ -830,7 +831,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
     <payer>
       <merchantPayerId>1</merchantPayerId>
       <fullName>APPROVED</fullName>
-      <emailAddress>juliana.diaz@payu.com</emailAddress>
+      <emailAddress>john.doe@payu.com</emailAddress>
       <contactPhone>7563126</contactPhone>
       <dniNumber>5415668464654</dniNumber>
       <billingAddress>
@@ -876,7 +877,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
     <extraParameters>
       <EXPIRATION_DATE>1742490236444</EXPIRATION_DATE>
       <URL_PAYMENT_RECEIPT_PDF>http://ppp-web-gateway-payu.transactional.payu.preprod/ppp-web-gateway-payu/receipt?vid=1438936173Ybccc494c97bf4b7Y5f4bcef70c4d7b6</URL_PAYMENT_RECEIPT_PDF>
-      <QRCODE_IMAGE_BASE64>iVBORw0KGgoAAAANSUhEUgAAAJ4AAACeAQAAAADr/o7WAAAEG0lEQVR4Xn2XQYqjOwyEDd4KdBWDtwZfXaCtQFcxaCvQlPN2M/5faJLuD5K2paqS0urfR7a/SV0oLY96rhjU19nF2egNPb3x6LHdTsywYWVvaFQ1/JzJyZSHwuQT4gNGrDMikj34f2BsCunhkq0NSvqCntqnuk5eI2fFyN85H1Ca/fX43f0Bq06P4xa6WlaU/1fPBxTiIbO1tYPa9mwx1xtqHedR1ktOtVFl/gWT8Owtxt7cVWnKB7Teh5xjnc/IDGdxe0NfGw1xJllyNseZa71hTvyJS8bWUBqdU+gNqznXVp62Bxp3htL6gKH7GI/w1shPpfoHjDaXoNAsVglFtH7L94JV5CqxdPcTrtQW38a94Nni0Qf7WIfkTG3rA3aRLZEoXSTku+Ke8wUdqm6zZspV1gmOmW8IPy0V2/AMT1Y6Bv08oeY6Nd2moW8Dr9vpDYNnP1C1MhrDzUoh2yesRmvjiWIeOBfa5NujF3Q96a6+kzIVvdN8QydtcD6UsNLG0XVF+4TBEqPYqpakT2OWD+jCzK3xlN7a8Witf8BgNGOWoiYOMVDF/oBqshAsNfoqfIZDtPmGsttahbN36oqwQlTaG1ZjhBWc7yuLEZR8FfKCoSVm3jsjKgnZ9jvnC6Yd/B9Cw9bMrrZSPqD5gaA69I9A48A10eInrBOQt993zWLP0fVq/gF1qt2DByoYKB3cS2+IfsH7MadOZBAarTjSE4rXhrbPcrjm3oJvVD7h6ilw38HBahykqn9AWN944u0bHJbB2egNT1vJrQTF3koIP0KLn9A2xL2vo2++QuWR9oZHRrakWDLQN5lcPd/Qe66tQn0LKW868wuqMNUQDtk4nflunT6gSx+JJ1kr1+DtuMATJgbYPmS09PwKTD8tPSBcrQMjsoQwnw16uC5+wcBEhFXaYDmt3/Sjm8kPiAOd5ja41u4chnFCb2hDjBtCVW5o+ZSwLxiLcLvMmxg07sD6gIrJgD1GF4Y+ftcGQ3xAbAZatqbi4dPXtFvPBxRL3GBIbkwURJDfIfWESIcDnS4+aGGNyPyEGKWmAuusMFbZOr5goQ2+MUmooHKvhRY/oR/MnNFtSRy6EXSP9IQ1hy7BrMD8g9KYJ0r3hka01wmYGmGFXuiwN9QiyAuDl7GVwQ+8bjte0CVIkM4My/i19u+cL2iOBBI7ioREUtMvVJ8QVkmLmOwViQVlYvN4Q6gksJPY9DOpDv0s84SHJjzVkENYX5ordrp8wyqZpm59w308Ev2+e8gDCoSDvcgLEkRPvN8IekLH3saHscLlSMIP3xa/IOo/awunzoFixLmj/AOiylawKnakM6pjqH1B62eIz37HGdp4RfuEWLMFIS28FzwQtef67d7/QsHqarPbFHxrKIzypR/w7+8s9fVd5g+mOwIKMCFj8AAAAABJRU5ErkJggg==</QRCODE_IMAGE_BASE64>
+      <QRCODE_IMAGE_BASE64>iVBORw0KGgoAAAANSUhEUgAAAJ4AAACeAQAAAADr/o7WAAAEG0lEQVR4Xn2XQYqjOwyEDd4KdBWDtwZfXaCtQFcxaCvQlPN2M/5faJLuD5K2paqS0urfR7a/SV0oLY96rhjU19nF2egNPb3x6LHdTsywYWVvaFQ1/JzJyZSHwuQT4gNGrDMikj34f2BsCunhkq0NSvqCntqnuk5eI2fFyN85H1Ca/fX43f0Bq06P4xa6WlaU/1fPBxTiIbO1tYPa9mwx1xtqHedR1ktOtVFl/gWT8Owtxt7cVWnKB7Teh5xjnc/IDGdxe0NfGw1xJllyNseZa71hTvyJS8bWUBqdU+gNqznXVp62Bxp3htL6gKH7GI/w1shPpfoHjDaXoNAsVglFtH7L94JV5CqxdPcTrtQW38a94Nni0Qf7WIfkTG3rA3aRLZEoXSTku+Ke8wUdqm6zZspV1gmOmW8IPy0V2/AMT1Y6Bv08oeY6Nd2moW8Dr9vpDYNnP1C1MhrDzUoh2yesRmvjiWIeOBfa5NujF3Q96a6+kzIVvdN8QydtcD6UsNLG0XVF+4TBEqPYqpakT2OWD+jCzK3xlN7a8Witf8BgNGOWoiYOMVDF/oBqshAsNfoqfIZDtPmGsttahbN36oqwQlTaG1ZjhBWc7yuLEZR8FfKCoSVm3jsjKgnZ9jvnC6Yd/B9Cw9bMrrZSPqD5gaA69I9A48A10eInrBOQt993zWLP0fVq/gF1qt2DByoYKB3cS2+IfsH7MadOZBAarTjSE4rXhrbPcrjm3oJvVD7h6ilw38HBahykqn9AWN944u0bHJbB2egNT1vJrQTF3koIP0KLn9A2xL2vo2++QuWR9oZHRrakWDLQN5lcPd/Qe66tQn0LKW868wuqMNUQDtk4nflunT6gSx+JJ1kr1+DtuMATJgbYPmS09PwKTD8tPSBcrQMjsoQwnw16uC5+wcBEhFXaYDmt3/Sjm8kPiAOd5ja41u4chnFCb2hDjBtCVW5o+ZSwLxiLcLvMmxg07sD6gIrJgD1GF4Y+ftcGQ3xAbAZatqbi4dPXtFvPBxRL3GBIbkwURJDfIfWESIcDnS4==</QRCODE_IMAGE_BASE64>
       <URL_PAYMENT_RECEIPT_HTML>http://ppp-web-gateway-payu.transactional.payu.preprod/ppp-web-gateway-payu/app/v2?vid=1438936173Ybccc494c97bf4b7Y5f4bcef70c4d7b6</URL_PAYMENT_RECEIPT_HTML>
     </extraParameters>
     <additionalInfo xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
@@ -928,20 +929,20 @@ La lista de documentos disponibles es:
 
 | ISO | Descripción |
 |:-:|-|
-| CC | Cédula de ciudadanía. |
-| CE | Cédula de extranjería. |
-| NIT | Número de Identificación Tributaria (Empresas). |
-| TI | Tarjeta de identidad. |
-| PP | Pasaporte. |
-| RC | Registro civil de nacimiento. |
-| DE | Documento de identificación extranjero. |
+| `CC` | Cédula de ciudadanía. |
+| `CE` | Cédula de extranjería. |
+| `NIT` | Número de Identificación Tributaria (Empresas). |
+| `TI` | Tarjeta de identidad. |
+| `PP` | Pasaporte. |
+| `RC` | Registro civil de nacimiento. |
+| `DE` | Documento de identificación extranjero. |
 
 6. Debes enviar el número de identificación del pagador en el extra parámetro `PSE_REFERENCE3` de la petición.
 
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-2}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -1016,7 +1017,7 @@ La lista de documentos disponibles es:
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -1361,7 +1362,7 @@ Este método retorna la lista de bancos disponibles para realizar [pagos utiliza
 #### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-3}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -1380,7 +1381,7 @@ Este método retorna la lista de bancos disponibles para realizar [pagos utiliza
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -1426,87 +1427,27 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
 {
     "code": "SUCCESS",
     "error": null,
-    "banks": [
-        {
-            "id": "34e6e912-a395-4d31-9599-9baa176c1a61",
-            "description": "A continuación seleccione su banco",
-            "pseCode": "0"
-        },
-        {
-            "id": "033aec11-e068-4252-8043-237144be9233",
-            "description": "BAN.CO",
-            "pseCode": "1552"
-        },
-        {
-            "id": "a720cb4c-6549-4932-83be-6d72b3eb0016",
-            "description": "BANCAMIA",
-            "pseCode": "1059"
-        },
+    "banks": [        
         {
             "id": "d9280852-47a5-4e99-94ac-3d7648ba79a3",
             "description": "BANCO AGRARIO",
             "pseCode": "1040"
-        },
-        {
-            "id": "ff216e8a-28ba-4bf6-9935-b94dfdfd96a0",
-            "description": "BANCO AGRARIO DESARROLLO",
-            "pseCode": "1081"
-        },
-        {
-            "id": "5073154e-efd4-4870-9315-abb926e87519",
-            "description": "BANCO AGRARIO QA DEFECTOS",
-            "pseCode": "1080"
-        },
+        },        
         {
             "id": "6e61a91d-58bf-46ec-aa09-1f44974dda7e",
             "description": "BANCO CAJA SOCIAL",
             "pseCode": "10322"
-        },
-        {
-            "id": "e062711e-6bbd-4a13-819a-d60084f9c6fa",
-            "description": "BANCO CAJA SOCIAL DESARROLLO",
-            "pseCode": "1032"
-        },
-        {
-            "id": "a9b5cc17-b0ae-4708-9835-586a0bef95df",
-            "description": "BANCO COMERCIAL AVVILLAS S.A.",
-            "pseCode": "1052"
-        },
-        {
-            "id": "c5c97dfe-6101-453f-bcd4-691f4b329a3c",
-            "description": "BANCO COOMEVA S.A. - BANCOOMEVA",
-            "pseCode": "1061"
-        },
-        {
-            "id": "7a2e8d04-e8c8-404b-8e49-d5d37c107a12",
-            "description": "BANCO COOPERATIVO COOPCENTRAL",
-            "pseCode": "1066"
-        },
-        {
-            "id": "197fe0af-f658-4fe0-ad1b-952e174de549",
-            "description": "BANCO CREDIFINANCIERA",
-            "pseCode": "1058"
-        },
+        },        
         {
             "id": "b1de44f1-cede-4aca-9d3f-3313d5cc0c63",
             "description": "BANCO DAVIVIENDA",
             "pseCode": "1051"
-        },
-        {
-            "id": "7a10219e-04a7-4c31-b747-54ded27c7f07",
-            "description": "BANCO DAVIVIENDA Desarrollo",
-            "pseCode": "10512"
-        },
+        },        
         {
             "id": "ed06f40e-a1b9-4e48-8851-bffb4cda0480",
             "description": "BANCO DE BOGOTA",
             "pseCode": "1039"
-        },
-        {
-            "id": "4592a13b-6334-4fba-8402-9d006b599fa8",
-            "description": "BANCO DE BOGOTA DESARROLLO 2013",
-            "pseCode": "1001"
-        },
+        },        
         {
             "id": "55f59084-cd3b-47d2-a420-6442cdb9e4b1",
             "description": "BANCO DE OCCIDENTE",
@@ -1536,181 +1477,11 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
             "id": "beeb494a-4ce5-41b4-b497-0756f0b6a6d9",
             "description": "BANCO POPULAR",
             "pseCode": "1002"
-        },
-        {
-            "id": "a5a4b740-1644-4627-ae2a-41b13ffc7c5e",
-            "description": "BANCO PRODUCTOS POR SEPARADO",
-            "pseCode": "1203"
-        },
-        {
-            "id": "47e747ef-c817-4be6-9eff-b6b16f50d001",
-            "description": "Banco PSE",
-            "pseCode": "1101"
-        },
-        {
-            "id": "589939d7-06d1-4933-a101-8bb29b801d76",
-            "description": "BANCO SANTANDER COLOMBIA",
-            "pseCode": "1065"
-        },
-        {
-            "id": "fcdaa98e-99ce-4e76-a504-1e053a05e773",
-            "description": "BANCO SERFINANZA",
-            "pseCode": "1069"
-        },
-        {
-            "id": "201608c6-81de-436f-967a-2ec7c212c100",
-            "description": "BANCO TEQUENDAMA",
-            "pseCode": "1035"
-        },
-        {
-            "id": "a8f33ba3-0053-464a-afbe-9add7c63fbc3",
-            "description": "Banco union Colombia Credito",
-            "pseCode": "1004"
-        },
-        {
-            "id": "5dfa1b2c-64bd-4e8c-9fad-585337cfd4ff",
-            "description": "BANCO UNION COLOMBIANO",
-            "pseCode": "1022"
-        },
-        {
-            "id": "56e306ef-6011-4f41-9640-b98449d6a6be",
-            "description": "BANCO UNION COLOMBIANO FD2",
-            "pseCode": "1005"
-        },
-        {
-            "id": "bc883c0d-3610-4a88-96ca-2e2baa1dd2e5",
-            "description": "Banco Web Service ACH",
-            "pseCode": "1055"
-        },
-        {
-            "id": "4e97e580-fc92-47ea-af4f-7b3b3ddffff8",
-            "description": "Banco Web Service ACH WSE 3.0",
-            "pseCode": "1055"
-        },
-        {
-            "id": "931f6bfb-283e-4721-bb86-4a7484bfd28e",
-            "description": "BANCOLOMBIA DATAPOWER",
-            "pseCode": "10072"
-        },
-        {
-            "id": "1285de9c-8d47-49f7-b00a-e87882e2a3f9",
-            "description": "BANCOLOMBIA DESARROLLO",
-            "pseCode": "10071"
-        },
-        {
-            "id": "451f0e5f-5db4-4f55-a1fc-b38e06526e04",
-            "description": "BANCOLOMBIA QA",
-            "pseCode": "1007"
-        },
-        {
-            "id": "448e00ec-c479-497d-9a35-0dfbbf462f72",
-            "description": "BANKA",
-            "pseCode": "1077"
-        },
-        {
-            "id": "5f3a7adb-b283-4ca3-bee9-741f1306a03d",
-            "description": "BBVA COLOMBIA S.A.",
-            "pseCode": "1013"
-        },
-        {
-            "id": "cd4286fa-850a-4b34-96d1-f71d6a79f44a",
-            "description": "BBVA DESARROLLO",
-            "pseCode": "1513"
-        },
-        {
-            "id": "10e9b7b6-7a5f-4d5b-8d7f-4b2020f43f93",
-            "description": "CITIBANK COLOMBIA S.A.",
-            "pseCode": "1009"
-        },
-        {
-            "id": "77f0988f-cf45-4931-bbcd-984e07e0fc51",
-            "description": "COLTEFINANCIERA",
-            "pseCode": "1370"
-        },
-        {
-            "id": "48c81f6a-e0f1-4c1d-ab9b-9915726e3596",
-            "description": "CONFIAR COOPERATIVA FINANCIERA",
-            "pseCode": "1292"
-        },
-        {
-            "id": "8694df26-5ccd-45c0-b5b7-2b995c47f81a",
-            "description": "COOPERATIVA FINANCIERA COTRAFA",
-            "pseCode": "1289"
-        },
-        {
-            "id": "1c222feb-2b58-408c-a495-ade06b6825c0",
-            "description": "COOPERATIVA FINANCIERA DE ANTIOQUIA",
-            "pseCode": "1283"
-        },
-        {
-            "id": "70a18a09-38f2-4f62-aba6-9ad28c30c966",
-            "description": "CREDIFIANCIERA",
-            "pseCode": "1558"
-        },
-        {
-            "id": "3f8b3126-8aa3-4438-8a6c-1d544184f2d7",
-            "description": "DALE",
-            "pseCode": "1097"
-        },
-        {
-            "id": "a953078b-5e22-42ea-9301-954558e8f463",
-            "description": "DAVIPLATA",
-            "pseCode": "1551"
-        },
-        {
-            "id": "2ad780ba-a1e8-4cb9-9150-670429aae092",
-            "description": "GIROS Y FINANZAS COMPAÑIA DE FINANCIAMIENTO S.A",
-            "pseCode": "1303"
-        },
-        {
-            "id": "c0bfb716-a098-40f6-84b5-1972a4846506",
-            "description": "IRIS",
-            "pseCode": "1637"
-        },
-        {
-            "id": "7e1efd88-4f88-4e21-a972-28b526b27da5",
-            "description": "ITAU",
-            "pseCode": "1006"
-        },
-        {
-            "id": "26c9a2df-6b4f-4309-9137-3692d9bb9f82",
-            "description": "MOVII S.A",
-            "pseCode": "1801"
-        },
-        {
-            "id": "d9b48a70-6068-4116-a345-154381e5d953",
-            "description": "NEQUI CERTIFICACION",
-            "pseCode": "1508"
-        },
-        {
-            "id": "60199dc5-7d38-49c6-92a5-b839dc0087d2",
-            "description": "prueba restriccion",
-            "pseCode": "9988"
-        },
-        {
-            "id": "be467299-d90a-407e-86d3-01e30ade1e06",
-            "description": "Prueba Steve",
-            "pseCode": "121212"
-        },
+        },        
         {
             "id": "201acc05-4c4f-49dc-9be6-3261a6ce4a3c",
             "description": "RAPPIPAY",
             "pseCode": "1151"
-        },
-        {
-            "id": "7602e001-6199-48bc-9ee3-466f8eb2e422",
-            "description": "SCOTIABANK COLPATRIA DESARROLLO",
-            "pseCode": "1019"
-        },
-        {
-            "id": "9bb638a0-4c3f-41d2-8811-f8cdd29b0db2",
-            "description": "SCOTIABANK COLPATRIA UAT",
-            "pseCode": "1078"
-        },
-        {
-            "id": "086547b5-313b-42c7-acef-93d0f76b1dd5",
-            "description": "SEIVY – GM FINANCIAL",
-            "pseCode": "1305"
         }
     ]
 }
@@ -1745,34 +1516,9 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
     <code>SUCCESS</code>
     <banks>
         <bank>
-            <id>34e6e912-a395-4d31-9599-9baa176c1a61</id>
-            <description>A continuación seleccione su banco</description>
-            <pseCode>0</pseCode>
-        </bank>
-        <bank>
-            <id>033aec11-e068-4252-8043-237144be9233</id>
-            <description>BAN.CO</description>
-            <pseCode>1552</pseCode>
-        </bank>
-        <bank>
-            <id>a720cb4c-6549-4932-83be-6d72b3eb0016</id>
-            <description>BANCAMIA</description>
-            <pseCode>1059</pseCode>
-        </bank>
-        <bank>
             <id>d9280852-47a5-4e99-94ac-3d7648ba79a3</id>
             <description>BANCO AGRARIO</description>
             <pseCode>1040</pseCode>
-        </bank>
-        <bank>
-            <id>ff216e8a-28ba-4bf6-9935-b94dfdfd96a0</id>
-            <description>BANCO AGRARIO DESARROLLO</description>
-            <pseCode>1081</pseCode>
-        </bank>
-        <bank>
-            <id>5073154e-efd4-4870-9315-abb926e87519</id>
-            <description>BANCO AGRARIO QA DEFECTOS</description>
-            <pseCode>1080</pseCode>
         </bank>
         <bank>
             <id>6e61a91d-58bf-46ec-aa09-1f44974dda7e</id>
@@ -1780,49 +1526,14 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
             <pseCode>10322</pseCode>
         </bank>
         <bank>
-            <id>e062711e-6bbd-4a13-819a-d60084f9c6fa</id>
-            <description>BANCO CAJA SOCIAL DESARROLLO</description>
-            <pseCode>1032</pseCode>
-        </bank>
-        <bank>
-            <id>a9b5cc17-b0ae-4708-9835-586a0bef95df</id>
-            <description>BANCO COMERCIAL AVVILLAS S.A.</description>
-            <pseCode>1052</pseCode>
-        </bank>
-        <bank>
-            <id>c5c97dfe-6101-453f-bcd4-691f4b329a3c</id>
-            <description>BANCO COOMEVA S.A. - BANCOOMEVA</description>
-            <pseCode>1061</pseCode>
-        </bank>
-        <bank>
-            <id>7a2e8d04-e8c8-404b-8e49-d5d37c107a12</id>
-            <description>BANCO COOPERATIVO COOPCENTRAL</description>
-            <pseCode>1066</pseCode>
-        </bank>
-        <bank>
-            <id>197fe0af-f658-4fe0-ad1b-952e174de549</id>
-            <description>BANCO CREDIFINANCIERA</description>
-            <pseCode>1058</pseCode>
-        </bank>
-        <bank>
             <id>b1de44f1-cede-4aca-9d3f-3313d5cc0c63</id>
             <description>BANCO DAVIVIENDA</description>
             <pseCode>1051</pseCode>
         </bank>
         <bank>
-            <id>7a10219e-04a7-4c31-b747-54ded27c7f07</id>
-            <description>BANCO DAVIVIENDA Desarrollo</description>
-            <pseCode>10512</pseCode>
-        </bank>
-        <bank>
             <id>ed06f40e-a1b9-4e48-8851-bffb4cda0480</id>
             <description>BANCO DE BOGOTA</description>
             <pseCode>1039</pseCode>
-        </bank>
-        <bank>
-            <id>4592a13b-6334-4fba-8402-9d006b599fa8</id>
-            <description>BANCO DE BOGOTA DESARROLLO 2013</description>
-            <pseCode>1001</pseCode>
         </bank>
         <bank>
             <id>55f59084-cd3b-47d2-a420-6442cdb9e4b1</id>
@@ -1855,180 +1566,10 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método.
             <pseCode>1002</pseCode>
         </bank>
         <bank>
-            <id>a5a4b740-1644-4627-ae2a-41b13ffc7c5e</id>
-            <description>BANCO PRODUCTOS POR SEPARADO</description>
-            <pseCode>1203</pseCode>
-        </bank>
-        <bank>
-            <id>47e747ef-c817-4be6-9eff-b6b16f50d001</id>
-            <description>Banco PSE</description>
-            <pseCode>1101</pseCode>
-        </bank>
-        <bank>
-            <id>589939d7-06d1-4933-a101-8bb29b801d76</id>
-            <description>BANCO SANTANDER COLOMBIA</description>
-            <pseCode>1065</pseCode>
-        </bank>
-        <bank>
-            <id>fcdaa98e-99ce-4e76-a504-1e053a05e773</id>
-            <description>BANCO SERFINANZA</description>
-            <pseCode>1069</pseCode>
-        </bank>
-        <bank>
-            <id>201608c6-81de-436f-967a-2ec7c212c100</id>
-            <description>BANCO TEQUENDAMA</description>
-            <pseCode>1035</pseCode>
-        </bank>
-        <bank>
-            <id>a8f33ba3-0053-464a-afbe-9add7c63fbc3</id>
-            <description>Banco union Colombia Credito</description>
-            <pseCode>1004</pseCode>
-        </bank>
-        <bank>
-            <id>5dfa1b2c-64bd-4e8c-9fad-585337cfd4ff</id>
-            <description>BANCO UNION COLOMBIANO</description>
-            <pseCode>1022</pseCode>
-        </bank>
-        <bank>
-            <id>56e306ef-6011-4f41-9640-b98449d6a6be</id>
-            <description>BANCO UNION COLOMBIANO FD2</description>
-            <pseCode>1005</pseCode>
-        </bank>
-        <bank>
-            <id>bc883c0d-3610-4a88-96ca-2e2baa1dd2e5</id>
-            <description>Banco Web Service ACH</description>
-            <pseCode>1055</pseCode>
-        </bank>
-        <bank>
-            <id>4e97e580-fc92-47ea-af4f-7b3b3ddffff8</id>
-            <description>Banco Web Service ACH WSE 3.0</description>
-            <pseCode>1055</pseCode>
-        </bank>
-        <bank>
-            <id>931f6bfb-283e-4721-bb86-4a7484bfd28e</id>
-            <description>BANCOLOMBIA DATAPOWER</description>
-            <pseCode>10072</pseCode>
-        </bank>
-        <bank>
-            <id>1285de9c-8d47-49f7-b00a-e87882e2a3f9</id>
-            <description>BANCOLOMBIA DESARROLLO</description>
-            <pseCode>10071</pseCode>
-        </bank>
-        <bank>
-            <id>451f0e5f-5db4-4f55-a1fc-b38e06526e04</id>
-            <description>BANCOLOMBIA QA</description>
-            <pseCode>1007</pseCode>
-        </bank>
-        <bank>
-            <id>448e00ec-c479-497d-9a35-0dfbbf462f72</id>
-            <description>BANKA</description>
-            <pseCode>1077</pseCode>
-        </bank>
-        <bank>
-            <id>5f3a7adb-b283-4ca3-bee9-741f1306a03d</id>
-            <description>BBVA COLOMBIA S.A.</description>
-            <pseCode>1013</pseCode>
-        </bank>
-        <bank>
-            <id>cd4286fa-850a-4b34-96d1-f71d6a79f44a</id>
-            <description>BBVA DESARROLLO</description>
-            <pseCode>1513</pseCode>
-        </bank>
-        <bank>
-            <id>10e9b7b6-7a5f-4d5b-8d7f-4b2020f43f93</id>
-            <description>CITIBANK COLOMBIA S.A.</description>
-            <pseCode>1009</pseCode>
-        </bank>
-        <bank>
-            <id>77f0988f-cf45-4931-bbcd-984e07e0fc51</id>
-            <description>COLTEFINANCIERA</description>
-            <pseCode>1370</pseCode>
-        </bank>
-        <bank>
-            <id>48c81f6a-e0f1-4c1d-ab9b-9915726e3596</id>
-            <description>CONFIAR COOPERATIVA FINANCIERA</description>
-            <pseCode>1292</pseCode>
-        </bank>
-        <bank>
-            <id>8694df26-5ccd-45c0-b5b7-2b995c47f81a</id>
-            <description>COOPERATIVA FINANCIERA COTRAFA</description>
-            <pseCode>1289</pseCode>
-        </bank>
-        <bank>
-            <id>1c222feb-2b58-408c-a495-ade06b6825c0</id>
-            <description>COOPERATIVA FINANCIERA DE ANTIOQUIA</description>
-            <pseCode>1283</pseCode>
-        </bank>
-        <bank>
-            <id>70a18a09-38f2-4f62-aba6-9ad28c30c966</id>
-            <description>CREDIFIANCIERA</description>
-            <pseCode>1558</pseCode>
-        </bank>
-        <bank>
-            <id>3f8b3126-8aa3-4438-8a6c-1d544184f2d7</id>
-            <description>DALE</description>
-            <pseCode>1097</pseCode>
-        </bank>
-        <bank>
-            <id>a953078b-5e22-42ea-9301-954558e8f463</id>
-            <description>DAVIPLATA</description>
-            <pseCode>1551</pseCode>
-        </bank>
-        <bank>
-            <id>2ad780ba-a1e8-4cb9-9150-670429aae092</id>
-            <description>GIROS Y FINANZAS COMPAÑIA DE FINANCIAMIENTO S.A</description>
-            <pseCode>1303</pseCode>
-        </bank>
-        <bank>
-            <id>c0bfb716-a098-40f6-84b5-1972a4846506</id>
-            <description>IRIS</description>
-            <pseCode>1637</pseCode>
-        </bank>
-        <bank>
-            <id>7e1efd88-4f88-4e21-a972-28b526b27da5</id>
-            <description>ITAU</description>
-            <pseCode>1006</pseCode>
-        </bank>
-        <bank>
-            <id>26c9a2df-6b4f-4309-9137-3692d9bb9f82</id>
-            <description>MOVII S.A</description>
-            <pseCode>1801</pseCode>
-        </bank>
-        <bank>
-            <id>d9b48a70-6068-4116-a345-154381e5d953</id>
-            <description>NEQUI CERTIFICACION</description>
-            <pseCode>1508</pseCode>
-        </bank>
-        <bank>
-            <id>60199dc5-7d38-49c6-92a5-b839dc0087d2</id>
-            <description>prueba restriccion</description>
-            <pseCode>9988</pseCode>
-        </bank>
-        <bank>
-            <id>be467299-d90a-407e-86d3-01e30ade1e06</id>
-            <description>Prueba Steve</description>
-            <pseCode>121212</pseCode>
-        </bank>
-        <bank>
             <id>201acc05-4c4f-49dc-9be6-3261a6ce4a3c</id>
             <description>RAPPIPAY</description>
             <pseCode>1151</pseCode>
-        </bank>
-        <bank>
-            <id>7602e001-6199-48bc-9ee3-466f8eb2e422</id>
-            <description>SCOTIABANK COLPATRIA DESARROLLO</description>
-            <pseCode>1019</pseCode>
-        </bank>
-        <bank>
-            <id>9bb638a0-4c3f-41d2-8811-f8cdd29b0db2</id>
-            <description>SCOTIABANK COLPATRIA UAT</description>
-            <pseCode>1078</pseCode>
-        </bank>
-        <bank>
-            <id>086547b5-313b-42c7-acef-93d0f76b1dd5</id>
-            <description>SEIVY – GM FINANCIAL</description>
-            <pseCode>1305</pseCode>
-        </bank>
+        </bank>        
     </banks>
 </bankListResponse>
 ```
@@ -2205,7 +1746,7 @@ Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de est
         },
         "digitalWallet": {
             "type" : "GOOGLE_PAY",
-            "message" : "{\"signature\":\"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1695147545256\\\"}\",\"signatures\":[\"MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\\u003d\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\\\",\\\"ephemeralPublicKey\\\":\\\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\\\u003d\\\",\\\"tag\\\":\\\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\\\u003d\\\"}\"}"
+            "message" : "{\"signature\":\"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\\u003d\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1695147545256\\\"}\",\"signatures\":[\"MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\\u003d\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\\\",\\\"ephemeralPublicKey\\\":\\\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\\\u003d\\\",\\\"tag\\\":\\\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\\\u003d\\\"}\"}"
         },
         "extraParameters": {
             "INSTALLMENTS_NUMBER": 1
@@ -2290,7 +1831,7 @@ Los siguientes son ejemplos de los cuerpos de la petición y la respuesta de est
          </creditCard>
          <digitalWallet>
              <type>GOOGLE_PAY</type>
-             <message>{"signature":"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\u003d\\u003d\",\"keyExpiration\":\"1695147545256\"}","signatures":["MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/kB1eIMrwcz5cPGJAPSmL2RebBofsl5QFJdVUmeXXSS7nQ4aeQpuqCcoI/NqLb5r3bEaq33pbglfv2YyyHK1ERlET3TsTR+rGBcJXv9JLh2ZhdoUJYDkDqP+f+65Fn3/xRppfXbwNCrCnO+DvVsgZTFp7cj69WA6uWBeYM4HejKa1BUpt8TfP132FjaUSnwSlykkJhHK5svQFxf2rpJGFdmz4d06iLREy/N+27pyE9eJeJohO2JJXaVTQgICmVNvGefR4KaNELpxeNAzuhKQsTZBYQY179zveNg4EQqai3CxKIr09G/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\",\"ephemeralPublicKey\":\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\u003d\",\"tag\":\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\u003d\"}"}</message>
+             <message>{"signature":"MEUCIQCSsfd63AcUEjNRnpgqEm/B6cm8Fna1ty+HatD4Hqp/bgIgHCtrwKhvO1e5K3vDfE6FxqSaRkP9PHuY63aQ35gV5lk\u003d","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExtzNORa//EJphgvdpUTsDElAg26mYXxNqs8/UX7DDSDCojJ/2+GCf8CVmClyRM+bukNsYM82pwkjZqOe5AOxUg\\u003d\\u003d\",\"keyExpiration\":\"1695147545256\"}","signatures":["MEQCIAxxj2BnQzTyTXLzjJ08JG+s1qdmX1XlOxzFmq1THTJ4AiAe7anOO7l+KZ1nkbGBufXBuQGInFMGR70+I33EyCL5GQ\u003d\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"GNKqqZ7bx6btPTkZPjpvi1IHKS79JrdtOI3bRZA6G5936ofXqD/m3f/YpuF4mlADkHIhmBYVq6hzyA0B4M1cjht7BFsQhE5fqA+6PgbPY6eAqaH4PPQGt/3VM9uVxmtcJK6k2JL8N7CCF85vx6s+LASH4wwO3Sk2NIlPB0B2QHdfdrOpwo5r6T3xYJAq6wHqFNrdOLq5NTodDqEaXP3y/MwpMufTWEBm2rsk6HqTh1Qz+d72aph3U3bRQVhFj3ZE2ZsIXIc7dwCLGV\",\"ephemeralPublicKey\":\"BNgz4XETGJgixJYrYHLXjQrRaZ9i2q2Z2uGTOFNuVY5ZiCFiSJeiP0l+dt+Y0r8I29l5F2Lwd+e8torE3vSMm9g\\u003d\",\"tag\":\"NUJPbcTwbfWBC3ByHzcwQz/bEsbt80vh1ahXoRY4xAQ\\u003d\"}"}</message>
          </digitalWallet>
          <extraParameters>
              <INSTALLMENTS_NUMBER>1</INSTALLMENTS_NUMBER>
@@ -2398,7 +1939,7 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-4}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table3" class="showMandatory"><input type="checkbox" id="table3" name="table3" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -2478,14 +2019,14 @@ La imagen a continuación es un ejemplo de la página de resumen de PayU, puedes
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
 | Nombre del campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
-| `code | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| `error | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| `code` | Alfanumérico | | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| `error` | Alfanumérico | Máx:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
 | `transactionResponse` | Objeto | | Datos de la respuesta. |
 | `transactionResponse > orderId` | Número | | Identificador de orden generado o existente en PayU. |
 | `transactionResponse > transactionId` | Alfanumérico | 36 | Identificador de la transacción en PayU. |
@@ -2832,7 +2373,7 @@ El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos p
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-5}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table4" class="showMandatory"><input type="checkbox" id="table4" name="table4" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -2907,7 +2448,7 @@ El proceso de pago está diseñado para ser simple y seguro. Sigue estos pasos p
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -3173,7 +2714,7 @@ Este método te permite procesar pagos de los clientes en efectivo o a través d
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-6}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table5" class="showMandatory"><input type="checkbox" id="table5" name="table5" value="true" onchange="showMandatory(this)"> Mostrar solo los campos obligatorios</label>
 <br>
 <div class="variables"></div>
@@ -3246,12 +2787,12 @@ Este método te permite procesar pagos de los clientes en efectivo o a través d
 | `transaction > paymentMethod` | Alfanumérico | 32 | Seleccione un método de pago en efectivo o de referencia bancaria válido. [Ver los métodos de pago disponibles para Colombia]({{< ref "select-your-payment-method.html#colombia" >}}). | Sí |
 | `transaction > paymentCountry` | Alfanumérico | 2 | Asigna `CO` para Colombia. | Sí |
 | `transaction > expirationDate` | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
-| `transaction > ipAddress | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+| `transaction > ipAddress` | Alfanumérico | Máx:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -3272,7 +2813,7 @@ Este método te permite procesar pagos de los clientes en efectivo o a través d
 | `transactionResponse > responseMessage` | Alfanumérico | Máx:2048 | Mensaje asociado con el código de respuesta. |
 | `transactionResponse > operationDate` | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
 | `transactionResponse > extraParameters` | Objeto | | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
-| transactionResponse > additionalInfo | Objeto | | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+| `transactionResponse > additionalInfo` | Objeto | | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
 
 </details>
 
@@ -3698,7 +3239,7 @@ Aunque es poco probable que cambien los códigos de aerolíneas, existe una posi
 Para completar una solicitud de transacción exitosa, debes incluir los parámetros específicos para aerolíneas, además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, también puedes incluir [datos del PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Usa el código de aerolínea obtenido del endpoint anterior e incluye las tarifas aeroportuarias y los impuestos que aplican.
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -3831,7 +3372,7 @@ A continuación, se presentan ejemplos de una solicitud para este método.
 Para completar una solicitud de transacción exitosa, debes incluir los parámetros específicos para agencias de viajes, además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, también puedes incluir [datos del PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Usa el código de aerolínea obtenido del endpoint anterior e incluye las tarifas aeroportuarias y los impuestos que aplican.
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -4002,7 +3543,7 @@ Además de los detalles de transacción previamente suministrados, la API permit
 Los siguientes parámetros se refieren a los datos PNR y son opcionales. Están disponibles en todos los países de América Latina donde opera PayU. Estos campos no son suficientes por sí solos para completar una solicitud de transacción, pero son complementarios para casos de uso específicos donde conocer los detalles sobre el pasajero y su itinerario de viaje puede ayudar en la detección de fraude.
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -4269,7 +3810,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-7}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -4285,7 +3826,7 @@ Este método retorna la lista de los métodos de pago disponibles en todos los p
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -4398,7 +3939,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 ### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-8}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -4414,7 +3955,7 @@ El método `PING` te permite verificar la conexión con nuestra plataforma.
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 

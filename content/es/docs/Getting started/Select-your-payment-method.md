@@ -78,12 +78,34 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
       <td><strong>Tarjetas soportadas</strong>: CRM Falabella, Nativa, Cordial, Cordobesa y Nexo.</td>
     </tr>
     <tr>
-      <td><img src="/assets/PaymentMethods/naranja.png" width="80px" alt="Naranja"/></td>
-      <td>Naranja</td>
-      <td><code>NARANJA</code></td>
-      <td>Tarjeta de crédito</td>
-      <td></td>
-    </tr>
+  <td><img src="/assets/PaymentMethods/naranja.png" width="80px" alt="Naranja"/></td>
+  <td>Naranja</td>
+  <td><code>NARANJA</code></td>
+  <td>Tarjeta de crédito</td>
+  <td>
+    <details>
+      <summary><strong>Consideración especial</strong></summary>
+      <p><strong>Consideración especial:</strong> Tarjetas de crédito Naranja X (BIN 589562)</p>
+      <p>Las tarjetas de crédito Naranja X tienen un comportamiento específico en su proceso de validación del número de tarjeta (OCR):</p>
+      <ul>
+        <li><strong>Hasta el 17 de abril de 2023:</strong> Las tarjetas físicas se emitían utilizando el algoritmo Luhn 11 para el dígito verificador.</li>
+        <li><strong>Actualmente:</strong> Todas las nuevas tarjetas se emiten utilizando el algoritmo estándar Luhn 10.</li>
+      </ul>
+      <p><strong>Estado actual:</strong></p>
+      <ul>
+        <li>Más del 80% de las tarjetas físicas activas ya utilizan Luhn 10.</li>
+        <li>Un pequeño porcentaje aún opera con Luhn 11, el cual se eliminará gradualmente a medida que se renueven las tarjetas.</li>
+        <li>Todas las tarjetas virtuales Naranja X dentro de la aplicación ya utilizan Luhn 10.</li>
+      </ul>
+      <p><strong>Recomendaciones para los integradores:</strong></p>
+      <ul>        
+        <li>Implementar una validación dual para el BIN 589562, admitiendo tanto los algoritmos Luhn 10 como Luhn 11.</li>
+        <li>Como alternativa, omitir la validación del dígito verificador para este BIN específico y validar únicamente el número BIN.</li>
+      </ul>
+      <p>Estas opciones ayudan a evitar rechazos innecesarios para transacciones válidas que aún utilizan el algoritmo Luhn 11.</p>
+    </details>
+  </td>
+</tr>
     <tr>
       <td><img src="/assets/PaymentMethods/pago-facil.png" width="80px" alt="PAGOFACIL"/></td>
       <td>PAGOFACIL</td>

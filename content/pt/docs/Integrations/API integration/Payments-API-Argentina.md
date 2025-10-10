@@ -382,6 +382,28 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 * A variável `transaction.threeDomainSecure` não substitui as informações do cartão nem qualquer um dos campos obrigatórios da transação. Este objeto é adicional e não obrigatório.
 * A variável `transaction.threeDomainSecure` corresponde a um cenário _passthrough_ onde a loja faz a autenticação por conta própria.
 
+<details>
+      <summary><strong>Consideração especial para cartões Naranja</strong></summary>
+      <p><strong>Consideração especial:</strong> Cartões de crédito Naranja X (BIN 589562)</p>
+      <p>Os cartões de crédito Naranja X apresentam um comportamento específico no processo de validação do número do cartão (OCR):</p>
+      <ul>
+        <li><strong>Até 17 de abril de 2023:</strong> Os cartões físicos eram emitidos utilizando o algoritmo Luhn 11 para o dígito verificador.</li>
+        <li><strong>Atualmente:</strong> Todos os novos cartões são emitidos utilizando o algoritmo padrão Luhn 10.</li>
+      </ul>
+      <p><strong>Status atual:</strong></p>
+      <ul>
+        <li>Mais de 80% dos cartões físicos ativos já utilizam Luhn 10.</li>
+        <li>Uma pequena porcentagem ainda opera com Luhn 11, que será gradualmente descontinuado à medida que os cartões forem renovados.</li>
+        <li>Todos os cartões virtuais Naranja X no aplicativo já utilizam Luhn 10.</li>
+      </ul>
+      <p><strong>Recomendações para os integradores:</strong></p>
+      <ul>        
+        <li>Implementar validação dupla para o BIN 589562, aceitando os algoritmos Luhn 10 e Luhn 11.</li>
+        <li>Como alternativa, ignorar a validação do dígito verificador para esse BIN específico e validar apenas o número do BIN.</li>
+      </ul>
+      <p>Essas opções ajudam a evitar recusas desnecessárias em transações válidas que ainda utilizam o algoritmo Luhn 11.</p>
+    </details>
+
 ### Autorização {#authorization}
 
 Use este método para executar a etapa **Autorização** de um fluxo de duas etapas. Nesta etapa, você autoriza o pagamento, mas o valor não é debitado até você [capturar]({{< ref "#capture" >}}) os fundos.<br>A seguir estão os corpos de pedido e resposta para este tipo de transação.
