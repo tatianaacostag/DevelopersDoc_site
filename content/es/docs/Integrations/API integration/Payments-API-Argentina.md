@@ -20,14 +20,14 @@ Para integrar la API de Pagos, dirige tus solicitudes a las siguientes URL segú
 
 {{% /alert %}}
 
-## Funcionalidades Disponibles {#available-features}
+## Funcionalidades disponibles {#available-features}
 
 La API de Pagos incluye las siguientes funcionalidades:
 
-* [Enviar Transacciones Utilizando Tarjetas de Crédito o Débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
-* [Enviar Transacciones Utilizando Efectivo]({{< ref "#submit-transactions-using-cash" >}})
-* [Incluir Información de Registro de Nombre del Pasajero]({{< ref "#include-passenger-name-record-information-optional" >}})
-* [Consultar Métodos de Pago Disponibles]({{< ref "#available-payment-methods-query" >}})
+* [Enviar transacciones utilizando tarjetas de crédito o débito]({{< ref "#submit-transactions-using-credit-or-debit-cards" >}})
+* [Enviar transacciones utilizando efectivo]({{< ref "#submit-transactions-using-cash" >}})
+* [Incluir información de registro de nombre del pasajero]({{< ref "#include-passenger-name-record-information-optional" >}})
+* [Consultar métodos de pago disponibles]({{< ref "#available-payment-methods-query" >}})
 * [Ping]({{< ref "#ping" >}})
 
 {{% alert title="Nota" color="info"%}}
@@ -38,11 +38,11 @@ Para confirmar el estado de una transacción, puedes utilizar una de las siguien
 
 {{% /alert %}}
 
-## Enviar Transacciones Utilizando Tarjetas de Crédito o Débito {#submit-transactions-using-credit-or-debit-cards}
+## Enviar transacciones utilizando tarjetas de crédito o débito {#submit-transactions-using-credit-or-debit-cards}
 
 Este método te permite procesar pagos realizados por tus clientes utilizando tarjetas de crédito o débito. Para Argentina, puedes realizar los flujos de dos pasos (**Autorización**, **Captura**) y el de un paso (**Cobro**). Para más información, consulta los [flujos de pago]({{< ref "payments.md#payment-flows" >}}).
 
-### Uso de Tarjetas Tokenizadas
+### Uso de tarjetas tokenizadas
 
 PayU admite pagos con tarjeta tokenizada, lo que permite realizar pagos regulares con una tarjeta almacenada en un token. Un token de tarjeta de crédito reemplaza la información sensible de una tarjeta de crédito, permitiéndole almacenarla de manera segura de acuerdo con los estándares de seguridad PCI DSS (Payment Card Industry Data Security Standard).
 
@@ -54,7 +54,7 @@ PayU puede procesar pagos utilizando los siguientes servicios:
 
 * **Visa Token Service - VTS**.<br>Un servicio de tokenización proporcionado por Visa. Este servicio le permite almacenar la información sensible de las tarjetas de crédito Visa en un token, permitiéndole usarlas para pagos regulares o para crear funciones de pago con un clic.<br><br>Para obtener más información, consulta [Visa Token Service (VTS)](https://usa.visa.com/products/visa-token-service.html).
 
-#### Pagar con Tokens de PayU
+#### Pagar con tokens de PayU
 
 Para realizar pagos utilizando tokens de tarjetas de crédito de PayU, incluye el parámetro `transaction.creditCardTokenId` en lugar de la información de la tarjeta de crédito. 
 
@@ -71,7 +71,7 @@ Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad n
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "language": "es",
@@ -110,7 +110,7 @@ Ejemplo de una Solicitud:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>es</language>
@@ -161,7 +161,7 @@ El siguiente ejemplo muestra el cuerpo de la solicitud a un alto nivel para un f
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "language": "es",
@@ -202,7 +202,7 @@ Ejemplo de una Solicitud:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>es</language>
@@ -245,128 +245,128 @@ Ejemplo de una Solicitud:
 
 Encuentra la descripción del objeto `transaction.networkToken` y sus parámetros en la sección de [Parámetros]({{< ref "#parameters-for-request-and-response" >}}).
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response}
+### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table1" class="showMandatory"><input type="checkbox" id="table1" name="table1" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
-| transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
-| transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
-| transaction > order > description | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
-| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
-| transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
-| transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
-| transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress | Objeto |  | Dirección de envío. | No |
-| transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
-| transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
-| transaction > order > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
-| transaction > order > shippingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección. | No |
-| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
-| transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
-| transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
-| transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
-| transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
-| transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí |
-| transaction > order > buyer > contactPhone | Alfanumérico | Max:20 | Teléfono del comprador. | Sí |
-| transaction > order > buyer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. | Sí |
-| transaction > order > buyer > shippingAddress | Alfanumérico |  | Dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Max:150 | Línea de dirección 1 del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
-| transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
-| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
-| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
-| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del impuesto a las ventas. | Sí |
-| transaction > order > additionalValues > TX_TAX > value | Numérico | 12, 2 | Especifica el monto del impuesto.  | No |
-| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > creditCardTokenId | Alfanumérico |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}) | No |
-| transaction > creditCard | Objeto |  | Información de la tarjeta de crédito. Si procesas utilizando tarjeta débito, no envíes este parámetro.<br>Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
-| transaction > creditCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | No |
-| transaction > creditCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
-| transaction > creditCard > expirationDate | Alfanumérico | 7 | Fecha de expiración de la tarjeta de crédito. Formato `YYYY/MM`. | No |
-| transaction > creditCard > name | Alfanumérico | Min:1 Max:255 | Nombre del tarjetahabiente mostrado en la tarjeta de crédito. | No |
-| transaction > creditCard > processWithoutCvv2 | Booleano | Max:255 | Te permite procesar transacciones sin incluir el código de seguridad de la tarjeta de crédito. Tu comercio requiere autorización de PayU antes de utilizar esta funcionalidad. | No |
-| transaction > debitCard | Objeto |  | Información de la tarjeta débito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta debito. | No |
-| transaction > debitCard > number | Alfanumérico | Min:13 Max:20 | Número de la tarjeta débito. | No |
-| transaction > debitCard > securityCode | Alfanumérico | Min:1 Max:4 | Código de seguridad la tarjeta débito (CVC2, CVV2, CID). | No |
-| transaction > debitCard > expirationDate | Alfanumérico | 7 | Fecha de expiración de la tarjeta débito. Formato `YYYY/MM`. | No |
-| transaction > debitCard > name | Alfanumérico | Min:1 Max:255 | Nombre del tarjetahabiente mostrado en la tarjeta debito. | No |
-| transaction > payer | Objeto |  | Información del pagador. Debido a regulaciones de impuestos, es obligatorio enviar los parámetros `payer.billingAddress.state` y `payer.dnitype`. | Sí |
-| transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | No |
-| transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
-| transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador que debe ser igual al enviado en el parámetro `creditCard.name` para pagos con tarjeta de crédito. | No |
-| transaction > payer > billingAddress | Objeto |  | Dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street1 | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | No |
-| transaction > payer > billingAddress > street2 | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
-| transaction > payer > billingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | No |
-| transaction > payer > billingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección de facturación. Formato [ISO 3166-2 oficial de Argentina](https://www.iso.org/obp/ui/#iso:code:3166:AR). | Sí |
-| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | No |
-| transaction > payer > billingAddress > postalCode | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
-| transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
-| transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | No |
-| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | No |
-| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sí |
-| transaction > type | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito o débito valido. [Ver los métodos de pago disponibles para Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sí |
-| transaction > paymentCountry | Alfanumérico | 2 | Asigna `AR` para Argentina. | Sí |
-| transaction > deviceSessionId | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
-| transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
-| transaction > cookie | Alfanumérico | Max:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
-| transaction > userAgent | Alfanumérico | Max:1024 | User agent del navegador donde el cliente realiza la transacción. | Sí |
-| transaction > extraParameters | Objeto |  | Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de _extraParameters_ es 64 caracteres.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, the _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
-| transaction > threeDomainSecure | Objeto |  | Este objeto contiene la información de 3DS 2.0. | No |
-| transaction > threeDomainSecure > embedded | Booleano |  | Asigna `true` si quieres utilizar un MPI embebido para el proceso de Autorización. Por defecto, este valor está asignado como `false`. | No |
-| transaction > threeDomainSecure > eci | Numérico | Máx:2 | Indicador de Comercio Electrónico.<br>Valor retornado por los servidores de directorio indicando el intento de autenticación.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` es `false` y `transaction.threeDomainSecure.xid` tiene un valor configurado. | No |
-| transaction > threeDomainSecure > cavv | Alfanumérico | Máx:28 | Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional. | No |
-| transaction > threeDomainSecure > xid | Alfanumérico | Máx:28 | Identificador de la transacción enviado por el MPI codificado en Base 64.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` is `false` y `transaction.threeDomainSecure.eci` tiene un valor configurado. | No |
-| transaction > threeDomainSecure > directoryServerTransactionId | Alfanumérico | Máx:36 | Identificador de la transacción generador por el servidor de directorio durante la autenticación. | No |
+| `language` | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| `command` | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
+| `test` (JSON)<hr>`isTest` (XML) | Booleano |  | Asigna `true` si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| `merchant` | Objeto |  | Este objeto tiene los datos de autenticación. | Sí |
+| `merchant > apiLogin` | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `merchant > apiKey` | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `transaction` | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
+| `transaction > order` | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
+| `transaction > order > accountId` | Numérico |  | Identificador de tu cuenta. | Sí |
+| `transaction > order > referenceCode` | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
+| `transaction > order > description` | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
+| `transaction > order > language` | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
+| `transaction > order > notifyUrl` | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
+| `transaction > order > partnerId` | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
+| `transaction > order > signature` | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
+| `transaction > order > shippingAddress` | Objeto |  | Dirección de envío. | No |
+| `transaction > order > shippingAddress > street1` | Alfanumérico | Max:100 | Línea de dirección 1. | No |
+| `transaction > order > shippingAddress > street2` | Alfanumérico | Max:100 | Línea de dirección 2. | No |
+| `transaction > order > shippingAddress > city` | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
+| `transaction > order > shippingAddress > state` | Alfanumérico | Max:40 | Estado o provincia de la dirección. | No |
+| `transaction > order > shippingAddress > country` | Alfanumérico | 2 | País de la dirección. | No |
+| `transaction > order > shippingAddress > postalCode` | Alfanumérico | Max:8 | Código postal de la dirección. | No |
+| `transaction > order > shippingAddress > phone` | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
+| `transaction > order > buyer` | Objeto |  | Información del comprador. | Sí |
+| `transaction > order > buyer > merchantBuyerId` | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
+| `transaction > order > buyer > fullName` | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
+| `transaction > order > buyer > emailAddress` | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí |
+| `transaction > order > buyer > contactPhone` | Alfanumérico | Max:20 | Teléfono del comprador. | Sí |
+| `transaction > order > buyer > dniNumber` | Alfanumérico | Max:20 | Número de identificación del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress` | Alfanumérico |  | Dirección de envío del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > street1` | Alfanumérico | Max:150 | Línea de dirección 1 del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > city` | Alfanumérico | Max:50 | Ciudad de la dirección del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > state` | Alfanumérico | Max:40 | Estado o provincia de la dirección del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > country` | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
+| `transaction > order > buyer > shippingAddress > postalCode` | Numérico | Max:20 | Código postal de la dirección del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > phone` | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
+| `transaction > order > additionalValues` | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
+| `transaction > order > additionalValues > TX_VALUE` | Alfanumérico | 64 | Monto de la transacción. | Sí |
+| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
+| `transaction > order > additionalValues > TX_VALUE > currency` | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
+| `transaction > order > additionalValues > TX_TAX` | Alfanumérico | 64 | Monto del impuesto a las ventas. | Sí |
+| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12, 2 | Especifica el monto del impuesto.  | No |
+| `transaction > order > additionalValues > TX_TAX > currency` | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE` | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency` | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| `transaction > creditCardTokenId` | Alfanumérico |  | Incluye este parámetro cuando la transacción se haga con una tarjeta tokenizada reemplazando la información de la tarjeta de crédito. Para más información, consulta [API de Tokenización]({{< ref "Tokenization-API.md" >}}) | No |
+| `transaction > creditCard` | Objeto |  | Información de la tarjeta de crédito. Si procesas utilizando tarjeta débito, no envíes este parámetro.<br>Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta de crédito no tokenizada. | No |
+| `transaction > creditCard > number` | Alfanumérico | Min:13 Max:20 | Número de la tarjeta de crédito. | No |
+| `transaction > creditCard > securityCode` | Alfanumérico | Min:1 Max:4 | Código de seguridad de la tarjeta de crédito (CVC2, CVV2, CID). | No |
+| `transaction > creditCard > expirationDate` | Alfanumérico | 7 | Fecha de expiración de la tarjeta de crédito. Formato `YYYY/MM`. | No |
+| `transaction > creditCard > name` | Alfanumérico | Min:1 Max:255 | Nombre del tarjetahabiente mostrado en la tarjeta de crédito. | No |
+| `transaction > creditCard > processWithoutCvv2` | Booleano | Max:255 | Te permite procesar transacciones sin incluir el código de seguridad de la tarjeta de crédito. Tu comercio requiere autorización de PayU antes de utilizar esta funcionalidad. | No |
+| `transaction > debitCard` | Objeto |  | Información de la tarjeta débito. Este objeto y sus parámetros son obligatorios cuando el pago se realiza utilizando una tarjeta debito. | No |
+| `transaction > debitCard > number` | Alfanumérico | Min:13 Max:20 | Número de la tarjeta débito. | No |
+| `transaction > debitCard > securityCode` | Alfanumérico | Min:1 Max:4 | Código de seguridad la tarjeta débito (CVC2, CVV2, CID). | No |
+| `transaction > debitCard > expirationDate` | Alfanumérico | 7 | Fecha de expiración de la tarjeta débito. Formato `YYYY/MM`. | No |
+| `transaction > debitCard > name` | Alfanumérico | Min:1 Max:255 | Nombre del tarjetahabiente mostrado en la tarjeta debito. | No |
+| `transaction > payer` | Objeto |  | Información del pagador. Debido a regulaciones de impuestos, es obligatorio enviar los parámetros `payer.billingAddress.state` y `payer.dnitype`. | Sí |
+| `transaction > payer > emailAddress` | Alfanumérico | Max:255 | Correo electrónico del pagador. | No |
+| `transaction > payer > merchantPayerId` | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
+| `transaction > payer > fullName` | Alfanumérico | Max:150 | Nombre del pagador que debe ser igual al enviado en el parámetro `creditCard.name` para pagos con tarjeta de crédito. | No |
+| `transaction > payer > billingAddress` | Objeto |  | Dirección de facturación. | Sí |
+| `transaction > payer > billingAddress > street1` | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | No |
+| `transaction > payer > billingAddress > street2` | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
+| `transaction > payer > billingAddress > city` | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | No |
+| `transaction > payer > billingAddress > state` | Alfanumérico | Max:40 | Estado o provincia de la dirección de facturación. Formato [ISO 3166-2 oficial de Argentina](https://www.iso.org/obp/ui/#iso:code:3166:AR). | Sí |
+| `transaction > payer > billingAddress > country` | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | No |
+| `transaction > payer > billingAddress > postalCode` | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
+| `transaction > payer > billingAddress > phone` | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
+| `transaction > payer > birthdate` | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
+| `transaction > payer > contactPhone` | Alfanumérico | Max:20 | Número de teléfono del pagador. | No |
+| `transaction > payer > dniNumber` | Alfanumérico | Max:20 | Número de identificación del pagador. | No |
+| `transaction > payer > dniType` | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sí |
+| `transaction > type` | Alfanumérico | 32 | Asigna este valor de acuerdo con el tipo de transacción requerido:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para flujos de un paso.</li></ul> | Sí |
+| `transaction > paymentMethod` | Alfanumérico | 32 | Selecciona un método de pago de Tarjeta de crédito o débito valido. [Ver los métodos de pago disponibles para Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sí |
+| `transaction > paymentCountry` | Alfanumérico | 2 | Asigna `AR` para Argentina. | Sí |
+| `transaction > deviceSessionId` | Alfanumérico | Max:255 | Identificador de la sesión del dispositivo donde el cliente realiza la transacción. Para más información, consulta [este artículo]({{< ref "integrations.html#_devicesessionid_-variable" >}}). | Sí |
+| `transaction > ipAddress` | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+| `transaction > cookie` | Alfanumérico | Max:255 | Cookie almacenada por el dispositivo donde el cliente realiza la transacción. | Sí |
+| `transaction > userAgent` | Alfanumérico | Max:1024 | User agent del navegador donde el cliente realiza la transacción. | Sí |
+| `transaction > extraParameters` | Objeto |  | Parámetros adicionales o datos asociados a la petición. El tamaño máximo de cada nombre de _extraParameters_ es 64 caracteres.<br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"INSTALLMENTS_NUMBER": 1`<br>`}`<br><br>En XML, the _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>INSTALLMENTS_NUMBER</string>`<br>&emsp;&emsp;`<string>1</string>`<br>&emsp;`</entry>`<br>`</extraParameters>`  | No |
+| `transaction > threeDomainSecure` | Objeto |  | Este objeto contiene la información de 3DS 2.0. | No |
+| `transaction > threeDomainSecure > embedded` | Booleano |  | Asigna `true` si quieres utilizar un MPI embebido para el proceso de Autorización. Por defecto, este valor está asignado como `false`. | No |
+| `transaction > threeDomainSecure > eci` | Numérico | Máx:2 | Indicador de Comercio Electrónico.<br>Valor retornado por los servidores de directorio indicando el intento de autenticación.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` es `false` y `transaction.threeDomainSecure.xid` tiene un valor configurado. | No |
+| `transaction > threeDomainSecure > cavv` | Alfanumérico | Máx:28 | Valor de verificación de autenticación del titular de la tarjeta (Cardholder Authentication Verification Value).<br>Código del criptograma utilizado en la autenticación de la transacción codificado en Base 64.<br>Dependiendo de los códigos ECI específicos establecidos por la red, este valor puede ser opcional. | No |
+| `transaction > threeDomainSecure > xid` | Alfanumérico | Máx:28 | Identificador de la transacción enviado por el MPI codificado en Base 64.<br>Este parámetro es obligatorio cuando `transaction.threeDomainSecure.embedded` is `false` y `transaction.threeDomainSecure.eci` tiene un valor configurado. | No |
+| `transaction > threeDomainSecure > directoryServerTransactionId` | Alfanumérico | Máx:36 | Identificador de la transacción generador por el servidor de directorio durante la autenticación. | No |
 
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción |
+| Nombre del campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
-| code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse | Objeto |  | Datos de la respuesta. |
-| transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
-| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. |
-| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
-| transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
-| transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
-| transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters | Objeto |  | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| `code` | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| `error` | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| `transactionResponse` | Objeto |  | Datos de la respuesta. |
+| `transactionResponse > orderId` | Numérico |  | Identificador generado o existente de la orden en PayU. |
+| `transactionResponse > transactionId` | Alfanumérico | 36 | Identificador de la transacción en PayU. |
+| `transactionResponse > state` | Alfanumérico | Max:32 | Estado de la transacción. |
+| `transactionResponse > responseCode` | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. |
+| `transactionResponse > paymentNetworkResponseCode` | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
+| `transactionResponse > paymentNetworkResponseErrorMessage` | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
+| `transactionResponse > trazabilityCode` | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
+| `transactionResponse > authorizationCode` | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
+| `transactionResponse > responseMessage` | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
+| `transactionResponse > operationDate` | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| `transactionResponse > extraParameters` | Objeto |  | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
@@ -412,7 +412,7 @@ Utiliza este método para realizar el paso de **Autorización** del flujo de dos
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "language": "es",
@@ -499,7 +499,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -533,7 +533,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>es</language>
@@ -626,7 +626,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -670,7 +670,7 @@ Los siguientes son ejemplos de los cuerpos de la solicitud y la respuesta para e
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "language": "es",
@@ -691,7 +691,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -723,7 +723,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>es</language>
@@ -744,7 +744,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -762,7 +762,7 @@ Ejemplo de una Respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-### Captura Parcial {#partial-capture}
+### Captura parcial {#partial-capture}
 
 Una captura parcial es una operación que permite solicitar el desembolso de un monto menor al autorizado previamente en una transacción.
 
@@ -780,7 +780,7 @@ Los siguientes son ejemplos de los cuerpos de la solicitud y la respuesta para e
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
     "language": "es",
@@ -807,7 +807,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -846,7 +846,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
   <language>es</language>
@@ -874,7 +874,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <response>
   <code>SUCCESS</code>
@@ -922,7 +922,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este tipo de 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "language": "es",
@@ -1009,7 +1009,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -1043,7 +1043,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>es</language>
@@ -1137,7 +1137,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1188,114 +1188,114 @@ La información del Costo Financiero Total (CFT) debe tener las siguientes carac
 
 Según la regulación vigente, no podrás mencionar la frase “sin interés” (o cualquier otra frase similar), cuando el costo de financiación del producto y/o servicio sea trasladado al precio de venta del consumidor.
 
-## Enviar Transacciones Utilizando Efectivo {#submit-transactions-using-cash}
+## Enviar transacciones utilizando efectivo {#submit-transactions-using-cash}
 
 Este método te permite procesar los pagos en efectivo de tus clientes. Para integrarte con las transacciones en efectivo, debes redirigir a tu cliente a la URL que se encuentra en la respuesta; tu cliente ve un de pago como el siguiente.
 
 <img src="/assets/Payments/CashReceiptAR.png" alt="PrintScreen" width="50%">
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-1}
+### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-1}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <label for="table2" class="showMandatory"><input type="checkbox" id="table2" name="table2" value="true" onchange="showMandatory(this)"> Mostrar solo campos obligatorios</label>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |---|---|---|---|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant | Objeto |  | Este objeto tiene los datos de la autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| transaction | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
-| transaction > order | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
-| transaction > order > accountId | Numérico |  | Identificador de tu cuenta. | Sí |
-| transaction > order > referenceCode | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
-| transaction > order > description | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
-| transaction > order > language | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
-| transaction > order > notifyUrl | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
-| transaction > order > partnerId | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
-| transaction > order > signature | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
-| transaction > order > shippingAddress | Objeto |  | Dirección de envío. | No |
-| transaction > order > shippingAddress > street1 | Alfanumérico | Max:100 | Línea de dirección 1. | No |
-| transaction > order > shippingAddress > street2 | Alfanumérico | Max:100 | Línea de dirección 2. | No |
-| transaction > order > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
-| transaction > order > shippingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección. | No |
-| transaction > order > shippingAddress > country | Alfanumérico | 2 | País de la dirección. | No |
-| transaction > order > shippingAddress > postalCode | Alfanumérico | Max:8 | Código postal de la dirección. | No |
-| transaction > order > shippingAddress > phone | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
-| transaction > order > buyer | Objeto |  | Información del comprador. | Sí |
-| transaction > order > buyer > merchantBuyerId | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
-| transaction > order > buyer > fullName | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
-| transaction > order > buyer > emailAddress | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí |
-| transaction > order > buyer > contactPhone | Alfanumérico | Max:20 | Teléfono del comprador. | Sí |
-| transaction > order > buyer > dniNumber | Alfanumérico | Max:20 | Número de identificación del comprador. | Sí |
-| transaction > order > buyer > shippingAddress | Alfanumérico |  | Dirección de envío del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > street1 | Alfanumérico | Max:150 | Línea de dirección 1 del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección del comprador. | Sí | 
-| transaction > order > buyer > shippingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > country | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
-| transaction > order > buyer > shippingAddress > postalCode | Numérico | Max:20 | 	Código postal de la dirección del comprador. | Sí |
-| transaction > order > buyer > shippingAddress > phone | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
-| transaction > order > additionalValues > | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
-| transaction > order > additionalValues > TX_VALUE | Alfanumérico | 64 | Monto de la transacción. | Sí |
-| transaction > order > additionalValues > TX_VALUE > value | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
-| transaction > order > additionalValues > TX_VALUE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
-| transaction > order > additionalValues > TX_TAX | Alfanumérico | 64 | Monto del impuesto a las ventas. | Sí |
-| transaction > order > additionalValues > TX_TAX > value | Numérico | 12, 2 | Especifica el monto del impuesto a las ventas.  | No |
-| transaction > order > additionalValues > TX_TAX > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > value | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
-| transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| transaction > payer | Objeto |  | Información del pagador. | Sí |
-| transaction > payer > emailAddress | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
-| transaction > payer > merchantPayerId | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
-| transaction > payer > fullName | Alfanumérico | Max:150 | Nombre del pagador. | Sí |
-| transaction > payer > billingAddress | Objeto |  | Dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street1 | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > street2 | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
-| transaction > payer > billingAddress > city | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > state | Alfanumérico | Max:40 | Estado o provincia de la dirección de facturación. | Sí |
-| transaction > payer > billingAddress > country | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
-| transaction > payer > billingAddress > postalCode | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
-| transaction > payer > billingAddress > phone | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
-| transaction > payer > birthdate | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
-| transaction > payer > contactPhone | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
-| transaction > payer > dniNumber | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
-| transaction > payer > dniType | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
-| transaction > type | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
-| transaction > paymentMethod | Alfanumérico | 32 | Selecciona un método de pago en efectivo válido. [Ver los métodos de pago disponibles para Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sí |
-| transaction > paymentCountry | Alfanumérico | 2 | Asigna `AR` para Argentina. | Sí |
-| transaction > expirationDate | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
-| transaction > ipAddress | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
+| `language` | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| `command` | Alfanumérico | Max:32 | Asigna `SUBMIT_TRANSACTION`. | Sí |
+| `test` (JSON)<hr>`isTest` (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| `merchant` | Objeto |  | Este objeto tiene los datos de la autenticación. | Sí |
+| `merchant > apiLogin` | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `merchant > apiKey` | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `transaction` | Objeto |  | Este objeto tiene los datos de la transacción. | Sí |
+| `transaction > order` | Objeto |  | Este objeto tiene los datos de la orden. | Sí |
+| `transaction > order > accountId` | Numérico |  | Identificador de tu cuenta. | Sí |
+| `transaction > order > referenceCode` | Alfanumérico | Min:1 Max:255 | Representa el identificador de la orden en tu sistema. | Sí |
+| `transaction > order > description` | Alfanumérico | Min:1 Max:255 | Descripción de la orden. | Sí |
+| `transaction > order > language` | Alfanumérico | 2 | Idioma utilizado en los correos electrónicos enviados al comprador y al vendedor. | Sí |
+| `transaction > order > notifyUrl` | Alfanumérico | Max:2048 | URL de confirmación de la orden. | No |
+| `transaction > order > partnerId` | Alfanumérico | Max:255 | ID de aliado dentro de PayU. | No |
+| `transaction > order > signature` | Alfanumérico | Max:255 | Firma asociada al formulario. Para más información, consulta [Firma de autenticación]({{< ref "integrations.html#authentication-signature" >}}). | Sí |
+| `transaction > order > shippingAddress` | Objeto |  | Dirección de envío. | No |
+| `transaction > order > shippingAddress > street1` | Alfanumérico | Max:100 | Línea de dirección 1. | No |
+| `transaction > order > shippingAddress > street2` | Alfanumérico | Max:100 | Línea de dirección 2. | No |
+| `transaction > order > shippingAddress > city` | Alfanumérico | Max:50 | Ciudad de la dirección. | No |
+| `transaction > order > shippingAddress > state` | Alfanumérico | Max:40 | Estado o provincia de la dirección. | No |
+| `transaction > order > shippingAddress > country` | Alfanumérico | 2 | País de la dirección. | No |
+| `transaction > order > shippingAddress > postalCode` | Alfanumérico | Max:8 | Código postal de la dirección. | No |
+| `transaction > order > shippingAddress > phone` | Alfanumérico | Max:11 | Número de teléfono asociado a la dirección. | No |
+| `transaction > order > buyer` | Objeto |  | Información del comprador. | Sí |
+| `transaction > order > buyer > merchantBuyerId` | Alfanumérico | Max:100 | Identificador del comprador en tu sistema. | No |
+| `transaction > order > buyer > fullName` | Alfanumérico | Max:150 | Nombre del comprador. | Sí |
+| `transaction > order > buyer > emailAddress` | Alfanumérico | Max:255 | Correo electrónico de comprador. | Sí |
+| `transaction > order > buyer > contactPhone` | Alfanumérico | Max:20 | Teléfono del comprador. | Sí |
+| `transaction > order > buyer > dniNumber` | Alfanumérico | Max:20 | Número de identificación del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress` | Alfanumérico |  | Dirección de envío del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > street1` | Alfanumérico | Max:150 | Línea de dirección 1 del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > city` | Alfanumérico | Max:50 | Ciudad de la dirección del comprador. | Sí | 
+| `transaction > order > buyer > shippingAddress > state` | Alfanumérico | Max:40 | Estado o provincia de la dirección del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > country` | Alfanumérico | 2 | País de la dirección del comprador en formato ISO 3166 alpha-2. | Sí |
+| `transaction > order > buyer > shippingAddress > postalCode` | Numérico | Max:20 | 	Código postal de la dirección del comprador. | Sí |
+| `transaction > order > buyer > shippingAddress > phone` | Numérico | Max:20 | Número de teléfono asociado a la dirección del comprador. | Sí |
+| `transaction > order > additionalValues` | Objeto | 64 | Monto de la orden y sus valores asociados. | Sí |
+| `transaction > order > additionalValues > TX_VALUE` | Alfanumérico | 64 | Monto de la transacción. | Sí |
+| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12, 2 | Especifica el monto de la transacción, este valor puede tener dos dígitos decimales (Ej. `10000.00` o `10000`). | Sí |
+| `transaction > order > additionalValues > TX_VALUE > currency` | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Sí |
+| `transaction > order > additionalValues > TX_TAX` | Alfanumérico | 64 | Monto del impuesto a las ventas. | Sí |
+| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12, 2 | Especifica el monto del impuesto a las ventas.  | No |
+| `transaction > order > additionalValues > TX_TAX > currency` | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE` | Alfanumérico | 64 | Valor base para calcular el impuesto.<br>Si el monto no tiene impuesto, envía 0.<br>Este valor puede tener dos dígitos decimales.  | No |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12, 2 | Especifica el monto base de la transacción. | No |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency` | Alfanumérico | 3 | Código ISO de la moneda. [Ver monedas aceptadas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
+| `transaction > payer` | Objeto |  | Información del pagador. | Sí |
+| `transaction > payer > emailAddress` | Alfanumérico | Max:255 | Correo electrónico del pagador. | Sí |
+| `transaction > payer > merchantPayerId` | Alfanumérico | Max:100 | Identificador del pagador en tu sistema. | No |
+| `transaction > payer > fullName` | Alfanumérico | Max:150 | Nombre del pagador. | Sí |
+| `transaction > payer > billingAddress` | Objeto |  | Dirección de facturación. | Sí |
+| `transaction > payer > billingAddress > street1` | Alfanumérico | Max:100 | Línea 1 de la dirección de facturación. | Sí |
+| `transaction > payer > billingAddress > street2` | Alfanumérico | Max:100 | Línea 2 de la dirección de facturación. | No |
+| `transaction > payer > billingAddress > city` | Alfanumérico | Max:50 | Ciudad de la dirección de facturación. | Sí |
+| `transaction > payer > billingAddress > state` | Alfanumérico | Max:40 | Estado o provincia de la dirección de facturación. | Sí |
+| `transaction > payer > billingAddress > country` | Alfanumérico | 2 | País de la dirección de facturación en formato ISO 3166 Alpha-2. | Sí |
+| `transaction > payer > billingAddress > postalCode` | Alfanumérico | Max:20 | Código postal de la dirección de facturación. | No |
+| `transaction > payer > billingAddress > phone` | Alfanumérico | Max:20 | Número de teléfono de la dirección de facturación. | No |
+| `transaction > payer > birthdate` | Alfanumérico | Max:10 | Fecha de nacimiento del pagador. | No |
+| `transaction > payer > contactPhone` | Alfanumérico | Max:20 | Número de teléfono del pagador. | Sí |
+| `transaction > payer > dniNumber` | Alfanumérico | Max:20 | Número de identificación del pagador. | Sí |
+| `transaction > payer > dniType` | Alfanumérico | 2 | Tipo de identificación del pagador. [Ver los tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| `transaction > type` | Alfanumérico | 32 | Como los pagos en efectivo se realizan en oficinas físicas, el único tipo de transacción disponible es `AUTHORIZATION_AND_CAPTURE` | Sí |
+| `transaction > paymentMethod` | Alfanumérico | 32 | Selecciona un método de pago en efectivo válido. [Ver los métodos de pago disponibles para Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sí |
+| `transaction > paymentCountry` | Alfanumérico | 2 | Asigna `AR` para Argentina. | Sí |
+| `transaction > expirationDate` | Alfanumérico | 23 | Fecha y hora máxima en la que el cliente puede realizar el pago. Formato `YYYY-MM-DDTHH:MM:SS`, por ejemplo `2021-06-12T16:07:11.586`. | No |
+| `transaction > ipAddress` | Alfanumérico | Max:39 | Dirección IP del dispositivo donde el cliente realiza la transacción. | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción |
+| Nombre del campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
-| code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
-| error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
-| transactionResponse | Objeto |  | Datos de la respuesta. |
-| transactionResponse > orderId | Numérico |  | Identificador generado o existente de la orden en PayU. |
-| transactionResponse > transactionId | Alfanumérico | 36 | Identificador de la transacción en PayU. |
-| transactionResponse > state | Alfanumérico | Max:32 | Estado de la transacción. Como el pago se realiza en una oficina física, el estado de una transacción exitosa es `PENDING` |
-| transactionResponse > paymentNetworkResponseCode | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
-| transactionResponse > paymentNetworkResponseErrorMessage | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
-| transactionResponse > trazabilityCode | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
-| transactionResponse > authorizationCode | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
-| transactionResponse > pendingReason | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en `transactionResponse > state`, la transacción está en espera del pago. |
-| transactionResponse > responseCode | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
-| transactionResponse > responseMessage | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
-| transactionResponse > operationDate | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
-| transactionResponse > extraParameters | Objeto |  | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| `code` | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. |
+| `error` | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. |
+| `transactionResponse` | Objeto |  | Datos de la respuesta. |
+| `transactionResponse > orderId` | Numérico |  | Identificador generado o existente de la orden en PayU. |
+| `transactionResponse > transactionId` | Alfanumérico | 36 | Identificador de la transacción en PayU. |
+| `transactionResponse > state` | Alfanumérico | Max:32 | Estado de la transacción. Como el pago se realiza en una oficina física, el estado de una transacción exitosa es `PENDING` |
+| `transactionResponse > paymentNetworkResponseCode` | Alfanumérico | Max:255 | Código de respuesta retornado por la red bancaria. |
+| `transactionResponse > paymentNetworkResponseErrorMessage` | Alfanumérico | Max:255 | Mensaje de error retornado por la red bancaria. |
+| `transactionResponse > trazabilityCode` | Alfanumérico | Max:32 | Código de trazabilidad retornado por la red bancaria. |
+| `transactionResponse > authorizationCode` | Alfanumérico | Max:12 | Código de autorización retornado por la red bancaria. |
+| `transactionResponse > pendingReason` | Alfanumérico | Max:21 | Código de la razón asociada con el estado, como se mencionó en `transactionResponse > state`, la transacción está en espera del pago. |
+| `transactionResponse > responseCode` | Alfanumérico | Max:64 | Código de respuesta asociado con el estado. En este caso, para una transacción exitosa es `PENDING_TRANSACTION_CONFIRMATION`. |
+| `transactionResponse > responseMessage` | Alfanumérico | Max:2048 | Mensaje asociado al código de respuesta. |
+| `transactionResponse > operationDate` | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
+| `transactionResponse > extraParameters` | Objeto |  | Parámetros adicionales o datos asociados con la respuesta.<br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"REFERENCE": "74794"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>REFERENCE</string>`<br>&emsp;&emsp;`<int>74794</int>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 
 </details>
 
@@ -1317,7 +1317,7 @@ Los siguientes son los cuerpos de la petición y la respuesta para este método 
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "language": "es",
@@ -1393,7 +1393,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -1431,7 +1431,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>es</language>
@@ -1510,7 +1510,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
@@ -1550,50 +1550,50 @@ Ejemplo de una Respuesta:
 {{< /tab >}}
 {{< /tabs >}}
 
-## Incluir Información de Registro de Nombre del Pasajero (Opcional) {#include-passenger-name-record-information-optional}
+## Incluir información de registro de nombre del pasajero (opcional) {#include-passenger-name-record-information-optional}
 
 Además de los detalles de transacción previamente suministrados, la API permite la inclusión opcional de datos de Registro de Nombre de Pasajero (PNR). Aunque es particularmente valiosa para aerolíneas y agencias de viajes, esta función extiende su utilidad a cualquier comercio que utilice los servicios de PayU en toda América Latina, incluso cuando no procese directamente pagos de vuelos. El beneficio principal de los datos PNR es mejorar significativamente el análisis de riesgo de las transacciones a través de las herramientas antifraude de PayU, proporcionando una visión más completa de la transacción más allá de los simples detalles de pago.
 
 Los siguientes parámetros se refieren a los datos PNR y son opcionales. Están disponibles en todos los países de América Latina donde opera PayU. Estos campos no son suficientes por sí solos para completar una solicitud de transacción, pero son complementarios para casos de uso específicos donde conocer los detalles sobre el pasajero y su itinerario de viaje puede ayudar en la detección de fraude.
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
 | **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
 |-|-|-|-|-|
-| transaction > pnr > id | alfanumérico | 32 | ID del registro de nombre del pasajero (PNR). | `PNR123456` |
-| transaction > pnr > reservationAgent > id | alfanumérico | 32 | ID del agente de reservas. | `AGENT123` |
-| transaction > pnr > reservationAgent > firstName | alfanumérico | 255 | Nombre(s) del agente de reservas. | `John` |
-| transaction > pnr > reservationAgent > lastName | alfanumérico | 255 | Apellido(s) del agente de reservas. | `Doe` |
-| transaction > pnr > reservationAgent > email | alfanumérico | 255 | Correo electrónico del agente de reservas. | `agent@example.com` |
-| transaction > pnr > reservationAgent > officePhoneNumber | alfanumérico | 50 | Teléfono de oficina del agente de reservas.| `+573001234567` |
-| transaction > pnr > reservationOffice > id | alfanumérico | 9 | ID de la oficina de reservas.| `OFFICE123`|
-| transaction > pnr > reservationOffice > country | alfanumérico | 2 | País de la oficina de reservas (Código ISO). | `CO` |
-| transaction > pnr > saleOffice > id | alfanumérico | 9 | ID de la oficina de ventas. | `SALEOFF123`                |
-| transaction > pnr > saleOffice > country | alfanumérico | 2 | País de la oficina de ventas (Código ISO). | `US` |
-| transaction > pnr > passengers[] > id | alfanumérico | 32 | ID del pasajero. | `PASS12345` |
-| transaction > pnr > passengers[] > country | alfanumérico | 2 | País del pasajero (Código ISO). | `AR`                        |
-| transaction > pnr > passengers[] > level | alfanumérico | 32 | Nivel del pasajero. | `GOLD`                      |
-| transaction > pnr > passengers[] > firstName | alfanumérico | 255 | Nombre(s) del pasajero. | `Maria`                     |
-| transaction > pnr > passengers[] > lastName | alfanumérico | 255 | Apellido(s) del pasajero. | `Gonzalez` |
-| transaction > pnr > passengers[] > documentType | numérico | 2 | Tipo de documento. Los valores posibles son:<br>`0` = No especificado<br>`1` = Cédula de ciudadanía<br>`2` = Cédula de extranjería<br>`3` = Número de identificación tributaria<br>`4` = Tarjeta de identidad<br>`5` = Pasaporte<br>`6` = Tarjeta de seguridad social<br>`7` = Sociedad extranjera sin NIT<br>`8` = Fideicomiso<br>`9` = Registro civil<br>`10` = Carnet diplomático | `5` |
-| transaction > pnr > passengers[] > documentNumber | alfanumérico | 50 | Número de documento del pasajero. | `P12345678` |
-| transaction > pnr > passengers[] > email | alfanumérico | 255 | Dirección de correo electrónico del pasajero. | `passenger@example.com` |
-| transaction > pnr > passengers[] > officePhoneNumber | alfanumérico | 50 | Teléfono de oficina del pasajero. | `+573008765432`             |
-| transaction > pnr > passengers[] > homePhoneNumber | alfanumérico | 50 | Teléfono de casa del pasajero. | `+573002345678`             |
-| transaction > pnr > passengers[] > mobilePhoneNumber | alfanumérico | 50 | Teléfono móvil del pasajero. | `+573001234567` |
-| transaction > pnr > passengers[] > address > country | alfanumérico | 2 | País de la dirección del pasajero (Código ISO). | `BR` |
-| transaction > pnr > passengers[] > address > city | alfanumérico | 65 | Ciudad de la dirección del pasajero. | `São Paulo` |
-| transaction > pnr > passengers[] > address > street | alfanumérico | 255 | Dirección (calle) del pasajero. | `Rua das Flores, 123` |
-| transaction > pnr > itinerary[] > departureDate | alfanumérico | 19 | Fecha de salida en formato UTC. | `2022-01-01T23:59:59` |
-| transaction > pnr > itinerary[] > arrivalDate | alfanumérico | 19 | Fecha de llegada en formato UTC. | `2022-01-02T23:59:59` |
-| transaction > pnr > itinerary[] > flightNumber | alfanumérico | 12 | Número de vuelo. | `FL1234` |
-| transaction > pnr > itinerary[] > origin | alfanumérico | 8 | Origen. | `BOG` |
-| transaction > pnr > itinerary[] > destination | alfanumérico | 8 | Destino. | `MIA` |
-| transaction > pnr > itinerary[] > travelClass | alfanumérico | 2 | Clase de viaje en el segmento de reserva. | `Y` |
-| transaction > pnr > itinerary[] > ticketType | alfanumérico | 50 | Tipo de boleto. | `E-TICKET` |
+| `transaction > pnr > id` | Alfanumérico | 32 | ID del registro de nombre del pasajero (PNR). | `PNR123456` |
+| `transaction > pnr > reservationAgent > id` | Alfanumérico | 32 | ID del agente de reservas. | `AGENT123` |
+| `transaction > pnr > reservationAgent > firstName` | Alfanumérico | 255 | Nombre(s) del agente de reservas. | `John` |
+| `transaction > pnr > reservationAgent > lastName` | Alfanumérico | 255 | Apellido(s) del agente de reservas. | `Doe` |
+| `transaction > pnr > reservationAgent > email` | Alfanumérico | 255 | Correo electrónico del agente de reservas. | `agent@example.com` |
+| `transaction > pnr > reservationAgent > officePhoneNumber` | Alfanumérico | 50 | Teléfono de oficina del agente de reservas.| `+573001234567` |
+| `transaction > pnr > reservationOffice > id` | Alfanumérico | 9 | ID de la oficina de reservas.| `OFFICE123`|
+| `transaction > pnr > reservationOffice > country` | Alfanumérico | 2 | País de la oficina de reservas (Código ISO). | `CO` |
+| `transaction > pnr > saleOffice > id` | Alfanumérico | 9 | ID de la oficina de ventas. | `SALEOFF123`                |
+| `transaction > pnr > saleOffice > country` | Alfanumérico | 2 | País de la oficina de ventas (Código ISO). | `US` |
+| `transaction > pnr > passengers[] > id` | Alfanumérico | 32 | ID del pasajero. | `PASS12345` |
+| `transaction > pnr > passengers[] > country` | Alfanumérico | 2 | País del pasajero (Código ISO). | `AR`                        |
+| `transaction > pnr > passengers[] > level` | Alfanumérico | 32 | Nivel del pasajero. | `GOLD`                      |
+| `transaction > pnr > passengers[] > firstName` | Alfanumérico | 255 | Nombre(s) del pasajero. | `Maria`                     |
+| `transaction > pnr > passengers[] > lastName` | Alfanumérico | 255 | Apellido(s) del pasajero. | `Gonzalez` |
+| `transaction > pnr > passengers[] > documentType` | Numérico | 2 | Tipo de documento. Los valores posibles son:<br>`0` = No especificado<br>`1` = Cédula de ciudadanía<br>`2` = Cédula de extranjería<br>`3` = Número de identificación tributaria<br>`4` = Tarjeta de identidad<br>`5` = Pasaporte<br>`6` = Tarjeta de seguridad social<br>`7` = Sociedad extranjera sin NIT<br>`8` = Fideicomiso<br>`9` = Registro civil<br>`10` = Carnet diplomático | `5` |
+| `transaction > pnr > passengers[] > documentNumber` | Alfanumérico | 50 | Número de documento del pasajero. | `P12345678` |
+| `transaction > pnr > passengers[] > email` | Alfanumérico | 255 | Dirección de correo electrónico del pasajero. | `passenger@example.com` |
+| `transaction > pnr > passengers[] > officePhoneNumber` | Alfanumérico | 50 | Teléfono de oficina del pasajero. | `+573008765432`             |
+| `transaction > pnr > passengers[] > homePhoneNumber` | Alfanumérico | 50 | Teléfono de casa del pasajero. | `+573002345678`             |
+| `transaction > pnr > passengers[] > mobilePhoneNumber` | Alfanumérico | 50 | Teléfono móvil del pasajero. | `+573001234567` |
+| `transaction > pnr > passengers[] > address > country` | Alfanumérico | 2 | País de la dirección del pasajero (Código ISO). | `BR` |
+| `transaction > pnr > passengers[] > address > city` | Alfanumérico | 65 | Ciudad de la dirección del pasajero. | `São Paulo` |
+| `transaction > pnr > passengers[] > address > street` | Alfanumérico | 255 | Dirección (calle) del pasajero. | `Rua das Flores, 123` |
+| `transaction > pnr > itinerary[] > departureDate` | Alfanumérico | 19 | Fecha de salida en formato UTC. | `2022-01-01T23:59:59` |
+| `transaction > pnr > itinerary[] > arrivalDate` | Alfanumérico | 19 | Fecha de llegada en formato UTC. | `2022-01-02T23:59:59` |
+| `transaction > pnr > itinerary[] > flightNumber` | Alfanumérico | 12 | Número de vuelo. | `FL1234` |
+| `transaction > pnr > itinerary[] > origin` | Alfanumérico | 8 | Origen. | `BOG` |
+| `transaction > pnr > itinerary[] > destination` | Alfanumérico | 8 | Destino. | `MIA` |
+| `transaction > pnr > itinerary[] > travelClass` | Alfanumérico | 2 | Clase de viaje en el segmento de reserva. | `Y` |
+| `transaction > pnr > itinerary[] > ticketType` | Alfanumérico | 50 | Tipo de boleto. | `E-TICKET` |
 
 </details>
 
@@ -1603,15 +1603,15 @@ Al usar el formato XML, los parámetros del itinerario aparecen bajo `transactio
 
 {{% /alert %}}
 
-#### Llamado a la API {#api-call-9}
+#### Llamado a la API {#api-call-1}
 
 A continuación, se presentan ejemplos de una solicitud para este método.
 
-{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
   "transaction": {
@@ -1712,7 +1712,7 @@ Ejemplo de una Solicitud:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
   ...
@@ -1817,54 +1817,54 @@ Ejemplo de una Solicitud:
 
 {{< /tabs >}}
 
-## Consultar Métodos de Pago Disponibles {#available-payment-methods-query}
+## Consultar métodos de pago disponibles {#available-payment-methods-query}
 
 Este método retorna la lista de los métodos de pago disponibles en todos los países.
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-2}
+### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-2}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio | 
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio | 
 |-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. | Sí |
+| `language` | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| `command` | Alfanumérico | Max:32 | Asigna `GET_PAYMENT_METHODS`. | Sí |
 | test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant | Objeto |  | Este objeto tiene los datos de la autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `merchant` | Objeto |  | Este objeto tiene los datos de la autenticación. | Sí |
+| `merchant > apiLogin` | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `merchant > apiKey` | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
-| code | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. | Sí |
-| error | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. | Sí |
-| paymentMethods | Objeto |  | Lista de métodos de pago. | Sí |
-| paymentMethods > paymentMethodComplete | Objeto |  | Este objeto tiene la información de un método de pago. | Sí |
-| paymentMethods > paymentMethodComplete > id | Numérico |  | Identificador del método de pago. | Sí |
-| paymentMethods > paymentMethodComplete > description | Alfanumérico | Max:32 | Nombre del método de pago. | Sí |
-| paymentMethods > paymentMethodComplete > country | Alfanumérico | 2 | Código ISO del país del método de pago. | Sí |
+| `code` | Alfanumérico |  | Código de respuesta de la transacción. Los valores posibles son `ERROR` y `SUCCESS`. | Sí |
+| `error` | Alfanumérico | Max:2048 | Mensaje de error asociado cuando el código de respuesta es `ERROR`. | Sí |
+| `paymentMethods` | Objeto |  | Lista de métodos de pago. | Sí |
+| `paymentMethods > paymentMethodComplete` | Objeto |  | Este objeto tiene la información de un método de pago. | Sí |
+| `paymentMethods > paymentMethodComplete > id` | Numérico |  | Identificador del método de pago. | Sí |
+| `paymentMethods > paymentMethodComplete > description` | Alfanumérico | Max:32 | Nombre del método de pago. | Sí |
+| `paymentMethods > paymentMethodComplete > country` | Alfanumérico | 2 | Código ISO del país del método de pago. | Sí |
 
 </details>
 
-### Llamado a la API {#api-call-1}
+### Llamado a la API {#api-call-2}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método. Para el propósito de este ejemplo, la respuesta muestra dos métodos de pago. 
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "test": false,
@@ -1878,7 +1878,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -1907,7 +1907,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>en</language>
@@ -1921,7 +1921,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <paymentMethodsResponse>
     <code>SUCCESS</code>
@@ -1950,45 +1950,45 @@ Ejemplo de una Respuesta:
 
 El método `PING` te permite verificar la conexión con nuestra plataforma. 
 
-### Parámetros para la Solicitud y la Respuesta {#parameters-for-request-and-response-3}
+### Parámetros para la solicitud y respuesta {#parameters-for-request-and-response-3}
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |-|-|-|-|:-:|
-| language | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
-| command | Alfanumérico | Max:32 | Asigna `PING`. | Sí |
-| test (JSON)<hr>isTest (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
-| merchant | Objeto |  | Este objeto tiene los datos de la autenticación. | Sí |
-| merchant > apiLogin | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
-| merchant > apiKey | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `language` | Alfanumérico | 2 | Idioma utilizado en la petición, este idioma se utiliza para mostrar los mensajes de error generados. [Ver idiomas soportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
+| `command` | Alfanumérico | Max:32 | Asigna `PING`. | Sí |
+| `test` (JSON)<hr>`isTest` (XML) | Booleano |  | Asigna `true` Si la petición es en modo pruebas. Si no, asigna `false`. | Sí |
+| `merchant` | Objeto |  | Este objeto tiene los datos de la autenticación. | Sí |
+| `merchant > apiLogin` | Alfanumérico | Min:12 Max:32 | Usuario o login entregado por PayU. [Cómo obtengo mi API Login]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
+| `merchant > apiKey` | Alfanumérico | Min:6 Max:32 | Contraseña entregada por PayU. [Cómo obtengo mi API Key]({{< ref "integrations.html#api-key-and-api-login" >}}) | Sí |
 
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción |
+| Nombre del campo | Formato | Tamaño | Descripción |
 |-|-|-|-|
-| code | Alfanumérico |  | Código de respuesta de la transacción. |
-| error | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
-| transactionResponse | Objeto | Max:2048 | La respuesta del método PING si ocurrió un error. |
+| `code` | Alfanumérico |  | Código de respuesta de la transacción. |
+| `error` | Alfanumérico | Max:2048 | Mensaje de error asociado si ocurrió un error. |
+| `transactionResponse` | Objeto | Max:2048 | La respuesta del método PING si ocurrió un error. |
 </details>
 
-### Llamado a la API {#api-call-2}
+### Llamado a la API {#api-call-3}
 
 Los siguientes son los cuerpos de la petición y la respuesta para este método.
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```JSON
 {
    "test": false,
@@ -2002,7 +2002,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```JSON
 {
     "code": "SUCCESS",
@@ -2016,7 +2016,7 @@ Ejemplo de una Respuesta:
 {{< tab tabNum="2" >}}
 <br>
 
-Ejemplo de una Solicitud:
+**Ejemplo de una solicitud:**
 ```XML
 <request>
    <language>en</language>
@@ -2030,7 +2030,7 @@ Ejemplo de una Solicitud:
 ```
 <br>
 
-Ejemplo de una Respuesta:
+**Ejemplo de una respuesta:**
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>

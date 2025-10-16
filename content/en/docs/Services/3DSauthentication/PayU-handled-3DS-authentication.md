@@ -10,16 +10,14 @@ tags: ["subtopic"]
 
 To enable 3DS authentication, contact your PayU representative or technical support. Once enabled, include the `req3DSAuthentication` parameter in your payment requests using PayU's Payments API.
 
-{{% alert title="Notes" color="info"%}}
+## Considerations
 
 * 3DS authentication with PayU Latam is only available in **Argentina**, **Brazil**, **Colombia**, **Mexico**, and **Peru**.
 * When using 3DS authentication in API integrations, setting a `RESPONSE_URL` is **mandatory**. If not provided, the transaction will return an error.
 * If you use a <a href="https://developers.payulatam.com/latam/en/docs/integrations/webcheckout-integration.html" target="_blank">WebCheckout integration</a>, contact your PayU representative or technical support to confirm whether 3DS authentication is available for your transactions. 
 * **Supported networks:** Visa and Mastercard.
 
-{{% /alert %}}
-
-### The `req3DSAuthentication` Parameter
+## The `req3DSAuthentication` Parameter
 
 This parameter enables you to specify whether a transaction requires 3DS authentication. The parameter supports the following values:
 
@@ -28,7 +26,7 @@ This parameter enables you to specify whether a transaction requires 3DS authent
 
 **If your request doesn't include `req3DSAuthentication`**, PayU's risk engine will determine whether the transaction requires 3DS authentication based on its risk assessment.
 
-#### Parameters for 3DS Authentication 
+### Parameters for 3DS Authentication 
 
 The table below outlines the key parameters associated with 3DS authentication. For a complete list of parameters applicable to credit or debit card transactions, refer to the <a href="https://developers.payulatam.com/latam/en/docs/integrations/api-integration.html" target="_blank">Payments API documentation</a> for your country. 
 
@@ -39,7 +37,7 @@ The table below outlines the key parameters associated with 3DS authentication. 
 | `transaction > extraParameters > RESPONSE_URL` | Alphanumeric | Up to 255 characters | URL where the user is redirected after completing the 3DS authentication, typically a page on the merchant’s website. **For API integrations, this parameter is mandatory**. If not provided, the transaction may fail because PayU cannot redirect the user after the authentication challenge. For a detailed list of possible statuses, refer to the <a href="https://developers.payulatam.com/latam/en/docs/getting-started/response-codes-and-variables.html#response-codes-sent-to-the-response-page" target="_blank">response codes documentation</a>. |
 
 
-#### Request Example
+### Request Example
 
 In the following request example, `req3DSAuthentication` is set to `true` to require 3DS authentication:
 
@@ -47,7 +45,6 @@ In the following request example, `req3DSAuthentication` is set to `true` to req
 {{< tab tabNum="1" >}}
 <br>
 
-Request Example:
 ```JSON
 {
     "language": "en",
@@ -152,7 +149,6 @@ Request Example:
 {{< tab tabNum="2" >}}
 <br>
 
-Request Example:
 ```XML
 <request>
     <language>en</language>
@@ -302,13 +298,48 @@ These account IDs are for testing purposes only, do not use them in production e
 
 {{% /alert %}}
 
+### Test Cards
+
+You can use the following test cards to replicate different 3DS scenarios in the test environment. **Do not** use these cards in production.
+
+| Brand       | Card Number          | 3DS Scenario                                      |
+|-------------|----------------------|---------------------------------------------------|
+| Mastercard  | `5521455186577727`   | Card is not registered for 3DS                |
+| Mastercard  | `5436062405627681`   | 3DS challenge required                        |
+| Mastercard  | `5150030090350186`   | 3DS successful without friction (no challenge required) |
+| Mastercard  | `5150030090050182`   | 3DS successful without friction (no challenge required) |
+| Visa        | `4012001037141120`   | 3DS challenge required                        |
+| Visa        | `4245757666349685`   | 3DS challenge required                        |
+
+#### Test Data for Approved Authorizations
+
+Use the following parameters to simulate approved transactions in the test environment:
+
+* Include **`APPROVED`** in the cardholder name (e.g. `APPROVED John Doe`).
+* Use **`777`** as the CVV.
+* Expiration date: a month less than or equal to `05` (i.e., month < 6) and a year after the current year (for example `05/202_` — replace `_` with the appropriate digit for testing).
+
+#### Test Data for Declined Authorizations
+
+Use the following parameters to simulate declined transactions in the test environment:
+
+* Include **`REJECTED`** in the cardholder name (e.g. `REJECTED John Doe`).
+* Use **`666`** as the CVV.
+* Expiration date: a month greater than or equal to `07` (i.e., month > 6) and a year after the current year (for example `07/202_` — replace `_` with the appropriate digit for testing).
+
+{{% alert title="Note" color="info"%}}
+
+These numbers and conventions are for sandbox testing only. Make sure to use the test `Account ID`, `API Key` and `API Login` provided above when executing transactions.
+
+{{% /alert %}}
+
 ## Transaction Response
 
 Upon sending a payment request, you will receive a response with a `"PENDING"` state for the transaction. This response will also include a field within `extraParameters` called `THREEDS_AUTH_REDIRECT_URL`.
 
 * **`THREEDS_AUTH_REDIRECT_URL`:** This URL should be used to redirect the payer to complete the 3DS authentication process. The authentication process might involve challenges like entering a one-time password (OTP) received on their phone.
 
-#### Response Example
+### Response Example
 
 In the response example below, the merchant redirects the payer to `https://merch-prod.payu.com`:
 
@@ -316,7 +347,6 @@ In the response example below, the merchant redirects the payer to `https://merc
 {{< tab tabNum="1" >}}
 <br>
 
-Response Example:
 ```JSON
 {
     "code": "SUCCESS",
@@ -357,7 +387,6 @@ Response Example:
 {{< tab tabNum="2" >}}
 <br>
 
-Response Example:
 ```XML
 <paymentResponse>
     <code>SUCCESS</code>
