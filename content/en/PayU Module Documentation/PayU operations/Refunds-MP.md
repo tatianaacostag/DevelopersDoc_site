@@ -85,7 +85,7 @@ Before requesting a refund, take into account the following country-specific con
 - Request a refund **at least 10 minutes after approval** and up to **357 days** after the transaction.
 - The minimum refund amount is **100 COP**.
 - If you do not submit the refund request on the same day as the transaction capture (**before 9 PM UTC-5**), PayU processes it manually instead of attempting it online.
-- Once approved, the payer receives the funds within **30 working days**.
+- Once approved, the payer receives the funds within **15 working days**, depending on the card issuer.
 - Request only **one partial refund per order**. If the customer asks for an additional refund, process it outside of PayU (e.g., through a gift card, discount, or bank transfer). You can also use our [Payouts API](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payouts-api.html) to send the amount directly from your PayU account balance. This option is only available under the aggregator model and requires requesting the customer’s bank account details each time. This is especially useful for Alternative Payment Methods such as **Efecty** or **PSE**.
 - Partial refunds for international credit cards are **not available**. 
 - Partial refunds (only one per order) are available for payments made through **AMEX, Codensa, Diners, Mastercard, or Visa**.

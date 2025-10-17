@@ -78,7 +78,7 @@ Antes de solicitar un reembolso, ten en cuenta las siguientes consideraciones es
 - Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta **357 días**.
 - El monto mínimo para un reembolso es **100 COP**.
 - Si una solicitud de reembolso **no se envía el mismo día** de la captura de la transacción (**antes de las 9 PM UTC-5**), se **procesa manualmente** en lugar de intentarse en línea.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
+- Una vez aprobado, el pagador recibe los fondos dentro de **15 días hábiles**, dependiendo del emisor de la tarjeta.
 - **Los reembolsos parciales no están disponibles** para tarjetas de crédito internacionales.
 
 ### México

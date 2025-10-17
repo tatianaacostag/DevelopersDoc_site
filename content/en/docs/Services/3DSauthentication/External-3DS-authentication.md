@@ -12,13 +12,11 @@ tags: ["subtopic"]
 
 If you have your own 3DS Authentication service, you can integrate it seamlessly with PayU, this approach is also known as **passthrough** and lets you manage the authentication process directly with your chosen Merchant Plug-in (MPI) or 3DS Server.
 
-{{% alert title="Notes" color="info"%}}
+### Considerations
 
 * 3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, **Mexico**, and **Peru**.
 * This feature requires an API integration and is not available for Webcheckout integration.
 * **Supported networks:** Visa and Mastercard
-
-{{% /alert %}}
 
 ## How it Works
 
@@ -26,7 +24,7 @@ If you have your own 3DS Authentication service, you can integrate it seamlessly
 * **Handle authentication:** You manage the communication between your platform and the 3DS service.
 * **Send response to PayU:** Include the authentication response from your 3DS service within your payment request to PayU.
 
-### Important Considerations
+### Considerations
 
 * **Independent services:** Your 3DS service operates independently of PayU's authorization service.
 * **Combined data required:** For successful payment processing, your PayU authorization request must include the authentication response from your 3DS service.
@@ -105,6 +103,18 @@ The following JSON example shows how to structure a payment request that include
     "test": false
 }
 ```
+
+## Acquirer Data for 3DS Testing
+
+Use the following acquirer details to perform 3DS test transactions.
+
+| Country | Acquirer Merchant ID | Mastercard BIN | Visa BIN |
+|----------|----------------------|----------------|-----------|
+| **Argentina** | 5921041903 | 541109 | 435017 |
+| **Brazil** | 65145705 | 548087 | 483044 |
+| **Colombia** | 0010881563 | 271699 | 450724 |
+| **Mexico** | 9508014 | 272087 | 441567 |
+| **Peru** | 100070253 | 271542 | 491955 |
 
 ## Country-Specific Documentation
 

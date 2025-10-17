@@ -8,30 +8,28 @@ weight: 22
 tags: ["subtopic"]
 ---
 
-## Aprovechamiento de una Autenticación 3DS Externa
+## Emplear una autenticación 3DS externa
 
-Si tienes tu propio servicio de autenticación 3DS, puedes integrarlo fácilmente con PayU. Este enfoque también se conoce como **passthrough** y te permite gestionar el proceso de autenticación directamente con tu Merchant Plug-in (MPI) o servidor 3DS elegido.
+Si tienes tu propio servicio de autenticación 3DS, puedes integrarlo fácilmente con PayU. Este método también se conoce como **passthrough** y te permite gestionar el proceso de autenticación directamente con tu Merchant Plug-in (MPI) o servidor 3DS elegido.
 
-{{% alert title="Notas" color="info"%}}
+### Consideraciones
 
 * La autenticación 3DS para PayU Latam solo está disponible para **Argentina**, **Brasil**, **Colombia**, **México** y **Perú**.
 * Esta funcionalidad requiere una integración API y no está disponible para la integración Webcheckout.
 * **Redes compatibles actualmente:** Visa y Mastercard
 
-{{% /alert %}}
-
-## Cómo Funciona
+## Cómo funciona
 
 * **Utiliza tu servicio 3DS existente:** PayU se integra perfectamente con tu proveedor preferido para un flujo de trabajo fluido.
 * **Gestiona la autenticación:** Tú manejas la comunicación entre tu plataforma y el servicio 3DS.
 * **Envía la respuesta a PayU:** Incluye la respuesta de autenticación de tu servicio 3DS dentro de tu solicitud de pago a PayU.
 
-### Consideraciones Importantes
+### Consideraciones
 
 * **Servicios independientes:** Tu servicio 3DS funciona independientemente del servicio de autorización de PayU.
 * **Datos combinados necesarios:** Para un procesamiento de pago exitoso, tu solicitud de autorización de PayU debe incluir la respuesta de autenticación de tu servicio 3DS.
 
-## Parámetros API para la Autenticación 3DS
+## Parámetros de la API para la autenticación 3DS
 
 Cuando uses tu propio servicio 3DS con el método de passthrough, incluye los siguientes campos en tu solicitud de pago a PayU:
 
@@ -44,7 +42,7 @@ Cuando uses tu propio servicio 3DS con el método de passthrough, incluye los si
 | `transaction > threeDomainSecure > xid` | Alfanumérico | Máx: 28 | Identifica la transacción mediante el ID que devuelve el MPI en Base64.<br>Este parámetro se vuelve obligatorio cuando configuras `transaction.threeDomainSecure.embedded` en `false` e incluyes `transaction.threeDomainSecure.eci`. |
 | `transaction > threeDomainSecure > directoryServerTransactionId` | Alfanumérico | Máx: 36 | Identifica la transacción mediante el ID que genera el servidor de directorio durante la autenticación. |
 
-## Ejemplo de Solicitud
+## Ejemplo de una solicitud
 
 El siguiente ejemplo en formato JSON muestra cómo estructurar una solicitud de pago que incluye los datos de autenticación 3DS externa utilizando el método de passthrough:
 
@@ -106,7 +104,19 @@ El siguiente ejemplo en formato JSON muestra cómo estructurar una solicitud de 
 }
 ```
 
-## Documentación Específica por País
+## Datos del adquirente para pruebas 3DS
+
+Utiliza los siguientes datos del adquirente para realizar transacciones de prueba 3DS.
+
+| País | ID de comercio del adquirente | BIN Mastercard | BIN Visa |
+|------|-------------------------------|----------------|-----------|
+| **Argentina** | 5921041903 | 541109 | 435017 |
+| **Brasil** | 65145705 | 548087 | 483044 |
+| **Colombia** | 0010881563 | 271699 | 450724 |
+| **México** | 9508014 | 272087 | 441567 |
+| **Perú** | 100070253 | 271542 | 491955 |
+
+## Documentación específica por país
 
 Para obtener instrucciones detalladas sobre cómo incluir parámetros de respuesta de autenticación en tu solicitud, consulta la documentación de tu país de procesamiento:
 
