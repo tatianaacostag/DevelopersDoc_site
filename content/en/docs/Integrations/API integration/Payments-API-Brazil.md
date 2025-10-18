@@ -1234,7 +1234,6 @@ Response Example:
 {{< /tab >}}
 {{< /tabs >}}
 
-
 ## Submit Transactions Using Google Pay {#submit-transactions-using-google-pay}
 
 Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.
@@ -1254,7 +1253,7 @@ Please note that if your integration with PayU is API, you must change the setti
 * [Perform API integration of the payment method](#api-integration-of-the-payment-method)
 * [Test the payment method](#test-the-payment-method)
 
- ### API Integration of the Payment Method
+### API Integration of the Payment Method
 
 To integrate the website with the Google Pay wallet, proceed according to the instructions placed at these websites:
 * [API documentation](https://developers.google.com/pay/api/web)
@@ -1310,9 +1309,9 @@ Below, a sample of a Google Pay Token:
 }
 ```
 
- ### Process Google Pay Transactions in PayU
+### Process Google Pay Transactions in PayU
 
- The primary function of Google Pay as a digital wallet is to store credit cards to facilitate payment processing. With that in mind, for PayU, the transactions processed by Google Pay will have the same credit card logic except for the following particularities:
+The primary function of Google Pay as a digital wallet is to store credit cards to facilitate payment processing. With that in mind, for PayU, the transactions processed by Google Pay will have the same credit card logic except for the following particularities:
 
 * If you are processing transactions of your customers with Google Pay, you should configure the information of the wallet in the parameter ```transaction.digitalWallet```.
 * Inside the parameter ```transaction.digitalWallet``` use ```GOOGLE_PAY``` in the field ```transaction.digitalWallet.type``` and send the Google Pay Token in the field ```transaction.digitalWallet.message```. 

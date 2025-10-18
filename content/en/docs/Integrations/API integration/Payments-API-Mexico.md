@@ -25,6 +25,7 @@ To integrate the Payments API, direct your requests to the following URLs accord
 Payments API includes the following features:
 
 * [Submit Transactions Using Credit or Debit Cards]({{< ref "Payments-API-Mexico.md#submit-transactions-using-credit-or-debit-cards" >}})
+* [Submit Transactions Using Google Pay]({{< ref "#submit-transactions-using-google-pay" >}})
 * [Submit Transactions Using Cash]({{< ref "Payments-API-Mexico.md#submit-transactions-using-cash" >}})
 * [Submit Transactions Using Bank Transfer]({{< ref "Payments-API-Mexico.md#submit-transactions-using-bank-transfer" >}})
 * [Submit Transactions Using Bank Reference]({{< ref "Payments-API-Mexico.md#submit-transactions-using-bank-reference" >}})
@@ -1026,6 +1027,358 @@ Response Example:
 {{< /tab >}}
 {{< /tabs >}}
 
+## Submit Transactions Using Google Pay {#submit-transactions-using-google-pay}
+
+Google Pay is a digital wallet that enables simple and fast card payments, without the need of entering the card data for each payment. The card data is safely stored by Google. This payment method is available for all devices (mobile phones and computers), no matter the operating system and in almost all web browsers.
+
+In case of using Google Pay, the merchants must adhere to the Google Pay APIs [Acceptable Use Policy](https://payments.developers.google.com/terms/aup) and accept the terms that [Google Pay API Terms of Service](https://payments.developers.google.com/terms/sellertos) defines.
+
+{{% alert title="Note" color="info"%}}
+
+The description below applies to provision of this service directly by displaying the Google Pay lightbox at the website of the payment recipient (e-store).
+
+{{% /alert %}}
+
+For PayU merchants processing in Mexico, please note that Google Pay is currently available only for API integrations. To process Google Pay transactions, you must complete the following steps:
+
+* Integrate the payment method using the API.
+* Adapt your existing PayU API integration to support Google Pay.
+
+### API Integration of the Payment Method
+
+To integrate the website with the Google Pay wallet, proceed according to the instructions placed at these websites:
+* [API documentation](https://developers.google.com/pay/api/web)
+* [API integration checklist](https://developers.google.com/pay/api/web/guides/test-and-deploy/integration-checklist)
+* [Brand guidelines](https://developers.google.com/pay/api/web/guides/brand-guidelines)
+
+#### PayU Definitions for the API Integration of the Payment Method
+
+Below you will find relevant information that you must consider for your payments to be processed by PayU once the payment method is integrated.
+
+##### Request a Payment Token for PayU
+
+Google encrypts the information of the card selected by the payer for secure processing, this is carried out by a payment provider. The ```gateway``` parameter in the script should have the constant value of ```payulatam```, and the ```gatewayMerchantId``` should include your PayU account number according to the example below:
+
+```
+const tokenizationSpecification = {
+  type: 'PAYMENT_GATEWAY',
+  parameters: {
+    'gateway': 'payulatam',
+    'gatewayMerchantId': 'YOUR_ACCOUNT_ID '
+  }
+};
+```
+
+##### Supported Payment Networks
+
+PayU processes Google Pay payments for Mastercard and Visa cards. To configure your Google script, use these settings:
+
+```
+const allowedCardNetworks = ["MASTERCARD", "VISA", "ELECTRON", "MAESTRO"];
+const allowedCardAuthMethods = ["PAN_ONLY"];
+```
+
+Google will return a `PaymentData` object, and the `paymentMethodData.tokenizationData.token` field will contain a securely encrypted Google Pay Token (a string).
+
+Below, a sample of a Google Pay Token:
+
+```
+{
+  "protocolVersion":"ECv2",
+  "signature":"MEUCIG39tbaQPwJe28U+UMsJmxUBUWSkwlOv9Ibohacer+CoAiEA8Wuq3lLUCwLQ06D2kErxaMg3b/oLDFbd2gcFze1zDqU\u003d",
+  "intermediateSigningKey":{
+    "signedKey": "{\"keyExpiration\":\"1542394027316\",\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/1+3HBVSbdv+j7NaArdgMyoSAM43yRydzqdg1TxodSzA96Dj4Mc1EiKroxxunavVIvdxGnJeFViTzFvzFRxyCw\\u003d\\u003d\"}",
+    "signatures": ["MEYCIQDcXCoB4fYJF3EolxrE2zB+7THZCfKA7cWxSztKceXTCgIhAN/d5eBgx/1A6qKBdH0IS7/aQ7dO4MuEt26OrLCUxZnl"]
+  },
+  "signedMessage":"{\"tag\":\"TjkIKzIOvCrFvjf7/aeeL8/FZJ3tigaNnerag68hIaw\\u003d\",\"ephemeralPublicKey\":\"BLJoTmxP2z7M2N6JmaN786aJcT/L/OJfuJKQdIXcceuBBZ00sf5nm2+snxAJxeJ4HYFTdNH4MOJrH58GNDJ9lJw\\u003d\",\"encryptedMessage\":\"mleAf23XkKjj\"}"
+}
+```
+
+### Process Google Pay Transactions in PayU
+
+The primary function of Google Pay as a digital wallet is to store credit cards to facilitate payment processing. With that in mind, for PayU, the transactions processed by Google Pay will have the same credit card logic except for the following particularities:
+
+* If you are processing transactions of your customers with Google Pay, you should configure the information of the wallet in the parameter ```transaction.digitalWallet```.
+* Inside the parameter ```transaction.digitalWallet``` use ```GOOGLE_PAY``` in the field ```transaction.digitalWallet.type``` and send the Google Pay Token in the field ```transaction.digitalWallet.message```. 
+* Take into account that for Google Pay transactions inside the parameter ```transaction.creditcard```, you should always send a value for ```transaction.creditcard.name```. Other fields of this parameter are not necessary since Google Pay delivers them inside the token. 
+* Contact your account manager to make the necessary activations to process without cvv as this payment method requires it.
+
+#### API Call {#api-call}
+
+The following are the bodies of the request and response of this payment method.
+
+{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+Request Example:
+```JSON
+{
+"language": "en",
+    "command": "SUBMIT_TRANSACTION",
+    "merchant": {
+        "apiLogin": "pRRXKOl8ikMmt9u",
+        "apiKey": "4Vj8eK4rloUd272L48hsrarnUA"
+    },
+    "transaction": {
+        "type": "AUTHORIZATION_AND_CAPTURE",
+        "paymentMethod": "MASTERCARD",
+        "paymentCountry": "MX",
+        "ipAddress": "147.203.165.186",
+        "userAgent": "Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 6.2; Trident/6.0)",
+        "cookie": "l5jc08ez9lqy1exxkbruh0o7k",
+        "deviceSessionId": "2c7aa39a700862da9ca06bd39b52e302",
+        "req3DSAuthentication": "true",
+        "order": {
+            "language": "en",
+            "signature": "3fdb76cc2dc3b1adb37430658705985b105294a20aa128f5bc309f3d76bd9067",
+            "accountId": "516687",
+            "description": "PayULatam|Test|MX|MXN|GooglePay",
+            "referenceCode": "Postman|UniqueReference|9/18/2025, 11:33:18 AM",
+            "notifyUrl": "https://5bb9f92041d902192de31554e65bafe4.m.pipedream.net",
+            "buyer": {
+                "merchantBuyerId": "MB_MX_1001",
+                "fullName": "John Doea",
+                "emailAddress": "john.doe@email.com",
+                "dniType": "CURP",
+                "dniNumber": "LOGM900412MDFRPR08",
+                "shippingAddress": {
+                    "country": "MX",
+                    "state": "CDMX",
+                    "city": "Ciudad de Mexico",
+                    "postalCode": "06700",
+                    "street1": "Av. Alvaro Obregonn 123",
+                    "street2": "Depto. 4, Col. Roma Norte",
+                    "phone": "5512345678"
+                }
+            },
+            "shippingAddress": {
+                "country": "MX",
+                "state": "CDMX",
+                "city": "Ciudad de Mexico",
+                "postalCode": "06700",
+                "street1": "Av. Alvaro Obregonn 123",
+                "street2": "Depto. 4, Col. Roma Norte",
+                "phone": "5512345678"
+            },
+            "additionalValues": {
+                "TX_VALUE": {
+                    "value": 596,
+                    "currency": "MXN"
+                },
+                "TX_TAX": {
+                    "value": 82,
+                    "currency": "MXN"
+                },
+                "TX_TAX_RETURN_BASE": {
+                    "value": 514,
+                    "currency": "MXN"
+                }
+            }
+        },
+        "payer": {
+            "merchantPayerId": "MP_MX_2002",
+            "fullName": "Jane Smith",
+            "emailAddress": "j.smith@example.com",
+            "contactPhone": "5598765432",
+            "dniType": "CURP",
+            "dniNumber": "MARA850715HDFRZS03",
+            "billingAddress": {
+                "country": "MX",
+                "state": "CDMX",
+                "city": "Ciudad de Mexico",
+                "postalCode": "04100",
+                "street1": "Calle Francisco Sosa 45",
+                "street2": "Col. Coyoa",
+                "phone": "5598765432"
+            }
+        },
+        "creditCard": {
+            "name": "APPROVED"
+        },
+        "digitalWallet": {
+            "type": "GOOGLE_PAY",
+            "message": "{\"signature\":\"MEYCIQCuxXTYshCrEQbW8OaGT/Nieb8opDRweEPorFc1yWNrIwIhAMJUZWJeeukveo1bEghbIuWUjwt07WPHQ5cPPp/VjSFc\",\"intermediateSigningKey\":{\"signedKey\":\"{\\\"keyValue\\\":\\\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEs4ndUn/BYwZ5v3i4PoEfnYfeRLPoSaqoi6hiO4WWXVnAAeU8NzH8QB76CkpwwStEnsrwkSocPzraa8EwHY4Kdw\\\\u003d\\\\u003d\\\",\\\"keyExpiration\\\":\\\"1758884919146\\\"}\",\"signatures\":[\"MEQCIDiiEVR495hVrLgLppqn6o+GJzwNNOvYYu/TsI4giUibAiA6pwsXyKSu2yWSye0zE/PcDKIXWp7TFG7ISOcOyZSkAQ\\u003d\\u003d\"]},\"protocolVersion\":\"ECv2\",\"signedMessage\":\"{\\\"encryptedMessage\\\":\\\"jz75BshPqkgDY6Oz/iY+FUSJk8OC7duVvVRhN9kMFgeqogoQLJI48frjIK3m6m7rmNkfhlkxxwC2nHtWszZBUXeiHTDPyG5sJLKwYKuuZ2hKx4Ho32o16WyggBWYt1AlBqmIOv22PPEf2bDJ/Bsfmfo2KXHG99/+2YM1/5usKE+6xIwwvBbTGRkT7dZRNDnJHgm4o/weMgY3Gdc7LKtgR0u/xvJAeTD8tE25i6PWSQpMuqlXCNJ13+mtfjaO8KxylHyQrq5WRrGgSbmhhCVIdwjfDtWZKZF+bhJvqaYY1pLjRgoNFP6SZRzzkcMbRY8TV0Ea3LA4UyrxlRjnDNY4a7zYCckP+qk/5qDUqzEQGTB4a1PEiISwAY2eHxoMokE30BCVcbseEGrSpaoIifThJd2vIjqRL6nvtX1DNq5wUkURsxK4joUjBtdBZWrX+uOSmNfayi0rPqxeTTRTldEUjC/Dc97tCsSfAZjCOM+ZNvail9bi7ezdGgxsFr2mEoDOrOuDAXtr+zsO8My6J2t4WArYxDk/uGBNgAbS\\\",\\\"ephemeralPublicKey\\\":\\\"BAPcb2ul2X77oDEejSTZYADpF3vRPLvmtB7BZ4jAJ9M/LmpLD39FsY9ozs5x2FEWdtmQ9IBi65w2vcfjHUELpMU\\\\u003d\\\",\\\"tag\\\":\\\"R/jvDyn4BlEF84hKZgyutuHCrgaRHWZMo0i3PIHn/HU\\\\u003d\\\"}\"}"
+        },
+        "extraParameters": {
+            "INSTALLMENTS_NUMBER": 1,
+            "RESPONSE_URL": "https://urlonline.com/#https://yoursite.com/payment_result"
+        }
+    },
+    "test": false
+}
+```
+<br>
+
+Response Example:
+```JSON
+{
+    "code": "SUCCESS",
+    "error": null,
+    "transactionResponse": {
+        "orderId": 1400437001,
+        "transactionId": "f0f8c441-43e8-490a-b4f2-c14d2c403175",
+        "state": "APPROVED",
+        "paymentNetworkResponseCode": "6",
+        "paymentNetworkResponseErrorMessage": null,
+        "trazabilityCode": "282856",
+        "authorizationCode": "MOCK-CIELO-1624047897817",
+        "pendingReason": null,
+        "responseCode": "APPROVED",
+        "errorCode": null,
+        "responseMessage": null,
+        "transactionDate": null,
+        "transactionTime": null,
+        "operationDate": 1624029898077,
+        "referenceQuestionnaire": null,
+        "extraParameters": {
+            "BANK_REFERENCED_CODE": "CREDIT",
+            "CIELO_TID": "1006993069000509C28A"
+        },
+        "additionalInfo": null
+    }
+} 
+```
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+Request Example:
+```XML
+<request>
+  <language>en</language>
+  <command>SUBMIT_TRANSACTION</command>
+  <merchant>
+    <apiLogin>pRRXKOl8ikMmt9u</apiLogin>
+    <apiKey>4Vj8eK4rloUd272L48hsrarnUA</apiKey>
+  </merchant>
+  <transaction>
+    <type>AUTHORIZATION_AND_CAPTURE</type>
+    <paymentMethod>MASTERCARD</paymentMethod>
+    <paymentCountry>MX</paymentCountry>
+    <ipAddress>147.203.165.186</ipAddress>
+    <userAgent>Mozilla/5.0 (compatible; MSIE 7.0; Windows NT 6.2; Trident/6.0)</userAgent>
+    <cookie>l5jc08ez9lqy1exxkbruh0o7k</cookie>
+    <deviceSessionId>2c7aa39a700862da9ca06bd39b52e302</deviceSessionId>
+    <req3DSAuthentication>true</req3DSAuthentication>
+    <order>
+      <language>en</language>
+      <signature>3fdb76cc2dc3b1adb37430658705985b105294a20aa128f5bc309f3d76bd9067</signature>
+      <accountId>516687</accountId>
+      <description>PayULatam|Test|MX|MXN|GooglePay</description>
+      <referenceCode>Postman|UniqueReference|9/18/2025, 11:33:18 AM</referenceCode>
+      <notifyUrl>https://5bb9f92041d902192de31554e65bafe4.m.pipedream.net</notifyUrl>
+      <buyer>
+        <merchantBuyerId>MB_MX_1001</merchantBuyerId>
+        <fullName>John Doea</fullName>
+        <emailAddress>john.doe@email.com</emailAddress>
+        <dniType>CURP</dniType>
+        <dniNumber>LOGM900412MDFRPR08</dniNumber>
+        <shippingAddress>
+          <country>MX</country>
+          <state>CDMX</state>
+          <city>Ciudad de Mexico</city>
+          <postalCode>06700</postalCode>
+          <street1>Av. Alvaro Obregonn 123</street1>
+          <street2>Depto. 4, Col. Roma Norte</street2>
+          <phone>5512345678</phone>
+        </shippingAddress>
+      </buyer>
+      <shippingAddress>
+        <country>MX</country>
+        <state>CDMX</state>
+        <city>Ciudad de Mexico</city>
+        <postalCode>06700</postalCode>
+        <street1>Av. Alvaro Obregonn 123</street1>
+        <street2>Depto. 4, Col. Roma Norte</street2>
+        <phone>5512345678</phone>
+      </shippingAddress>
+      <additionalValues>
+        <TX_VALUE>
+          <value>596</value>
+          <currency>MXN</currency>
+        </TX_VALUE>
+        <TX_TAX>
+          <value>82</value>
+          <currency>MXN</currency>
+        </TX_TAX>
+        <TX_TAX_RETURN_BASE>
+          <value>514</value>
+          <currency>MXN</currency>
+        </TX_TAX_RETURN_BASE>
+      </additionalValues>
+    </order>
+    <payer>
+      <merchantPayerId>MP_MX_2002</merchantPayerId>
+      <fullName>Jane Smith</fullName>
+      <emailAddress>j.smith@example.com</emailAddress>
+      <contactPhone>5598765432</contactPhone>
+      <dniType>CURP</dniType>
+      <dniNumber>MARA850715HDFRZS03</dniNumber>
+      <billingAddress>
+        <country>MX</country>
+        <state>CDMX</state>
+        <city>Ciudad de Mexico</city>
+        <postalCode>04100</postalCode>
+        <street1>Calle Francisco Sosa 45</street1>
+        <street2>Col. Coyoa</street2>
+        <phone>5598765432</phone>
+      </billingAddress>
+    </payer>
+    <creditCard>
+      <name>APPROVED</name>
+    </creditCard>
+    <digitalWallet>
+      <type>GOOGLE_PAY</type>
+      <message>
+        {"signature":"MEYCIQCuxXTYshCrEQbW8OaGT/Nieb8opDRweEPorFc1yWNrIwIhAMJUZWJeeukveo1bEghbIuWUjwt07WPHQ5cPPp/VjSFc","intermediateSigningKey":{"signedKey":"{\"keyValue\":\"MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEs4ndUn/BYwZ5v3i4PoEfnYfeRLPoSaqoi6hiO4WWXVnAAeU8NzH8QB76CkpwwStEnsrwkSocPzraa8EwHY4Kdw\\u003d\\u003d\",\"keyExpiration\":\"1758884919146\"}","signatures":["MEQCIDiiEVR495hVrLgLppqn6o+GJzwNNOvYYu/TsI4giUibAiA6pwsXyKSu2yWSye0zE/PcDKIXWp7TFG7ISOcOyZSkAQ\\u003d\\u003d"]},"protocolVersion":"ECv2","signedMessage":"{\"encryptedMessage\":\"jz75BshPqkgDY6Oz/iY+FUSJk8OC7duVvVRhN9kMFgeqogoQLJI48frjIK3m6m7rmNkfhlkxxwC2nHtWszZBUXeiHTDPyG5sJLKwYKuuZ2hKx4Ho32o16WyggBWYt1AlBqmIOv22PPEf2bDJ/Bsfmfo2KXHG99/+2YM1/5usKE+6xIwwvBbTGRkT7dZRNDnJHgm4o/weMgY3Gdc7LKtgR0u/xvJAeTD8tE25i6PWSQpMuqlXCNJ13+mtfjaO8KxylHyQrq5WRrGgSbmhhCVIdwjfDtWZKZF+bhJvqaYY1pLjRgoNFP6SZRzzkcMbRY8TV0Ea3LA4UyrxlRjnDNY4a7zYCckP+qk/5qDUqzEQGTB4a1PEiISwAY2eHxoMokE30BCVcbseEGrSpaoIifThJd2vIjqRL6nvtX1DNq5wUkURsxK4joUjBtdBZWrX+uOSmNfayi0rPqxeTTRTldEUjC/Dc97tCsSfAZjCOM+ZNvail9bi7ezdGgxsFr2mEoDOrOuDAXtr+zsO8My6J2t4WArYxDk/uGBNgAbS\",\"ephemeralPublicKey\":\"BAPcb2ul2X77oDEejSTZYADpF3vRPLvmtB7BZ4jAJ9M/LmpLD39FsY9ozs5x2FEWdtmQ9IBi65w2vcfjHUELpMU\\u003d\",\"tag\":\"R/jvDyn4BlEF84hKZgyutuHCrgaRHWZMo0i3PIHn/HU\\u003d\"}"}
+      </message>
+    </digitalWallet>
+    <extraParameters>
+      <INSTALLMENTS_NUMBER>1</INSTALLMENTS_NUMBER>
+      <RESPONSE_URL>https://urlonline.com/#https://yoursite.com/payment_result</RESPONSE_URL>
+    </extraParameters>
+  </transaction>
+  <test>false</test>
+</request>
+```
+<br>
+
+Response Example:
+```XML
+<paymentResponse>
+         <code>SUCCESS</code>
+     <error></error>
+     <transactionResponse>
+         <orderId>1400437001</orderId>
+         <transactionId>f0f8c441-43e8-490a-b4f2-c14d2c403175</transactionId>
+         <state>APPROVED</state>
+         <paymentNetworkResponseCode>6</paymentNetworkResponseCode>
+         <paymentNetworkResponseErrorMessage></paymentNetworkResponseErrorMessage>
+         <trazabilityCode>282856</trazabilityCode>
+         <authorizationCode>MOCK-CIELO-1624047897817</authorizationCode>
+         <pendingReason></pendingReason>
+         <responseCode>APPROVED</responseCode>
+         <errorCode></errorCode>
+         <responseMessage></responseMessage>
+         <transactionDate></transactionDate>
+         <transactionTime></transactionTime>
+         <operationDate>1624029898077</operationDate>
+         <referenceQuestionnaire></referenceQuestionnaire>
+         <extraParameters>
+             <BANK_REFERENCED_CODE>CREDIT</BANK_REFERENCED_CODE>
+             <CIELO_TID>1006993069000509C28A</CIELO_TID>
+         </extraParameters>
+         <additionalInfo></additionalInfo>
+     </transactionResponse>
+</paymentResponse>
+```
+
+{{< /tab >}}
+{{< /tabs >}}
+
 ## Submit Transactions Using Cash
 
 This method lets you process the payments in cash of your customers. To integrate with cash transactions, you must redirect the customer to the URL found in the response of the method; your customer sees a payment receipt like this.
@@ -1151,11 +1504,11 @@ This method lets you process the payments in cash of your customers. To integrat
    - **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
    - **PAYMENT_WAY_ID**: network payment of the payment type.
 
-### API Call
+### API Call {#api-call-1}
 
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="5" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1542,11 +1895,11 @@ To integrate with these transactions, you must redirect the customer to the URL 
   - **SPEI_CLABE_ACCOUNT_NUMBER**: is the PayU's interbank CLABE, namely, the account where the amount will be transferred. The payer must register this CLABE as beneficiary in their bank branch before performing the transfer.
   - **SPEI_BANK_NAME**: name associated with the PayU CLABE account. The beneficiary account is associated with the STP bank and it's always the same bank for PayU.
 
-### API Call
+### API Call {#api-call-2}
 
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="6" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -1934,11 +2287,11 @@ This method lets you process payments of your customers using bank references. T
    - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects bank reference payment. 
    - **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
 
-### API Call
+### API Call {#api-call-3}
 
 The following are the bodies of the request and response of this payment method.
 
-{{< tabs tabTotal="2" tabID="7" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2241,11 +2594,11 @@ When using XML format, itinerary parameters appear under `transaction > pnr > it
 
 {{% /alert %}}
 
-#### API Call {#api-call-9}
+#### API Call {#api-call-4}
 
 The following are examples of the request for this method.
 
-{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2494,11 +2847,11 @@ This method returns a list of the payment methods available in all countries.
 
 </details>
 
-### API Call
+### API Call {#api-call-5}
 
 The following are the bodies of the request and response of this method. For the sake of the example, the response here shows two payment methods. 
 
-{{< tabs tabTotal="2" tabID="8" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="10" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
@@ -2617,11 +2970,11 @@ The ```PING``` method lets you verify the connection to our platform.
 | transactionResponse | Object | Max:2048 | The response of the PING method if an error ocurred. |
 </details>
 
-### API Call
+### API Call {#api-call-6}
 
 The following are the bodies of the request and response of this method.
 
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tabs tabTotal="2" tabID="11" tabName1="JSON" tabName2="XML" >}}
 {{< tab tabNum="1" >}}
 <br>
 
