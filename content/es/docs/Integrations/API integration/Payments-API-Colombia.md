@@ -1597,7 +1597,7 @@ Ten en cuenta que si tu integración con PayU es API, debes realizar los ajustes
 * [Realizar la integración API del medio de pago](#integración-api-del-medio-de-pago)
 * [Probar el método de pago](#probar-el-método-de-pago) 
 
- ### Integración API del medio de pago
+### Integración API del medio de pago
 
 Para integrar el sitio web con el monedero Google Pay, procede según las instrucciones que figuran en este sitio web:
 * [Documentación de la API](https://developers.google.com/pay/api/web)

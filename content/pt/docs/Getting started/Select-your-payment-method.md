@@ -464,6 +464,12 @@ Para integrar sua solução por meio de API ou SDK, consulte a coluna **parâmet
       <td>Dinheiro</td>      
     </tr>
     <tr>
+      <td><img src="/assets/PaymentMethods/google_pay.png" width="80px" alt="Google Pay"/></td>
+      <td>Google Pay</td>
+      <td><code>GOOGLE_PAY</code></td>
+      <td>Serviço de pagamento móvel</td>      
+    </tr>
+    <tr>
       <td><img src="/assets/PaymentMethods/master.png" width="80px" alt="Mastercard"/></td>
       <td>Mastercard</td>
       <td><code>MASTERCARD</code></td>

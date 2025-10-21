@@ -314,7 +314,7 @@ Você pode utilizar os seguintes cartões de teste para reproduzir diferentes ce
 
 Use os seguintes parâmetros para simular transações aprovadas no ambiente de testes:
 
-* Inclua **`APPROVED`** no nome do titular do cartão (ex.: `APPROVED John Doe`).
+* Inclua **`APPROVED`** no nome do titular do cartão (ex.: `APPROVED`).
 * Use **`777`** como o CVV.
 * Data de validade: um mês menor ou igual a `05` (ou seja, mês < 6) e um ano posterior ao atual (por exemplo, `05/202_` — substitua `_` pelo dígito correspondente nos testes).
 
@@ -322,7 +322,7 @@ Use os seguintes parâmetros para simular transações aprovadas no ambiente de 
 
 Use os seguintes parâmetros para simular transações rejeitadas no ambiente de testes:
 
-* Inclua **`REJECTED`** no nome do titular do cartão (ex.: `REJECTED John Doe`).
+* Inclua **`REJECTED`** no nome do titular do cartão (ex.: `REJECTED`).
 * Use **`666`** como o CVV.
 * Data de validade: um mês maior ou igual a `07` (ou seja, mês > 6) e um ano posterior ao atual (por exemplo, `07/202_` — substitua `_` pelo dígito correspondente nos testes).
 

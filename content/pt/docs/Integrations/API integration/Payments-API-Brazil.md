@@ -1252,7 +1252,7 @@ Um tema muito importante é que se a sua integração com a PayU for API, você 
 * [Efetuar a integração API do meio de pagamento](#integração-api-do-meio-de-pagamento)
 * [Testar o meio de pagamento](#testar-o-meio-de-pagamento)
 
- ### Integração API do Meio de Pagamento 
+### Integração API do Meio de Pagamento 
 
 Para integrar o seu site com a carteira Google Pay, proceda de acordo com as instruções apresentadas no link abaixo:
 * [Documentação da API](https://developers.google.com/pay/api/web)

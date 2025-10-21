@@ -315,7 +315,7 @@ Puedes utilizar las siguientes tarjetas de prueba para replicar diferentes escen
 
 Usa los siguientes parámetros para simular transacciones aprobadas en el entorno de pruebas:
 
-* Incluye **`APPROVED`** en el nombre del titular de la tarjeta (ej. `APPROVED John Doe`).
+* Incluye **`APPROVED`** en el nombre del titular de la tarjeta (ej. `APPROVED`).
 * Usa **`777`** como CVV.
 * Fecha de vencimiento: un mes menor o igual a `05` (es decir, mes < 6) y un año posterior al actual (por ejemplo `05/202_` — reemplaza `_` por el dígito correspondiente en pruebas).
 
@@ -323,7 +323,7 @@ Usa los siguientes parámetros para simular transacciones aprobadas en el entorn
 
 Usa los siguientes parámetros para simular transacciones rechazadas en el entorno de pruebas:
 
-* Incluye **`REJECTED`** en el nombre del titular de la tarjeta (ej. `REJECTED John Doe`).
+* Incluye **`REJECTED`** en el nombre del titular de la tarjeta (ej. `REJECTED`).
 * Usa **`666`** como CVV.
 * Fecha de vencimiento: un mes mayor o igual a `07` (es decir, mes > 6) y un año posterior al actual (por ejemplo `07/202_` — reemplaza `_` por el dígito correspondiente en pruebas).
 

@@ -464,6 +464,12 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
       <td>Efectivo</td>      
     </tr>
     <tr>
+      <td><img src="/assets/PaymentMethods/google_pay.png" width="80px" alt="Google Pay"/></td>
+      <td>Google Pay</td>
+      <td><code>GOOGLE_PAY</code></td>
+      <td>Servicio móvil de pagos</td>      
+    </tr>
+    <tr>
       <td><img src="/assets/PaymentMethods/master.png" width="80px" alt="Mastercard"/></td>
       <td>Mastercard</td>
       <td><code>MASTERCARD</code></td>

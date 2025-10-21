@@ -464,6 +464,12 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
       <td>Cash</td>      
     </tr>
     <tr>
+      <td><img src="/assets/PaymentMethods/google_pay.png" width="80px" alt="Google Pay"/></td>
+      <td>Google Pay</td>
+      <td><code>GOOGLE_PAY</code></td>
+      <td>Mobile payment service</td>      
+    </tr>
+    <tr>
       <td><img src="/assets/PaymentMethods/master.png" width="80px" alt="Mastercard"/></td>
       <td>Mastercard</td>
       <td><code>MASTERCARD</code></td>

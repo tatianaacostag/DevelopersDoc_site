@@ -315,7 +315,7 @@ You can use the following test cards to replicate different 3DS scenarios in the
 
 Use the following parameters to simulate approved transactions in the test environment:
 
-* Include **`APPROVED`** in the cardholder name (e.g. `APPROVED John Doe`).
+* Include **`APPROVED`** in the cardholder name (e.g. `APPROVED`).
 * Use **`777`** as the CVV.
 * Expiration date: a month less than or equal to `05` (i.e., month < 6) and a year after the current year (for example `05/202_` — replace `_` with the appropriate digit for testing).
 
@@ -323,7 +323,7 @@ Use the following parameters to simulate approved transactions in the test envir
 
 Use the following parameters to simulate declined transactions in the test environment:
 
-* Include **`REJECTED`** in the cardholder name (e.g. `REJECTED John Doe`).
+* Include **`REJECTED`** in the cardholder name (e.g. `REJECTED`).
 * Use **`666`** as the CVV.
 * Expiration date: a month greater than or equal to `07` (i.e., month > 6) and a year after the current year (for example `07/202_` — replace `_` with the appropriate digit for testing).
 
