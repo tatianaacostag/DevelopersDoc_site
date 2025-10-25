@@ -3,69 +3,89 @@ title: "Smart Check – Automatic Reverification"
 linkTitle: "Smart Check – Automatic Reverification"
 date: 2025-03-26T15:09:39-05:00
 description: >
-  Smart Check is PayU LATAM’s automatic merchant reverification solution, designed to optimize compliance processes (KYC/AML).
+  Smart Check is a feature that allows PayU LATAM merchants to automatically update and verify their information directly from the <a href="https://merchants.payulatam.com/login/auth" target="_blank">Merchant Panel</a>, meeting the KYC (Know Your Customer) and AML (Anti-Money Laundering) requirements established by local regulations.
 weight: 60
 ---
 
-With this feature, merchants update their information directly from the <a href="https://merchants.payulatam.com/login/auth" target="_blank">Merchant Panel</a>, while the system automatically performs validations and screenings, reducing the manual workload of risk and compliance teams.
+The process is fully digital and guided: forms are completed online, information is automatically validated, and merchants can track their reverification status in real time—without manual management or additional support.
 
-## How does Smart Check work?
+**Main benefit:** merchants keep their accounts active and compliant without interruptions through a secure, simple, and automated flow.
 
-The reverification flow consists of the following steps:
+## How Smart Check Works
 
-### 1. Case creation
+The reverification process consists of four main stages, all managed from the **Merchant Panel**.
 
-Reverification begins with the generation of a case, as follows:
+The following video demonstrates the complete process. This section also provides a brief description of each stage.
 
-* **Automatic:** based on the frequency defined in the AML section of the merchant account.  
-* **Manual:** in specific situations, such as reactivation processes.  
-* Cases are initially assigned to the **Automatic Reverification** user.
+<video width="650" controls>
+	<source src="/assets/SmartCheck/smartcheck.mp4" type="video/mp4">
+</video>
 
-### 2. Digital form
+### 1. Accessing the Process
 
-The merchant receives a form in the **Merchant Panel** and has up to **80 configurable days** to complete it.
+When a merchant needs to update their information, the **Data Update** option becomes available in the left-hand menu of the Merchant Panel. Upon entering, all required forms are displayed according to the merchant type (individual or legal entity).
 
-### 3. Automatic validations
+![PrintScreen](/assets/SmartCheck/smartcheck01.png)
 
-The system performs the following processes:
+### 2. Completing the Forms
 
-* **Web Scraper:** validates the economic activity against the registered website.  
-* **Adverse Media:** searches for negative news, sanctions, or relationships with PEPs.  
-* **Identity Validation & OCR:** verifies documents and legal representatives.  
-* **Risk matrix:** is automatically generated and executed based on declared data and active subaccounts.  
+The forms are designed to make the update process straightforward. Each one includes preloaded information with the merchant’s current data, along with fields that need to be reviewed, updated, or completed.
 
-### 4. Result
+The main forms include:
 
-At the end of the validations, the system determines the outcome of the case based on the findings.
+-	**General information:** legal name, address, contact details, and business activity.
+-	**Certificate of existence and legal representation:** updated document issued within the last 3 months.
+-	**Business details:** description of the business model, supplier controls, and compliance policies.
+-	**Financial statements:** last two fiscal years.
+-	**Ultimate beneficiaries and directors:** ownership and control information.
+-	**Declaration of source of funds:** confirmation of the lawful origin of resources.
 
-* **Automatic approval:** the case is closed if no alerts are detected.  
-* **Manual review:** the case is assigned to analysts if any findings are detected (e.g., prohibited MCC, document inconsistencies, or sanctioned CRP).  
+![PrintScreen](/assets/SmartCheck/smartcheck02.png)
 
-## Key benefits
+### 3. Submission and Validation
 
-The implementation of Smart Check provides significant advantages for both merchants and risk/compliance teams, streamlining the management of reverification processes.
+Once all forms are completed, the system runs automatic validations to verify the consistency and authenticity of the information:
 
-* Reduced manual effort in KYC/AML processes.  
-* Automatic approval of low-risk cases.  
-* Greater traceability and security in the reported information.  
-* Flexibility in response times and management rules.  
+-	**Document review:** automatic verification of certificates and financial statements.
+-	**Identity and OCR validation:** automatic reading of attached documents.
+-	**AML/KYC checks:** screening for PEPs, sanctions, or adverse media.
+-	**Risk analysis:** the system evaluates the information to determine the merchant’s risk level.
 
-## Case statuses
+During this stage, the process status appears as **Under review** in the panel.
 
-In Salesforce, cases move through the following statuses:
+![PrintScreen](/assets/SmartCheck/smartcheck03.png)
 
-* `Created:` Case created, form pending.  
-* `Waiting:` Form available to the merchant.  
-* `Filled:` Form completed and submitted.  
-* `Form Expired:` The merchant did not respond within the timeframe.  
-* `Working:` Validations in progress.  
-* `Close Approved:` Case automatically approved.  
-* `Manual Review:` Case assigned to analysts due to alerts or inconsistencies.  
+### 4. Process Outcome
 
-### Additional considerations
+- ✅ **Approved:** the system automatically closes the process and updates the merchant’s information.
+- ⚠️ **Additional review:** if the PayU team identifies any inconsistencies, they will contact the merchant to complete or attach additional information.
 
-When implementing Smart Check, it is important to consider certain operational aspects and limitations that may affect case management:
+## Benefits for Merchants
 
-* In **Phase 1**, the approved information is updated only in Salesforce. Integration with Admin is planned for **Phase 2**.  
-* In multi-country operations, case creation may require manual management.  
-* Some scenarios may trigger a manual review (for example, when Complif does not confirm the legal representatives in the Chamber of Commerce).
+-	**Full autonomy:** merchants can update their information directly without relying on PayU support.
+-	**Automated compliance:** PayU ensures regulatory compliance through automated validations.
+-	**Enhanced traceability:** all information remains securely stored and traceable within the system.
+-	**Guaranteed operational continuity:**
+    - Merchant Panel features remain available as long as the merchant completes the forms within the established timeframe. 
+    - If the merchant already has active restrictions, they are automatically lifted once all forms are submitted—no need to wait for PayU’s final approval.
+    - If additional documentation or clarification is needed during the review, PayU will contact the merchant directly to complete the information without affecting operations or panel availability.
+
+## Process Statuses Displayed
+
+During reverification, merchants can view the following statuses in the Merchant Panel:
+
+| Status | Description |
+|---|---|	
+| **Pending completion** |	The form is available and awaiting completion. |
+| **In progress** | The forms have been submitted and automatic validations are in progress. |
+| **Approved** | The information has been successfully validated and no further actions are required. |
+| **Under review** |	PayU is reviewing additional information. |
+| **Expired** | The merchant did not complete the process within the established timeframe. |
+
+### Additional Considerations
+
+-	The reverification process is **automatically** enabled according to PayU’s defined periodicity.
+-	Merchants have **up to 80 days** to complete all information.
+-	Documents must be uploaded in **PDF format**, readable, and without passwords.
+-	If the process is not completed within the timeframe, Merchant Panel functionalities may be temporarily limited.
+-	Once the process is approved, the merchant can continue operating as normal.

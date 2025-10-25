@@ -3,69 +3,90 @@ title: "Smart Check – Reverificación Automática"
 linkTitle: "Smart Check – Reverificación Automática"
 date: 2025-03-26T15:09:39-05:00
 description: >
-  Smart Check es la solución de reverificación automática de comercios que PayU LATAM implementa para optimizar los procesos de cumplimiento (KYC/AML).
+  Smart Check es una funcionalidad que permite a los comercios de PayU LATAM actualizar y verificar automáticamente su información directamente desde el <a href="https://merchants.payulatam.com/login/auth" target="_blank">Merchant Panel</a>, cumpliendo con los requisitos de KYC (Know Your Customer) y AML (Anti-Money Laundering) exigidos por la regulación local.
 weight: 60
 ---
 
-Con esta funcionalidad, los comercios actualizan su información directamente desde el <a href="https://merchants.payulatam.com/login/auth" target="_blank">Merchant Panel</a>, mientras el sistema ejecuta de forma automática validaciones y screenings, reduciendo el trabajo manual de los equipos de riesgo y cumplimiento.
+El proceso es totalmente digital y guiado: los formularios se completan en línea, la información se valida automáticamente y el comercio puede seguir el estado de su reverificación en tiempo real, sin necesidad de gestiones manuales o soporte adicional.
+
+**Beneficio principal:** el comercio mantiene su cuenta activa y en cumplimiento normativo sin interrupciones, mediante un flujo seguro, simple y automatizado.
 
 ## ¿Cómo funciona Smart Check?
 
-El flujo de reverificación consta de los siguientes pasos:
+El proceso de reverificación consta de cuatro etapas principales, todas gestionadas desde el **Merchant Panel**.
 
-### 1. Creación del caso
+El siguiente video muestra una demostración del proceso completo. En esta sección, también encontrarás una descripción resumida de cada etapa.
 
-La reverificación comienza con la generación de un caso, de la siguiente forma:
+<video width="650" controls>
+	<source src="/assets/SmartCheck/smartcheck.mp4" type="video/mp4">
+</video>
 
-* **Automática:** según la periodicidad definida en la sección AML de la cuenta del comercio.  
-* **Manual:** en situaciones específicas, como procesos de reactivación.  
-* Los casos se asignan inicialmente al usuario **Automatic Reverification**.
+### 1. Acceso al proceso
 
-### 2. Formulario digital
+Cuando el comercio debe actualizar su información, el Merchant Panel habilita la opción **Actualización de Datos** en el menú lateral izquierdo.
+Al ingresar, se muestran todos los formularios requeridos según el tipo de comercio (persona jurídica o natural).
 
-El comercio recibe un formulario en el **Merchant Panel** y tiene hasta **80 días configurables** para completarlo.
+![PrintScreen](/assets/SmartCheck/smartcheck01.png)
 
-### 3. Validaciones automáticas
+### 2. Diligenciamiento de formularios
 
-El sistema ejecuta los siguientes procesos:
+Los formularios están diseñados para facilitar la actualización paso a paso. Cada uno incluye información precargada con los datos actuales del comercio y campos que deben revisarse, actualizarse o completarse.
 
-* **Web Scraper:** valida la actividad económica contra la página web declarada.
-* **Adverse Media:** busca noticias negativas, sanciones o relaciones con PEPs.
-* **Identity Validation & OCR:** verifica documentos y representantes legales.
-* **Matriz de riesgo:** se completa y ejecuta automáticamente con base en datos declarados y subcuentas activas.
+Los formularios principales incluyen:
 
-### 4. Resultado
+-	**Información general:** razón social, dirección, contacto, actividad económica.
+-	**Certificado de existencia y representación legal:** documento actualizado no mayor a 3 meses.
+-	**Detalles del negocio:** descripción del modelo comercial, control de proveedores y políticas de cumplimiento.
+-	**Estados financieros:** últimos dos años fiscales.
+-	**Beneficiarios finales y directores:** información societaria y de control.
+-	**Declaración de origen de fondos:** confirmación de la procedencia lícita de los recursos.
 
-Al finalizar las validaciones, el sistema determina el desenlace del caso de acuerdo con los hallazgos encontrados.
+![PrintScreen](/assets/SmartCheck/smartcheck02.png)
 
-* **Aprobación automática:** el caso se cierra si no hay alertas.
-* **Validación manual:** si se detecta algún hallazgo (ej. MCC prohibido, inconsistencia documental, CRP con sanciones).
+### 3. Envío y validación
 
-## Beneficios principales
+Una vez completados todos los formularios, el sistema ejecuta validaciones automáticas para verificar la consistencia y autenticidad de la información:
 
-La implementación de Smart Check aporta ventajas clave tanto para los comercios como para los equipos de riesgo y cumplimiento, optimizando la gestión de los procesos de reverificación.
+-	**Revisión documental:** verificación automática de certificados y estados financieros.
+-	**Validación de identidad y OCR:** lectura automática de los documentos adjuntos.
+-	**Cruces AML/KYC:** revisión de PEPs, sanciones o noticias negativas.
+-	**Análisis de riesgo:** el sistema evalúa la información para determinar el nivel de riesgo del comercio.
 
-* Reducción del esfuerzo manual en procesos de KYC/AML.
-* Aprobación automática de casos de bajo riesgo.
-* Mayor trazabilidad y seguridad en la información declarada.
-* Flexibilidad en tiempos y reglas de gestión.
+Durante esta etapa, el estado del proceso aparece como **En revisión** dentro del panel.
 
-## Estados de un caso
+![PrintScreen](/assets/SmartCheck/smartcheck03.png)
 
-En Salesforce, los casos avanzan a través de los siguientes estados:
+### 4. Resultado del proceso
 
-* `Created:` Caso creado, formulario pendiente.
-* `Waiting:` Formulario disponible para el comercio.
-* `Filled:` Formulario completado y enviado.
-* `Form Expired:` El comercio no respondió en el plazo.
-* `Working:` Validaciones en proceso.
-* `Close Approved:` Caso aprobado automáticamente.
-* `Manual Review:` Caso asignado a analistas por alerta o inconsistencia.
+- ✅ **Aprobado:** el sistema cierra el proceso automáticamente y actualiza la información del comercio.
+- ⚠️ **Revisión adicional:** si el equipo de PayU identifica alguna inconsistencia, contactará al comercio para completar o adjuntar información adicional.
+
+## Beneficios para los comerciantes
+
+-	**Autonomía total:** el comercio actualiza su información directamente sin depender del soporte de PayU.
+-	**Cumplimiento automatizado:** PayU garantiza el cumplimiento regulatorio mediante validaciones automáticas.
+-	**Mayor trazabilidad:** toda la información queda registrada y segura en el sistema.
+-	**Continuidad operativa garantizada:**
+    - Las funcionalidades del Merchant Panel permanecen disponibles mientras el comercio complete los formularios dentro del plazo establecido. 
+    - Si el comercio ya tiene restricciones activas, estas se levantan automáticamente al enviar todos los formularios, sin necesidad de esperar la aprobación final de PayU.
+    - Si durante la revisión se requiere documentación adicional o alguna aclaración, el equipo de PayU contactará directamente al comercio para completar la información, sin afectar la operación ni la disponibilidad del panel.
+
+## Estados visibles del proceso
+
+Durante la reverificación, el comercio puede visualizar los siguientes estados en el Merchant Panel:
+
+| Estado | Descripción |
+|---|---|	
+| **Pendiente de diligenciamiento** |	El formulario está disponible y a la espera de ser completado. |
+| **En proceso** | Los formularios fueron enviados y las validaciones automáticas están en curso. |
+| **Aprobado** | La información fue validada exitosamente y no se requieren acciones adicionales. |
+| **En revisión** |	PayU está revisando información adicional. |
+| **Expirado** | El comercio no completó el proceso dentro del plazo establecido. |
 
 ### Consideraciones adicionales
 
-Al implementar Smart Check es importante tener en cuenta ciertos aspectos operativos y limitaciones que pueden influir en la gestión de los casos:
-
-* En la **Fase 1**, la información aprobada se actualiza únicamente en Salesforce. La integración con Admin está prevista para la **Fase 2**.
-* En casos de operación en varios países, la creación de casos puede requerir gestión manual.
-* Algunos escenarios pueden forzar una validación manual (por ejemplo, cuando Complif no confirma los representantes legales en Cámara de Comercio).
+-	El proceso de reverificación se habilita **automáticamente** según la periodicidad establecida por PayU.
+-	El comercio dispone de **hasta 80 días** para completar toda la información.
+-	Los documentos deben cargarse en **formato PDF**, legibles y sin contraseñas.
+-	Si el proceso no se completa dentro del plazo, las funcionalidades del Merchant Panel pueden verse temporalmente limitadas.
+-	Una vez el proceso sea aprobado, el comercio puede continuar operando con normalidad.
