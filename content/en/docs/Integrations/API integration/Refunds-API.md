@@ -8,7 +8,7 @@ weight: 50
 tags: ["subtopic"]
 ---
 
-{{% alert title="Note" color="info"%}}
+{{% alert title="URLs" color="info"%}}
 
 To integrate with the Voids and Refunds API, direct your requests to the appropriate environment URL:
 
@@ -101,7 +101,7 @@ The `VOID` method cancels a previously authorized transaction. This is an **auto
 <div class="variables"></div>
 
 | Field Name | Format | Size | Description | Mandatory |
-|------------|---------|------|-------------|:---------:|
+|------------|--------|------|------------|:----------:|
 | `language` | Alphanumeric | 2 | Language used in the request. This determines the language of error messages. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Yes |
 | `command` | Alphanumeric | Max: 32 | Set to `SUBMIT_TRANSACTION`. | Yes |
 | `test` (JSON)<br>`isTest` (XML) | Boolean | — | Set to `true` for test mode; otherwise, `false`. | Yes |
@@ -263,6 +263,88 @@ The following examples show the request and response bodies for this transaction
 A refund is issued when a merchant voluntarily returns the payment to the shopper. This can happen due to **customer dissatisfaction** or when the product is **out of stock**. The `REFUND` method reverses a previously captured transaction.
 
 Refunds can be issued for the **full amount** or as a **partial refund** (`PARTIAL_REFUND`).
+
+### Refund Capabilities per Payment Method and Country
+
+The following tables summarize the refund behavior observed for different payment methods across Latam. Each section shows whether a payment method supports total refunds, partial refunds, and multiple partial refunds, including the maximum number of partial refunds identified during testing.
+
+<details id="argentina">
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
+
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+|----------------|------------------------|--------------------------|------------------------------------|-------------------------------|--------|
+| **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Both domestic and international AMEX (credit) support multiple partial refunds; AMEX debit supports only a single partial refund. |
+| **ARGENCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 2 | Supports up to 2 partial refunds (domestic transactions). |
+| **CABAL** | ✅ Yes | ✅ Yes | ✅ Yes | 3 | Support for multiple partial refunds, both for debit and credit. |
+| **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 14 | Support for multiple partial refunds across debit and credit; prepaid supports single partial refund only. |
+| **MASTERCARD_PREPAID** | ✅ Yes | ✅ Yes | ❌ No | 1 | Only single partial refunds supported. |
+| **NARANJA** | ✅ Yes | ✅ Yes | ✅ Yes | 3 | Multiple partial refunds supported for debit and credit. |
+| **VISA** | ✅ Yes | ✅ Yes | ✅ Yes | 22 | Multiple partial refunds allowed for debit, credit, and prepaid. |
+| **VISA_PREPAID** | ✅ Yes | ✅ Yes | ❌ No | 1 | Only single partial refunds supported. |
+
+</details>
+
+<details id="brazil">
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brazil</b></summary>
+
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+|----------------|------------------------|--------------------------|------------------------------------|-------------------------------|-------|
+| **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 3 | Support for partial and multiple partial refunds for credit transactions. |
+| **ELO** | ✅ Yes | ✅ Yes | ✅ Yes | 5 | Multiple partial refunds supported for both credit and debit transactions. |
+| **HIPERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 2 | Debit transactions allow up to 2 partial refunds. |
+| **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 5 | Multiple partial refunds supported (domestic transactions). |
+| **PIX** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Support for multiple partial refunds. |
+| **VISA** | ✅ Yes | ✅ Yes | ✅ Yes | 11 | Consistent support for multiple partial refunds across all card types (credit and debit). |
+
+</details>
+
+<details id="chile">
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
+
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+|----------------|------------------------|---------------------------|------------------------------------|-------------------------------|--------|
+| **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 5 | Support for both domestic and international credit transactions. |
+| **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 10 | Fully supports multiple partial refunds across all card types. |
+| **MASTERCARD_PREPAID** | ✅ Yes | ✅ Yes | ✅ Yes | 2 | Multiple partial refunds supported for debit transactions. |
+| **VISA** | ✅ Yes | ✅ Yes | ✅ Yes | 9 | Multiple partial refunds supported across all card types; both domestic and international transactions confirmed. |
+| **VISA_PREPAID** | ✅ Yes | ✅ Yes | ✅ Yes | 2 | Multiple partial refunds supported for debit transactions. |
+
+</details>
+
+<details id="colombia">
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>
+
+| Payment Method | Features |
+|----------------|----------|
+| **AMEX** <br> **DINERS** <br> **MASTERCARD** <br> **MASTERCARD_DEBIT** <br> **VISA** <br> **VISA_DEBIT** <br> **VISA_NFC** <br> **CODENSA**| ✅ <b>Total Refund Supported:</b> Yes<br>✅ <b>Partial Refund Supported:</b> Yes<br>❌ <b>Multiple Partial Refunds Supported:</b> No<br><b>Maximum Partial Refunds Found:</b> 1<br><b>Note:</b> Only a single partial refund is supported for all payment methods. |
+
+</details>
+
+<details id="mexico">
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>Mexico</b></summary>
+
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+|----------------|------------------------|---------------------------|------------------------------------|-------------------------------|--------|
+| **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | AMEX supports multiple partial refunds for both domestic and international credit cards (up to 7). Debit cards only support a single partial refund. |
+| **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Support for multiple partial refunds for both credit and debit cards. |
+| **VISA** | ✅ Yes | ✅ Yes | ✅ Yes | 10 | Support for multiple partial refunds for both credit and debit cards. |
+
+</details>
+
+<details id="peru">
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Peru</b></summary>
+
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+|----------------|------------------------|---------------------------|------------------------------------|-------------------------------|--------|
+| **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 8 | Multiple partial refunds supported. |
+| **DINERS** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Domestic transactions support multiple partial refunds; international only allows a single partial refund. |
+| **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 8 | Multiple partial refunds supported. |
+| **MASTERCARD_DEBIT** | ✅ Yes | ✅ Yes | ✅ Yes | 8 | Multiple partial refunds supported. |
+| **VISA** | ✅ Yes | ✅ Yes | ✅ Yes | 17 | Multiple partial refunds supported. |
+| **VISA_DEBIT** | ✅ Yes | ✅ Yes | ✅ Yes | 12 | Multiple partial refunds supported. |
+| **YAPE** | ✅ Yes | ✅ Yes | ✅ Yes | 2 | Multiple partial refunds supported. |
+
+</details>
 
 ### Parameters for Request and Response
 
@@ -543,7 +625,7 @@ To confirm whether the refund request submitted through the Voids and Refunds AP
 {{% alert title="Notes" color="info"%}}
 
 * If you do not want PayU to manage your refunds through the Cancellations Module, contact your account manager to disable this service. In that case, you will always receive the direct network response without PayU retries.
-* In many countries, up to 99% of refunds processed via the Cancellations Module are approved. For partial refunds, the approval rate can reach 97%.
+* In many countries, up to **99%** of refunds processed via the Cancellations Module are approved. For partial refunds, the approval rate can reach **97%**.
 
 {{% /alert %}}
 

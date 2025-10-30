@@ -3,12 +3,12 @@ title: "API de Anulaciones y Reembolsos"
 linkTitle: "API de Anulaciones y Reembolsos"
 date: 2021-06-25T09:24:50-05:00
 description: >
-  La API de Anulaciones y Reembolsos permite cancelar o reembolsar transacciones que han sido autorizadas o cobradas. Dependiendo del estado de la transacción, puedes enviar una solicitud utilizando los métodos `Void` o `Refund`.
+  La API de Anulaciones y Reembolsos permite cancelar o reembolsar transacciones que han sido autorizadas o cobradas. Dependiendo del estado de la transacción, puedes enviar una solicitud utilizando los métodos `VOID` o `REFUND`.
 weight: 50
 tags: ["subtopic"]
 ---
 
-{{% alert title="Nota" color="info"%}}
+{{% alert title="URLs" color="info"%}}
 
 Para integrarte con la API de Anulaciones y Reembolsos, dirige tus solicitudes a la URL del entorno correspondiente:
 
@@ -88,9 +88,9 @@ Antes de usar la API de Anulaciones y Reembolsos, ten en cuenta las siguientes c
 
 ## Anulación
 
-El método `VOID` cancela una transacción previamente autorizada. Este es un **proceso automático**—tan pronto como se envía la solicitud `VOID`, no sigue un flujo de aprobación y la transacción **no se carga** al titular de la tarjeta.
+El método `VOID` cancela una transacción previamente autorizada. Este es un **proceso automático**—tan pronto como se envía la solicitud `VOID`, no sigue un flujo de aprobación y la integración no hará cobro por la transacción al titular de la tarjeta.
 
-### Parámetros para la Solicitud y Respuesta
+### Parámetros para la solicitud y respuesta
 
 <details>
 
@@ -100,11 +100,11 @@ El método `VOID` cancela una transacción previamente autorizada. Este es un **
 
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |------------------|---------|--------|-------------|:-----------:|
 | `language` | Alfanumérico | 2 | Idioma utilizado en la solicitud. Esto determina el idioma de los mensajes de error. [Ver idiomas compatibles]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | `command` | Alfanumérico | Máx: 32 | Debe establecerse en `SUBMIT_TRANSACTION`. | Sí |
-| `test` (JSON)<br>`isTest` (XML) | Booleano | — | Establezca en `true` para modo de prueba; de lo contrario, `false`. | Sí |
+| `test` (JSON)<br>`isTest` (XML) | Booleano | — | Establece `true` para modo de prueba; de lo contrario, establece `false`. | Sí |
 | `merchant` | Objeto | — | Contiene los datos de autenticación. | Sí |
 | `merchant > apiLogin` | Alfanumérico | Mín: 12, Máx: 32 | Usuario o login proporcionado por PayU. [Cómo obtener API Login]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
 | `merchant > apiKey` | Alfanumérico | Mín: 6, Máx: 32 | Contraseña proporcionada por PayU. [Cómo obtener API Key]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
@@ -125,7 +125,7 @@ El método `VOID` cancela una transacción previamente autorizada. Este es un **
 
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción |
+| Nombre del campo | Formato | Tamaño | Descripción |
 |------------------|---------|--------|-------------|
 | `code` | Alfanumérico | — | Código de respuesta de la transacción. Valores posibles: `ERROR`, `SUCCESS`. |
 | `error` | Alfanumérico | Máx: 2048 | Mensaje de error cuando el código de respuesta es `ERROR`. |
@@ -153,7 +153,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Solicitud:**
+**Ejemplo de una solicitud:**
 
 ```JSON
 {
@@ -177,7 +177,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Respuesta:**
+**Ejemplo de una respuesta:**
 
 ```JSON
 {
@@ -211,7 +211,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Solicitud:**
+**Ejemplo de una solicitud:**
 
 ```XML
 <request>
@@ -234,7 +234,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Respuesta:**
+**Ejemplo de una respuesta:**
 
 ```XML
 <paymentResponse>
@@ -263,18 +263,100 @@ Un reembolso se emite cuando un comerciante devuelve voluntariamente el pago al 
 
 Los reembolsos pueden emitirse por el **monto total** o como un **reembolso parcial** (`PARTIAL_REFUND`).
 
-### Parámetros para la Solicitud y Respuesta
+### Capacidades de reembolso por método de pago y país
+
+Las siguientes tablas resumen el comportamiento de los reembolsos observado para los diferentes métodos de pago en Latinoamérica. Cada sección muestra si un método de pago admite reembolsos totales, parciales y múltiples reembolsos parciales, incluyendo el número máximo de reembolsos parciales identificados durante las pruebas.
+
+<details id="argentina">
+<summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
+
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+|----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
+| **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Las tarjetas AMEX nacionales e internacionales (crédito) admiten múltiples reembolsos parciales; AMEX débito admite solo un reembolso parcial. |
+| **ARGENCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 2 | Admite hasta 2 reembolsos parciales (transacciones nacionales). |
+| **CABAL** | ✅ Sí | ✅ Sí | ✅ Sí | 3 | Admite múltiples reembolsos parciales, tanto para débito como crédito. |
+| **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 14 | Admite múltiples reembolsos parciales en débito y crédito; las tarjetas prepago solo admiten un reembolso parcial. |
+| **MASTERCARD_PREPAID** | ✅ Sí | ✅ Sí | ❌ No | 1 | Solo admite un reembolso parcial. |
+| **NARANJA** | ✅ Sí | ✅ Sí | ✅ Sí | 3 | Admite múltiples reembolsos parciales para débito y crédito. |
+| **VISA** | ✅ Sí | ✅ Sí | ✅ Sí | 22 | Permite múltiples reembolsos parciales para débito, crédito y prepago. |
+| **VISA_PREPAID** | ✅ Sí | ✅ Sí | ❌ No | 1 | Solo admite un reembolso parcial. |
+
+</details>
+
+<details id="brazil">
+<summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brasil</b></summary>
+
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+|----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
+| **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 3 | Admite reembolsos parciales y múltiples reembolsos parciales para transacciones con crédito. |
+| **ELO** | ✅ Sí | ✅ Sí | ✅ Sí | 5 | Admite múltiples reembolsos parciales para transacciones con crédito y débito. |
+| **HIPERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 2 | Las transacciones con débito permiten hasta 2 reembolsos parciales. |
+| **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 5 | Admite múltiples reembolsos parciales (transacciones nacionales). |
+| **PIX** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Admite múltiples reembolsos parciales. |
+| **VISA** | ✅ Sí | ✅ Sí | ✅ Sí | 11 | Admite múltiples reembolsos parciales de forma consistente en todos los tipos de tarjeta (crédito y débito). |
+
+</details>
+
+<details id="chile">
+<summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
+
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+|----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
+| **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 5 | Soporte para transacciones nacionales e internacionales con crédito. |
+| **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 10 | Soporte total para múltiples reembolsos parciales en todos los tipos de tarjeta. |
+| **MASTERCARD_PREPAID** | ✅ Sí | ✅ Sí | ✅ Sí | 2 | Admite múltiples reembolsos parciales en transacciones con débito. |
+| **VISA** | ✅ Sí | ✅ Sí | ✅ Sí | 9 | Admite múltiples reembolsos parciales en todos los tipos de tarjeta; se confirmaron transacciones nacionales e internacionales. |
+| **VISA_PREPAID** | ✅ Sí | ✅ Sí | ✅ Sí | 2 | Admite múltiples reembolsos parciales en transacciones con débito. |
+
+</details>
+
+<details id="colombia">
+<summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>
+
+| Método de pago | Características |
+|----------------|-----------------|
+| **AMEX** <br> **DINERS** <br> **MASTERCARD** <br> **MASTERCARD_DEBIT** <br> **VISA** <br> **VISA_DEBIT** <br> **VISA_NFC** <br> **CODENSA** | ✅ <b>Soporta reembolsos totales:</b> Sí<br>✅ <b>Soporta reembolsos parciales:</b> Sí<br>❌ <b>Soporta múltiples reembolsos parciales:</b> No<br><b>Máximo de reembolsos parciales encontrado:</b> 1<br><b>Nota:</b> Solo se admite un reembolso parcial para todos los métodos de pago. |
+
+</details>
+
+<details id="mexico">
+<summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>México</b></summary>
+
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+|----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
+| **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | AMEX admite múltiples reembolsos parciales tanto para tarjetas de crédito nacionales como internacionales (hasta 7). Las tarjetas de débito solo admiten un reembolso parcial. |
+| **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Admite múltiples reembolsos parciales tanto para crédito como para débito. |
+| **VISA** | ✅ Sí | ✅ Sí | ✅ Sí | 10 | Admite múltiples reembolsos parciales tanto para crédito como para débito. |
+
+</details>
+
+<details id="peru">
+<summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Perú</b></summary>
+
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+|----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
+| **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 8 | Admite múltiples reembolsos parciales. |
+| **DINERS** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Las transacciones nacionales admiten múltiples reembolsos parciales; las internacionales solo permiten un reembolso parcial. |
+| **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 8 | Admite múltiples reembolsos parciales. |
+| **MASTERCARD_DEBIT** | ✅ Sí | ✅ Sí | ✅ Sí | 8 | Admite múltiples reembolsos parciales. |
+| **VISA** | ✅ Sí | ✅ Sí | ✅ Sí | 17 | Admite múltiples reembolsos parciales. |
+| **VISA_DEBIT** | ✅ Sí | ✅ Sí | ✅ Sí | 12 | Admite múltiples reembolsos parciales. |
+| **YAPE** | ✅ Sí | ✅ Sí | ✅ Sí | 2 | Admite múltiples reembolsos parciales. |
+
+</details>
+
+### Parámetros para la solicitud y respuesta
 
 <details>
 <summary>Solicitud</summary>
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción | Obligatorio |
+| Nombre del campo | Formato | Tamaño | Descripción | Obligatorio |
 |------------------|---------|--------|-------------|:-----------:|
 | `language` | Alfanumérico | 2 | Idioma utilizado en la solicitud. Esto determina el idioma de los mensajes de error. [Ver idiomas compatibles]({{< ref "response-codes-and-variables.html#supported-languages" >}}). | Sí |
 | `command` | Alfanumérico | Máx: 32 | Debe establecerse en `SUBMIT_TRANSACTION`. | Sí |
-| `test` (JSON)<br>`isTest` (XML) | Booleano | — | Establezca en `true` para modo de prueba; de lo contrario, `false`. | Sí |
+| `test` (JSON)<br>`isTest` (XML) | Booleano | — | Establece `true` para modo de prueba; de lo contrario, establece `false`. | Sí |
 | `merchant` | Objeto | — | Contiene los datos de autenticación. | Sí |
 | `merchant > apiLogin` | Alfanumérico | Mín: 12, Máx: 32 | Usuario o login proporcionado por PayU. [Cómo obtener API Login]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
 | `merchant > apiKey` | Alfanumérico | Mín: 6, Máx: 32 | Contraseña proporcionada por PayU. [Cómo obtener API Key]({{< ref "integrations.html#api-key-and-api-login" >}}). | Sí |
@@ -296,7 +378,7 @@ Los reembolsos pueden emitirse por el **monto total** o como un **reembolso parc
 <br>
 <div class="variables"></div>
 
-| Nombre del Campo | Formato | Tamaño | Descripción |
+| Nombre del campo | Formato | Tamaño | Descripción |
 |------------------|---------|--------|-------------|
 | `code` | Alfanumérico | — | Código de respuesta de la transacción. Valores posibles: `ERROR`, `SUCCESS`. |
 | `error` | Alfanumérico | Máx: 2048 | Mensaje de error cuando el código de respuesta es `ERROR`. |
@@ -324,7 +406,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Solicitud de Reembolso:**
+**Ejemplo de una solicitud de reembolso:**
 
 ```JSON
 {
@@ -348,7 +430,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Solicitud de Reembolso Parcial:**
+**Ejemplo de una solicitud de reembolso parcial:**
 
 ```JSON
 {  
@@ -377,7 +459,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Respuesta:**
+**Ejemplo de una respuesta:**
 
 ```JSON
 {
@@ -411,7 +493,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Solicitud de Reembolso:**
+**Ejemplo de una solicitud de reembolso:**
 
 ```XML
 <request>
@@ -434,7 +516,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 ```
 <br>
 
-**Ejemplo de una Solicitud de Reembolso Parcial:**
+**Ejemplo de una solicitud de reembolso parcial:**
 
 ```XML
 <request>
@@ -466,7 +548,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 <br>
 
-**Ejemplo de una Respuesta:**
+**Ejemplo de una respuesta:**
 
 ```XML
 <paymentResponse>
@@ -485,11 +567,11 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
 
 {{< /tabs >}}
 
-### Consultar el Estado del Reembolso
+### Consultar el estado del reembolso
 
 Como se mencionó anteriormente, las solicitudes de reembolso pasan por un proceso de aprobación en el que PayU tarda entre 1 y 3 días en procesarlas y aprobarlas o rechazarlas. Puedes verificar el estado de un reembolso utilizando uno de los siguientes métodos:
 
-#### Consultar el Estado a través del Panel de Administración de PayU
+#### Consultar el estado a través del Panel de Administración de PayU
 
 1. Inicia sesión en tu cuenta del módulo de PayU. En el panel izquierdo, expande el menú **Transacciones** y selecciona **Reporte de Ventas**.
 
@@ -503,7 +585,7 @@ Como se mencionó anteriormente, las solicitudes de reembolso pasan por un proce
 
    ![PrintScreen](/assets/Refunds/Refunds_es_03.png)
 
-#### Consultar el Estado a través de la API de Consultas
+#### Consultar el estado a través de la API de Consultas
 
 También puedes verificar el estado del reembolso utilizando la [API de Consultas]({{< ref "Queries-API.md" >}}). Para hacerlo, envía una solicitud que contenga el **ID de la orden**.
 
@@ -522,3 +604,85 @@ La respuesta puede indicar uno de los tres posibles estados:
 - **Rechazado**: Si la solicitud de reembolso es rechazada por un agente de servicio al cliente de PayU, la orden aparece con el estado `CAPTURED` (`result.payload.status` en la respuesta).  
   - El primer tipo de transacción es `REFUND` (`result.transactions.type` en la respuesta).  
   - El primer estado de la transacción es `DECLINED` (`result.transactions.transactionResponse.state` en la respuesta).
+
+### Manejo de reembolsos pendientes con el Módulo de Cancelaciones de PayU
+
+Esta sección te guiará sobre cómo rastrear el estado final de un reembolso iniciado a través del Módulo de Cancelaciones de PayU, especialmente cuando dependes de la API de Consultas para recibir actualizaciones.
+
+#### Módulo de Cancelaciones manual y actualización de reembolsos pendientes
+
+Cuando solicitas un reembolso mediante la API de Voids and Refunds, PayU envía la solicitud a la red de pagos. Si la red rechaza el reembolso, PayU inicialmente devuelve el estado `PENDING` en el campo `paymentResponse.transactionResponse.state`.
+
+En este escenario, PayU activa automáticamente el **Módulo de Cancelaciones** para volver a intentar el reembolso. Este proceso puede implicar múltiples intentos, cada uno generando un nuevo ID de reembolso, hasta alcanzar un estado final. Este mecanismo mejora las tasas de éxito de los reembolsos y reduce la necesidad de que los comercios realicen múltiples intentos manuales.
+
+Para confirmar si la solicitud de reembolso enviada mediante el API de Voids and Refunds alcanzó un estado final (`APPROVED` o `DECLINED`), debes:
+
+- Consultar su estado utilizando el [API de Consultas](https://developers.payulatam.com/latam/es/docs/integrations/api-integration/queries-api.html) (por ID de orden), o  
+- Esperar una notificación a través del webhook configurado (`notifyUrl` para integraciones por API o la [Página de Confirmación](https://developers.payulatam.com/latam/es/docs/integrations/webcheckout-integration/confirmation-page.html) para WebCheckout).
+
+{{% alert title="Notas" color="info"%}}
+
+* Si no deseas que PayU gestione tus reembolsos mediante el Módulo de Cancelaciones, contacta a tu gerente de cuenta para desactivar este servicio. En ese caso, siempre recibirás la respuesta directa de la red sin reintentos de PayU.  
+* En muchos países, hasta el **99%** de los reembolsos procesados a través del Módulo de Cancelaciones son aprobados. Para reembolsos parciales, la tasa de aprobación puede alcanzar el **97%**.
+
+{{% /alert %}}
+
+#### Identificación del estado final del reembolso en la API de Consultas
+
+Para diferenciar entre tu solicitud de reembolso inicial y los intentos generados por el Módulo de Cancelaciones de PayU, utiliza el **ID de Orden** o el **Código de Referencia** en la **API de Consultas** y revisa los siguientes campos:
+
+- `result > payload > status` – Estado general de la orden (`REFUNDED` si se reembolsó el monto total; `CAPTURED` puede indicar reembolsos parciales).  
+- `result > payload > transactions[] > id` – ID de la transacción de reembolso.  
+- `result > payload > transactions[] > type` – Tipo de transacción (`REFUND` o `PARTIAL_REFUND`).  
+- `result > payload > transactions[] > source` – Fuente (`EMPTY` = reembolsos en línea, `CANCELLATIONS_MODULE` = reintentos a través del Módulo de Cancelaciones de PayU).  
+- `result > payload > transactions[] > transactionResponse > state` – Estado del reembolso (`PENDING`, `APPROVED`, `DECLINED`).  
+- `result > payload > transactions[] > transactionResponse > operationDate` – Fecha y hora en que se generó el reembolso.  
+- `result > payload > transactions[] > additionalValues > TX_VALUE > value` – Monto del reembolso.  
+- `result > payload > transactions[] > extraParameters > MANUAL_REFUND` – Indica cómo se procesó el reembolso (ausente, `TRUE` o `FALSE`).  
+
+##### Reglas para actualizar el estado del reembolso
+
+Sigue estas reglas al actualizar tu sistema:
+
+| `MANUAL_REFUND` | Estado del reembolso | Significado | Acción recomendada |
+|---|---|---|---|
+| Ausente | `PENDING` | Reembolso inicial en proceso | No actualizar |
+| Ausente | `DECLINED` | Solicitud inicial rechazada; Módulo de Cancelaciones activado | No actualizar |
+| `FALSE` | `APPROVED` | Reembolso procesado automáticamente por el Módulo de Cancelaciones | Actualizar estado |
+| `FALSE` | `DECLINED` | Intento de reembolso fallido a través del Módulo de Cancelaciones | No actualizar |
+| `TRUE` | `APPROVED` o `DECLINED` | Reembolso finalizado a través del Módulo de Cancelaciones | Actualizar estado |
+
+##### Consideraciones adicionales
+
+- Si el estado final es `DECLINED` después de la operación del Módulo de Cancelaciones, puedes enviar una nueva solicitud de reembolso a través de la **Refunds API**. Al hacerlo, evita actualizar basándote en intentos de transacción previos: usa los campos `operationDate` y `TX_VALUE` para rastrear el intento de reembolso correcto.  
+- Registra **un solo registro de reembolso por solicitud API** en tu sistema, incluso si el Módulo de Cancelaciones creó múltiples transacciones.  
+- Actualiza tu registro de reembolso **solo cuando se alcance un estado final**, siguiendo las reglas anteriores.
+
+#### Identificación del estado final del reembolso mediante webhook
+
+PayU también te notifica el estado final del reembolso a través del **webhook** configurado (`notifyUrl` para integraciones API o [Página de Confirmación](https://developers.payulatam.com/latam/en/docs/integrations/webcheckout-integration/confirmation-page.html) para WebCheckout).
+
+##### Lógica del webhook
+
+- Si el estado de la solicitud de reembolso es `APPROVED` o `DECLINED`, PayU envía inmediatamente una notificación por webhook.  
+- Si el estado del reembolso es inicialmente `PENDING`, no se envía ningún webhook hasta que se alcance un estado final (`APPROVED` o `DECLINED`).  
+
+##### Reglas de actualización del webhook
+
+- Si el estado inicial es `PENDING`, **no actualices** el reembolso hasta recibir el webhook.  
+- Una vez que llegue el webhook, actualiza el estado del reembolso según corresponda (`APPROVED` o `DECLINED`).  
+- Usa al menos los siguientes campos del payload para identificar correctamente el reembolso:  
+  - `transaction_type` – Tipo de transacción  
+  - `value` – Monto del reembolso  
+  - `response_message_pol` – Mensaje de respuesta  
+  - `transaction_date` – Fecha y hora de la transacción  
+
+##### Consideraciones del webhook
+
+A diferencia de la Queries API, el webhook solo notifica cuando el reembolso alcanza un **estado final**. No se envían notificaciones para intentos intermedios (`PENDING`) o reintentos dentro del Módulo de Cancelaciones.
+
+Por esta razón, recomendamos implementar el webhook si aún no lo has hecho. Esto te permite actualizar los estados de los reembolsos de forma automática, sin aplicar las reglas de validación manual requeridas para el Queries API.
+
+Este comportamiento aplica cuando se activan las siguientes configuraciones de cuenta:
+- **Permitir transacciones de reversa con estado pendiente:** Desactivado  
+- **Activar respuesta pendiente para anulaciones y reembolsos:** Activado

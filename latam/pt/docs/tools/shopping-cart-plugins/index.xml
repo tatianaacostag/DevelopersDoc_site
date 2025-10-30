@@ -1,0 +1,2063 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PayU Latam – Integrações e Plugins para E-Commerce</title>
+    <link>/pt/docs/tools/shopping-cart-plugins.html</link>
+    <description>Recent content in Integrações e Plugins para E-Commerce on PayU Latam</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt</language>
+    <lastBuildDate>Wed, 07 Apr 2021 09:27:04 -0500</lastBuildDate>
+    
+	  <atom:link href="/pt/docs/tools/shopping-cart-plugins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: VTEX</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/vtex.html</link>
+      <pubDate>Tue, 25 May 2021 10:30:35 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/vtex.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;A VTEX é uma plataforma de comércio digital empresarial que permite criar rapidamente uma loja online com recursos integrados. Para mais informações, visite o &lt;a href=&#34;https://vtex.com&#34; target=&#34;_blank&#34;&gt;site oficial da VTEX&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Antes de integrar o PayU com o VTEX, certifique-se de ter o seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;conta PayU Latam ativa&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://control.paymentsos.com/signup&#34; target=&#34;_blank&#34;&gt;conta PayU Enterprise (PaymentsOS) ativa&lt;/a&gt; no modo de produção/ao vivo. Para mais detalhes sobre como ativá-la, consulte &lt;a href=&#34;#activating-your-payu-enterprise-account-live-mode&#34;&gt;Ativando sua conta PayU Enterprise&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Uma conta VTEX com direitos e permissões suficientes para acessar o painel administrativo da VTEX. Essa conta deve ter a autenticação de dois fatores ativada.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;availability-by-country-and-payment-methods&#34;&gt;Disponibilidade por País e Métodos de Pagamento&lt;/h2&gt;
+&lt;p&gt;A tabela abaixo mostra a disponibilidade da VTEX por país e os métodos de pagamento compatíveis:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;País&lt;/th&gt;
+&lt;th&gt;Cartões de Crédito&lt;/th&gt;
+&lt;th&gt;Pagamentos em Dinheiro&lt;/th&gt;
+&lt;th&gt;Outros Métodos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;20px&#34;/&gt;  Argentina  &lt;/td&gt;
+&lt;td&gt;Cartões de crédito, Google Pay&lt;/td&gt;
+&lt;td&gt;Pagamentos em dinheiro&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../../assets/Brasil.png&#34; width=&#34;20px&#34;/&gt;  Brasil&lt;/td&gt;
+&lt;td&gt;AMEX, MasterCard, Visa, Google Pay&lt;/td&gt;
+&lt;td&gt;Boleto Bancário&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;20px&#34;/&gt;  Colômbia  &lt;/td&gt;
+&lt;td&gt;AMEX, Codensa, Diners, MasterCard, Visa, Google Pay&lt;/td&gt;
+&lt;td&gt;Efecty, Su Red, referência bancária&lt;/td&gt;
+&lt;td&gt;PSE, Nequi&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../../assets/Chile.png&#34; width=&#34;20px&#34;/&gt;  Chile&lt;/td&gt;
+&lt;td&gt;Cartões de crédito, Google Pay&lt;/td&gt;
+&lt;td&gt;Pagamentos em dinheiro&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../../assets/Mexico.png&#34; width=&#34;20px&#34;/&gt;  México&lt;/td&gt;
+&lt;td&gt;Cartões de crédito, Google Pay&lt;/td&gt;
+&lt;td&gt;Pagamentos em dinheiro&lt;/td&gt;
+&lt;td&gt;SPEI&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&#34;../../../../assets/Peru.png&#34; width=&#34;20px&#34;/&gt;  Peru&lt;/td&gt;
+&lt;td&gt;AMEX, MasterCard, Visa, Google Pay&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;Yape&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;activating-your-payu-enterprise-account-live-mode&#34;&gt;Ativando sua Conta PayU Enterprise (Modo Ativo)&lt;/h2&gt;
+&lt;p&gt;Por padrão, novas contas são configuradas no modo de teste. Para habilitar transações ao vivo, entre em contato com seu gerente de conta e envie uma solicitação com os seguintes detalhes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Merchant ID:&lt;/strong&gt; Localize o Merchant ID da sua conta LATAM no &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;Painel de Gerenciamento do PayU&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account ID:&lt;/strong&gt; Encontre seu Account ID no painel de controle do PayU Enterprise clicando no seu nome de usuário no canto superior direito.
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex01pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuring-your-payu-enterprise-account&#34;&gt;Configurando sua Conta PayU Enterprise&lt;/h2&gt;
+&lt;p&gt;Para configurar os métodos de pagamento na VTEX para processamento através do nosso gateway, siga os passos abaixo. A configuração consiste em duas etapas. Antes de prosseguir, certifique-se de ter atendido aos pré-requisitos mencionados acima.&lt;/p&gt;
+&lt;h3 id=&#34;1-initial-setup&#34;&gt;1. Configuração Inicial&lt;/h3&gt;
+&lt;p&gt;O PayU Enterprise opera através do PaymentsOS, que atua como middleware entre o PayU Latam e o VTEX. O primeiro passo é configurar os seguintes componentes dentro da sua conta PayU Enterprise:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configuração do provedor&lt;/li&gt;
+&lt;li&gt;Unidade de negócios&lt;/li&gt;
+&lt;li&gt;Webhook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Você pode configurar esses componentes utilizando um dos seguintes métodos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#configuring-the-account-using-postman&#34;&gt;Configurando a conta usando o Postman&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#configuring-the-account-manually-using-payu-enterprise-dashboard&#34;&gt;Configurando a conta manualmente pelo painel da PayU Enterprise&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;configuring-the-account-using-postman&#34;&gt;Configurando a Conta Usando o Postman&lt;/h4&gt;
+&lt;p&gt;Siga estas etapas para configurar sua conta usando o Postman:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Clique no botão abaixo para importar nossa coleção do Postman (atualize a página se o botão não funcionar).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;div class=&#34;postman-run-button&#34;
+data-postman-action=&#34;collection/import&#34;
+data-postman-visibility=&#34;public&#34;
+data-postman-var-1=&#34;32817672-5295ab7d-32e5-4563-89f7-62c6a32ae773&#34;
+data-postman-collection-url=&#34;entityId=32817672-5295ab7d-32e5-4563-89f7-62c6a32ae773&amp;entityType=collection&amp;workspaceId=34b660f6-497b-4504-afcc-11eb3025d8a9&#34;&gt;&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+  (function (p,o,s,t,m,a,n) {
+    !p[s] &amp;&amp; (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
+    !o.getElementById(s+t) &amp;&amp; o.getElementsByTagName(&#34;head&#34;)[0].appendChild((
+      (n = o.createElement(&#34;script&#34;)),
+      (n.id = s+t), (n.async = 1), (n.src = m), n
+    ));
+  }(window, document, &#34;_pm&#34;, &#34;PostmanRunObject&#34;, &#34;https://run.pstmn.io/button.js&#34;));
+&lt;/script&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Após importar a coleção, defina as variáveis globais. Baixe o arquivo de variáveis globais &lt;a href=&#34;../../../../assets/globals/VTEX Hub.postman_globals.json&#34; download&gt;aqui&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No Postman, clique em &lt;strong&gt;Import&lt;/strong&gt; ao lado do nome do seu workspace e selecione o arquivo JSON baixado.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Import&lt;/strong&gt; para finalizar o processo.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Execute os métodos da coleção na ordem exibida. Primeiro, selecione o método &lt;code&gt;POST&lt;/code&gt; chamado &lt;code&gt;1. Login&lt;/code&gt; e, em seguida, vá até a aba &lt;strong&gt;Body&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Insira seu e-mail e senha da sua conta PayU Enterprise e clique em &lt;strong&gt;Send&lt;/strong&gt;. Se o login for bem-sucedido, os dados de autenticação serão definidos para o próximo método.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique no método &lt;code&gt;GET&lt;/code&gt; &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No canto superior direito, clique no ícone de olho para localizar o parâmetro &lt;code&gt;env&lt;/code&gt;. Clique no ícone de lápis e defina-o como &lt;code&gt;test&lt;/code&gt; para ambiente de teste ou &lt;code&gt;live&lt;/code&gt; para produção.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Send&lt;/strong&gt; para continuar.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Em seguida, configure o provedor, que armazena suas credenciais de processamento de pagamento. Selecione o método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;3. Create Provider Configuration&lt;/code&gt; e vá até a aba &lt;strong&gt;Body&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Preencha os seguintes detalhes:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;name&lt;/td&gt;
+&lt;td&gt;Insira um nome para a configuração do provedor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Forneça uma descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.apiLogin&lt;/td&gt;
+&lt;td&gt;Nome de usuário ou login fornecido pela PayU. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como obter meu API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.apiKey&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como obter minha API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.accountId&lt;/td&gt;
+&lt;td&gt;ID da conta PayU com base no seu país de operação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.merchantId&lt;/td&gt;
+&lt;td&gt;Seu ID de comércio no PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.paymentCountry&lt;/td&gt;
+&lt;td&gt;País de processamento no formato ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.partnerID&lt;/td&gt;
+&lt;td&gt;Identificador da PayU. Insira &lt;code&gt;ZOOZ_VTEX_V2&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;configuration_data.cashRedirect&lt;/td&gt;
+&lt;td&gt;Defina como &lt;code&gt;true&lt;/code&gt; para garantir o fluxo adequado de pedidos com pagamentos em dinheiro na VTEX.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+O parâmetro &lt;code&gt;provider_id&lt;/code&gt; é atribuído automaticamente pela resposta do método &lt;code&gt;2. Retrieve PayU Latam ID&lt;/code&gt;. Não modifique esse valor.
+&lt;/div&gt;
+
+&lt;ol start=&#34;11&#34;&gt;
+&lt;li&gt;Configure a &lt;em&gt;unidade de negócios&lt;/em&gt;, que vincula a configuração do provedor com as credenciais da API PayU Enterprise para processar transações. Selecione o método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;4. Create Business Unit&lt;/code&gt; e, em seguida, navegue até a aba &lt;strong&gt;Body&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Preencha os seguintes detalhes:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parâmetro&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;id&lt;/td&gt;
+&lt;td&gt;Identificador da unidade de negócios (minúsculas, sem espaços). &lt;strong&gt;Este valor não pode ser alterado posteriormente, portanto, garanta a precisão.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;Descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+O parâmetro &lt;code&gt;default_processor&lt;/code&gt; é atribuído automaticamente pela resposta do método &lt;code&gt;3. Create Provider Configuration&lt;/code&gt;. Não modifique esse valor.
+&lt;/div&gt;
+
+&lt;ol start=&#34;12&#34;&gt;
+&lt;li&gt;Crie o webhook, que recebe notificações da VTEX quando o status de uma transação muda. Selecione o método &lt;code&gt;POST&lt;/code&gt; &lt;code&gt;5. Create Webhook&lt;/code&gt; e, em seguida, navegue até a aba &lt;strong&gt;Body&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/Postman/VTEX_Postman_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Defina o parâmetro &lt;code&gt;endpoint&lt;/code&gt; com base no seu ambiente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Teste: &lt;code&gt;https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Produção: &lt;code&gt;https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mantenha todos os outros parâmetros com seus valores padrão.&lt;/p&gt;
+&lt;p&gt;Neste ponto, sua conta PayU Enterprise usando PaymentsOS está configurada. O próximo passo é &lt;a href=&#34;#2-configuring-the-vtex-provider&#34;&gt;Configurar o Provedor VTEX&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;configuring-the-account-using-payu-enterprise-dashboard&#34;&gt;Configurando a Conta Usando o Painel PayU Enterprise&lt;/h4&gt;
+&lt;p&gt;Siga estas etapas para configurar sua conta usando o painel PayU Enterprise.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Criar a Configuração do Provedor&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Um &lt;em&gt;provedor&lt;/em&gt; armazena suas credenciais de processamento de pagamento. Siga estas etapas para configurar um:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.1&lt;/span&gt; No painel do PayU Enterprise, navegue até &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Providers&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.2&lt;/span&gt; Clique no módulo correspondente ao país ou divisão que você está configurando.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.3&lt;/span&gt; Preencha os seguintes campos:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Nome da Configuração&lt;/td&gt;
+&lt;td&gt;Insira um nome para a configuração do provedor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Descrição&lt;/td&gt;
+&lt;td&gt;Forneça uma descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiLogin&lt;/td&gt;
+&lt;td&gt;Nome de usuário ou login fornecido pelo PayU. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como obter meu API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiKey&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Como obter minha API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID da conta PayU com base no seu país de operação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Seu ID de comércio no PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paymentCountry&lt;/td&gt;
+&lt;td&gt;País de processamento no formato ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cashRedirect&lt;/td&gt;
+&lt;td&gt;Selecione &lt;code&gt;true&lt;/code&gt; para garantir o fluxo correto de pedidos com pagamentos em dinheiro na VTEX.&lt;br&gt; &lt;strong&gt;Nota:&lt;/strong&gt; Essa configuração é essencial para comerciantes que processam pagamentos em dinheiro na VTEX.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.4&lt;/span&gt; Clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex03.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Criar a Unidade de Negócios&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Uma &lt;em&gt;unidade de negócios&lt;/em&gt; vincula a configuração do provedor com as credenciais da API do PayU Enterprise para processar transações. Siga estas etapas:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.1&lt;/span&gt; No painel, vá para &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Business Units&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex04.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.2&lt;/span&gt; Clique em &lt;strong&gt;Create Business Unit&lt;/strong&gt; e insira:
+&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Business Unit Name&lt;/td&gt;
+&lt;td&gt;Deve estar em minúsculas e não conter espaços. &lt;strong&gt;Este valor não pode ser alterado posteriormente, portanto, garanta a precisão.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.3&lt;/span&gt; Na seção &lt;strong&gt;Choose a Default Provider for This Business Unit&lt;/strong&gt;, selecione a &lt;strong&gt;Provider Configuration&lt;/strong&gt; criada na Etapa 1. Depois, clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex05.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 700px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Criar o Webhook&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;O webhook recebe notificações do VTEX quando o status de uma transação muda. Siga estas etapas:&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.1&lt;/span&gt; No painel, navegue até &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Webhooks&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex06.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.2&lt;/span&gt; Clique em &lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt; e insira a URL apropriada com base no seu ambiente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Teste: &lt;code&gt;https://sandbox.api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Produção: &lt;code&gt;https://api.payulatam.com/vtex-payments-integration/paymentsos/webhook&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;3.3&lt;/span&gt; Na tabela &lt;strong&gt;Payment Event Alerts&lt;/strong&gt;, ative o controle deslizante &lt;strong&gt;Update&lt;/strong&gt; para &lt;strong&gt;Authorization&lt;/strong&gt; e &lt;strong&gt;Charge&lt;/strong&gt;. Em seguida, no campo &lt;strong&gt;Associated Business Units&lt;/strong&gt;, insira a &lt;strong&gt;Business Unit&lt;/strong&gt; criada na etapa anterior. Por fim, clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex07.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 600px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;p&gt;Neste ponto, sua conta PayU Enterprise usando PaymentsOS está totalmente configurada. O próximo passo é &lt;a href=&#34;#2-configuring-the-vtex-provider&#34;&gt;configurar o provedor VTEX&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;2-configuring-the-vtex-provider&#34;&gt;2. Configurando o Provedor VTEX&lt;/h3&gt;
+&lt;p&gt;Depois de configurar sua conta PayU Enterprise, o próximo passo é configurar o provedor VTEX para cada método de pagamento. Para prosseguir, você deve ter uma conta de usuário válida para acessar o admin da VTEX.&lt;/p&gt;
+&lt;h4 id=&#34;criando-um-novo-provedor&#34;&gt;Criando um Novo Provedor&lt;/h4&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Antes de criar o novo provedor, certifique-se de ter configurado o fingerprint para a PayU. Para isso, consulte este &lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-fingerprint-para-payu&#34;&gt;guia&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;Configurações da Loja &amp;gt; Provedores &amp;gt; Novo Provedor&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex08pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Localize &lt;strong&gt;PayU&lt;/strong&gt; e selecione &lt;strong&gt;PayUv2&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex09pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+Certifique-se de selecionar &lt;strong&gt;PayUv2&lt;/strong&gt;, pois este guia se aplica especificamente a essa versão.
+&lt;/div&gt;
+
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Preencha o seguinte formulário:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex10.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;p&gt;As informações do provedor podem ser obtidas a partir de:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Coleção do Postman:&lt;/strong&gt; Execute o método &lt;strong&gt;Retrieve Authentication Keys&lt;/strong&gt;, configurando o parâmetro global &lt;code&gt;env&lt;/code&gt; como &lt;code&gt;test&lt;/code&gt; ou &lt;code&gt;live&lt;/code&gt;, dependendo do ambiente de processamento.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Painel PayU Enterprise:&lt;/strong&gt; Navegue até &lt;strong&gt;Account &amp;gt; Business Units&lt;/strong&gt; e selecione a Unidade de Negócio criada em &lt;a href=&#34;#configuring-your-payu-enterprise-account&#34;&gt;Configurando sua Conta PayU Enterprise&lt;/a&gt;. Use o seletor no topo para escolher o ambiente de processamento.&lt;br&gt;Alguns valores estão ocultos por padrão; clique no ícone de olho para revelá-los.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;App key&lt;/td&gt;
+&lt;td&gt;ID do aplicativo da &lt;strong&gt;Unidade de Negócio&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;App token&lt;/td&gt;
+&lt;td&gt;Chave API privada da &lt;strong&gt;Unidade de Negócio&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Name&lt;/td&gt;
+&lt;td&gt;Nome usado para identificar a &lt;strong&gt;afiliação ao Gateway&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enable test mode&lt;/td&gt;
+&lt;td&gt;Marque esta opção para realizar transações de teste.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Automatic settlement&lt;/td&gt;
+&lt;td&gt;Escolha como capturar (cobrar) os pagamentos:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para um fluxo de uma etapa, selecione &lt;code&gt;Captura automática imediatamente após a autorização do pagamento&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para um fluxo de duas etapas, selecione &lt;code&gt;Desativado: Não capturado automaticamente&lt;/code&gt; para capturar os pagamentos no momento da fatura.&lt;/li&gt;&lt;li&gt;Para programar a captura automática, selecione &lt;code&gt;Programado: Agenda a captura automática&lt;/code&gt; e defina um prazo em horas.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Para mais detalhes, consulte &lt;a href=&#34;https://developers.vtex.com/vtex-rest-api/docs/custom-auto-capture-feature&#34;&gt;Funcionalidade de Captura Automática Personalizada&lt;/a&gt;.&lt;br&gt;O prazo padrão para captura automática é de sete (7) dias após a aprovação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Enable payout split and send payment recipients?&lt;/td&gt;
+&lt;td&gt;Selecione &lt;code&gt;No&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tipo Autorizacion&lt;/td&gt;
+&lt;td&gt;Escolha entre fluxos de pagamento de uma ou duas etapas:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Para um fluxo de uma etapa, selecione &lt;code&gt;Autorización y Captura&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Para um fluxo de duas etapas, selecione &lt;code&gt;Pre-Autorización&lt;/code&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;Consulte &lt;a href=&#34;../../../../pt/docs/services/payments.html#payment-flows&#34;&gt;Fluxos de pagamento&lt;/a&gt; para mais informações.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tipo de devolución&lt;/td&gt;
+&lt;td&gt;Determina como o reembolso é processado quando uma devolução é iniciada a partir do VTEX:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Selecione &lt;code&gt;Automático siempre que sea posible&lt;/code&gt; para solicitar o reembolso automaticamente via PayU, processado pela operadora do cartão. Esta opção se aplica apenas a pagamentos com cartão.&lt;/li&gt;&lt;li&gt;Selecione &lt;code&gt;Manual a cargo del comercio&lt;/code&gt; para realizar o reembolso manualmente por meio de métodos alternativos (por exemplo, dinheiro, crédito na loja ou trocas de produto).&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Public Key&lt;/td&gt;
+&lt;td&gt;Chave API pública da &lt;strong&gt;Unidade de Negócio&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Idioma&lt;/td&gt;
+&lt;td&gt;Selecione o idioma para a emissão do pedido. Idiomas compatíveis:&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Espanhol&lt;/li&gt;&lt;li&gt;Inglês&lt;/li&gt;&lt;li&gt;Português&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Expiración pago (días)&lt;/td&gt;
+&lt;td&gt;Define o período de validade para pagamentos em dinheiro.&lt;br&gt;&lt;strong&gt;Importante:&lt;/strong&gt; Este valor deve coincidir com o campo &lt;strong&gt;Validade do pagaré&lt;/strong&gt; na seção &lt;a href=&#34;#configuring-cash-payment-methods&#34;&gt;Configuração de métodos de pagamento em dinheiro&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar&lt;/strong&gt; para concluir a configuração.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;configurando-capturas-em-um-fluxo-de-duas-etapas&#34;&gt;Configurando Capturas em um Fluxo de Duas Etapas&lt;/h4&gt;
+&lt;p&gt;Esta seção explica como capturar pedidos autorizados no VTEX V2 usando um fluxo de pagamento em duas etapas (autorização seguida de captura). Inclui um guia passo a passo para capturar o valor total ou parcial de um pedido.&lt;/p&gt;
+&lt;h5 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h5&gt;
+&lt;p&gt;Antes de capturar pedidos, certifique-se de que as seguintes configurações estejam corretas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Configuração da Conta PayU:&lt;/strong&gt; Sua conta PayU deve estar habilitada para &lt;a href=&#34;../../../../pt/docs/services/payments.html#payment-flows&#34;&gt;processamento em duas etapas&lt;/a&gt;. Para mais informações sobre como ativar esse fluxo de pagamento, entre em contato com seu representante de vendas da PayU.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Afiliação de Pagamento na VTEX (PayUv2):&lt;/strong&gt; A afiliação do provedor PayUv2 na VTEX deve estar configurada para o processamento em duas etapas, que envolve &lt;strong&gt;autorização&lt;/strong&gt; seguida de &lt;strong&gt;liquidação&lt;/strong&gt; (captura).
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Liquidação automática:&lt;/strong&gt; Definida como &lt;code&gt;Desativado&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tipo de autorização:&lt;/strong&gt; Definido como &lt;code&gt;Pré-autorização&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex30.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 500px;&#34;&gt;
+&lt;p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Se você não pretende capturar valores menores ou maiores do que o valor originalmente autorizado, pode ativar a &lt;strong&gt;Liquidação automática&lt;/strong&gt; para capturar o pedido imediatamente após a autorização ou agendar a captura definindo um intervalo de tempo em horas.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Condição de Pagamento:&lt;/strong&gt; Verifique se a condição de pagamento relevante está habilitada com a afiliação PayUv2.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex31.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px;&#34;&gt;
+&lt;h5 id=&#34;iniciando-uma-captura&#34;&gt;Iniciando uma Captura&lt;/h5&gt;
+&lt;p&gt;Quando um pedido tiver uma &lt;strong&gt;autorização aprovada&lt;/strong&gt;, siga estes passos no seu painel da VTEX:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Acesse o Pedido:&lt;/strong&gt; Abra o painel administrativo da VTEX e selecione o pedido autorizado.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Atualize o Status do Pedido:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Se o status do pedido estiver como &amp;ldquo;Janela de cancelamento&amp;rdquo;, clique no botão &amp;ldquo;&lt;strong&gt;Pronto para manuseio&lt;/strong&gt;&amp;rdquo; para atualizá-lo.&lt;/li&gt;
+&lt;li&gt;Em seguida, atualize o pedido usando a opção &amp;ldquo;&lt;strong&gt;Iniciar manuseio&lt;/strong&gt;&amp;rdquo;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Após completar essas etapas, o status do pedido mudará para &amp;ldquo;&lt;strong&gt;Em manuseio&lt;/strong&gt;&amp;rdquo;, indicando que está pronto para ser capturado. Você poderá então capturar o valor total ou um valor modificado (menor ou maior).&lt;/p&gt;
+&lt;h5 id=&#34;capturando-o-valor-total&#34;&gt;Capturando o Valor Total&lt;/h5&gt;
+&lt;p&gt;Para capturar o &lt;strong&gt;valor total autorizado&lt;/strong&gt;:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Selecione a opção &lt;strong&gt;Nota fiscal&lt;/strong&gt; no pedido.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex32.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 650px;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Escolha &lt;strong&gt;Enviar nota fiscal única&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Insira o &lt;strong&gt;número da nota fiscal&lt;/strong&gt; na seção de detalhes.&lt;/li&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar nota fiscal&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ao concluir, o processo de liquidação será finalizado e o valor total autorizado do pedido será capturado.&lt;/p&gt;
+&lt;h5 id=&#34;capturando-um-valor-menor-ou-maior&#34;&gt;Capturando um Valor Menor ou Maior&lt;/h5&gt;
+&lt;p&gt;A VTEX oferece duas maneiras de capturar um valor diferente da autorização original:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A) Alterando os Itens do Pedido&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Esse método permite ajustar os itens do pedido para refletir o valor desejado para captura.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Acesse a seção &lt;strong&gt;faturamento pendente&lt;/strong&gt; dentro do pedido.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex33.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 500px;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Selecione a opção &lt;strong&gt;Alterar itens&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ajuste os Itens:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Para capturar um &lt;strong&gt;valor menor&lt;/strong&gt;, reduza a quantidade de itens existentes ou remova-os.&lt;/li&gt;
+&lt;li&gt;Para capturar um &lt;strong&gt;valor maior&lt;/strong&gt;, aumente a quantidade de itens ou adicione novos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Finalize a Captura:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Após modificar os itens, selecione a opção &lt;strong&gt;Nota fiscal&lt;/strong&gt; no pedido.&lt;/li&gt;
+&lt;li&gt;Escolha &lt;strong&gt;Enviar nota fiscal única&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Insira o &lt;strong&gt;número da nota fiscal&lt;/strong&gt; nos detalhes.&lt;/li&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar nota fiscal&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Essa ação completará a liquidação e a integração capturará o valor modificado.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;B) Alterando o Valor Final do Pedido&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Esse método permite ajustar diretamente o valor total do pedido.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Acesse o pedido e selecione a opção &lt;strong&gt;Alterar valor final&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex34.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 350px;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Ajuste o Valor:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Para capturar um &lt;strong&gt;valor menor&lt;/strong&gt;, insira o valor que deseja descontar do total.&lt;/li&gt;
+&lt;li&gt;Para capturar um &lt;strong&gt;valor maior&lt;/strong&gt;, insira o valor pelo qual deseja aumentar o pedido.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Finalize a Captura:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Após modificar o valor, selecione a opção &lt;strong&gt;Nota fiscal&lt;/strong&gt; no pedido.&lt;/li&gt;
+&lt;li&gt;Escolha &lt;strong&gt;Enviar nota fiscal única&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Insira o &lt;strong&gt;número da nota fiscal&lt;/strong&gt; nos detalhes.&lt;/li&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar nota fiscal&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Isso concluirá a liquidação na VTEX.&lt;/p&gt;
+&lt;h5 id=&#34;entendendo-as-transações-da-payu-após-a-captura&#34;&gt;Entendendo as Transações da PayU após a Captura&lt;/h5&gt;
+&lt;p&gt;Veja como as transações aparecerão na PayU com base nas suas ações de captura:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Captura do Valor Total (Sem Ajuste):&lt;/strong&gt; Se você não ajustou o valor do pedido, verá duas transações na PayU: uma &lt;strong&gt;autorização&lt;/strong&gt; e uma &lt;strong&gt;captura&lt;/strong&gt; do valor total.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Captura de Valor Menor:&lt;/strong&gt; Se você ajustou o pedido para capturar um valor menor, verá duas transações na PayU: uma &lt;strong&gt;autorização&lt;/strong&gt; e uma &lt;strong&gt;captura parcial&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Captura de Valor Maior:&lt;/strong&gt; Se o valor capturado for maior, verá quatro transações: a &lt;strong&gt;autorização inicial&lt;/strong&gt; e sua &lt;strong&gt;captura&lt;/strong&gt;, além de uma &lt;strong&gt;autorização adicional&lt;/strong&gt; para o valor excedente e sua respectiva &lt;strong&gt;captura&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;configuring-payment-methods&#34;&gt;Configurando Métodos de Pagamento&lt;/h4&gt;
+&lt;p&gt;Configure os métodos de pagamento que serão exibidos no site durante o checkout. &lt;a href=&#34;../../../../pt/docs/getting-started/select-your-payment-method.html&#34;&gt;Veja os métodos de pagamento disponíveis&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;As alterações nas condições de pagamento podem levar até 10 minutos para serem refletidas no fluxo de checkout.&lt;/li&gt;
+&lt;li&gt;O PIX não está disponível para o Brasil ao usar a VTEX.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h5 id=&#34;configuring-credit-or-debit-cards&#34;&gt;Configurando Cartões de Crédito ou Débito&lt;/h5&gt;
+&lt;p&gt;Dependendo do seu &lt;a href=&#34;../../../../pt/docs/getting-started/select-your-payment-method.html&#34;&gt;país de processamento&lt;/a&gt;, você pode configurar a afiliação criada para usar cartões de crédito ou débito&lt;sup&gt;*&lt;/sup&gt;. Siga as etapas abaixo para adicionar esse método de pagamento à sua loja VTEX.&lt;/p&gt;
+&lt;p&gt;&lt;sup&gt;*&lt;/sup&gt; &lt;em&gt;A disponibilidade de cartões de débito depende do seu país de processamento.&lt;/em&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+Clique &lt;a href=&#34;#configuring-co-branded-or-private-label-cards&#34;&gt;aqui&lt;/a&gt; para saber como configurar cartões Co-branded ou Private Label.
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;Transações &amp;gt; Pagamentos &amp;gt; Configurações&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Selecione a guia &lt;strong&gt;Condições de Pagamento&lt;/strong&gt; e clique no ícone de adição.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex11pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Selecione o método de pagamento que deseja adicionar. Os métodos de pagamento são agrupados por tipo.&lt;br&gt;Para este exemplo, selecionamos &lt;strong&gt;American Express&lt;/strong&gt; na seção de &lt;strong&gt;Cartão de Crédito&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex12pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Forneça os seguintes detalhes:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nome da Regra (para identificação rápida)&lt;/strong&gt;: Insira um nome descritivo para a condição de pagamento.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Status&lt;/strong&gt;: Defina o status da condição de pagamento. Você pode ter &lt;strong&gt;apenas uma&lt;/strong&gt; condição de pagamento ativa por método de pagamento.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Processar com afiliação&lt;/strong&gt;: Selecione a afiliação do gateway configurada anteriormente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pagamento à vista ou parcelado?&lt;/strong&gt;: Selecione &lt;strong&gt;À vista&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex13pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar&lt;/strong&gt;. A nova condição de pagamento agora será listada na guia &lt;strong&gt;Condições de Pagamento&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex14pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;configuring-co-branded-or-private-label-cards&#34;&gt;Configurando Cartões Co-Branded ou Private Label&lt;/h5&gt;
+&lt;p&gt;Os cartões co-branded e private label são cartões de crédito emitidos por uma loja ou marca, às vezes em parceria com redes como AMEX, VISA ou MasterCard. Siga estas etapas para adicionar esse método de pagamento à sua loja VTEX.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;Transações &amp;gt; Pagamentos &amp;gt; Configurações&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Selecione a guia &lt;strong&gt;Pagamentos customizados&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex15pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;A guia &lt;strong&gt;Pagamentos customizados&lt;/strong&gt; fornece cinco (5) espaços para configurar cartões co-branded e private label. Neste exemplo, configuramos o cartão colombiano Codensa, que é um cartão private label.&lt;br&gt;Clique em qualquer caixa disponível na seção &lt;strong&gt;Cartões da Loja (Bandeira Própria)&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex16pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Insira os seguintes detalhes do cartão, mantendo o formato exato:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nome&lt;/strong&gt;: &lt;code&gt;Codensa&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Descrição&lt;/strong&gt;: &lt;code&gt;Codensa&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Intervalos de BIN&lt;/strong&gt;: &lt;code&gt;590712-590712&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Código de pagamento do adquirente&lt;/strong&gt;: &lt;code&gt;codensa&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Para cartões &lt;em&gt;co-branded&lt;/em&gt;, você também deve selecionar a bandeira do cartão.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex17pt.png&#34; alt=&#34;PrintScreen&#34; width=&#34;700px&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Use a tabela abaixo para configurar cartões co-branded e private label. Você pode deixar os valores restantes com suas entradas padrão.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;País&lt;/th&gt;
+&lt;th&gt;Nome&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;th&gt;Intervalos de BIN&lt;/th&gt;
+&lt;th&gt;Código de pagamento do adquirente&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Argencard&lt;/td&gt;
+&lt;td&gt;Argencard&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;501105-532362&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;argencard&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Cabal&lt;/td&gt;
+&lt;td&gt;Cabal&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;60423,60400,589657&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;cabal&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Cencosud&lt;/td&gt;
+&lt;td&gt;Cencosud&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;603493-603493&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;cencosud&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Naranja&lt;/td&gt;
+&lt;td&gt;Naranja&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;589562&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;naranja&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../../assets/Argentina.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Shopping&lt;/td&gt;
+&lt;td&gt;Shopping&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;603488&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;shopping&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;img src=&#34;../../../../assets/Colombia.png&#34; width=&#34;25px&#34;/&gt;&lt;/td&gt;
+&lt;td&gt;Codensa&lt;/td&gt;
+&lt;td&gt;Codensa&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;590712-590712&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;codensa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Para mais detalhes sobre a configuração de cartões &lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-cobranded--jrkLK41IjuquUmyKUi86Q&#34;&gt;co-branded&lt;/a&gt; e &lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-pagamentos-com-cartoes-de-loja-bandeira-propria--428FgVdSGQUeAOoogkaIw4&#34;&gt;private label&lt;/a&gt;, visite o VTEX Help Center.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar&lt;/strong&gt;. Após criar o pagamento personalizado, você será redirecionado para a opção de criar uma &lt;strong&gt;Condição de Pagamento&lt;/strong&gt;. Siga as instruções na seção &lt;a href=&#34;#configuring-credit-or-debit-cards&#34;&gt;Configurando Cartões de Crédito ou Débito&lt;/a&gt; para concluir esta etapa.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;configurando-o-google-pay&#34;&gt;Configurando o Google Pay&lt;/h5&gt;
+&lt;p&gt;O Google Pay é uma carteira digital que permite que os clientes realizem transações de forma rápida e segura utilizando os cartões salvos em suas contas do Google. Integrar o Google Pay à sua loja VTEX por meio da PayU ajuda a melhorar a experiência de compra, reduzir a fricção no checkout e aumentar as taxas de conversão.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Quando os clientes pagam com Google Pay, a PayU processa a transação como um pagamento padrão com cartão de crédito ou débito, dependendo do tipo de cartão. Nenhuma taxa adicional será aplicada além das já acordadas.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Pré-requisitos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Verifique se o Google Pay está ativo na sua conta PayU. Se tiver dúvidas sobre este requisito, entre em contato com o seu executivo de contas da PayU ou envie um e-mail para &lt;a href=&#34;mailto:tecnico.co@payu.com&#34;&gt;tecnico.co@payu.com&lt;/a&gt;, informando que você é um lojista VTEX solicitando a ativação do Google Pay.&lt;/li&gt;
+&lt;li&gt;Os pagamentos com cartão devem estar habilitados na configuração da sua loja VTEX.&lt;/li&gt;
+&lt;li&gt;A PayU deve estar configurada como o provedor de pagamento para as transações com cartão de crédito na sua loja VTEX.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Passo a passo:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;Configurações da Loja &amp;gt; Carteiras Digitais&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Encontre a opção do Google Pay e ative a chave deslizante.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Quando solicitado, confirme a ativação clicando em &lt;strong&gt;Ativar&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;video width=&#34;640&#34; height=&#34;480&#34; controls&gt;
+&lt;source src=&#34;../../../../assets/VTEX/Videos/video02pt.mp4&#34; &gt;  
+&lt;/video&gt;
+&lt;p&gt;
+&lt;p&gt;Após a ativação, o Google Pay estará disponível como uma opção de pagamento no checkout da sua loja. Pode levar até 10 minutos para o método aparecer.&lt;/p&gt;
+&lt;p&gt;Para mais informações e boas práticas, consulte o guia oficial da VTEX sobre como ativar carteiras digitais no &lt;a href=&#34;https://help.vtex.com/en/tracks/digital-wallet-e-wallet&#34; target=&#34;_blank&#34;&gt;Centro de Ajuda da VTEX&lt;/a&gt;.&lt;/p&gt;
+&lt;h5 id=&#34;configuring-cash-payment-methods&#34;&gt;Configurando Métodos de Pagamento em Dinheiro&lt;/h5&gt;
+&lt;p&gt;Como os pagamentos em dinheiro exigem que os clientes efetuem o pagamento em locais físicos, você pode configurar esse método de pagamento na VTEX como notas promissórias (&lt;em&gt;Notes Payables&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Ao configurar um método de pagamento em dinheiro, os clientes são redirecionados para o checkout da PayU, onde podem baixar o comprovante de pagamento e pagá-lo no local físico correspondente. Siga as instruções abaixo para adicionar esse método de pagamento à sua loja VTEX.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Considerações:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Certifique-se de que todos os meios de pagamento que você pretende configurar estejam habilitados na sua conta PayU, e que &lt;strong&gt;os nomes correspondam exatamente aos registrados na PayU&lt;/strong&gt;. Métodos inativos ou com nomes incorretos podem causar falhas nas transações. Se precisar de ajuda para habilitar meios de pagamento ou carteiras específicas, &lt;a href=&#34;https://colombia.support.payu.com/s/?language=pt_BR&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;entre em contato conosco&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Para o &lt;strong&gt;Boleto Bancário&lt;/strong&gt; no Brasil, este procedimento não é necessário. Basta localizar e configurar este meio de pagamento como uma condição de pagamento.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Passo a Passo:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;Transações &amp;gt; Pagamentos &amp;gt; Configurações&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Selecione a guia &lt;strong&gt;Pagamentos customizados&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex15pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Nesta guia, há cinco (5) espaços disponíveis para configurar métodos de pagamento em dinheiro. Neste exemplo, configuraremos o OXXO, um método de pagamento em dinheiro do México.&lt;br&gt;Clique em qualquer caixa disponível na seção &lt;strong&gt;Promissórias&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex18pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Forneça as seguintes informações:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Nome&lt;/strong&gt;: Use o valor listado &lt;a href=&#34;../../../../pt/docs/getting-started/select-your-payment-method.html&#34;&gt;aqui&lt;/a&gt; na coluna &lt;code&gt;parâmetro paymentMethod&lt;/code&gt;. Para este exemplo, insira &lt;code&gt;OXXO&lt;/code&gt;.
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Descrição&lt;/strong&gt;: Insira uma descrição para exibição quando o cliente selecionar esse método de pagamento (opcional).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Data de Expiração da Nota Promissória&lt;/strong&gt;: Especifique o número de dias antes do vencimento do pagamento em dinheiro. O padrão é 7 dias. Certifique-se de que esse valor corresponde à configuração &lt;strong&gt;Expiração do Pagamento (dias)&lt;/strong&gt; configurada na afiliação da VTEX para evitar problemas de processamento.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Deixe os demais campos com seus valores padrão.&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar&lt;/strong&gt;. Depois que o pagamento personalizado for criado, você será redirecionado para configurar uma nova &lt;strong&gt;Condição de Pagamento&lt;/strong&gt;. Siga as instruções na seção &lt;a href=&#34;#configuring-credit-or-debit-cards&#34;&gt;Configurando Cartões de Crédito ou Débito&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;configuring-nequi&#34;&gt;Configuração do Nequi&lt;/h5&gt;
+&lt;p&gt;Adicionar Nequi como método de pagamento permite que sua empresa alcance milhões de usuários que preferem carteiras digitais, oferecendo uma forma de pagamento mais rápida, segura e conveniente. Isso pode ajudar a aumentar as vendas, fortalecer a fidelidade dos clientes e garantir transações seguras.&lt;/p&gt;
+&lt;p&gt;Antes de começar, certifique-se de que o Nequi esteja habilitado em sua conta PayU e que &lt;strong&gt;o nome do método de pagamento corresponda exatamente ao registrado na PayU&lt;/strong&gt;. Qualquer divergência ou status inativo resultará em erros de transação. Se precisar de ajuda para habilitar o Nequi, por favor &lt;a href=&#34;https://colombia.support.payu.com/s/?language=pt_BR&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;entre em contato conosco&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Passo a passo:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Acesse o painel de administração da VTEX e vá até &lt;strong&gt;Transações &amp;gt; Pagamentos &amp;gt; Configurações&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Selecione a aba &lt;strong&gt;Condições de Pagamento&lt;/strong&gt; e clique no ícone de &lt;strong&gt;mais&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex11pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Procure por &lt;strong&gt;NequiPayu&lt;/strong&gt; usando a barra de pesquisa e selecione-o para abrir a interface de configuração.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex35.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Na interface de configuração:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Defina &lt;strong&gt;NEQUI&lt;/strong&gt; como o nome da condição&lt;/li&gt;
+&lt;li&gt;Escolha o provedor&lt;/li&gt;
+&lt;li&gt;Habilite o método de pagamento&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex36pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Salvar&lt;/strong&gt;. Confirme que o Nequi aparece na aba &lt;strong&gt;Condições de Pagamento&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex37pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uma vez configurado, o Nequi estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até &lt;strong&gt;10 minutos&lt;/strong&gt; para que a opção fique visível.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex41en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;testes-em-sandbox&#34;&gt;Testes em Sandbox&lt;/h6&gt;
+&lt;p&gt;Para obter informações sobre como simular transações do Nequi no ambiente Sandbox, consulte a &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-colombia.html#sanbox-environment-testing&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;documentação da API de Pagamentos&lt;/a&gt;.&lt;/p&gt;
+&lt;h5 id=&#34;configuring-yape&#34;&gt;Configuração do Yape&lt;/h5&gt;
+&lt;p&gt;Adicionar Yape como método de pagamento permite que sua empresa se conecte a milhões de usuários no Peru que preferem carteiras digitais. Com o Yape, os clientes podem pagar de forma fácil e segura usando apenas o número de telefone — ajudando você a aumentar as vendas, atrair novos clientes e garantir transações confiáveis respaldadas pelo BCP (Banco de Crédito do Perú).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Considerações:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Certifique-se de que o Yape esteja habilitado em sua conta PayU e que &lt;strong&gt;o nome do método de pagamento corresponda exatamente ao registrado na PayU&lt;/strong&gt;. Qualquer divergência ou status inativo resultará em erros de transação. Se precisar de ajuda para habilitar o Yape, por favor &lt;a href=&#34;https://colombia.support.payu.com/s/?language=pt_BR&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;entre em contato conosco&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Verifique se sua loja VTEX foi criada com &lt;strong&gt;VTEX IO&lt;/strong&gt; ou &lt;strong&gt;FastStore&lt;/strong&gt;. Em seguida, instale o aplicativo &lt;strong&gt;Pop-up for Online Payment with Yape&lt;/strong&gt; acessando a URL de configuração. Substitua &lt;code&gt;{vtexaccount}&lt;/code&gt; na URL abaixo pelo nome da sua conta VTEX (isto é, o subdomínio que você usa para acessar o painel de administração da VTEX):
+&lt;code&gt;https://{vtexaccount}.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup&lt;/code&gt;
+&lt;br&gt;&lt;strong&gt;Exemplo:&lt;/strong&gt;
+&lt;br&gt;Se sua conta VTEX for &lt;code&gt;payulatam&lt;/code&gt;, a URL será:
+&lt;br&gt;&lt;code&gt;https://payulatam.myvtex.com/admin/apps/payulatam.yape-payment-app-payuv2@1.3.0/setup&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Passo a passo:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Acesse o painel de administração da VTEX e vá até &lt;strong&gt;Transações &amp;gt; Pagamentos &amp;gt; Configurações&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Selecione a aba &lt;strong&gt;Condições de Pagamento&lt;/strong&gt; e clique no ícone de &lt;strong&gt;mais&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex11pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Procure por &lt;strong&gt;YapePayu&lt;/strong&gt; usando a barra de pesquisa e selecione-o para abrir a interface de configuração.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex38.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Na interface de configuração:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Defina &lt;strong&gt;YAPE&lt;/strong&gt; como o nome da condição&lt;/li&gt;
+&lt;li&gt;Escolha o provedor&lt;/li&gt;
+&lt;li&gt;Habilite o método de pagamento&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex39pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Salvar&lt;/strong&gt;. Confirme que o Yape aparece na aba &lt;strong&gt;Condições de Pagamento&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex40pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Uma vez configurado, o Yape estará disponível como opção de pagamento no checkout da VTEX. Observe que pode levar até &lt;strong&gt;10 minutos&lt;/strong&gt; para que a opção fique visível.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex42en.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h6 id=&#34;testes-em-sandbox-1&#34;&gt;Testes em Sandbox&lt;/h6&gt;
+&lt;p&gt;Para obter informações sobre como simular transações do Yape no ambiente Sandbox, consulte a &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations/api-integration/payments-api-peru.html#testando-no-ambiente-de-sandbox&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;documentação da API de Pagamentos&lt;/a&gt;.&lt;/p&gt;
+&lt;h5 id=&#34;configuring-pse&#34;&gt;Configurando PSE&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;Pré-requisitos:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Este método de pagamento está disponível apenas para lojistas que processam pagamentos na Colômbia.&lt;/li&gt;
+&lt;li&gt;Para oferecer PSE como método de pagamento, você deve instalar o &lt;strong&gt;Aplicativo PSE desenvolvido pela VTEX&lt;/strong&gt;. Se ainda não o fez, acesse &lt;strong&gt;Configurações da Conta &amp;gt; Aplicações &amp;gt; App Store&lt;/strong&gt; e procure por &lt;strong&gt;Bancos para PSE&lt;/strong&gt;. &lt;br&gt;Se o aplicativo não estiver disponível na loja, você pode solicitar sua instalação à equipe da VTEX enviando um ticket para o &lt;a href=&#34;https://help.vtex.com/en/support&#34;&gt;Suporte VTEX&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Se você estiver utilizando uma integração VTEX Legacy, a VTEX precisará realizar uma configuração adicional antes que você possa configurar este método de pagamento. Entre em contato com seu representante VTEX ou solicite assistência via &lt;a href=&#34;https://help.vtex.com/en/support&#34;&gt;Suporte VTEX&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;p&gt;Para mais informações, consulte os seguintes recursos da VTEX:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.vtex.com/en/announcements/pse-medio-de-pago-para-clientes-en-colombia--4T22CHOcEV3Nb2RtkJZOFB&#34;&gt;Informações gerais sobre PSE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.vtex.com/en/tutorial/configurar-pago-con-pse--7dRChubn7TqdEyWrHQEQp6&#34;&gt;Configurando pagamentos com PSE na VTEX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apps.vtex.com/vtexlatam-banks-for-pse/p&#34;&gt;Aplicativo Bancos para PSE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Passo a Passo:&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;Configurações da Loja &amp;gt; Pagamentos &amp;gt; Configurações &amp;gt; Condições de Pagamento&lt;/strong&gt;. Em seguida, siga estas etapas:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.1&lt;/span&gt; Clique no botão &lt;strong&gt;+&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.2&lt;/span&gt; Na categoria &lt;strong&gt;Outros&lt;/strong&gt;, localize &lt;strong&gt;PSE&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.3&lt;/span&gt; Preencha os seguintes campos:&lt;/p&gt;
+&lt;p&gt;    &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;•&lt;/span&gt; &lt;strong&gt;Nome da Regra&lt;/strong&gt;: Insira um nome descritivo para identificar este método de pagamento. &lt;br&gt;
+    &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;•&lt;/span&gt; &lt;strong&gt;Processar com Afiliação&lt;/strong&gt;: Selecione a afiliação do gateway configurada para processar pagamentos com PayUV2. &lt;br&gt;
+    &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;•&lt;/span&gt; &lt;strong&gt;Status&lt;/strong&gt;: Ative a condição de pagamento.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;1.4&lt;/span&gt; Clique em &lt;strong&gt;Salvar&lt;/strong&gt; para aplicar as configurações.&lt;/p&gt;
+   &lt;video width=&#34;630&#34; height=&#34;300&#34; controls&gt;
+      &lt;source src=&#34;../../../../assets/VTEX/Videos/Video01.mp4&#34; type=&#34;video/mp4&#34;&gt;  
+   &lt;/video&gt;
+&lt;p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Configure o aplicativo Bancos para PSE com suas credenciais da PayU seguindo estas etapas:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.1&lt;/span&gt; Faça login no painel de administração da VTEX e vá para &lt;strong&gt;Apps &amp;gt; Aplicativos Instalados &amp;gt; Banks for PSE&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;  &lt;span style=&#34;color: #A6C307; font-weight: bold;&#34;&gt;2.2&lt;/span&gt; Preencha o formulário e clique em &lt;strong&gt;Salvar&lt;/strong&gt;.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Conector Utilizado para Processar o PSE&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;PayUv2&lt;/strong&gt; na lista suspensa.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Código da Aplicação&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Insira a chave privada da &lt;strong&gt;Unidade de Negócios&lt;/strong&gt;. Esta informação está disponível no Painel de Controle PayU Enterprise, conforme explicado &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins/vtex.html#configure-the-gateway-affiliation&#34;&gt;aqui&lt;/a&gt;. &lt;br&gt; &lt;strong&gt;Nota:&lt;/strong&gt; Este campo corresponde ao &lt;em&gt;Token de Aplicação&lt;/em&gt; da afiliação VTEX.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Chave da Aplicação&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Insira o ID da &lt;strong&gt;Aplicação da Unidade de Negócios&lt;/strong&gt;. Esta informação está disponível no Painel de Controle PayU Enterprise, conforme explicado &lt;a href=&#34;https://developers.payulatam.com/latam/en/docs/tools/shopping-cart-plugins/vtex.html#configure-the-gateway-affiliation&#34;&gt;aqui&lt;/a&gt;. &lt;br&gt; &lt;strong&gt;Nota:&lt;/strong&gt; Este campo corresponde à &lt;em&gt;Chave da Aplicação&lt;/em&gt; da afiliação VTEX.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex19.png&#34; alt=&#34;PrintScreen&#34; width=&#34;500px&#34;/&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Após concluir a configuração, você poderá processar transações em ambiente de produção com PSE.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+Para testar o PSE em um ambiente sandbox, certifique-se de que sua afiliação VTEX está no modo de teste e que você possui uma configuração adicional específica para o PSE. Para mais orientações, entre em contato com sua agência de implementação ou com o &lt;a href=&#34;https://help.vtex.com/en/support&#34;&gt;Suporte VTEX&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;testing-the-integration&#34;&gt;Testando a Integração&lt;/h2&gt;
+&lt;p&gt;Depois de configurar as condições de pagamento para seus métodos de pagamento, é altamente recomendável testar sua integração antes de processar transações reais.&lt;/p&gt;
+&lt;h3 id=&#34;pré-requisitos-para-testes-bem-sucedidos&#34;&gt;Pré-requisitos para Testes Bem-sucedidos:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Certifique-se de que sua conta PayU Enterprise está no modo &lt;code&gt;TEST&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Verifique se o &lt;strong&gt;Seletor de Ambiente&lt;/strong&gt; em sua &lt;strong&gt;Afiliação ao Gateway VTEX&lt;/strong&gt; está definido como &lt;code&gt;TEST&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Utilize as credenciais de teste apropriadas ao configurar a &lt;strong&gt;Afiliação ao Gateway VTEX&lt;/strong&gt;. Você pode encontrar as credenciais de teste &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/test-your-solution.html&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Após concluir seus testes, atualize a configuração com as informações de produção, incluindo sua conta PayU Enterprise, o seletor de ambiente na afiliação VTEX e as credenciais.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;passos-para-realizar-uma-transação-de-teste&#34;&gt;Passos para Realizar uma Transação de Teste&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no painel de administração VTEX e vá para &lt;strong&gt;VISITAR LOJA&lt;/strong&gt; no menu superior.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex20.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;A loja configurada para sua conta VTEX será aberta. Selecione qualquer produto e prossiga com a compra.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex21.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No carrinho de compras, clique no botão &lt;strong&gt;Fechar Pedido&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex22.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Na seção de pagamento, os métodos de pagamento disponíveis aparecem agrupados por tipo. Selecione o método que deseja testar e insira os dados de teste. Você pode encontrar números de cartões de teste e informações relevantes &lt;a href=&#34;../../../../pt/docs/getting-started/test-your-solution.html#test-cards&#34;&gt;aqui&lt;/a&gt;.&lt;br&gt;
+Por fim, clique em &lt;strong&gt;Finalizar Compra&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex23.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;verificando-a-transação&#34;&gt;Verificando a Transação&lt;/h3&gt;
+&lt;p&gt;Depois que a compra for aprovada, você pode verificar a transação nos seguintes locais:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Admin VTEX&lt;/strong&gt;: Navegue até &lt;strong&gt;Pagamentos &amp;gt; Transações&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex24pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Painel PayU Enterprise&lt;/strong&gt;: Vá para &lt;strong&gt;Pagamentos &amp;gt; Buscar&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex25pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+O parâmetro &lt;strong&gt;ID da Transação Externa&lt;/strong&gt; dentro da &lt;strong&gt;Atividade da Transação&lt;/strong&gt; corresponde ao ID do Pedido na PayU.
+&lt;/div&gt;
+
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Painel de Gestão PayU&lt;/strong&gt;: Verifique a transação no módulo &lt;a href=&#34;../../../../pt/payu-module-documentation/reports/sales-report.html&#34;&gt;&lt;strong&gt;Relatório de Vendas&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex26.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;../../../../pt/docs/services/queries.html&#34;&gt;API de Consultas&lt;/a&gt;&lt;/strong&gt;: Use o &lt;strong&gt;ID da Transação Externa&lt;/strong&gt; como parâmetro &lt;code&gt;OrderID&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;testando-fluxos-de-duas-etapas&#34;&gt;Testando Fluxos de Duas Etapas&lt;/h2&gt;
+&lt;p&gt;Se sua &lt;strong&gt;Afiliação ao Gateway&lt;/strong&gt; estiver configurada para processar transações usando um fluxo de duas etapas, os fundos autorizados no cartão de crédito não serão liquidados até que você solicite explicitamente a liquidação. Para concluir a liquidação, você deve faturar o pedido.&lt;/p&gt;
+&lt;h3 id=&#34;passos-para-faturar-um-pedido&#34;&gt;Passos para Faturar um Pedido&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Localize a transação no &lt;strong&gt;Admin VTEX&lt;/strong&gt;, em &lt;strong&gt;Pagamentos &amp;gt; Transações&lt;/strong&gt;, e clique nela.&lt;br&gt;
+Em seguida, clique no botão &lt;strong&gt;Pedido&lt;/strong&gt; no canto superior direito.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex27.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Role até a seção &lt;strong&gt;Pacote&lt;/strong&gt; e clique em &lt;strong&gt;Faturar Pacote&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex28.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Insira os detalhes da fatura e clique em &lt;strong&gt;Enviar Fatura&lt;/strong&gt;.&lt;br&gt;
+Assim que a fatura for enviada ao cliente, o valor autorizado será cobrado do cartão do cliente.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex29.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Um pedido autorizado pode ser cancelado usando o botão &lt;strong&gt;Cancelar Pedido&lt;/strong&gt; nos detalhes do pedido.&lt;br&gt;
+Quando um pedido é cancelado, a PayU envia uma transação de &lt;em&gt;void&lt;/em&gt;, que é registrada tanto no PayU Enterprise quanto na PayU Latam.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Shopify</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/shopify.html</link>
+      <pubDate>Tue, 25 May 2021 10:30:35 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/shopify.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;Shopify é uma plataforma de comércio que permite criar e gerenciar facilmente sua loja online com poderosas ferramentas integradas. Para mais informações, visite o site oficial da &lt;a href=&#34;https://www.shopify.com&#34; target=&#34;_blank&#34;&gt;Shopify&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;conta PayU Latam ativa&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Um plano válido do Shopify. Note que a funcionalidade de Checkout não está disponível nos planos de teste. Você pode explorar os planos e preços do Shopify &lt;a href=&#34;https://www.shopify.com/br/precos&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;order-management-in-shopify&#34;&gt;Gestão de pedidos no Shopify&lt;/h2&gt;
+&lt;p&gt;Tenha em mente as seguintes disposições ao gerenciar pedidos no Shopify:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;All orders (Todos os pedidos):&lt;/strong&gt; Inclui pedidos com os seguintes 2 estados:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Approved (Aprovado):&lt;/strong&gt; Pedidos que estão pagos integralmente ou parcialmente.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Pending (Pendente):&lt;/strong&gt; Pedidos aguardando conclusão quando o cliente retorna à loja após processar um pagamento pelo gateway.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Abandoned checkouts (Pagamentos abandonados)&lt;/strong&gt;: Aplica-se a processos que:
+&lt;ol&gt;
+&lt;li&gt;Permaneceram incompletos porque o usuário não pôde completar o pagamento ou abandonou o site de compras.&lt;/li&gt;
+&lt;li&gt;Estão marcados como &lt;em&gt;Rejeitados&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Permanecem em estado &lt;em&gt;Pendente&lt;/em&gt; sem que o cliente retorne ao site de compras após o processamento do pagamento pelo gateway, isso inclui:&lt;br&gt;
+&lt;span style=&#34;color: #A6C307;font-weight: bold;&#34;&gt;3.1.&lt;/span&gt; Pagamentos em dinheiro.&lt;br&gt;
+&lt;span style=&#34;color: #A6C307;font-weight: bold;&#34;&gt;3.2.&lt;/span&gt; Pagamentos com cartão de crédito que passam por validação devido às regras de proteção contra fraude.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;O Shopify &lt;strong&gt;NÃO&lt;/strong&gt; reserva inventário para nenhum dos cenários acima.&lt;/li&gt;
+&lt;li&gt;Para os processos considerados como &lt;em&gt;pagamento abandonado&lt;/em&gt;, o sistema só gera pedidos uma vez que a transação atinja o estado &lt;em&gt;Aprovado&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;setting-up-payu-as-payment-gateway&#34;&gt;Configurando o PayU como gateway de pagamento&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login em sua conta do Shopify e baixe o aplicativo PayU Latam v2 na loja de aplicativos clicando &lt;a href=&#34;https://apps.shopify.com/payu-latam-v2?locale=pt-BR&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt; e selecionando &lt;strong&gt;Instalar&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify01PT.png&#34; alt=&#34;PrintScreen&#34; width=&#34;550&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Selecione a loja onde deseja instalar o aplicativo. Você será redirecionado para a página de instalação. Clique em &lt;strong&gt;Instalar&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify02PT.png&#34; alt=&#34;PrintScreen&#34; width=&#34;550&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify03PT.png&#34; alt=&#34;PrintScreen&#34; width=&#34;550&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Escolha o ambiente para a instalação do aplicativo — Teste ou Produção — com base no uso desejado:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Use o &lt;strong&gt;Ambiente de Teste&lt;/strong&gt; se estiver realizando transações de teste com credenciais sandbox.&lt;/li&gt;
+&lt;li&gt;Use o &lt;strong&gt;Ambiente de Produção&lt;/strong&gt; apenas se estiver pronto para processar pagamentos reais com credenciais ativas.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Certifique-se de não usar credenciais de teste no ambiente de produção, ou vice-versa. Isso pode resultar em erros ou falhas nas transações.&lt;/li&gt;
+&lt;li&gt;Encontre suas credenciais do ambiente de produção acessando o &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;Painel de Gestão da PayU&lt;/a&gt;, onde você pode localizar o &lt;strong&gt;Merchant ID&lt;/strong&gt; e o &lt;strong&gt;Account ID&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Encontre as credenciais do ambiente de teste &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/test-your-solution.html&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Você também pode verificar ou alterar suas credenciais nas configurações da sua conta Shopify.&lt;/li&gt;
+&lt;li&gt;Você precisa de um Account ID por loja no Shopify.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Após selecionar o ambiente correto, insira seu &lt;strong&gt;Merchant ID&lt;/strong&gt; e &lt;strong&gt;Account ID&lt;/strong&gt;, e clique em &lt;strong&gt;Salvar&lt;/strong&gt; para confirmar.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify04EN.png&#34; alt=&#34;PrintScreen&#34; width=&#34;450&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Você será redirecionado para a página de Pagamentos. Para ativar o aplicativo, clique no botão &lt;strong&gt;Ativar&lt;/strong&gt; localizado no canto inferior direito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify06PT.png&#34; alt=&#34;PrintScreen&#34; width=&#34;600&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Para sua informação, você verá vários métodos de pagamento. Para prosseguir, você deve selecionar pelo menos um deles. Isso não alterará os métodos de pagamento disponíveis no Checkout Web da PayU.&lt;/li&gt;
+&lt;li&gt;Modo de teste: dentro da mesma seção &lt;em&gt;Pagamentos&lt;/em&gt;, você encontrará a opção para usar o modo de teste, permitindo que você conduza testes no ambiente Sandbox.&lt;/li&gt;
+&lt;li&gt;Recomendamos que você utilize o ambiente de teste de forma controlada, preferencialmente durante os horários de menor movimento, já que as transações processadas em modo de teste não resultam em pagamentos reais e o ambiente de produção permanece desativado.&lt;/li&gt;
+&lt;li&gt;Para desativar o modo de teste, desmarque a caixa:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify07PT.png&#34; alt=&#34;PrintScreen&#34; width=&#34;600&#34;&gt;
+
+&lt;/div&gt;
+
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Acesse seu &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module.html&#34; target=&#34;_blank&#34;&gt;Painel de Gestão da PayU&lt;/a&gt;, vá para a seção &lt;strong&gt;Configurações&lt;/strong&gt; e clique em &lt;strong&gt;Configurações Técnicas&lt;/strong&gt;. Ative a opção chamada &lt;strong&gt;Controlar pagamentos duplicados (Validar referência única)&lt;/strong&gt; para evitar problemas durante o processamento do pagamento.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/Shopify/Shopify08PT.png&#34; alt=&#34;PrintScreen&#34; width=&#34;600&#34;&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;A partir de agora, o PayU está configurado como seu processador de pagamento, permitindo que você inicie suas vendas. Com o Checkout Web da PayU, seus clientes podem fazer compras usando vários métodos de pagamento, incluindo dinheiro, cartões de crédito e transferências bancárias, adaptados ao país onde você está realizando negócios.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;payment-flow-in-shopify&#34;&gt;Fluxo de pagamento no Shopify&lt;/h2&gt;
+&lt;p&gt;Ao configurar o PayU como portal de pagamento na plataforma, seu cliente pode pagar conforme explicado a seguir.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Seu cliente seleciona o produto ou serviço que deseja comprar e o adiciona ao carrinho de compras.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_08_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;No carrinho de compras, seu cliente segue para a finalização da compra.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_09_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Depois que seu cliente fornece suas informações, ele pode clicar em &lt;em&gt;&lt;strong&gt;Finalizar a compra&lt;/strong&gt;&lt;/em&gt; e ser redirecionado para PayU Latam para concluir o pagamento.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_10_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Quando está em nosso portal de pagamento, ele pode ver a descrição da venda e os métodos de pagamento disponíveis para o seu país.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Shopify/Shopify_11_pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Se precisar emitir um reembolso total ou parcial, você pode gerenciá-lo diretamente no administrador da loja Shopify. Para obter mais informações, clique &lt;a href=&#34;https://help.shopify.com/pt-BR/manual/orders/cancel-delete-order&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Omnibees</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/omnibees.html</link>
+      <pubDate>Mon, 10 Mar 2025 10:30:35 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/omnibees.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;O Omnibees é uma plataforma de distribuição e gerenciamento de hotéis que fornece tecnologia para que os hotéis gerenciem reservas e otimizem a receita em vários canais de vendas. Para mais informações, visite o &lt;a href=&#34;https://omnibees.com&#34; target=&#34;_blank&#34;&gt;site oficial do Omnibees&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Antes de integrar o PayU com o Omnibees, certifique-se de ter o seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;conta PayU Latam ativa&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://control.paymentsos.com/signup&#34; target=&#34;_blank&#34;&gt;conta PayU Enterprise (PaymentsOS) ativa&lt;/a&gt; no modo de produção/ao vivo (veja os detalhes de ativação abaixo).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ativando-sua-conta-payu-enterprise-modo-ao-vivo&#34;&gt;Ativando sua Conta PayU Enterprise (Modo ao vivo)&lt;/h2&gt;
+&lt;p&gt;Por padrão, novas contas são configuradas no modo de teste. Para habilitar transações ao vivo, entre em contato com seu gerente de conta e envie uma solicitação com os seguintes detalhes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Merchant ID:&lt;/strong&gt; Localize o Merchant ID da sua conta LATAM no &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html#merchant-and-account-ids&#34; target=&#34;_blank&#34;&gt;Painel de Gerenciamento do PayU&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account ID:&lt;/strong&gt; Encontre seu Account ID no painel de controle do PayU Enterprise clicando no seu nome de usuário no canto superior direito.
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex01pt.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;integrando-o-payu-com-o-omnibees&#34;&gt;Integrando o PayU com o Omnibees&lt;/h2&gt;
+&lt;p&gt;A integração consiste em duas etapas principais:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Configurando sua conta PayU Enterprise&lt;/li&gt;
+&lt;li&gt;Entrando em contato com o Omnibees para habilitar a integração&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;1-configurando-sua-conta-payu-enterprise&#34;&gt;1. Configurando sua Conta PayU Enterprise&lt;/h3&gt;
+&lt;p&gt;O PayU Enterprise opera através do PaymentsOS, que atua como middleware entre o PayU Latam e o Omnibees. A configuração inclui os seguintes componentes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configuração do provedor&lt;/li&gt;
+&lt;li&gt;Configuração da unidade de negócios&lt;/li&gt;
+&lt;li&gt;Criação de webhook&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;11-configurando-um-provedor&#34;&gt;1.1 Configurando um Provedor&lt;/h4&gt;
+&lt;p&gt;Um &lt;em&gt;provedor&lt;/em&gt; armazena suas credenciais de processamento de pagamento. Siga estas etapas para configurar um:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No painel do PayU Enterprise, navegue até &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Providers&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VTEX/vtex02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Clique no módulo correspondente ao país ou divisão que você está configurando.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Preencha os seguintes campos:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Configuration Name&lt;/td&gt;
+&lt;td&gt;Insira um nome para a configuração do provedor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Forneça uma descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiLogin&lt;/td&gt;
+&lt;td&gt;Nome de usuário ou login fornecido pelo PayU. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Obter API Login&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apiKey&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;../../../../pt/docs/integrations.html#api-key-and-api-login&#34;&gt;Obter API Key&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;accountId&lt;/td&gt;
+&lt;td&gt;ID da conta PayU com base no seu país de operação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;merchantId&lt;/td&gt;
+&lt;td&gt;Seu ID de comércio no PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;paymentCountry&lt;/td&gt;
+&lt;td&gt;País de processamento no formato ISO 3166 Alpha-3.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;multicapture&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;None&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cashRedirect&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;None&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;p&gt;Se você estiver usando versões mais antigas do Módulo Administrativo do PayU, encontre as informações da sua conta em &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Technical Information&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/omnibees/omnibees1.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees2.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;h4 id=&#34;12-criando-uma-unidade-de-negócios&#34;&gt;1.2 Criando uma Unidade de Negócios&lt;/h4&gt;
+&lt;p&gt;Uma &lt;em&gt;unidade de negócios&lt;/em&gt; vincula a configuração do provedor com as credenciais da API do PayU Enterprise para processar transações. Siga estas etapas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No painel, vá para &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Business Units&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex04.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Create Business Unit&lt;/strong&gt; e insira:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Business Unit Name&lt;/td&gt;
+&lt;td&gt;Deve estar em minúsculas e não conter espaços. &lt;strong&gt;Este valor não pode ser alterado posteriormente, portanto, garanta a precisão.&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Description&lt;/td&gt;
+&lt;td&gt;Descrição opcional.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Na seção &lt;strong&gt;Choose a Default Provider for This Business Unit&lt;/strong&gt;, selecione o provedor criado na Etapa 1.1 e clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees3.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 700px; height: auto;&#34;&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+&lt;p&gt;Você pode clicar na guia da unidade de negócios para recuperar os seguintes detalhes necessários para a integração do Omnibees: &lt;strong&gt;App ID&lt;/strong&gt;, &lt;strong&gt;Public API key&lt;/strong&gt; e &lt;strong&gt;Private API key&lt;/strong&gt;.&lt;/p&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees4.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 450px; height: auto;&#34;&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&#34;13-criando-um-webhook&#34;&gt;1.3 Criando um Webhook&lt;/h4&gt;
+&lt;p&gt;O webhook recebe notificações do Omnibees quando o status de uma transação muda. Siga estas etapas:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;No painel, navegue até &lt;strong&gt;Configurations&lt;/strong&gt; &amp;gt; &lt;strong&gt;Webhooks&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/VTEX/vtex06.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 400px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Create a Webhook Endpoint&lt;/strong&gt; e insira:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://paymentgateways.omnibees.com/PayUWebhookService.ashx
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Habilite &lt;strong&gt;Update&lt;/strong&gt; e &lt;strong&gt;Create&lt;/strong&gt; para o evento &lt;strong&gt;Charge&lt;/strong&gt; em &lt;strong&gt;Payment Event Alerts&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Atribua o webhook à unidade de negócios criada anteriormente e selecione a versão mais recente do webhook.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Create&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/omnibees/omnibees5.png&#34; alt=&#34;PrintScreen&#34; style=&#34;width: 600px; height: auto;&#34;&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;2-entrando-em-contato-com-o-omnibees-para-habilitar-a-integração&#34;&gt;2. Entrando em Contato com o Omnibees para Habilitar a Integração&lt;/h2&gt;
+&lt;p&gt;Depois que os componentes do PayU Enterprise estiverem configurados, envie um e-mail para &lt;strong&gt;&lt;a href=&#34;mailto:servicedesk@omnibees.com&#34;&gt;servicedesk@omnibees.com&lt;/a&gt;&lt;/strong&gt; para solicitar a ativação. Inclua os seguintes detalhes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;App ID&lt;/li&gt;
+&lt;li&gt;Public API key&lt;/li&gt;
+&lt;li&gt;Private API key&lt;/li&gt;
+&lt;li&gt;Unidade de negócios (opcional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;gerenciamento-de-usuários-no-payu-enterprise&#34;&gt;Gerenciamento de Usuários no PayU Enterprise&lt;/h2&gt;
+&lt;p&gt;O PayU Enterprise permite acesso de usuário baseado em função para unidades de negócios. Para obter detalhes sobre o gerenciamento de usuários e permissões, consulte a &lt;a href=&#34;https://developers.paymentsos.com/docs/features/control-center.html#user-management&#34; target=&#34;_blank&#34;&gt;documentação do PayU Enterprise&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Drupal</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/drupal.html</link>
+      <pubDate>Wed, 26 May 2021 08:38:45 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/drupal.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Você precisa de uma conta ativa no PayU Latam.&lt;/li&gt;
+&lt;li&gt;Ter instalado &lt;a href=&#34;https://www.drupal.org/project/commerce_kickstart&#34;&gt;Drupal Commerce Kickstart 7.xx&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Ter o plugin Drupal do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/commerce_payulatam_1.0.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;li&gt;Ter acesso à pasta de instalação do Drupal.&lt;/li&gt;
+&lt;li&gt;Ter acesso ao backend do Drupal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Instalação&lt;/h2&gt;
+&lt;p&gt;O processo de instalação do plugin no servidor Drupal exige apenas a descompactação do plugin em &lt;em&gt;&lt;strong&gt;\sites\all\modules&lt;/strong&gt;&lt;/em&gt;. A pasta descompactada tem a seguinte estrutura:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Drupal/Drupal_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuração&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Faça login no painel de administração do Drupal. Abra o menu &lt;em&gt;&lt;strong&gt;Site settings&lt;/strong&gt;&lt;/em&gt; e clique na opção &lt;em&gt;&lt;strong&gt;Modules&lt;/strong&gt;&lt;/em&gt; na seção &lt;em&gt;&lt;strong&gt;Advanced settings&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Drupal/Drupal_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Localize e ative o módulo &lt;em&gt;&lt;strong&gt;Payment Payulatam&lt;/strong&gt;&lt;/em&gt;. Você pode usar o filtro de busca para encontrá-lo mais facilmente.&lt;br&gt;
+Assim que terminar, clique em &lt;em&gt;&lt;strong&gt;Save configuration&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Drupal/Drupal_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Volte ao painel de administração do Drupal. Abra o menu &lt;em&gt;&lt;strong&gt;Store settings&lt;/strong&gt;&lt;/em&gt; e clique em &lt;em&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;&lt;/em&gt;.&lt;br&gt;
+Encontrar &lt;em&gt;&lt;strong&gt;Payment gateway PayuLatam&lt;/strong&gt;&lt;/em&gt; na lista &lt;em&gt;&lt;strong&gt;Disabled payment method rules&lt;/strong&gt;&lt;/em&gt; e clicar em &lt;em&gt;&lt;strong&gt;enable&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Drupal/Drupal_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Se a ativação foi bem-sucedida, o Drupal mostra a seguinte mensagem&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Drupal/Drupal_05.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Agora clique no link &lt;em&gt;&lt;strong&gt;edit&lt;/strong&gt;&lt;/em&gt; no método habilitado recentemente.&lt;br&gt;
+Em seguida, localize a seção &lt;em&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/em&gt; e clique em &lt;em&gt;&lt;strong&gt;edit&lt;/strong&gt;&lt;/em&gt; ao lado da ação &lt;em&gt;&lt;strong&gt;Enable payment method: PayuLatam&lt;/strong&gt;&lt;/em&gt;. Aqui, configure o plugin usando sua conta PayU.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/Drupal/Drupal_06.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;API KEY&lt;/strong&gt;: Chave única da sua loja. Você pode obter esta informação no seu Módulo PayU (&lt;strong&gt;&lt;em&gt;Configuração&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;Configuração técnica&lt;/em&gt;&lt;/strong&gt; &amp;gt; &lt;strong&gt;&lt;em&gt;API Key&lt;/em&gt;&lt;/strong&gt;).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Merchant Id&lt;/strong&gt;: ID da sua loja no PayU Latam.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Account Id&lt;/strong&gt;: ID da conta PayU de acordo com o país onde você quer vender.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Enabled&lt;/strong&gt;: Definir &lt;code&gt;No&lt;/code&gt; se você deseja processar no ambiente de produção. Caso contrário, definir &lt;code&gt;Yes&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Deixe os outros campos com os valores pré-configurados.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+&lt;p&gt;Para fins de teste, você pode usar o  &lt;strong&gt;Merchant ID&lt;/strong&gt;, a &lt;strong&gt;APIKey&lt;/strong&gt; e o &lt;strong&gt;Account ID&lt;/strong&gt; disponíveis em &lt;a href=&#34;../../../../pt/docs/getting-started/test-your-solution.html&#34;&gt;Teste sua solução&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Assim que estiver no formulário de pagamento com cartão de crédito e observar a mensagem na parte superior do gateway  &lt;em&gt;Transação em modo de teste&lt;/em&gt;, você deve:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Insira o texto &lt;code&gt;APPROVED&lt;/code&gt; no campo Nome Completo se você deseja que a transação seja aprovada, &lt;code&gt;REJECTED&lt;/code&gt; se você quer que seja rejeitada ou &lt;code&gt;PENDING&lt;/code&gt; se você quiser que fique pendente.&lt;/li&gt;
+&lt;li&gt;Você deve inserir um número de cartão válido no campo Número do Cartão de acordo com a franquia selecionada. Para isso, você pode usar um gerador de cartão de crédito online.&lt;/li&gt;
+&lt;li&gt;Todos os outros campos podem ser aleatórios.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Nesta etapa seus clientes podem pagar com PayU Latam quando fizerem o checkout com o carrinho de compras do Drupal.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: VirtueMart</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/virtuemart.html</link>
+      <pubDate>Wed, 26 May 2021 08:39:05 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/virtuemart.html</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Você precisa de uma conta ativa no PayU Latam.&lt;/li&gt;
+&lt;li&gt;Para VirtueMart versão 2 ou superior:
+&lt;ul&gt;
+&lt;li&gt;Ter o plugin VirtueMart do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart2.6.7.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;li&gt;Ter o VirtueMart versão 2 ou superior instalado.&lt;/li&gt;
+&lt;li&gt;Seu site VirtueMart deve ser instalado em &lt;a href=&#34;https://joomla.org/&#34;&gt;Joomla!®&lt;/a&gt; 2.5 ou superior com MySQL 5.1 ou superior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Para VirtueMart versão 3.0.6:
+&lt;ul&gt;
+&lt;li&gt;Ter o plugin VirtueMart do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-joomla-virtuemart3.0.6.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;li&gt;Ter o VirtueMart versão 3.0.6 installed.&lt;/li&gt;
+&lt;li&gt;Seu site VirtueMart deve ser instalado em &lt;a href=&#34;https://joomla.org/&#34;&gt;Joomla!®&lt;/a&gt; versions 3.3.6, 2.5.28 ou 2.5.27.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;plugin-for-virtuemart-2-or-higher&#34;&gt;Plugin para VirtueMart 2 ou superior&lt;/h2&gt;
+&lt;p&gt;Siga o próximo procedimento para instalar e configurar o plugin em seu site.&lt;/p&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Instalação&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Abra o &lt;em&gt;Console do Administrador Joomla!®&lt;/em&gt; e selecione a opção &lt;em&gt;&lt;strong&gt;Extension Manager&lt;/strong&gt;&lt;/em&gt; localizada no menu &lt;em&gt;&lt;strong&gt;Extension&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart_01.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Na seção &lt;em&gt;&lt;strong&gt;Upload Package File&lt;/strong&gt;&lt;/em&gt;, clique em &lt;em&gt;&lt;strong&gt;Browse&lt;/strong&gt;&lt;/em&gt; e localize o arquivo &lt;em&gt;.zip&lt;/em&gt; do plugin PayU baixado.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart_02.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Assim que o procedimento de instalação for concluído, uma mensagem aparecerá para informar que a instalação foi bem-sucedida.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart_03.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuration&#34;&gt;Configuração&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Expanda a opção &lt;em&gt;&lt;strong&gt;Shop&lt;/strong&gt;&lt;/em&gt; no menu &lt;em&gt;&lt;strong&gt;VirtueMart&lt;/strong&gt;&lt;/em&gt; e selecione &lt;em&gt;&lt;strong&gt;Payment methods&lt;/strong&gt;&lt;/em&gt;. Depois, clique em &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; no canto superior direito da tela.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart_04.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Na guia &lt;em&gt;&lt;strong&gt;Payment Method Information&lt;/strong&gt;&lt;/em&gt;, definir &lt;em&gt;Payulatam&lt;/em&gt; como &lt;em&gt;&lt;strong&gt;Payment Name&lt;/strong&gt;&lt;/em&gt; e selecionar &lt;code&gt;PayuLatam&lt;/code&gt; no campo &lt;em&gt;&lt;strong&gt;Payment Method&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart_05.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Acesse a guia &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; e forneça as informações de sua conta e sua API key.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart_06.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Depois, forneça a URL de conexão para o portal e as variáveis de configuração explicadas na seção &lt;a href=&#34;#configuration-variables&#34;&gt;Variáveis de configuração&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As URLs para ambientes de teste e produção são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Teste: &lt;code&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Produção: &lt;code&gt;https://gateway.payulatam.com/ppp-web-gateway/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Finalmente, clique no botão &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; ou &lt;em&gt;&lt;strong&gt;Save &amp;amp; Close&lt;/strong&gt;&lt;/em&gt;. Nesta etapa, seus clientes podem pagar com PayU Latam usando o carrinho de compras VirtueMart.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;plugin-for-virtuemart-306&#34;&gt;Plugin para VirtueMart 3.0.6&lt;/h2&gt;
+&lt;p&gt;Siga o próximo procedimento para instalar e configurar o plugin em seu site.&lt;/p&gt;
+&lt;h3 id=&#34;installation&#34;&gt;Instalação&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Abra o &lt;em&gt;Console do Administrador Joomla!®&lt;/em&gt; e selecione a opção &lt;em&gt;&lt;strong&gt;Extension Manager&lt;/strong&gt;&lt;/em&gt; dentro do menu &lt;em&gt;&lt;strong&gt;Extensions&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_02.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;No campo &lt;em&gt;&lt;strong&gt;Extension package file&lt;/strong&gt;&lt;/em&gt;, escolha o arquivo &lt;em&gt;.zip&lt;/em&gt; baixado anteriormente.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_03.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Depois de carregar o arquivo &lt;em&gt;.zip&lt;/em&gt;, clique em &lt;em&gt;&lt;strong&gt;Upload &amp;amp; Install&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_05.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Assim que o procedimento de instalação for concluído, aparecerá uma mensagem para informar que a instalação foi bem-sucedida.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_06.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;configuration&#34;&gt;Configuração&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;No menu esquerdo, clique em &lt;em&gt;&lt;strong&gt;Manage&lt;/strong&gt;&lt;/em&gt;. Encontre e habilite o plugin &lt;code&gt;PayuLatam&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_07.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Aparecerá uma mensagem informando que você habilitou o plugin. Além disso, o ícone muda para uma marca de verificação.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_08.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Abra o menu &lt;em&gt;&lt;strong&gt;Components&lt;/strong&gt;&lt;/em&gt; e expanda a opção &lt;em&gt;&lt;strong&gt;Virtuemart&lt;/strong&gt;&lt;/em&gt;. Depois, selecione &lt;em&gt;&lt;strong&gt;Payment Methods&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_09.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Na janela aberta, clique em &lt;em&gt;&lt;strong&gt;New&lt;/strong&gt;&lt;/em&gt; para criar um método de pagamento usando o &lt;code&gt;PayuLatam&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_10.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Na guia &lt;em&gt;&lt;strong&gt;Payment Method Information&lt;/strong&gt;&lt;/em&gt;, definir &lt;em&gt;Payulatam&lt;/em&gt; como &lt;em&gt;&lt;strong&gt;Payment Name&lt;/strong&gt;&lt;/em&gt; e selecionar &lt;code&gt;PayuLatam&lt;/code&gt; no campo &lt;em&gt;&lt;strong&gt;Payment Method&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_11.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Acesse a guia &lt;em&gt;&lt;strong&gt;Configuration&lt;/strong&gt;&lt;/em&gt; e forneça as informações de sua conta e sua API key.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/VirtueMart/VirtueMart3_13.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Depois, forneça a URL de conexão para o portal e as variáveis de configuração explicadas na seção &lt;a href=&#34;#configuration-variables&#34;&gt;Variáveis de configuração&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As URLs para ambientes de teste e produção são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Teste: &lt;code&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Produção: &lt;code&gt;https://gateway.payulatam.com/ppp-web-gateway/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Finalmente, clique no botão &lt;em&gt;&lt;strong&gt;Save&lt;/strong&gt;&lt;/em&gt; ou &lt;em&gt;&lt;strong&gt;Save &amp;amp; Close&lt;/strong&gt;&lt;/em&gt;. Nesta etapa, seus clientes podem pagar com PayU Latam usando o carrinho de compras VirtueMart.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;configuration-variables&#34;&gt;Configuração variables&lt;/h2&gt;
+&lt;p&gt;Regardless of the VirtueMart version you use, set and configure the following variables in your plugin:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Logo&lt;/td&gt;
+&lt;td&gt;Logo exibido para o método de pagamento &lt;strong&gt;PayuLatam&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Test URL&lt;/td&gt;
+&lt;td&gt;URL do Gateway para teste: &lt;code&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Production URL&lt;/td&gt;
+&lt;td&gt;URL do Gateway para produção: &lt;code&gt;https://gateway.payulatam.com/ppp-web-gateway&lt;/code&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Test Mode&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;Yes&lt;/strong&gt; se você deseja fazer transações no ambiente de teste. Quando você ativa esta opção, o VirtueMart usa a URL configurada na variável da &lt;strong&gt;Test URL&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID da sua loja no PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta PayU de acordo com o país onde você quer vender.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API Key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio, que você encontra no Módulo PayU.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Seção &lt;strong&gt;ORDER STATUS PARAMS&lt;/strong&gt;&lt;br&gt;&lt;ul style=&#34;margin-bottom: initial;&#34;&gt;&lt;li&gt;Transações aprovadas&lt;/li&gt;&lt;li&gt;Transações Pendentes&lt;/li&gt;&lt;li&gt;Transações recusadas&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;Define o estado da ordem no VirtueMart de acordo com o estado da transação fornecido por PayU. Sugerimos manter os estados padrão. No entanto, você pode configurá-los de acordo com as necessidades dos seus negócios.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Currency&lt;/td&gt;
+&lt;td&gt;Defina USD. Além disso, você pode configurar a moeda do país do ID da conta.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Minimum Value / Maximum value&lt;/td&gt;
+&lt;td&gt;O valor total de uma ordem deve estar dentro deste limite para ativar a forma de pagamento PayuLatam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tax&lt;/td&gt;
+&lt;td&gt;Para usar esta opção, configure a regra VirtueMart correspondente ao imposto associado. Por exemplo, IVA para a Colômbia.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: WooCommerce</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/woocommerce.html</link>
+      <pubDate>Wed, 26 May 2021 08:40:03 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/woocommerce.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;WooCommerce é um plugin para WordPress que facilita a criação de uma loja online integrada. Para permitir que seus clientes paguem com PayU de seu site, você precisa instalar o plugin para WooCommerce, que integra PayU Latam como um portal de pagamento válido. Para obter mais informações sobre WooCommerce, consulte o &lt;a href=&#34;https://woocommerce.com/&#34;&gt;site oficial&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Você precisa de uma conta ativa no PayU Latam.&lt;/li&gt;
+&lt;li&gt;Ter instalado &lt;a href=&#34;https://wordpress.com/en&#34;&gt;WordPress 3.8&lt;/a&gt; ou superior.&lt;/li&gt;
+&lt;li&gt;Ter instalado WooCommerce 2.0 ou superior no site WordPress.&lt;/li&gt;
+&lt;li&gt;Ter o plugin WooCommerce do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/woocommerce-payu-latam-2.1.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Instalação&lt;/h2&gt;
+&lt;p&gt;Siga o próximo procedimento para instalar o plugin em seu site.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Faça login no seu site WordPress como administrador.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;No Painel, expanda o menu &lt;em&gt;&lt;strong&gt;Plugins&lt;/strong&gt;&lt;/em&gt; à esquerda e clique em &lt;em&gt;&lt;strong&gt;Add New&lt;/strong&gt;&lt;/em&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_01.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Acesse a opção &lt;em&gt;&lt;strong&gt;Upload&lt;/strong&gt;&lt;/em&gt; e escolha o arquivo &lt;em&gt;.zip&lt;/em&gt; do plugin WooCommerce baixado.&lt;br&gt;
+Depois, clique em &lt;em&gt;&lt;strong&gt;Install Now&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_02.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Forneça os dados da conexão via FTP e clique em &lt;em&gt;&lt;strong&gt;Proceed&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_03.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Esta etapa depende da configuração inicial do WordPress. A instalação do plugin não é afetada se esta tela não for exibida.
+&lt;/div&gt;
+
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Por fim, ative o plugin que você instalou clicando no botão &lt;em&gt;&lt;strong&gt;Activate Plugin&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_04.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuração&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;De volta ao painel, expanda o menu &lt;em&gt;&lt;strong&gt;WooCommerce&lt;/strong&gt;&lt;/em&gt; no painel esquerdo e clique em &lt;em&gt;&lt;strong&gt;Settings&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_05.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Acesse a aba &lt;em&gt;&lt;strong&gt;Checkout&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_06.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Role para baixo até a tabela &lt;em&gt;&lt;strong&gt;Payment Gateways&lt;/strong&gt;&lt;/em&gt; Depois, encontre &lt;em&gt;PayU Latam&lt;/em&gt; e arraste e solte no topo da tabela.&lt;br&gt;
+Clique no rádio da coluna &lt;em&gt;&lt;strong&gt;Default&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_07.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Salve as alterações.&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Clique no link &lt;em&gt;PayU Latam&lt;/em&gt; no topo da aba e configure os dados de sua conta PayU.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/WooCommerce/WooCommerce_09.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;A tabela a seguir explica os valores:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Enable / Disable&lt;/td&gt;
+&lt;td&gt;Marque esta caixa de seleção para habilitar o portal de pagamento no WooCommerce.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Title&lt;/td&gt;
+&lt;td&gt;Título exibido para o método de pagamento. o valor padrão é &lt;em&gt;PayU Latam&lt;/em&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID da sua loja no PayU Latam&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta PayU de acordo com o país onde você quer vender.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio, que você encontra no Módulo PayU.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gateway URL&lt;/td&gt;
+&lt;td&gt;URL do Gateway.&lt;br&gt;Para teste, você pode usar &lt;a href=&#34;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu&#34;&gt;https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu&lt;/a&gt; e para produção &lt;a href=&#34;https://checkout.payulatam.com/ppp-web-gateway-payu&#34;&gt;https://checkout.payulatam.com/ppp-web-gateway-payu&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Transaction in test mode&lt;/td&gt;
+&lt;td&gt;Marque esta caixa de seleção para fazer as transações no modo de teste.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Response page&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php&#34;&gt;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/response.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;https://your.domain.com&#34;&gt;https://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Confirmation page&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php&#34;&gt;https://your.domain.com/wp-content/plugins/woocommerce-payu-latam/confirmation.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;https://your.domain.com&#34;&gt;https://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Por fim, clique no botão &lt;em&gt;&lt;strong&gt;Save changes&lt;/strong&gt;&lt;/em&gt;. Nesta etapa seus clientes podem pagar com PayU Latam quando fizerem o checkout com o carrinho de compras do WooCommerce.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: osCommerce</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/oscommerce.html</link>
+      <pubDate>Wed, 26 May 2021 08:39:47 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/oscommerce.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;O osCommerce é uma plataforma desenvolvida em PHP que facilita a criação de uma loja online. Para permitir que seus clientes paguem com PayU de seu site, você precisa instalar o plugin para osCommerce, que integra PayU Latam como um portal de pagamento válido. Para obter mais informações sobre osCommerce, consulte o &lt;a href=&#34;https://www.oscommerce.com/&#34;&gt;site oficial&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Você precisa de uma conta ativa no PayU Latam.&lt;/li&gt;
+&lt;li&gt;Ter instalado &lt;a href=&#34;https://www.oscommerce.com/Products&#34;&gt;osCommerce version 2.3&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Ter o plugin osCommerce do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-oscommerce.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Instalação&lt;/h2&gt;
+&lt;p&gt;Siga o próximo procedimento para instalar o plugin em seu site.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Descompacte o arquivo do plugin em um local de sua escolha. A partir de agora, vamos direcionar este local para &lt;code&gt;[PLUGIN_PATH]&lt;/code&gt;.&lt;br&gt;
+Neste caminho, você encontra a pasta &lt;code&gt;oscommerce-plugin-1.0&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_01.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Usando FTP ou fazendo login como Administrador no servidor onde o osCommerce está instalado, inclua os arquivos de plug-in no servidor da seguinte maneira:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;No caminho do servidor &lt;code&gt;/[servidor]/apache/[publication_path]/oscommerce/catalog&lt;/code&gt;, copie os arquivos de plugin &lt;code&gt;confirmation_payu.php&lt;/code&gt; e &lt;code&gt;response_payu.php&lt;/code&gt;. Esses arquivos estão localizados no caminho &lt;code&gt;[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_02.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No caminho do servidor &lt;code&gt;/[servidor]/apache/[publication_path]/oscommerce/catalog/includes/languages/english/modules/&lt;/code&gt;, copie o arquivo do plugin &lt;code&gt;‘payu_latam.php&lt;/code&gt; localizado no caminho &lt;code&gt;[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\languages\english\modules\payment&lt;/code&gt;.&lt;br&gt;&lt;br&gt;
+&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_03.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;br&gt;
+Repita esta etapa para espanhol e português se você os instalou em seu site osCommerce. Esses arquivos estão localizados no caminho:&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;ES: &lt;code&gt;[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\languages\espanol\modules\payment&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;PT: &lt;code&gt;[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\languages\portugues\modules\payment&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+O plugin PayU Latam para osCommerce está disponível apenas para inglês, espanhol e português.
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No caminho do servidor &lt;code&gt;/[servidor]/apache/[publication_path]/oscommerce/catalog/includes/modules/payment/&lt;/code&gt;, copie o arquivo do plugin &lt;code&gt;‘payu_latam.php&lt;/code&gt; localizado no caminho &lt;code&gt;[PLUGIN_PATH]\oscommerce-plugin-1.0\oscommerce-payu-latam-1.0\catalog\includes\modules\payment&lt;/code&gt;. Este arquivo não é o mesmo que o mencionado anteriormente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_04.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;No painel de administração do osCommerce, expanda o menu &lt;em&gt;&lt;strong&gt;Modules&lt;/strong&gt;&lt;/em&gt; no painel esquerdo e selecione a opção &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_05.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Na seção Pagamento, clique no botão &lt;em&gt;&lt;strong&gt;Install Module&lt;/strong&gt;&lt;/em&gt; localizado no canto superior direito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_06.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Encontre o plugin &lt;code&gt;Payu Latam&lt;/code&gt; e clique nele. Depois, clique no botão &lt;em&gt;&lt;strong&gt;Install Module&lt;/strong&gt;&lt;/em&gt; no painel direito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_07.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Depois de instalar o plugin, a lista de módulos instalados do plugin &lt;code&gt;Payu Latam&lt;/code&gt; aparece no painel direito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_08.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuration&#34;&gt;Configuração&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Na seção Payment, selecione o método de pagamento &lt;em&gt;&lt;strong&gt;Payu Latam&lt;/strong&gt;&lt;/em&gt; e clique no botão &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt; no painel direito.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_09.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;O seguinte formulário de configuração aparece&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_10.jpg&#34; width=&#34;30%&#34; alt=&#34;PrintScreen&#34;/&gt;
+&lt;br&gt;
+&lt;p&gt;Configure-o usando as informações de sua conta PayU da seguinte forma:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Enable / Disable&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;True&lt;/strong&gt; para habilitar o portal de pagamento no osCommerce.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID da sua loja no PayU Latam&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta PayU de acordo com o país onde você quer vender.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio, que você encontra no Módulo PayU.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Gateway URL&lt;/td&gt;
+&lt;td&gt;URL do Gateway.&lt;br&gt;Para teste, você pode usar &lt;a href=&#34;https://sandbox.gateway.payulatam.com/ppp-web-gateway&#34;&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/a&gt; e para produção &lt;a href=&#34;https://gateway.payulatam.com/ppp-web-gateway/&#34;&gt;https://gateway.payulatam.com/ppp-web-gateway/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Transaction Mode&lt;/td&gt;
+&lt;td&gt;Selecione &lt;strong&gt;Test&lt;/strong&gt; se você deseja processar no ambiente de teste. Caso contrário, selecione &lt;strong&gt;Live&lt;/strong&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Response page&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;http://your.domain.com/yourOscommerceFolder/catalog/response_payu.php&#34;&gt;http://your.domain.com/yourOscommerceFolder/catalog/response_payu.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;http://your.domain.com&#34;&gt;http://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Confirmation page&lt;/td&gt;
+&lt;td&gt;URL da página de resposta.&lt;br&gt;Por padrão, a URL é &lt;a href=&#34;http://your.domain.com/yourOscommerceFolder/catalog/confirmation_payu.php&#34;&gt;http://your.domain.com/yourOscommerceFolder/catalog/confirmation_payu.php&lt;/a&gt;, você deve substituir &lt;a href=&#34;http://your.domain.com&#34;&gt;http://your.domain.com&lt;/a&gt; com o domínio do seu site.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Salve as alterações usando o botão na parte inferior do painel.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Finalmente, expanda o menu &lt;em&gt;&lt;strong&gt;Localization&lt;/strong&gt;&lt;/em&gt; e clique em &lt;em&gt;&lt;strong&gt;Order Status&lt;/strong&gt;&lt;/em&gt;. Verifique se o status da ordem foi criado de acordo com os idiomas instalados (inglês, espanhol e português) em seu site osCommerce.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/oscommerce/oscommerce_13.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Os estados válidos são:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Para inglês: &lt;code&gt;Approved&lt;/code&gt;, &lt;code&gt;Rejected&lt;/code&gt;, &lt;code&gt;Failed&lt;/code&gt; e &lt;code&gt;Pending&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Para espanhol: &lt;code&gt;Aprobada&lt;/code&gt;, &lt;code&gt;Rechazada&lt;/code&gt;, &lt;code&gt;Fallida&lt;/code&gt; e &lt;code&gt;Pendiente&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Para Portuguese: &lt;code&gt;Aprovado&lt;/code&gt;, &lt;code&gt;Recusada&lt;/code&gt;, &lt;code&gt;Falha&lt;/code&gt; e &lt;code&gt;Pendente&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Observação&lt;/h4&gt;
+Se você não tiver nenhum dos idiomas mencionados anteriormente, os estados não aparecerão na lista. Se você deseja instalar um idioma posteriormente, pode criar esses estados manualmente usando os mesmos nomes exibidos acima.
+&lt;/div&gt;
+
+&lt;p&gt;Nesta etapa seus clientes podem pagar com PayU Latam quando fizerem o checkout com o carrinho de compras do osCommerce.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: OpenCart</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/opencart.html</link>
+      <pubDate>Wed, 26 May 2021 08:40:11 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/opencart.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;OpenCart é uma plataforma gratuita desenvolvida em PHP para a criação de lojas online. OpenCart fornece uma base profissional e confiável para construir uma loja online. Essa base usa uma ampla variedade de usuários, como desenvolvedores web que procuram uma interface acessível ou proprietários de lojas que desejam lançar seus negócios online pela primeira vez. O OpenCart tem muitos recursos que oferecem a você um grande controle sobre a personalização de sua loja. Para obter mais informações sobre o OpenCart, consulte o &lt;a href=&#34;https://www.opencart.com/&#34;&gt;site oficial&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;O plug-in OpenCart está disponível para as versões 1.5 e 2.0 e você precisa atender aos seguintes pré-requisitos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Você precisa de uma conta ativa no PayU Latam.&lt;/li&gt;
+&lt;li&gt;Para OpenCart versão 1.5:
+&lt;ul&gt;
+&lt;li&gt;Ter o plugin OpenCart v1.5 do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;li&gt;Ter OpenCart versão 1.5.5.1 - 1.5.6.X instalado.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Para OpenCart versão 2.0:
+&lt;ul&gt;
+&lt;li&gt;Ter o plugin OpenCart v2.0 do PayU baixado e armazenado em local acessível. Clique &lt;a href=&#34;https://github.com/developers-payu-latam/developers-payu-latam.github.io/raw/master/plugins/plugin-opencart-2.0.zip&#34;&gt;aqui&lt;/a&gt; para fazer o download.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;instalação-installation-and-configuration&#34;&gt;Instalação {#installation} and configuration&lt;/h2&gt;
+&lt;p&gt;O procedimento para instalar o plugin OpenCart é o mesmo para a versão 1.5 ou 2.0. A única diferença é a aparência das versões e isso é abordado neste artigo.&lt;br&gt;
+Siga o próximo procedimento para instalar o plugin em seu site.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Descompacte o arquivo do plugin em um local de sua escolha. Em seguida, usando um cliente FTP, vá para o local onde você descompactou o plug-in.&lt;br&gt;Em seguida, carregue as pastas &lt;strong&gt;admin&lt;/strong&gt; e &lt;strong&gt;catalog&lt;/strong&gt; na pasta raiz da instalação do OpenCart em seu servidor.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_01.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Esta ação adiciona os arquivos de plugin ao seu servidor OpenCart nos locais corretos. Para validar se o procedimento estava correto, pesquise os seguintes arquivos em seus locais correspondentes.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_02.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;No console de administração de sua loja OpenCart, abra o menu &lt;em&gt;&lt;strong&gt;Extensions&lt;/strong&gt;&lt;/em&gt; e clique em &lt;em&gt;&lt;strong&gt;Payments&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;OpenCart v1.5&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_03.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OpenCart v2.0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_04.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Na tabela &lt;em&gt;&lt;strong&gt;Payment&lt;/strong&gt;&lt;/em&gt;, encontre a forma de pagamento &lt;em&gt;PayuLatam&lt;/em&gt;. Depois clique em &lt;em&gt;&lt;strong&gt;Install&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;OpenCart v1.5&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_05.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OpenCart v2.0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_06.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Quando o plugin for instalado, clique em &lt;em&gt;&lt;strong&gt;Edit&lt;/strong&gt;&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;OpenCart v1.5&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_07.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;OpenCart v2.0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/OpenCart/OpenCart_08.jpg&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;Configure a forma de pagamento usando os dados de sua conta PayU da seguinte maneira.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Valor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Production Url&lt;/td&gt;
+&lt;td&gt;URL do PayU Latam em produção &lt;a href=&#34;https://gateway.payulatam.com/ppp-web-gateway/&#34;&gt;https://gateway.payulatam.com/ppp-web-gateway/&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Test Url&lt;/td&gt;
+&lt;td&gt;URL do PayU Latam em teste &lt;a href=&#34;https://sandbox.gateway.payulatam.com/ppp-web-gateway&#34;&gt;https://sandbox.gateway.payulatam.com/ppp-web-gateway&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Test Mode?&lt;/td&gt;
+&lt;td&gt;Definir &lt;strong&gt;Yes&lt;/strong&gt; para fazer transações no ambiente de teste e &lt;strong&gt;No&lt;/strong&gt; para o ambiente de produção.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID da sua loja no PayU Latam&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta PayU de acordo com o país onde você quer vender.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio, que você encontra no Módulo PayU.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Approved Transaction&lt;/td&gt;
+&lt;td&gt;Status da ordem na loja OpenCart quando PayU Latam aprovar a transação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Pending Transaction&lt;/td&gt;
+&lt;td&gt;Status da ordem na loja OpenCart quando a transação está pendente no PayU Latam.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Declined Transaction&lt;/td&gt;
+&lt;td&gt;Status da ordem na loja OpenCart quando PayU Latam recusa a transação.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Status&lt;/td&gt;
+&lt;td&gt;Selecione &lt;em&gt;&lt;strong&gt;Enable&lt;/strong&gt;&lt;/em&gt; para ativar este método de pagamento no OpenCart.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;Finalmente, salve as alterações. Nesta etapa seus clientes podem pagar com PayU Latam quando fizerem o checkout com o carrinho de compras do OpenCart.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: PrestaShop</title>
+      <link>/pt/docs/tools/shopping-cart-plugins/prestashop.html</link>
+      <pubDate>Mon, 10 Mar 2025 10:30:35 -0500</pubDate>
+      
+      <guid>/pt/docs/tools/shopping-cart-plugins/prestashop.html</guid>
+      <description>
+        
+        
+        &lt;p&gt;PrestaShop é uma plataforma de e-commerce de código aberto que permite que empresas criem e personalizem lojas online com total controle sobre design e funcionalidade. É autohospedada e altamente extensível por meio de módulos e temas. Para mais informações, visite o &lt;a href=&#34;https://prestashop.com&#34; target=&#34;_blank&#34;&gt;site oficial do PrestaShop&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;p&gt;Antes de integrar o PayU ao PrestaShop, certifique-se de ter o seguinte:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/getting-started/create-an-account.html&#34; target=&#34;_blank&#34;&gt;conta ativa do PayU Latam&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Seu site deve estar rodando o PrestaShop na versão 1.4 a 1.6.&lt;/li&gt;
+&lt;li&gt;O plugin do PayU para PrestaShop, disponível para download &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/tools/shopping-cart-plugins.html#plugin-files&#34; target=&#34;_blank&#34;&gt;aqui&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Importante&lt;/h4&gt;
+As versões 1.7 e superiores do PrestaShop não são compatíveis com o plugin do PayU.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;integração-do-plugin-do-payu-nos-módulos-do-prestashop&#34;&gt;Integração do Plugin do PayU nos Módulos do PrestaShop&lt;/h2&gt;
+&lt;p&gt;Para usar os serviços do PayU no seu site PrestaShop, é necessário instalar o plugin do PayU como um módulo. Siga os passos abaixo:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Acesse o painel de administração do PrestaShop.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navegue até &lt;strong&gt;Modules and Services &amp;gt; Modules and Services&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Add a new module&lt;/strong&gt; no canto superior direito.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Clique em &lt;strong&gt;Choose a file&lt;/strong&gt;, selecione o arquivo ZIP do plugin do PayU para PrestaShop no seu computador e depois clique em &lt;strong&gt;Upload this module&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;../../../../assets/prestashop/prestashop1.png&#34; alt=&#34;PrintScreen&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;O módulo do PayU agora aparecerá na lista de módulos. Clique em &lt;strong&gt;Install&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Na lista de módulos, localize o módulo do PayU e clique em &lt;strong&gt;Configure&lt;/strong&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Preencha os seguintes campos obrigatórios:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Campo&lt;/th&gt;
+&lt;th&gt;Descrição&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Merchant ID&lt;/td&gt;
+&lt;td&gt;ID do seu comércio no PayU Latam. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34; target=&#34;_blank&#34;&gt;Ver meu Merchant ID&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Account ID&lt;/td&gt;
+&lt;td&gt;ID da conta do PayU baseado no seu país de operação. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/payu-module-documentation/getting-started/understanding-the-payu-module/technical-configuration.html&#34; target=&#34;_blank&#34;&gt;Ver meu Account ID&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API Key&lt;/td&gt;
+&lt;td&gt;Chave única do seu comércio. &lt;a href=&#34;https://developers.payulatam.com/latam/pt/docs/integrations.html#api-key-and-api-login&#34; target=&#34;_blank&#34;&gt;Ver minha API Key&lt;/a&gt;.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Nota&lt;/h4&gt;
+Ative o &lt;strong&gt;Test Mode&lt;/strong&gt; para realizar transações com dados simulados.
+&lt;/div&gt;
+
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;Clique em &lt;strong&gt;Save&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Agora, os serviços do PayU estão integrados com sucesso ao seu site PrestaShop.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

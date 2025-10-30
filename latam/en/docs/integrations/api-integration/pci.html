@@ -1,0 +1,1149 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.122.0">
+
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+
+
+<link rel="shortcut icon" href="../../../../favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="../../../../favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="../../../../favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="../../../../favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="../../../../favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="../../../../favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="../../../../favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="../../../../favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="../../../../favicons/android-192x192.png" sizes="192x192">
+
+<title>PCI DSS Compliance and Security Guide | PayU Latam</title><meta property="og:title" content="PCI DSS Compliance and Security Guide" />
+<meta property="og:description" content="Security in electronic transactions is essential to protect businesses and consumers in the digital environment. This guide presents best practices and standards that ensure secure transactions and regulatory compliance, strengthening user trust and mitigating operational and reputational risks.
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/en/docs/integrations/api-integration/pci.html" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2024-10-30T15:48:08-05:00" />
+<meta property="article:modified_time" content="2025-07-18T20:54:52-05:00" />
+
+<meta itemprop="name" content="PCI DSS Compliance and Security Guide">
+<meta itemprop="description" content="Security in electronic transactions is essential to protect businesses and consumers in the digital environment. This guide presents best practices and standards that ensure secure transactions and regulatory compliance, strengthening user trust and mitigating operational and reputational risks.
+"><meta itemprop="datePublished" content="2024-10-30T15:48:08-05:00" />
+<meta itemprop="dateModified" content="2025-07-18T20:54:52-05:00" />
+<meta itemprop="wordCount" content="1415">
+<meta itemprop="keywords" content="subtopic," /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="PCI DSS Compliance and Security Guide"/>
+<meta name="twitter:description" content="Security in electronic transactions is essential to protect businesses and consumers in the digital environment. This guide presents best practices and standards that ensure secure transactions and regulatory compliance, strengthening user trust and mitigating operational and reputational risks.
+"/>
+
+
+
+
+
+<link rel="preload" href="../../../../scss/main.min.4a8b893896cd657494aeb10a6bc6892f995412816702aea50e1d1728f4522ce0.css" as="style">
+<link href="../../../../scss/main.min.4a8b893896cd657494aeb10a6bc6892f995412816702aea50e1d1728f4522ce0.css" rel="stylesheet" integrity="">
+
+
+<link href="../../../../css/custom.css" rel="stylesheet">
+<script defer language="javascript" type="text/javascript"  src="../../../../js/add-on.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-page">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="../../../../en/">
+			
+			
+			<span class="navbar-logo"><img src="../../../../assets/PayULatam.png"></span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="../../../../en/docs.html" ><span class="active">Online payments</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="../../../../en/payu-module-documentation.html" ><span>PayU Module guide</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/pci.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/integrations/api-integration/pci.html">Português</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	
+	
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; Search this site…"
+  aria-label="Search this site…"
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="../../../../offline-search-index.19be9a384c7a98cfdfd54a356a6ffa535359d2d97599c0ae38b97390d99e37049d18ac771d5e6c63b6ea5468a04ff120e95b5c26f6cd94e10249d77d6f5f82e2.json"
+  data-offline-search-base-href="../../../../"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="../../../../es/docs/integrations/api-integration/pci.html">Español</a>
+	
+	<a class="dropdown-item" href="../../../../pt/docs/integrations/api-integration/pci.html">Português</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs.html" href="../../../../en/docs.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Home</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/getting-started.html" href="../../../../en/docs/getting-started.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Getting Started</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsgetting-startedhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/create-an-account.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedcreate-an-accounthtml" href="../../../../en/docs/getting-started/create-an-account.html">Creating a PayU Account</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/select-your-integration.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedselect-your-integrationhtml" href="../../../../en/docs/getting-started/select-your-integration.html">Select Your Integration</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/select-your-payment-method.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedselect-your-payment-methodhtml" href="../../../../en/docs/getting-started/select-your-payment-method.html">Select Your Payment Method</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/test-your-solution.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedtest-your-solutionhtml" href="../../../../en/docs/getting-started/test-your-solution.html">Test Your Solution</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/deploy-to-production.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-starteddeploy-to-productionhtml" href="../../../../en/docs/getting-started/deploy-to-production.html">Deploy to Production</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/getting-started/response-codes-and-variables.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsgetting-startedresponse-codes-and-variableshtml" href="../../../../en/docs/getting-started/response-codes-and-variables.html">Response Codes and Variables</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/services.html" href="../../../../en/docs/services.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Services</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsserviceshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/payments.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespaymentshtml" href="../../../../en/docs/services/payments.html">Payments</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/services/3dsauthentication.html" href="../../../../en/docs/services/3dsauthentication.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">3DS Authentication</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsservices3dsauthenticationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationpayu-handled-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/payu-handled-3ds-authentication.html">PayU-Handled 3DS Authentication</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/3dsauthentication/external-3ds-authentication.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsservices3dsauthenticationexternal-3ds-authenticationhtml" href="../../../../en/docs/services/3dsauthentication/external-3ds-authentication.html">External 3DS Authentication</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/queries.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesquerieshtml" href="../../../../en/docs/services/queries.html">Queries for Transactions</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/promotions.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespromotionshtml" href="../../../../en/docs/services/promotions.html">Interest-Free Installments</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/tokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicestokenizationhtml" href="../../../../en/docs/services/tokenization.html">Tokenization</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/smartcheck.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicessmartcheckhtml" href="../../../../en/docs/services/smartcheck.html">Smart Check – Automatic Reverification</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/refunds.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesrefundshtml" href="../../../../en/docs/services/refunds.html">Voids and Refunds</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/networktokenization.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicesnetworktokenizationhtml" href="../../../../en/docs/services/networktokenization.html">Network Tokenization</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/services/payouts.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocsservicespayoutshtml" href="../../../../en/docs/services/payouts.html">Payouts - Colombia</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/tools.html" href="../../../../en/docs/tools.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Tools</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/payment-request.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayment-requesthtml" href="../../../../en/docs/tools/payment-request.html">Payment Request</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/tools/shopping-cart-plugins.html" href="../../../../en/docs/tools/shopping-cart-plugins.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">E-Commerce Integrations and Plugins</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolsshopping-cart-pluginshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/vtex.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsvtexhtml" href="../../../../en/docs/tools/shopping-cart-plugins/vtex.html">VTEX</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/salesforce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginssalesforcehtml" href="../../../../en/docs/tools/shopping-cart-plugins/salesforce.html">Salesforce Commerce Cloud</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/shopify.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsshopifyhtml" href="../../../../en/docs/tools/shopping-cart-plugins/shopify.html">Shopify</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/omnibees.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsomnibeeshtml" href="../../../../en/docs/tools/shopping-cart-plugins/omnibees.html">Omnibees</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/drupal.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsdrupalhtml" href="../../../../en/docs/tools/shopping-cart-plugins/drupal.html">Drupal</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/virtuemart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsvirtuemarthtml" href="../../../../en/docs/tools/shopping-cart-plugins/virtuemart.html">VirtueMart</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/woocommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginswoocommercehtml" href="../../../../en/docs/tools/shopping-cart-plugins/woocommerce.html">WooCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/oscommerce.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsoscommercehtml" href="../../../../en/docs/tools/shopping-cart-plugins/oscommerce.html">osCommerce</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/opencart.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsopencarthtml" href="../../../../en/docs/tools/shopping-cart-plugins/opencart.html">OpenCart</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/shopping-cart-plugins/prestashop.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsshopping-cart-pluginsprestashophtml" href="../../../../en/docs/tools/shopping-cart-plugins/prestashop.html">PrestaShop</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/payu-module.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayu-modulehtml" href="../../../../en/docs/tools/payu-module.html">PayU Module</a>
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/tools/disputes.html" href="../../../../en/docs/tools/disputes.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">Disputes</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocstoolsdisputeshtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/disputes/disputes-webhook.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocstoolsdisputesdisputes-webhookhtml" href="../../../../en/docs/tools/disputes/disputes-webhook.html">Disputes Webhook</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+      
+        <a id="/en/docs/tools/payment-coupons.html" style=""  class="td-sidebar-link td-sidebar-link__page  " id="m-endocstoolspayment-couponshtml" href="../../../../en/docs/tools/payment-coupons.html">Payment Coupons</a>
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/integrations.html" href="../../../../en/docs/integrations.html" class="align-left pl-0 pr-2  td-sidebar-link td-sidebar-link__section ">Integrations</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationshtml">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/webcheckout-integration.html" href="../../../../en/docs/integrations/webcheckout-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">WebCheckout Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationswebcheckout-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/payment-form.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationpayment-formhtml" href="../../../../en/docs/integrations/webcheckout-integration/payment-form.html">Payment Form</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/response-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationresponse-pagehtml" href="../../../../en/docs/integrations/webcheckout-integration/response-page.html">Response Page</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/confirmation-page.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationconfirmation-pagehtml" href="../../../../en/docs/integrations/webcheckout-integration/confirmation-page.html">Confirmation Page</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationswebcheckout-integrationairlines-and-travel-agencies-colombiahtml" href="../../../../en/docs/integrations/webcheckout-integration/airlines-and-travel-agencies-colombia.html">Airlines and Travel Agencies - Colombia</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/api-integration.html" href="../../../../en/docs/integrations/api-integration.html" class="align-left pl-0 pr-2 active  td-sidebar-link td-sidebar-link__page ">API Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationsapi-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/pci.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  active sub-section-child-topic" id="m-endocsintegrationsapi-integrationpcihtml" href="../../../../en/docs/integrations/api-integration/pci.html">PCI DSS Compliance and Security Guide</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-argentina.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-argentinahtml" href="../../../../en/docs/integrations/api-integration/payments-api-argentina.html">Payments API - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-brazil.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-brazilhtml" href="../../../../en/docs/integrations/api-integration/payments-api-brazil.html">Payments API - Brazil</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-chile.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-chilehtml" href="../../../../en/docs/integrations/api-integration/payments-api-chile.html">Payments API - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-colombia.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-colombiahtml" href="../../../../en/docs/integrations/api-integration/payments-api-colombia.html">Payments API - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-mexico.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-mexicohtml" href="../../../../en/docs/integrations/api-integration/payments-api-mexico.html">Payments API - Mexico</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-panama.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-panamahtml" href="../../../../en/docs/integrations/api-integration/payments-api-panama.html">Payments API - Panama</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payments-api-peru.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayments-api-peruhtml" href="../../../../en/docs/integrations/api-integration/payments-api-peru.html">Payments API - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/queries-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationqueries-apihtml" href="../../../../en/docs/integrations/api-integration/queries-api.html">Queries API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/tokenization-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationtokenization-apihtml" href="../../../../en/docs/integrations/api-integration/tokenization-api.html">Tokenization API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/pricing-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpricing-apihtml" href="../../../../en/docs/integrations/api-integration/pricing-api.html">Pricing API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/refunds-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationrefunds-apihtml" href="../../../../en/docs/integrations/api-integration/refunds-api.html">Voids and Refunds API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/payouts-api.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationpayouts-apihtml" href="../../../../en/docs/integrations/api-integration/payouts-api.html">Payouts API</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/api-integration/simulator.html" style="  display: block !important; "  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationsapi-integrationsimulatorhtml" href="../../../../en/docs/integrations/api-integration/simulator.html">Token Simulator</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+<li class=" td-sidebar-link td-sidebar-link__sub_section_title ">
+    <a id="/en/docs/integrations/sdk-integration.html" href="../../../../en/docs/integrations/sdk-integration.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__page ">SDK Integration</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsintegrationssdk-integrationhtml">
+      
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-argentina.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-argentinahtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-argentina.html">Payments SDK - Argentina</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-brazil.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-brazilhtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-brazil.html">Payments SDK - Brazil</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-chile.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-chilehtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-chile.html">Payments SDK - Chile</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-colombia.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-colombiahtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-colombia.html">Payments SDK - Colombia</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-mexico.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-mexicohtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-mexico.html">Payments SDK - Mexico</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/payments-sdk-peru.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationpayments-sdk-peruhtml" href="../../../../en/docs/integrations/sdk-integration/payments-sdk-peru.html">Payments SDK - Peru</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/queriessdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationqueriessdkhtml" href="../../../../en/docs/integrations/sdk-integration/queriessdk.html">Queries SDK</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/tokenizationsdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationtokenizationsdkhtml" href="../../../../en/docs/integrations/sdk-integration/tokenizationsdk.html">Tokenization SDK</a>
+      
+      
+      
+      
+      
+        <a id="/en/docs/integrations/sdk-integration/refundssdk.html" style=""  class="td-sidebar-link td-sidebar-link__page  sub-section-child-topic" id="m-endocsintegrationssdk-integrationrefundssdkhtml" href="../../../../en/docs/integrations/sdk-integration/refundssdk.html">Voids and Refunds SDK</a>
+      
+      
+    </li>
+  </ul>
+  
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+ <ul class="td-sidebar-nav__section pr-md-3"> 
+<li class="  td-sidebar-nav__section-title ">
+    <a id="/en/docs/server-status.html" href="../../../../en/docs/server-status.html" class="align-left pl-0 pr-2 collapsed  td-sidebar-link td-sidebar-link__section ">Server Status</a>
+  </li>
+  <ul class="side-main">
+    <li class="" id="endocsserver-statushtml">
+      
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+      
+      
+    </li>
+  </ul>
+   </ul> 
+
+  </nav>
+</div>
+
+
+<script>
+  $('.td-sidebar-nav').scrollTop(localStorage.getItem("currentPosition"))
+  var currentPosition = 0;
+  $(".td-sidebar-nav" ).scroll(function() {
+    currentPosition = $('.td-sidebar-nav').scrollTop()
+    localStorage.setItem("currentPosition",currentPosition);
+  });
+  
+</script>
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<p>On this page</p>
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#payment-processing-compliance-what-you-need-to-know">Payment Processing Compliance: What You Need to Know</a>
+      <ul>
+        <li><a href="#why-is-compliance-with-standards-essential">Why Is Compliance with Standards Essential?</a></li>
+      </ul>
+    </li>
+    <li><a href="#pci-dss-40-fundamentals">PCI DSS 4.0 Fundamentals</a>
+      <ul>
+        <li><a href="#key-pci-dss-requirements">Key PCI DSS Requirements</a></li>
+        <li><a href="#scoping-and-segmentation-in-pci-dss">Scoping and Segmentation in PCI DSS</a></li>
+        <li><a href="#data-tokenization-protecting-the-pan">Data Tokenization: Protecting the PAN</a></li>
+        <li><a href="#pci-dss-compliance-levels-and-methods">PCI DSS Compliance Levels and Methods</a></li>
+      </ul>
+    </li>
+    <li><a href="#comprehensive-data-security-strategies">Comprehensive Data Security Strategies</a>
+      <ul>
+        <li><a href="#ensuring-customer-data-integrity">Ensuring Customer Data Integrity</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-resources">Additional Resources</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs.html">Home</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/integrations.html">Integrations</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="../../../../en/docs/integrations/api-integration.html">API Integration</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="../../../../en/docs/integrations/api-integration/pci.html">PCI DSS Compliance and Security Guide</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>PCI DSS Compliance and Security Guide</h1>
+    <div class="lead">Security in electronic transactions is essential to protect businesses and consumers in the digital environment. This guide presents best practices and standards that ensure secure transactions and regulatory compliance, strengthening user trust and mitigating operational and reputational risks.</div>
+	       
+	<h2 id="payment-processing-compliance-what-you-need-to-know">Payment Processing Compliance: What You Need to Know</h2>
+<p>The rapid growth of digital payments has opened up a world of opportunities for businesses but also introduced new risks. As online transactions increase, it becomes critical for companies to comply with international data security and protection standards. This compliance is not only a legal requirement—it is a fundamental pillar for building user trust and ensuring business continuity.</p>
+<h3 id="why-is-compliance-with-standards-essential">Why Is Compliance with Standards Essential?</h3>
+<p>In an environment where electronic payments move trillions of dollars each year, threats like fraud and data breaches are increasingly frequent and sophisticated. Failing to comply with regulations can lead to serious consequences: financial penalties, loss of credibility, service disruption, and even legal actions.</p>
+<p>Protecting cardholder information, especially financial data, is not optional—it&rsquo;s a shared responsibility among merchants, payment processors, and technology platforms.</p>
+<h2 id="pci-dss-40-fundamentals">PCI DSS 4.0 Fundamentals</h2>
+<p>Complying with international standards such as PCI DSS 4.0 (Payment Card Industry Data Security Standard) is essential to ensure transaction security and avoid legal sanctions.</p>
+<h3 id="key-pci-dss-requirements">Key PCI DSS Requirements</h3>
+<p>The PCI DSS standard establishes a set of mandatory measures that organizations must adopt to protect payment card data. These requirements are designed to strengthen security infrastructure, reduce fraud risks, and ensure the integrity of electronic transactions.</p>
+<ol>
+<li><strong>Secure network:</strong> Implementation of firewalls and secure passwords.</li>
+<li><strong>Cardholder data protection:</strong> Encrypted data storage and restricted access to authorized personnel.</li>
+<li><strong>Vulnerability management:</strong> Regular software updates to prevent attacks.</li>
+<li><strong>Access control:</strong> Only necessary staff have access to card data, and access is monitored.</li>
+<li><strong>Ongoing monitoring and testing:</strong> Periodic audits to identify and address vulnerabilities.</li>
+<li><strong>Comprehensive security policy:</strong> Implementation of security policies and continuous training for all personnel handling sensitive data.</li>
+</ol>
+<h3 id="scoping-and-segmentation-in-pci-dss">Scoping and Segmentation in PCI DSS</h3>
+<p>With the release of PCI DSS version 4.0, organizations face new challenges and opportunities in their compliance strategies. Digital transformation has brought increasingly dynamic environments: multi-cloud infrastructures, Zero Trust architectures, and network virtualization—all requiring a reevaluation of PCI DSS scoping and technical measures to protect cardholder data.</p>
+<h4 id="scoping-in-pci-dss-v40">Scoping in PCI DSS v4.0</h4>
+<p>In previous versions, PCI DSS scope focused mainly on systems that processed, stored, or transmitted card data. PCI DSS v4.0 takes a broader and more precise approach:</p>
+<ul>
+<li>It includes systems and processes that may impact the security of card data, even if they do not handle the Primary Account Number (PAN) or Sensitive Authentication Data (SAD) directly.</li>
+<li>Systems with direct connectivity to the Cardholder Data Environment (CDE) are considered in scope.</li>
+<li>Components excluded from scope must be effectively isolated and validated through network segmentation testing.</li>
+<li>This validation must be documented and renewed periodically as part of the compliance lifecycle.</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Example</h4>
+An admin server that does not store card data but has access to the CDE is considered in scope unless it is isolated and formally tested.
+</div>
+
+<h4 id="segmentation-to-reduce-pci-scope">Segmentation to Reduce PCI Scope</h4>
+<p>Network segmentation remains a key tool to limit compliance scope and reduce risks, but it must be adapted to modern technology environments. Several strategies exist, depending on the architecture type:</p>
+<ol>
+<li><strong>Traditional segmentation (physical or logical network)</strong></li>
+</ol>
+<ul>
+<li>Use of firewalls, routers, VLANs, ACLs, etc.</li>
+<li>Still valid in on-premise, hybrid, or cloud environments.</li>
+</ul>
+<ol start="2">
+<li><strong>Segmentation in Zero Trust architectures</strong></li>
+</ol>
+<ul>
+<li>Based on granular access policies, microsegmentation, and identity, device, and context-based control.</li>
+<li>Every access is dynamically evaluated—trust is not assumed based on network location.</li>
+<li>Requires continuous monitoring, device validation, and strong identity management.</li>
+</ul>
+<ol start="3">
+<li><strong>Segmentation in multi-cloud environments</strong></li>
+</ol>
+<ul>
+<li>Involves controlling traffic between different CSPs (Cloud Service Providers) using VPNs, private links, cloud-native firewalls, proxies, and service mesh.</li>
+<li>It’s recommended to apply host- or app-level controls (e.g., microservices, containers, API gateways, etc.).</li>
+<li>Centralized visibility into data flows, configuration, and changes (Infrastructure as Code - IaC) is vital.</li>
+</ul>
+<ol start="4">
+<li><strong>Mandatory penetration testing</strong></li>
+</ol>
+<ul>
+<li>Any segmentation used to reduce scope must be tested through pentesting.</li>
+<li>Penetration tests must be performed from outside systems capturing card data (e.g., e-commerce platforms, gateways).</li>
+</ul>
+<h3 id="data-tokenization-protecting-the-pan">Data Tokenization: Protecting the PAN</h3>
+<p>Tokenization is a security technique that replaces the real card number (PAN) with a token that has no intrinsic value. This allows transactions to be processed or references to be stored without compromising the PAN and protects sensitive data in case of a token leak.</p>
+<p>According to the Tokenization Product Security Guidelines, there are two main types of tokens:</p>
+<h4 id="irreversible-tokens">Irreversible Tokens</h4>
+<ul>
+<li>Generated using one-way mathematical functions.</li>
+<li>Cannot be reverted to the original PAN.</li>
+<li>Useful when PAN recovery is not needed (e.g., for analytics or backoffice storage).</li>
+</ul>
+<h4 id="reversible-tokens">Reversible Tokens</h4>
+<ul>
+<li>PAN recovery is possible if certain security requirements are met.</li>
+<li>Used in centralized tokenization models requiring detokenization (e.g., for reconciliations or refunds).</li>
+<li>Require secure key management and multi-factor authentication to access original data.</li>
+</ul>
+<h4 id="recommended-controls-for-tokenization-solutions">Recommended Controls for Tokenization Solutions</h4>
+<ul>
+<li>FIPS 140-2 Level 2 or 3 validation, depending on whether it’s a software or hardware solution.</li>
+<li>Clear separation between tokens and original PAN data.</li>
+<li>Access monitoring, event auditing, and cryptographic protection of tokens.</li>
+<li>Strong authentication, role-based access control, and isolation of token vaults.</li>
+</ul>
+<h3 id="pci-dss-compliance-levels-and-methods">PCI DSS Compliance Levels and Methods</h3>
+<p>Compliance with the PCI DSS standard varies depending on the type of entity (merchant or service provider) and its annual transaction volume. The standard classifies organizations into different levels, each with specific assessment requirements such as external audits, self-assessments, or technical scans.</p>
+<p>A key element to validate technical compliance is using an ASV (Approved Scanning Vendor)—a PCI Security Standards Council–certified organization that performs vulnerability scans on internet-exposed systems. These scans help:</p>
+<ul>
+<li>Detect insecure configurations or vulnerable software.</li>
+<li>Validate compliance with PCI DSS v4.0 requirement 11.3.2.</li>
+<li>Issue official reports used in evaluation processes such as the AOC (Attestation of Compliance) or SAQ (Self-Assessment Questionnaire).</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+Scans must be performed at least once per quarter or after any significant changes to the tech infrastructure.
+</div>
+
+<p>Below are the different compliance levels and applicable evaluation methods.</p>
+<h4 id="compliance-levels-for-merchants">Compliance Levels for Merchants</h4>
+<p>Organizations that process card transactions are grouped into four levels based on annual transaction volume, which determines their compliance requirements.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Compliance Level</strong></th>
+<th><strong>Annual Transaction Volume</strong></th>
+<th><strong>Assessment Requirements</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level 1</strong></td>
+<td>More than 6 million Visa/MasterCard transactions or more than 2.5 million American Express transactions</td>
+<td><li> Annual external audit (QSA) <br> <li> Quarterly vulnerability scan (ASV) <br> <li> Annual compliance report (AOC and ROC)</td>
+</tr>
+<tr>
+<td><strong>Level 2</strong></td>
+<td>Between 1 and 6 million transactions</td>
+<td><li> Annual self-assessment (SAQ) or external audit <br> <li> Quarterly vulnerability scan (ASV)</td>
+</tr>
+<tr>
+<td><strong>Level 3</strong></td>
+<td>Between 20,000 and 1 million transactions</td>
+<td><li> Annual self-assessment (SAQ) <br> <li> Quarterly vulnerability scan (ASV)</td>
+</tr>
+<tr>
+<td><strong>Level 4</strong></td>
+<td>Fewer than 20,000 transactions</td>
+<td><li> Annual self-assessment (SAQ) <br> <li> Quarterly vulnerability scan (ASV, as required by the acquiring bank)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="compliance-levels-for-service-providers">Compliance Levels for Service Providers</h4>
+<p>Service providers are grouped into two levels based on relevance and transaction volume:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Compliance Level</strong></th>
+<th><strong>Annual Transaction Volume</strong></th>
+<th><strong>Assessment Requirements</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level 1</strong></td>
+<td>More than 300,000 transactions or considered critical</td>
+<td><li> Annual audit by a QSA or ISA <br> <li> Quarterly vulnerability tests (ASV) <br> <li> Annual penetration testing</td>
+</tr>
+<tr>
+<td><strong>Level 2</strong></td>
+<td>Fewer than 300,000 transactions</td>
+<td><li> Self-assessment questionnaire (SAQ) <br> <li> Quarterly vulnerability tests (ASV)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="evaluation-methods">Evaluation Methods</h4>
+<ul>
+<li><strong>Self-Assessment Questionnaire (SAQ):</strong> Self-assessment to validate compliance for lower-level merchants and providers.</li>
+<li><strong>Report on Compliance (RoC):</strong> Annual audit for Level 1 providers, documenting compliance.</li>
+<li><strong>Attestation of Compliance (AoC):</strong> Signed document confirming PCI DSS compliance after audit or self-assessment.</li>
+</ul>
+
+
+<div class="alert alert-info" role="alert">
+<h4 class="alert-heading">Note</h4>
+Companies that experience a security breach may be reclassified to a higher level, regardless of their transaction volume.
+</div>
+
+<h2 id="comprehensive-data-security-strategies">Comprehensive Data Security Strategies</h2>
+<p>Online fraud is a constant threat for any electronic transaction platform. To minimize risks and protect customer data, implement these key security practices:</p>
+<ul>
+<li><strong>Reinforce authentication with 2FA:</strong> Require an additional layer of authentication (such as a code sent to a mobile device or MFA method) to prevent unauthorized access and fraudulent transactions.</li>
+<li><strong>Secure communications with advanced encryption:</strong> Ensure all client-server communications are encrypted with TLS 1.2 or 1.3 to protect sensitive data like credit card information from interception.</li>
+<li><strong>Actively monitor suspicious transactions:</strong> Use fraud detection algorithms to identify unusual patterns, such as frequent transactions in a short period or from atypical locations.</li>
+<li><strong>Protect sensitive data with tokenization:</strong> Replace sensitive data, like card numbers, with alphanumeric tokens with no intrinsic value. This safeguards the information in case of unauthorized access.</li>
+</ul>
+<h3 id="ensuring-customer-data-integrity">Ensuring Customer Data Integrity</h3>
+<p>Implementing best security practices, in addition to complying with standards, is essential to maintain the integrity and confidentiality of customer data. Key measures include:</p>
+<ul>
+<li><strong>Frequent backups:</strong> Enable system restoration with minimal data loss in the event of an incident.</li>
+<li><strong>Role-Based Access Control (RBAC):</strong> Limit access to data based on employee roles, reducing misuse risk.</li>
+<li><strong>Transparent privacy policy:</strong> Clearly explain to customers how their information is handled and protected to build trust in your platform.</li>
+</ul>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://www.pcisecuritystandards.org" target="_blank">PCI Security Standards Council:</a> Official information on PCI DSS.</li>
+<li><a href="https://docs-prv.pcisecuritystandards.org/Guidance%20Document/PCI%20DSS%20General/PCI-DSS-Scoping-and-Segmentation-Guidance-for-Modern-Network-Architectures.pdf" target="_blank">PCI DSS Scoping Guidance:</a> Application of the standard across different businesses.</li>
+<li><a href="https://listings.pcisecuritystandards.org/documents/Tokenization_Product_Security_Guidelines.pdf" target="_blank">PCI Council Tokenization Guidelines</a>.</li>
+</ul>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">
+Last modified
+
+July 18, 2025:
+
+ <b>Documentation updates (4f4830fa0)</b>
+</div>
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="../../../../js/main.min.cf0cf67aa0c4b9599b41d5b3a5b52ca9879eb3c73cf756863627b38a2052e9d7.js" integrity="sha256-zwz2eqDEuVmbQdWzpbUsqYees8c891aGNieziiBS6dc=" crossorigin="anonymous"></script>
+
+
+<script src="../../../../js/scrollspy.js"></script>
+<script src="../../../../js/scrolltotoc.js"></script>
+
+  </body>
+</html>

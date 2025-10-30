@@ -1,5 +1,5 @@
 ---
-title: "Seleccionar tu integración"
+title: "Seleccionar Tu Integración"
 date: 2021-04-06T16:59:57-05:00
 Description: >
   Selecciona cómo se integrará tu tienda con las herramientas o los servicios de PayU.
