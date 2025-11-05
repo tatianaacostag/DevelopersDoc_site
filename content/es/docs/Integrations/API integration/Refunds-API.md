@@ -94,7 +94,7 @@ El método `VOID` cancela una transacción previamente autorizada. Este es un **
 
 <details>
 
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 
 <br>
 
@@ -119,7 +119,7 @@ El método `VOID` cancela una transacción previamente autorizada. Este es un **
 
 <details>
 
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 
 <br>
 
@@ -270,7 +270,7 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 <details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
-| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales | Notas |
 |----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
 | **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Las tarjetas AMEX nacionales e internacionales (crédito) admiten múltiples reembolsos parciales; AMEX débito admite solo un reembolso parcial. |
 | **ARGENCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 2 | Admite hasta 2 reembolsos parciales (transacciones nacionales). |
@@ -286,7 +286,7 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brasil</b></summary>
 
-| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales | Notas |
 |----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
 | **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 3 | Admite reembolsos parciales y múltiples reembolsos parciales para transacciones con crédito. |
 | **ELO** | ✅ Sí | ✅ Sí | ✅ Sí | 5 | Admite múltiples reembolsos parciales para transacciones con crédito y débito. |
@@ -300,7 +300,7 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 <details id="chile">
 <summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
-| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales | Notas |
 |----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
 | **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 5 | Soporte para transacciones nacionales e internacionales con crédito. |
 | **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 10 | Soporte total para múltiples reembolsos parciales en todos los tipos de tarjeta. |
@@ -315,14 +315,14 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 
 | Método de pago | Características |
 |----------------|-----------------|
-| **AMEX** <br> **DINERS** <br> **MASTERCARD** <br> **MASTERCARD_DEBIT** <br> **VISA** <br> **VISA_DEBIT** <br> **VISA_NFC** <br> **CODENSA** | ✅ <b>Soporta reembolsos totales:</b> Sí<br>✅ <b>Soporta reembolsos parciales:</b> Sí<br>❌ <b>Soporta múltiples reembolsos parciales:</b> No<br><b>Máximo de reembolsos parciales encontrado:</b> 1<br><b>Nota:</b> Solo se admite un reembolso parcial para todos los métodos de pago. |
+| **AMEX** <br> **DINERS** <br> **MASTERCARD** <br> **MASTERCARD_DEBIT** <br> **VISA** <br> **VISA_DEBIT** <br> **VISA_NFC** <br> **CODENSA** | ✅ <b>Soporta reembolsos totales:</b> Sí<br>✅ <b>Soporta reembolsos parciales:</b> Sí<br>❌ <b>Soporta múltiples reembolsos parciales:</b> No<br><b>Máximo de reembolsos parciales:</b> 1<br><b>Nota:</b> Solo se admite un reembolso parcial para todos los métodos de pago. |
 
 </details>
 
 <details id="mexico">
 <summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>México</b></summary>
 
-| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales | Notas |
 |----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
 | **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | AMEX admite múltiples reembolsos parciales tanto para tarjetas de crédito nacionales como internacionales (hasta 7). Las tarjetas de débito solo admiten un reembolso parcial. |
 | **MASTERCARD** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Admite múltiples reembolsos parciales tanto para crédito como para débito. |
@@ -333,7 +333,7 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 <details id="peru">
 <summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Perú</b></summary>
 
-| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales encontrado | Notas |
+| Método de pago | Soporta reembolsos totales | Soporta reembolsos parciales | Soporta múltiples reembolsos parciales | Máximo de reembolsos parciales | Notas |
 |----------------|---------------------------|------------------------------|-------------------------------------------|-------------------------------------------|--------|
 | **AMEX** | ✅ Sí | ✅ Sí | ✅ Sí | 8 | Admite múltiples reembolsos parciales. |
 | **DINERS** | ✅ Sí | ✅ Sí | ✅ Sí | 7 | Las transacciones nacionales admiten múltiples reembolsos parciales; las internacionales solo permiten un reembolso parcial. |
@@ -348,7 +348,7 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 ### Parámetros para la solicitud y respuesta
 
 <details>
-<summary>Solicitud</summary>
+<summary><b>Solicitud</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -374,7 +374,7 @@ Las siguientes tablas resumen el comportamiento de los reembolsos observado para
 </details>
 
 <details>
-<summary>Respuesta</summary>
+<summary><b>Respuesta</b></summary>
 <br>
 <div class="variables"></div>
 

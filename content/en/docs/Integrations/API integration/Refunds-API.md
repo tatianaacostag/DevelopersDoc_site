@@ -94,7 +94,7 @@ The `VOID` method cancels a previously authorized transaction. This is an **auto
 
 <details>
 
-<summary>Request</summary>
+<summary><b>Request</b></summary>
 
 <br>
 
@@ -119,7 +119,7 @@ The `VOID` method cancels a previously authorized transaction. This is an **auto
 
 <details>
 
-<summary>Response</summary>
+<summary><b>Response</b></summary>
 
 <br>
 
@@ -271,7 +271,7 @@ The following tables summarize the refund behavior observed for different paymen
 <details id="argentina">
 <summary><img src="/assets/Argentina.png" width="25px"/> &nbsp; <b>Argentina</b></summary>
 
-| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds | Notes |
 |----------------|------------------------|--------------------------|------------------------------------|-------------------------------|--------|
 | **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Both domestic and international AMEX (credit) support multiple partial refunds; AMEX debit supports only a single partial refund. |
 | **ARGENCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 2 | Supports up to 2 partial refunds (domestic transactions). |
@@ -287,7 +287,7 @@ The following tables summarize the refund behavior observed for different paymen
 <details id="brazil">
 <summary><img src="/assets/Brasil.png" width="25px"/> &nbsp; <b>Brazil</b></summary>
 
-| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds | Notes |
 |----------------|------------------------|--------------------------|------------------------------------|-------------------------------|-------|
 | **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 3 | Support for partial and multiple partial refunds for credit transactions. |
 | **ELO** | ✅ Yes | ✅ Yes | ✅ Yes | 5 | Multiple partial refunds supported for both credit and debit transactions. |
@@ -301,7 +301,7 @@ The following tables summarize the refund behavior observed for different paymen
 <details id="chile">
 <summary><img src="/assets/Chile.png" width="25px"/> &nbsp; <b>Chile</b></summary>
 
-| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds | Notes |
 |----------------|------------------------|---------------------------|------------------------------------|-------------------------------|--------|
 | **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 5 | Support for both domestic and international credit transactions. |
 | **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 10 | Fully supports multiple partial refunds across all card types. |
@@ -316,14 +316,14 @@ The following tables summarize the refund behavior observed for different paymen
 
 | Payment Method | Features |
 |----------------|----------|
-| **AMEX** <br> **DINERS** <br> **MASTERCARD** <br> **MASTERCARD_DEBIT** <br> **VISA** <br> **VISA_DEBIT** <br> **VISA_NFC** <br> **CODENSA**| ✅ <b>Total Refund Supported:</b> Yes<br>✅ <b>Partial Refund Supported:</b> Yes<br>❌ <b>Multiple Partial Refunds Supported:</b> No<br><b>Maximum Partial Refunds Found:</b> 1<br><b>Note:</b> Only a single partial refund is supported for all payment methods. |
+| **AMEX** <br> **DINERS** <br> **MASTERCARD** <br> **MASTERCARD_DEBIT** <br> **VISA** <br> **VISA_DEBIT** <br> **VISA_NFC** <br> **CODENSA**| ✅ <b>Total Refund Supported:</b> Yes<br>✅ <b>Partial Refund Supported:</b> Yes<br>❌ <b>Multiple Partial Refunds Supported:</b> No<br><b>Maximum Partial Refunds:</b> 1<br><b>Note:</b> Only a single partial refund is supported for all payment methods. |
 
 </details>
 
 <details id="mexico">
 <summary><img src="/assets/Mexico.png" width="25px"/> &nbsp; <b>Mexico</b></summary>
 
-| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds | Notes |
 |----------------|------------------------|---------------------------|------------------------------------|-------------------------------|--------|
 | **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | AMEX supports multiple partial refunds for both domestic and international credit cards (up to 7). Debit cards only support a single partial refund. |
 | **MASTERCARD** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Support for multiple partial refunds for both credit and debit cards. |
@@ -334,7 +334,7 @@ The following tables summarize the refund behavior observed for different paymen
 <details id="peru">
 <summary><img src="/assets/Peru.png" width="25px"/> &nbsp; <b>Peru</b></summary>
 
-| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds Found | Notes |
+| Payment Method | Total Refund Supported | Partial Refund Supported | Multiple Partial Refunds Supported | Maximum Partial Refunds | Notes |
 |----------------|------------------------|---------------------------|------------------------------------|-------------------------------|--------|
 | **AMEX** | ✅ Yes | ✅ Yes | ✅ Yes | 8 | Multiple partial refunds supported. |
 | **DINERS** | ✅ Yes | ✅ Yes | ✅ Yes | 7 | Domestic transactions support multiple partial refunds; international only allows a single partial refund. |
@@ -349,7 +349,7 @@ The following tables summarize the refund behavior observed for different paymen
 ### Parameters for Request and Response
 
 <details>
-<summary>Request</summary>
+<summary><b>Request</b></summary>
 <br>
 <div class="variables"></div>
 
@@ -375,7 +375,7 @@ The following tables summarize the refund behavior observed for different paymen
 </details>
 
 <details>
-<summary>Response</summary>
+<summary><b>Response</b></summary>
 <br>
 <div class="variables"></div>
 
