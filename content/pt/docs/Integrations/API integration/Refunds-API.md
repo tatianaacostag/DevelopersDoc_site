@@ -451,7 +451,7 @@ Os exemplos a seguir mostram os corpos de requisição e resposta para esse tipo
          "id":"1400462690"
       },
       "parentTransactionId":"0486359b-a048-4b6b-9b72-af584e710e64",
-      "reason":"Reason for requesting the refund ou cancellation da transação",
+      "reason":"Reason for requesting the refund of the transaction",
       "type":"PARTIAL_REFUND"
    }
 }
@@ -541,7 +541,7 @@ Os exemplos a seguir mostram os corpos de requisição e resposta para esse tipo
          <id>1400462690</id>
       </order>
       <parentTransactionId>0486359b-a048-4b6b-9b72-af584e710e64</parentTransactionId>
-      <reason>Reason for requesting the refund or cancellation of the transaction</reason>
+      <reason>Reason for requesting the refund of the transaction</reason>
       <type>PARTIAL_REFUND</type>
    </transaction>
 </request>
@@ -588,23 +588,22 @@ Conforme mencionado anteriormente, os pedidos de reembolso passam por um process
 
 #### Verificando o status pela API de Consultas
 
-Você também pode verificar o status do reembolso usando a [API de Consultas]({{< ref "Queries-API.md" >}}). Para isso, envie uma requisição contendo o **ID do pedido**.
-
-Ao consultar um pedido, o sistema retorna a última transação associada a ele.
+Você também pode verificar o status do reembolso usando a [API de Consultas]({{< ref "Queries-API.md" >}}). Para isso, envie uma requisição contendo o **ID do pedido**. Ao consultar um pedido, o sistema retorna a última transação associada a ele.
 
 A resposta pode indicar um dos três possíveis status:
 
-- **Solicitação Pendente**: Se o pedido de reembolso ainda estiver em análise, o pedido aparecerá com status `CAPTURED` (`result.payload.status` na resposta).  
-  - O primeiro tipo de transação será `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` na resposta).  
-  - O primeiro status da transação será `APPROVED` (`result.transactions.transactionResponse.state` na resposta).
+- **Solicitação Não Resolvida**: Se a solicitação de reembolso ainda estiver em análise, o pedido aparecerá com o status `CAPTURED` (`result.payload.status` na resposta).  
+  - Haverá uma transação do tipo `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` na resposta), e o status da transação será `APPROVED` (`result.transactions.transactionResponse.state` na resposta).  
+  - Se o lojista utilizar um fluxo em duas etapas, haverá uma transação do tipo `AUTHORIZATION` e outra do tipo `CAPTURE`, ambas com o status `APPROVED`.
 
-- **Aprovado**: Se o pedido de reembolso for aprovado por um agente de atendimento da PayU, o pedido aparecerá com status `REFUNDED` (`result.payload.status` na resposta).  
-  - O primeiro tipo de transação será `REFUND` (`result.transactions.type` na resposta).  
-  - O primeiro status da transação será `APPROVED` (`result.transactions.transactionResponse.state` na resposta).
+- **Aprovado**: Se a solicitação de reembolso for aprovada, o pedido aparecerá com o status `REFUNDED` (`result.payload.status` na resposta).  
+  - Haverá uma transação do tipo `REFUND` (`result.transactions.type` na resposta).  
+  - O status da transação será `APPROVED` (`result.transactions.transactionResponse.state` na resposta).  
+  > **Nota:** Se houver capturas parciais que não cubram o valor total do pedido, o status do pedido continuará aparecendo como `CAPTURED`.
 
-- **Recusado**: Se o pedido de reembolso for rejeitado por um agente de atendimento da PayU, o pedido aparecerá com status `CAPTURED` (`result.payload.status` na resposta).  
-  - O primeiro tipo de transação será `REFUND` (`result.transactions.type` na resposta).  
-  - O primeiro status da transação será `DECLINED` (`result.transactions.transactionResponse.state` na resposta).
+- **Recusado**: Se a solicitação de reembolso for recusada, o pedido aparecerá com o status `CAPTURED` (`result.payload.status` na resposta).  
+  - Haverá uma transação do tipo `REFUND` (`result.transactions.type` na resposta).  
+  - O status da transação será `DECLINED` (`result.transactions.transactionResponse.state` na resposta).
 
 ### Gerenciando reembolsos pendentes com o Módulo de Cancelamentos da PayU
 

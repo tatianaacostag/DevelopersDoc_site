@@ -540,7 +540,7 @@ Los siguientes ejemplos muestran los cuerpos de solicitud y respuesta para este 
          <id>1400462690</id>
       </order>
       <parentTransactionId>0486359b-a048-4b6b-9b72-af584e710e64</parentTransactionId>
-      <reason>Reason for requesting the refund or cancellation of the transaction</reason>
+      <reason>Reason for requesting the refund of the transaction</reason>
       <type>PARTIAL_REFUND</type>
    </transaction>
 </request>
@@ -587,22 +587,21 @@ Como se mencionó anteriormente, las solicitudes de reembolso pasan por un proce
 
 #### Consultar el estado a través de la API de Consultas
 
-También puedes verificar el estado del reembolso utilizando la [API de Consultas]({{< ref "Queries-API.md" >}}). Para hacerlo, envía una solicitud que contenga el **ID de la orden**.
-
-Al consultar una orden, el sistema devuelve la última transacción asociada con ella.
+También puedes verificar el estado del reembolso utilizando la [API de Consultas]({{< ref "Queries-API.md" >}}). Para hacerlo, envía una solicitud que contenga el **ID de la orden**. Al consultar una orden, el sistema devuelve la última transacción asociada con ella.
 
 La respuesta puede indicar uno de los tres posibles estados:
 
 - **Solicitud No Resuelta**: Si la solicitud de reembolso aún está en revisión, la orden aparece con el estado `CAPTURED` (`result.payload.status` en la respuesta).  
-  - El primer tipo de transacción es `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` en la respuesta).  
-  - El primer estado de la transacción es `APPROVED` (`result.transactions.transactionResponse.state` en la respuesta).
+  - Habrá una transacción de tipo `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` en la respuesta), el estado de la transacción será `APPROVED` (`result.transactions.transactionResponse.state` en la respuesta).
+  - Si el comercio utiliza un flujo de dos pasos, habrá una transacción de tipo `AUTHORIZATION` y otra de tipo `CAPTURE`, ambas con estado `APPROVED`.
 
-- **Aprobado**: Si la solicitud de reembolso es aprobada por un agente de servicio al cliente de PayU, la orden aparece con el estado `REFUNDED` (`result.payload.status` en la respuesta).  
-  - El primer tipo de transacción es `REFUND` (`result.transactions.type` en la respuesta).  
+- **Aprobado**: Si la solicitud de reembolso es aprobada, la orden aparece con el estado `REFUNDED` (`result.payload.status` en la respuesta).  
+  - Habrá una transacción de tipo `REFUND` (`result.transactions.type` en la respuesta).  
   - El primer estado de la transacción es `APPROVED` (`result.transactions.transactionResponse.state` en la respuesta).
+  > **Nota:** Si existen capturas parciales que no cubren el monto total de la orden, el estado de la orden seguirá apareciendo como `CAPTURED`.
 
-- **Rechazado**: Si la solicitud de reembolso es rechazada por un agente de servicio al cliente de PayU, la orden aparece con el estado `CAPTURED` (`result.payload.status` en la respuesta).  
-  - El primer tipo de transacción es `REFUND` (`result.transactions.type` en la respuesta).  
+- **Rechazado**: Si la solicitud de reembolso es rechazada, la orden aparece con el estado `CAPTURED` (`result.payload.status` en la respuesta).  
+  - Habrá una transacción de tipo `REFUND` (`result.transactions.type` en la respuesta).  
   - El primer estado de la transacción es `DECLINED` (`result.transactions.transactionResponse.state` en la respuesta).
 
 ### Manejo de reembolsos pendientes con el Módulo de Cancelaciones de PayU

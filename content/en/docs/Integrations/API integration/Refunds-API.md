@@ -452,7 +452,7 @@ The following examples show the request and response bodies for this transaction
          "id":"1400462690"
       },
       "parentTransactionId":"0486359b-a048-4b6b-9b72-af584e710e64",
-      "reason":"Reason for requesting the refund or cancellation of the transaction",
+      "reason":"Reason for requesting the refund of the transaction",
       "type":"PARTIAL_REFUND"
    }
 }
@@ -542,7 +542,7 @@ The following examples show the request and response bodies for this transaction
          <id>1400462690</id>
       </order>
       <parentTransactionId>0486359b-a048-4b6b-9b72-af584e710e64</parentTransactionId>
-      <reason>Reason for requesting the refund or cancellation of the transaction</reason>
+      <reason>Reason for requesting the refund of the transaction</reason>
       <type>PARTIAL_REFUND</type>
    </transaction>
 </request>
@@ -589,23 +589,22 @@ As mentioned earlier, refund requests go through an approval process. PayU usual
 
 #### Checking the Status via the Queries API
 
-You can also check the refund status using the [Queries API]({{< ref "Queries-API.md" >}}). To do so, send a request with the **order ID**.
-
-When you query an order, the system returns the most recent transaction associated with it.
+You can also check the refund status using the [Queries API]({{< ref "Queries-API.md" >}}). To do so, send a request with the **order ID**. When you query an order, the system returns the most recent transaction associated with it.
 
 The response can indicate one of three statuses:
 
-- **Unresolved Request**: The refund request is still under review. The order shows a `CAPTURED` status (`result.payload.status` in the response).  
-  - The first transaction type is `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` in the response).  
-  - The first transaction status is `APPROVED` (`result.transactions.transactionResponse.state` in the response).
+- **Unresolved Request**: If the refund request is still under review, the order appears with the status `CAPTURED` (`result.payload.status` in the response).  
+  - There will be a transaction of type `AUTHORIZATION_AND_CAPTURE` (`result.transactions.type` in the response), and the transaction status will be `APPROVED` (`result.transactions.transactionResponse.state` in the response).  
+  - If the merchant uses a two-step flow, there will be a transaction of type `AUTHORIZATION` and another of type `CAPTURE`, both with the status `APPROVED`.
 
-- **Approved**: A PayU customer service agent approved the refund request. The order shows a `REFUNDED` status (`result.payload.status` in the response).  
-  - The first transaction type is `REFUND` (`result.transactions.type` in the response).  
-  - The first transaction status is `APPROVED` (`result.transactions.transactionResponse.state` in the response).
+- **Approved**: If the refund request is approved, the order appears with the status `REFUNDED` (`result.payload.status` in the response).  
+  - There will be a transaction of type `REFUND` (`result.transactions.type` in the response).  
+  - The transaction status is `APPROVED` (`result.transactions.transactionResponse.state` in the response).  
+  > **Note:** If there are partial captures that do not cover the full order amount, the order status will continue to appear as `CAPTURED`.
 
-- **Declined**:  A PayU customer service agent rejected the refund request. The order shows a `CAPTURED` status (`result.payload.status` in the response).  
-  - The first transaction type is `REFUND` (`result.transactions.type` in the response).  
-  - The first transaction status is `DECLINED` (`result.transactions.transactionResponse.state` in the response).
+- **Declined**: If the refund request is declined, the order appears with the status `CAPTURED` (`result.payload.status` in the response).  
+  - There will be a transaction of type `REFUND` (`result.transactions.type` in the response).  
+  - The transaction status is `DECLINED` (`result.transactions.transactionResponse.state` in the response).
 
 ### Handling Pending Refunds with the PayU Cancellations Module
 

@@ -313,22 +313,22 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 | `transaction > debitCard > securityCode` | Alfanumérico | Mín:1 Máx:4 | Código de segurança do cartão de débito (CVC2, CVV2, CID). | Não |
 | `transaction > debitCard > expirationDate` | Alfanumérico | 7 | Data de validade do cartão de débito. Formato `YYYY/MM`. | Não |
 | `transaction > debitCard > name` | Alfanumérico | Mín:1 Máx:255 | Nome do titular exibido no cartão de débito. | Não |
-| `transaction > payer` | Objeto |  | Informações do pagador. Devido à regulamentação tributária, é obrigatório o envio dos parâmetros `payer.billingAddress.state` e `payer.dnitype`. | Sim |
+| `transaction > payer` | Objeto |  | Informações do pagador. Na Argentina, para cumprir com as regulamentações fiscais e garantir o cálculo correto dos impostos, você deve enviar o endereço de cobrança do pagador (`transaction.payer.billingAddress`), o tipo de documento (`transaction.payer.dniType`) e o número do documento (`transaction.payer.dniNumber`). A ausência dessas informações pode impedir a aplicação correta dos impostos. | Sim |
 | `transaction > payer > emailAddress` | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Não |
 | `transaction > payer > merchantPayerId` | Alfanumérico | Máx:100 | Identificador do pagador em seu sistema. | Não |
-| `transaction > payer > fullName` | Alfanumérico | Máx:150 |Nome do pagador que deve corresponder ao nome enviado no parâmetro `creditCard.name` para pagamentos com cartão de crédito| Não |
-| `transaction > payer > billingAddress` | Objeto |  | Endereço de cobrança. | Sim |
-| `transaction > payer > billingAddress > street1` | Alfanumérico | Máx:100 | Endereço de cobrança linha 1. | Não |
+| `transaction > payer > fullName` | Alfanumérico | Máx:150 |Nome do pagador que deve corresponder ao nome enviado no parâmetro `creditCard.name` para pagamentos com cartão de crédito| Sim |
+| `transaction > payer > billingAddress` | Objeto |  | Na Argentina, o envio do endereço de cobrança completo é obrigatório para cumprir com as regulamentações fiscais locais. | Sim |
+| `transaction > payer > billingAddress > street1` | Alfanumérico | Máx:100 | Linha 1 do endereço de cobrança. Obrigatório na Argentina para cumprir com as regulamentações fiscais. | Sim |
 | `transaction > payer > billingAddress > street2` | Alfanumérico | Máx:100 | Endereço de cobrança linha 2. | Não |
-| `transaction > payer > billingAddress > city` | Alfanumérico | Máx:50 | Cidade do endereço de cobrança. | Não |
-| `transaction > payer > billingAddress > state` | Alfanumérico | Máx:40 | Estado do endereço de cobrança. Formato [ISO 3166-2 ARG oficial](https://www.iso.org/obp/ui/#iso:code:3166:AR). | Sim |
-| `transaction > payer > billingAddress > country` | Alfanumérico | 2 | País do endereço de cobrança no formato ISO 3166 Alpha-2. | Não |
+| `transaction > payer > billingAddress > city` | Alfanumérico | Máx:50 | Cidade do endereço de cobrança. Obrigatório na Argentina para cumprir com as regulamentações fiscais. | Sim |
+| `transaction > payer > billingAddress > state` | Alfanumérico | Máx:40 | Província do endereço de cobrança. Formato [ISO 3166-2 ARG oficial](https://www.iso.org/obp/ui/#iso:code:3166:AR). Na Argentina, este campo é obrigatório para o cálculo de impostos. | Sim |
+| `transaction > payer > billingAddress > country` | Alfanumérico | 2 | País do endereço de cobrança no formato ISO 3166 Alpha-2. | Sim |
 | `transaction > payer > billingAddress > postalCode` | Alfanumérico | Máx:20 | Código postal do endereço de cobrança. | Não |
 | `transaction > payer > billingAddress > phone` | Alfanumérico | Máx:20 | Número de telefone do endereço de cobrança. | Não |
 | `transaction > payer > birthdate` | Alfanumérico | Máx:10 | Data de nascimento do pagador. | Não |
 | `transaction > payer > contactPhone` | Alfanumérico | Máx:20 | Número de telefone do pagador. | Não |
-| `transaction > payer > dniNumber` | Alfanumérico | Máx:20 | Número de identificação do pagador. | Não |
-| `transaction > payer > dniType` | Alfanumérico | 2 | Tipo de identificação do pagador. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Sim |
+| `transaction > payer > dniNumber` | Alfanumérico | Máx:20 | Número de identificação do pagador. Na Argentina, este campo é obrigatório para o cálculo de impostos. O número deve ser válido para o país (exemplo: `CUIT`: 27-28033514-8, `CUIL`: 20-12345678-9, `DNI`: 45678901). | Sim |
+| `transaction > payer > dniType` | Alfanumérico | 2 | Tipo de identificação do pagador. [Ver tipos de documento]({{< ref "response-codes-and-variables.html#document-types" >}}). Na Argentina, este campo é obrigatório para o cálculo de impostos. Use `CUIT` ou `CUIL` como tipo de documento (outros tipos são aceitos, mas não são recomendados para fins fiscais). | Sim |
 | `transaction > type` | Alfanumérico | 32 | Definir este valor de acordo com a transação que você quer:<br><ul style="margin-bottom: initial;"><li>`AUTHORIZATION`</li><li>`CAPTURE`</li><li>`AUTHORIZATION_AND_CAPTURE` para fluxos de uma etapa.</li></ul> | Sim |
 | `transaction > paymentMethod` | Alfanumérico | 32 | Selecione um método de pagamento com cartão de crédito ou débito válido. [Veja os métodos de pagamento disponíveis na Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sim |
 | `transaction > paymentCountry` | Alfanumérico | 2 | Definir `AR` para a Argentina. | Sim |
@@ -381,6 +381,19 @@ Encontre a descrição do objeto `transaction.networkToken` e seus parâmetros n
 * Devido à regulamentação tributária, é obrigatório o envio dos parâmetros `payer.billingAddress.state` usando formato [ISO 3166-2 ARG oficial](https://www.iso.org/obp/ui/#iso:code:3166:AR) e `payer.dnitype`.
 * A variável `transaction.threeDomainSecure` não substitui as informações do cartão nem qualquer um dos campos obrigatórios da transação. Este objeto é adicional e não obrigatório.
 * A variável `transaction.threeDomainSecure` corresponde a um cenário _passthrough_ onde a loja faz a autenticação por conta própria.
+
+<details>
+      <summary><strong>Consideração especial sobre regulamentações fiscais</strong></summary>      
+      <p>Para cumprir com as regulamentações da autoridade fiscal da Argentina e garantir o cálculo correto dos impostos, é obrigatório incluir os seguintes campos na solicitação:</p>
+      <ul>
+        <li><strong>Endereço de cobrança:</strong> (<code>transaction.payer.billingAddress</code>).</li>
+        <ul>
+        <li><strong>Província:</strong> (<code>transaction.payer.billingAddress.state</code>). Deve seguir o formato <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR" target="_blank" rel="noopener noreferrer">ISO 3166-2 ARG oficial</a>.</li>
+        </ul>      
+      <li><strong>Tipo de documento:</strong> (<code>transaction.payer.dniType</code>). Use <code>CUIT</code> ou <code>CUIL</code> como tipos preferenciais (outros tipos são aceitos, mas não são recomendados para fins fiscais).</li>      
+      <li><strong>Número do documento:</strong> (<code>transaction.payer.dniNumber</code>). Deve ser um número de identificação válido para a Argentina (exemplos: <code>CUIT</code> <code>27-28033514-8</code>, <code>CUIL</code> <code>20-12345678-9</code>, <code>DNI</code> <code>45678901</code>).</li>
+      </ul>     
+</details>
 
 <details>
       <summary><strong>Consideração especial para cartões Naranja</strong></summary>
@@ -1251,22 +1264,22 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE` | Alfanumérico | 64 | Valor base para cálculo do VAT.<br>Se o valor não tiver IVA, envie 0.<br>Este valor pode ter duas casas decimais.  | Não |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Número | 12, 2 | Especifica o valor base da transação. | Não |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency` | Alfanumérico | 3 | Código ISO da moeda. [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | Não |
-| `transaction > payer` | Objeto |  | Informações do pagador. | Sim |
+| `transaction > payer` | Objeto |  | Informações do pagador. Na Argentina, para cumprir com as regulamentações fiscais e garantir o cálculo correto dos impostos, você deve enviar o endereço de cobrança do pagador (`transaction.payer.billingAddress`), o tipo de documento (`transaction.payer.dniType`) e o número do documento (`transaction.payer.dniNumber`). A ausência dessas informações pode impedir a aplicação correta dos impostos. | Sim |
 | `transaction > payer > emailAddress` | Alfanumérico | Máx:255 | Endereço de e-mail do pagador. | Sim |
 | `transaction > payer > merchantPayerId` | Alfanumérico | Máx:100 | Identificador do pagador em seu sistema. | Não |
-| `transaction > payer > fullName` | Alfanumérico | Máx:150 | Nome of the payer. | Sim |
-| `transaction > payer > billingAddress` | Objeto |  | Endereço de cobrança. | Sim |
-| `transaction > payer > billingAddress > street1` | Alfanumérico | Máx:100 | Endereço de cobrança linha 1. | Sim |
+| `transaction > payer > fullName` | Alfanumérico | Máx:150 | Nome do pagador. | Sim |
+| `transaction > payer > billingAddress` | Objeto |  | Na Argentina, o envio do endereço de cobrança completo é obrigatório para cumprir com as regulamentações fiscais locais. | Sim |
+| `transaction > payer > billingAddress > street1` | Alfanumérico | Máx:100 | Linha 1 do endereço de cobrança. Obrigatório na Argentina para cumprir com as regulamentações fiscais. | Sim |
 | `transaction > payer > billingAddress > street2` | Alfanumérico | Máx:100 | Endereço de cobrança linha 2. | Não |
-| `transaction > payer > billingAddress > city` | Alfanumérico | Máx:50 | Cidade do endereço de cobrança. | Sim |
-| `transaction > payer > billingAddress > state` | Alfanumérico | Máx:40 | Estado do endereço de cobrança. | Sim |
+| `transaction > payer > billingAddress > city` | Alfanumérico | Máx:50 | Cidade do endereço de cobrança. Obrigatório na Argentina para cumprir com as regulamentações fiscais. | Sim |
+| `transaction > payer > billingAddress > state` | Alfanumérico | Máx:40 | Província do endereço de cobrança. Formato [ISO 3166-2 ARG oficial](https://www.iso.org/obp/ui/#iso:code:3166:AR). Na Argentina, este campo é obrigatório para o cálculo de impostos. | Sim |
 | `transaction > payer > billingAddress > country` | Alfanumérico | 2 | País do endereço de cobrança no formato ISO 3166 Alpha-2. | Sim |
 | `transaction > payer > billingAddress > postalCode` | Alfanumérico | Máx:20 | Código postal do endereço de cobrança. | Não |
 | `transaction > payer > billingAddress > phone` | Alfanumérico | Máx:20 | Número de telefone do endereço de cobrança. | Não |
 | `transaction > payer > birthdate` | Alfanumérico | Máx:10 | Data de nascimento do pagador. | Não |
 | `transaction > payer > contactPhone` | Alfanumérico | Máx:20 | Número de telefone do pagador. | Sim |
-| `transaction > payer > dniNumber` | Alfanumérico | Máx:20 | Número de identificação do pagador. | Sim |
-| `transaction > payer > dniType` | Alfanumérico | 2 | Tipo de identificação do pagador. [Veja os tipos de documentos]({{< ref "response-codes-and-variables.html#document-types" >}}). | Não |
+| `transaction > payer > dniNumber` | Alfanumérico | Máx:20 | Número de identificação do pagador. Na Argentina, este campo é obrigatório para o cálculo de impostos. O número deve ser válido para o país (exemplo: `CUIT`: 27-28033514-8, `CUIL`: 20-12345678-9, `DNI`: 45678901). | Sim |
+| `transaction > payer > dniType` | Alfanumérico | 2 | Tipo de identificação do pagador. [Ver tipos de documento]({{< ref "response-codes-and-variables.html#document-types" >}}). Na Argentina, este campo é obrigatório para o cálculo de impostos. Use `CUIT` ou `CUIL` como tipo de documento (outros tipos são aceitos, mas não são recomendados para fins fiscais). | Sim |
 | `transaction > type` | Alfanumérico | 32 | Como os pagamentos em dinheiro são feitos em escritórios físicos, o único tipo de transação disponível é `AUTHORIZATION_AND_CAPTURE` | Sim |
 | `transaction > paymentMethod` | Alfanumérico | 32 | Selecione um método de pagamento válido em dinheiro. [Veja os métodos de pagamento disponíveis na Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Sim |
 | `transaction > paymentCountry` | Alfanumérico | 2 | Definir `AR` para a Argentina. | Sim |
@@ -1309,6 +1322,19 @@ Este método permite processar os pagamentos de seus clientes em dinheiro. Para 
    - **BAR_CODE**: código de barras que permite ao pagador efetuar o pagamento. 
    - **URL_PAYMENT_RECEIPT_HTML**: comprovante de pagamento em formato HTML. É para cá que você precisa redirecionar o pagamento quando o pagador seleciona o pagamento em dinheiro. 
    - **URL_PAYMENT_RECEIPT_PDF**: comprovante de pagamento em formato PDF.
+
+<details>
+      <summary><strong>Consideração especial sobre regulamentações fiscais</strong></summary>      
+      <p>Para cumprir com as regulamentações da autoridade fiscal da Argentina e garantir o cálculo correto dos impostos, é obrigatório incluir os seguintes campos na solicitação:</p>
+      <ul>
+        <li><strong>Endereço de cobrança:</strong> (<code>transaction.payer.billingAddress</code>).</li>
+        <ul>
+        <li><strong>Província:</strong> (<code>transaction.payer.billingAddress.state</code>). Deve seguir o formato <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR" target="_blank" rel="noopener noreferrer">ISO 3166-2 ARG oficial</a>.</li>
+        </ul>      
+      <li><strong>Tipo de documento:</strong> (<code>transaction.payer.dniType</code>). Use <code>CUIT</code> ou <code>CUIL</code> como tipos preferenciais (outros tipos são aceitos, mas não são recomendados para fins fiscais).</li>      
+      <li><strong>Número do documento:</strong> (<code>transaction.payer.dniNumber</code>). Deve ser um número de identificação válido para a Argentina (exemplos: <code>CUIT</code> <code>27-28033514-8</code>, <code>CUIL</code> <code>20-12345678-9</code>, <code>DNI</code> <code>45678901</code>).</li>
+      </ul>     
+</details>
 
 ### Chamada da API {#api-call}
  

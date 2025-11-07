@@ -313,22 +313,22 @@ Find the description of the object `transaction.networkToken` and its parameters
 | `transaction > debitCard > securityCode` | Alphanumeric | Min:1 Max:4 | Debit card security code (CVC2, CVV2, CID). | No |
 | `transaction > debitCard > expirationDate` | Alphanumeric | 7 | Debit card expiration date. Format `YYYY/MM`. | No |
 | `transaction > debitCard > name` | Alphanumeric | Min:1 Max:255 | Holder's name displayed in the debit card. | No |
-| `transaction > payer` | Object |  | Payer information. Due to Tax regulations, it is mandatory to send the parameters `payer.billingAddress.state` and `payer.dnitype`. | Yes |
+| `transaction > payer` | Object |  | Payer information. For Argentina, to comply with tax regulations and ensure the correct calculation of taxes, you must send the payer’s billing address (`transaction.payer.billingAddress`), document type (`transaction.payer.dniType`), and document number (`transaction.payer.dniNumber`). The absence of this information may prevent the correct application of taxes. | Yes |
 | `transaction > payer > emailAddress` | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | `transaction > payer > merchantPayerId` | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
-| `transaction > payer > fullName` | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `creditCard.name` for credit card payments. | No |
-| `transaction > payer > billingAddress` | Object |  | Billing address. | Yes |
-| `transaction > payer > billingAddress > street1` | Alphanumeric | Max:100 | Billing Address Line 1. | No |
+| `transaction > payer > fullName` | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `creditCard.name` for credit card payments. | Sí |
+| `transaction > payer > billingAddress` | Object |  | For Argentina, sending the full billing address is mandatory to comply with local tax regulations. | Yes |
+| `transaction > payer > billingAddress > street1` | Alphanumeric | Max:100 | Billing Address Line 1. Mandatory for Argentina to comply with tax regulations. | Yes |
 | `transaction > payer > billingAddress > street2` | Alphanumeric | Max:100 | Billing Address Line 2. | No |
-| `transaction > payer > billingAddress > city` | Alphanumeric | Max:50 | Billing address city. | No |
-| `transaction > payer > billingAddress > state` | Alphanumeric | Max:40 | Billing address state. Format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR). | Yes |
-| `transaction > payer > billingAddress > country` | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | No |
+| `transaction > payer > billingAddress > city` | Alphanumeric | Max:50 | Billing address city. Mandatory for Argentina to comply with tax regulations. | Yes |
+| `transaction > payer > billingAddress > state` | Alphanumeric | Max:40 | Billing address province. Format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR). For Argentina, this field is mandatory for tax calculation. | Yes |
+| `transaction > payer > billingAddress > country` | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | Yes |
 | `transaction > payer > billingAddress > postalCode` | Alphanumeric | Max:20 | Billing address zip code. | No |
 | `transaction > payer > billingAddress > phone` | Alphanumeric | Max:20 | Billing address phone number. | No |
 | `transaction > payer > birthdate` | Alphanumeric | Max:10 |Buyer's date of birth. | No |
 | `transaction > payer > contactPhone` | Alphanumeric | Max:20 | Buyer's phone number. | No |
-| `transaction > payer > dniNumber` | Alphanumeric | Max:20 | Identification number of the buyer. | No |
-| `transaction > payer > dniType` | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | Yes |
+| `transaction > payer > dniNumber` | Alphanumeric | Max:20 | Identification number of the payer. For Argentina, this field is mandatory for tax calculation. The number must be valid for the country (e.g., `CUIT`: 27-28033514-8, `CUIL`: 20-12345678-9, `DNI`: 45678901). | Yes |
+| `transaction > payer > dniType` | Alphanumeric | 2 | Identification type of the payer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). For Argentina, this field is mandatory for tax calculation. Use `CUIT` or `CUIL` as the document type (other types are accepted but not recommended for tax purposes). | Yes |
 | `transaction > networkToken` | Object |  | Information of the token. Include this parameter when the transaction is done using a tokenized card with VTS or MDES Tokenization. For more information, refer to [Pay with MDES or VTS tokens](https://developers.payulatam.com/latam/en/docs/integrations/api-integration/payments-api-brazil.html#pay-with-mdes-or-vts-tokens). *When sending this object, all its parameters are mandatory.  | No |
 | `transaction > networkToken > tokenPan` | Alphanumeric | Max: 32 | Token number generated either by MDES or VTS. | Yes* |
 | `transaction > networkToken > cryptogram` | Alphanumeric | Max: 28 | Unique key generated by MDES or VTS to decrypt the information of the credit card. | Yes* |
@@ -382,9 +382,22 @@ Find the description of the object `transaction.networkToken` and its parameters
 * For payments with credit card tokens generated using MDES or VTS, include the object `transaction.networkToken` and its parameters.
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`. Having this feature enabled is mandatory when using credit card tokens generated with MDES or VTS.
 * When using credit cards, take into account the considerations due to Argentinian regulations for the check out page.
-* Due to Tax regulations, it is mandatory to send the parameters `payer.billingAddress.state` using format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR) and `payer.dnitype`.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
 * The variable `transaction.threeDomainSecure` corresponds to a _passthrough_ scenario where the commerce performs the authentication by their own.
+
+<details>
+      <summary><strong>Special consideration for tax regulations</strong></summary>      
+      <p>To comply with Argentina’s tax authority regulations and ensure the correct calculation of taxes, it is mandatory to include the following fields in the request:</p>
+      <ul>
+        <li><strong>Billing address:</strong>(<code>transaction.payer.billingAddress</code>).</li>
+        <ul>
+        <li><strong>Province:</strong>(<code>transaction.payer.billingAddress.state</code>). Must follow the <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR" target="_blank" rel="noopener noreferrer">ISO 3166-2 ARG official</a></li>
+        </ul>      
+      <li><strong>Document type:</strong>(<code>transaction.payer.dniType</code>). Use <code>CUIT</code> or <code>CUIL</code> as preferred types (other types are accepted but not recommended for tax purposes).</li>      
+      <li><strong>Document number:</strong>(<code>transaction.payer.dniNumber</code>). Must be a valid identification number for Argentina (examples: <code>CUIT</code> <code>27-28033514-8</code>, <code>CUIL</code> <code>20-12345678-9</code>, <code>DNI</code> <code>45678901</code>).</li>
+      </ul>     
+</details>
+
 <details>
       <summary><strong>Special consideration for Naranja cards</strong></summary>
       <p><strong>Special consideration:</strong> Naranja X Credit Cards (BIN 589562)</p>
@@ -1229,22 +1242,22 @@ This method lets you process the payments in cash of your customers. To integrat
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE` | Alphanumeric | 64 | Base value to calculate the VAT.<br>If the amount does not have IVA, send 0.<br>This value may have two decimal digits.  | No |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Number | 12, 2 | Specifies the base amount of the transaction. | No |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > currency` | Alphanumeric | 3 | ISO code of the currency. [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}). | No |
-| `transaction > payer` | Objeto |  | Payer information. | Yes |
+| `transaction > payer` | Objeto |  | Payer information. For Argentina, to comply with tax regulations and ensure the correct calculation of taxes, you must send the payer’s billing address (`transaction.payer.billingAddress`), document type (`transaction.payer.dniType`), and document number (`transaction.payer.dniNumber`). The absence of this information may prevent the correct application of taxes. | Yes |
 | `transaction > payer > emailAddress` | Alphanumeric | Max:255 | Payer e-mail address. | Yes |
 | `transaction > payer > merchantPayerId` | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
 | `transaction > payer > fullName` | Alphanumeric | Max:150 | Name of the payer. | Yes |
-| `transaction > payer > billingAddress` | Object |  | Billing address. | Yes |
-| `transaction > payer > billingAddress > street1` | Alphanumeric | Max:100 | Billing Address Line 1. | Yes |
+| `transaction > payer > billingAddress` | Object |  | For Argentina, sending the full billing address is mandatory to comply with local tax regulations. | Yes |
+| `transaction > payer > billingAddress > street1` | Alphanumeric | Max:100 | Billing Address Line 1. Mandatory for Argentina to comply with tax regulations. | Yes |
 | `transaction > payer > billingAddress > street2` | Alphanumeric | Max:100 | Billing Address Line 2. | No |
-| `transaction > payer > billingAddress > city` | Alphanumeric | Max:50 | Billing address city. | Yes |
-| `transaction > payer > billingAddress > state` | Alphanumeric | Max:40 | Billing address state. | Yes |
+| `transaction > payer > billingAddress > city` | Alphanumeric | Max:50 | Billing address city. Mandatory for Argentina to comply with tax regulations. | Yes |
+| `transaction > payer > billingAddress > state` | Alphanumeric | Max:40 | Billing address province. Format [ISO 3166-2 ARG official](https://www.iso.org/obp/ui/#iso:code:3166:AR). For Argentina, this field is mandatory for tax calculation. | Yes |
 | `transaction > payer > billingAddress > country` | Alphanumeric | 2 | Billing address country in format ISO 3166 Alpha-2. | Yes |
 | `transaction > payer > billingAddress > postalCode` | Alphanumeric | Max:20 | Billing address zip code. | No |
 | `transaction > payer > billingAddress > phone` | Alphanumeric | Max:20 | Billing address phone number. | No |
 | `transaction > payer > birthdate` | Alphanumeric | Max:10 | Payer's date of birth. | No |
 | `transaction > payer > contactPhone` | Alphanumeric | Max:20 | Payer's phone number. | Yes |
-| `transaction > payer > dniNumber` | Alphanumeric | Max:20 | Identification number of the buyer. | Yes |
-| `transaction > payer > dniType` | Alphanumeric | 2 | Identification type of the buyer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). | No |
+| `transaction > payer > dniNumber` | Alphanumeric | Max:20 | Identification number of the payer. For Argentina, this field is mandatory for tax calculation. The number must be valid for the country (e.g., `CUIT`: 27-28033514-8, `CUIL`: 20-12345678-9, `DNI`: 45678901). | Yes |
+| `transaction > payer > dniType` | Alphanumeric | 2 | Identification type of the payer. [See Document types]({{< ref "response-codes-and-variables.html#document-types" >}}). For Argentina, this field is mandatory for tax calculation. Use `CUIT` or `CUIL` as the document type (other types are accepted but not recommended for tax purposes). | Yes |
 | `transaction > type` | Alphanumeric | 32 | As cash payments are performed in physical offices, the only available transaction type is `AUTHORIZATION_AND_CAPTURE` | Yes |
 | `transaction > paymentMethod` | Alphanumeric | 32 | Select a valid Payment Method in cash. [See the available Payment Methods for Argentina]({{< ref "select-your-payment-method.html#Argentina" >}}). | Yes |
 | `transaction > paymentCountry` | Alphanumeric | 2 | Set `AR` for Argentina. | Yes |
@@ -1287,6 +1300,19 @@ This method lets you process the payments in cash of your customers. To integrat
    - **BAR_CODE**: barcode which lets the payer perform the payment. 
    - **URL_PAYMENT_RECEIPT_HTML**: payment receipt in HTML format. This is where you need to redirect the payment when the payer selects cash payment. 
    - **URL_PAYMENT_RECEIPT_PDF**: payment receipt in PDF format.
+
+<details>
+      <summary><strong>Special consideration for tax regulations</strong></summary>      
+      <p>To comply with Argentina’s tax authority regulations and ensure the correct calculation of taxes, it is mandatory to include the following fields in the request:</p>
+      <ul>
+        <li><strong>Billing address:</strong>(<code>transaction.payer.billingAddress</code>).</li>
+        <ul>
+        <li><strong>Province:</strong>(<code>transaction.payer.billingAddress.state</code>). Must follow the <a href="https://www.iso.org/obp/ui/#iso:code:3166:AR" target="_blank" rel="noopener noreferrer">ISO 3166-2 ARG official</a></li>
+        </ul>      
+      <li><strong>Document type:</strong>(<code>transaction.payer.dniType</code>). Use <code>CUIT</code> or <code>CUIL</code> as preferred types (other types are accepted but not recommended for tax purposes).</li>      
+      <li><strong>Document number:</strong>(<code>transaction.payer.dniNumber</code>). Must be a valid identification number for Argentina (examples: <code>CUIT</code> <code>27-28033514-8</code>, <code>CUIL</code> <code>20-12345678-9</code>, <code>DNI</code> <code>45678901</code>).</li>
+      </ul>     
+</details>
 
 ### API Call {#api-call}
 
