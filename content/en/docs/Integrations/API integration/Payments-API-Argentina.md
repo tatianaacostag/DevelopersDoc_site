@@ -316,7 +316,7 @@ Find the description of the object `transaction.networkToken` and its parameters
 | `transaction > payer` | Object |  | Payer information. For Argentina, to comply with tax regulations and ensure the correct calculation of taxes, you must send the payer’s billing address (`transaction.payer.billingAddress`), document type (`transaction.payer.dniType`), and document number (`transaction.payer.dniNumber`). The absence of this information may prevent the correct application of taxes. | Yes |
 | `transaction > payer > emailAddress` | Alphanumeric | Max:255 | Payer e-mail address. | No |
 | `transaction > payer > merchantPayerId` | Alphanumeric | Max:100 | Identifier of the payer in your system. | No |
-| `transaction > payer > fullName` | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `creditCard.name` for credit card payments. | Sí |
+| `transaction > payer > fullName` | Alphanumeric | Max:150 | Name of the payer which must meet the name sent in the parameter `creditCard.name` for credit card payments. | Yes |
 | `transaction > payer > billingAddress` | Object |  | For Argentina, sending the full billing address is mandatory to comply with local tax regulations. | Yes |
 | `transaction > payer > billingAddress > street1` | Alphanumeric | Max:100 | Billing Address Line 1. Mandatory for Argentina to comply with tax regulations. | Yes |
 | `transaction > payer > billingAddress > street2` | Alphanumeric | Max:100 | Billing Address Line 2. | No |

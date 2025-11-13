@@ -142,6 +142,12 @@ Você pode utilizar os seguintes cartões de teste, organizados por país:
 </tbody>
 </table>
 
+{{% alert title="Nota" color="info" %}}
+
+Se você quiser testar pagamentos usando o <strong>Webpay Plus</strong>, consulte a <a href="https://www.transbankdevelopers.cl/documentacion/como_empezar#tarjetas-de-prueba" target="_blank" rel="noopener noreferrer">documentação oficial do Webpay Plus</a> para ver a lista de cartões de teste disponíveis.
+
+{{% /alert %}}
+
 </details>
 <details id="colombia">
 <summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colômbia</b></summary>

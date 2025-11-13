@@ -142,6 +142,12 @@ You can use the following test cards, organized by country:
 </tbody>
 </table>
 
+{{% alert title="Note" color="info" %}}
+
+If you want to test payments using <strong>Webpay Plus</strong>, refer to the official <a href="https://www.transbankdevelopers.cl/documentacion/como_empezar#tarjetas-de-prueba" target="_blank" rel="noopener noreferrer"> Webpay Plus documentation</a> for the list of available test cards.
+
+{{% /alert %}}
+
 </details>
 <details id="colombia">
 <summary><img src="/assets/Colombia.png" width="25px"/> &nbsp; <b>Colombia</b></summary>

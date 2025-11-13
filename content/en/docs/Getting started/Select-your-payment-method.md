@@ -29,7 +29,7 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Credit card</td>
@@ -162,7 +162,7 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Credit card</td>
@@ -244,11 +244,17 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Credit card</td>      
     </tr>
+    <tr>
+      <td><img src="/assets/PaymentMethods/khipu.png" width="80px" alt="Khipu"/></td>
+      <td>Khipu</td>
+      <td><code>KHIPU</code></td>
+      <td>Bank transfer</td>      
+    </tr>    
     <tr>
       <td><img src="/assets/PaymentMethods/master.png" width="80px" alt="Mastercard"/></td>
       <td>Mastercard</td>
@@ -300,7 +306,7 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Credit card</td>
@@ -440,7 +446,7 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Credit card</td>      
@@ -550,7 +556,7 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Credit card</td>      

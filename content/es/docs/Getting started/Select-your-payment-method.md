@@ -29,7 +29,7 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Tarjeta de crédito</td>
@@ -162,7 +162,7 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Tarjeta de crédito</td>
@@ -244,11 +244,17 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Tarjeta de crédito</td>      
     </tr>
+    <tr>
+      <td><img src="/assets/PaymentMethods/khipu.png" width="80px" alt="Khipu"/></td>
+      <td>Khipu</td>
+      <td><code>KHIPU</code></td>
+      <td>Transferencia bancaria</td>      
+    </tr>      
     <tr>
       <td><img src="/assets/PaymentMethods/master.png" width="80px" alt="Mastercard"/></td>
       <td>Mastercard</td>
@@ -300,7 +306,7 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Tarjeta de crédito</td>
@@ -440,7 +446,7 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Tarjeta de crédito</td>      
@@ -550,7 +556,7 @@ Para integrar tu solución mediante API o SDK, revisa la columna **Parámetro `p
   </thead>
   <tbody>
     <tr>
-      <td><img src="/assets/PaymentMethods/american.png" width="80px" alt="American Express"/></td>
+      <td><img src="/assets/PaymentMethods/amex.png" width="80px" alt="American Express"/></td>
       <td>American Express</td>
       <td><code>AMEX</code></td>
       <td>Tarjeta de crédito</td>      

@@ -1763,6 +1763,7 @@ Este método te permite procesar pagos con tarjetas débito o prepago de tus cli
 
 #### Consideraciones {#considerations-3}
 
+* Si deseas probar pagos utilizando <strong>Webpay Plus</strong>, consulta la <a href="https://www.transbankdevelopers.cl/documentacion/como_empezar#tarjetas-de-prueba" target="_blank" rel="noopener noreferrer">documentación oficial de Webpay Plus</a> para conocer la lista de tarjetas de prueba disponibles.
 * Si no incluyes el parámetro `RESPONSE_URL` dentro de `transaction.extraParameters`, la API tomará el valor de la variable **Response URL** ubicada en tu Panel de Administración de PayU, en **Configuración** > **Configuración técnica**.
 * Cuando proceses pagos a través de WebPay Plus, debes redirigir al cliente a la URL que se obtiene al concatenar el parámetro extra `URL_PAYMENT_REDIRECT` con el parámetro extra `TRANSBANK_DIRECT_TOKEN`, de la siguiente manera: `<br> URL_PAYMENT_REDIRECT?token_ws=TRANSBANK_DIRECT_TOKEN`.
 * Si la solicitud de pago es exitosa, la transacción tendrá el estado `PENDING` y el `responseCode` será `PENDING_PAYMENT_IN_ENTITY`. Esto se debe a que la integración redirige al pagador al banco seleccionado para finalizar el pago.
