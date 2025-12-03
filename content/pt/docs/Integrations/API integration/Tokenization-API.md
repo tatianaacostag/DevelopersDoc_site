@@ -1133,18 +1133,19 @@ Este recurso permite processar múltiplos pagamentos usando tokens armazenados a
 ### Considerações
 
 * Cada registro no arquivo deve seguir a estrutura e a ordem especificadas, com valores separados por vírgulas:
-    - ID da Conta – O identificador da sua conta PayU.
-    - Token do Cartão de Crédito
-    - Código de Segurança do Cartão de Crédito
-    - Número de Parcelas
-    - Referência da Venda
-    - Descrição da Venda
-    - E-mail do Comprador
-    - Código ISO da Moeda – [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}).
-    - Valor Total (incluindo impostos)
-    - Valor Base para Reembolso
-    - Valor Adicional
-    - Idioma do E-mail – Idioma utilizado nos e-mails enviados ao comprador e ao vendedor. [Veja os idiomas suportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}).
+    - ID da conta – O identificador da sua conta PayU.
+    - Token do cartão de crédito
+    - Código de segurança do cartão de crédito
+    - Número de parcelas
+    - Referência da venda
+    - Descrição da venda
+    - E-mail do comprador
+    - Código ISO da moeda – [Veja as moedas aceitas]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}).
+    - Valor total (incluindo impostos)
+    - Valor do imposto
+    - Valor base para reembolso
+    - Valor adicional
+    - Idioma do e-mail – Idioma utilizado nos e-mails enviados ao comprador e ao vendedor. [Veja os idiomas suportados]({{< ref "response-codes-and-variables.html#supported-languages" >}}).
 * O arquivo não deve incluir um cabeçalho.
 * O arquivo deve estar codificado em UTF-8. Você precisa implementar uma funcionalidade para codificar o conteúdo e enviar a string codificada no parâmetro `contentFile`.
 * O arquivo não pode conter mais de 10.000 registros.

@@ -77,7 +77,7 @@ Los días máximos para enviar evidencia varían por país:
 | Argentina | 5 días hábiles             |
 | Brasil    | 12 días hábiles            |
 | Chile     | 5 días hábiles             |
-| Colombia  | 2 días hábiles             |
+| Colombia  | 3 días hábiles             |
 | México    | 12 días calendario         |
 | Panamá    | 8 días hábiles             |
 | Perú      | 6 días hábiles             |

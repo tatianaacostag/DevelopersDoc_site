@@ -1,27 +1,27 @@
 ---
-title: "Página de Confirmação"
-linkTitle: "Página de Confirmação"
+title: "URL de Confirmação"
+linkTitle: "URL de Confirmação"
 date: 2021-03-29T12:15:57-05:00
 description: >
-  A página de confirmação facilita a comunicação entre sistemas, permitindo que você receba os resultados das transações e atualize seus estoques, pedidos ou bases de dados.
+  A URL de confirmação facilita a comunicação entre sistemas, permitindo que você receba os resultados das transações e atualize seus estoques, pedidos ou bases de dados.
 weight: 30
 tags: ["subtopic"]
 ---
 
 Esta página, invisível para os clientes, recebe dados via HTTP POST. É importante notar que, caso o pagador realize tentativas de pagamento, uma confirmação será gerada para cada transação, independentemente de ter sido aprovada ou rejeitada.
 
-Como essa página é destinada exclusivamente à atualização do sistema e não é voltada ao cliente, ela não deve conter nenhum código HTML. Embora sua implementação seja opcional, ela é altamente recomendada para garantir que seu sistema reflita corretamente os resultados das transações.
+Como essa URL é destinada exclusivamente à atualização do sistema e não é voltada ao cliente, ela não deve conter nenhum código HTML. Embora sua implementação seja opcional, ela é altamente recomendada para garantir que seu sistema reflita corretamente os resultados das transações.
 
-Ao finalizar uma transação (seja aprovada, rejeitada ou cancelada), nossa plataforma envia as variáveis relevantes para a URL da sua página de confirmação usando o método HTTP POST. Assim, é necessário implementar lógica do lado do servidor para capturar e processar esses dados de acordo com a linguagem de programação utilizada.
+Ao finalizar uma transação (seja aprovada, rejeitada ou cancelada), nossa plataforma envia as variáveis relevantes para a URL da sua URL de confirmação usando o método HTTP POST. Assim, é necessário implementar lógica do lado do servidor para capturar e processar esses dados de acordo com a linguagem de programação utilizada.
 
 ## Considerações {#considerations}
 
-* **Desabilitar autenticação:** Caso seu site utilize autenticação básica de acesso ou medidas de segurança similares, certifique-se de desabilitá-las para a URL da página de confirmação, permitindo o acesso por parte da PayU.
-* **Endereço IP público:** O endereço IP associado à URL da sua página de confirmação deve ser público. Evite usar URLs acessíveis apenas por intranet ou localhost.
-* **Certificado HTTPS válido:** Se você estiver usando HTTPS para sua página de confirmação, é obrigatório utilizar um certificado SSL/TLS válido.
-* **Tipo de conteúdo:** A página de confirmação deve estar configurada para processar dados no formato `x-www-form-urlencoded`.
-* **Evitar certas configurações de segurança:** Não utilize certificados de segurança de curva elíptica nem a suíte de criptografia `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` para sua página de confirmação.
-* **Envio de status final da transação:** A PayU acionará a página de confirmação apenas quando uma transação alcançar um status final (por exemplo, aprovada, rejeitada ou expirada). Não serão enviados relatórios para transações ainda em andamento (aguardando pagamento ou análise).
+* **Desabilitar autenticação:** Caso seu site utilize autenticação básica de acesso ou medidas de segurança similares, certifique-se de desabilitá-las para a URL da URL de confirmação, permitindo o acesso por parte da PayU.
+* **Endereço IP público:** O endereço IP associado à URL da sua URL de confirmação deve ser público. Evite usar URLs acessíveis apenas por intranet ou localhost.
+* **Certificado HTTPS válido:** Se você estiver usando HTTPS para sua URL de confirmação, é obrigatório utilizar um certificado SSL/TLS válido.
+* **Tipo de conteúdo:** A URL de confirmação deve estar configurada para processar dados no formato `x-www-form-urlencoded`.
+* **Evitar certas configurações de segurança:** Não utilize certificados de segurança de curva elíptica nem a suíte de criptografia `TLS_ECDHE_ECDSA_WITH_RC4_128_SHA` para sua URL de confirmação.
+* **Envio de status final da transação:** A PayU acionará a URL de confirmação apenas quando uma transação alcançar um status final (por exemplo, aprovada, rejeitada ou expirada). Não serão enviados relatórios para transações ainda em andamento (aguardando pagamento ou análise).
 
 ## Lista de IPs permitidos para os servidores da PayU {#whitelist-of-ip-addresses-for-payu-servers}
 
@@ -39,7 +39,7 @@ Para garantir que seu servidor receba as solicitações e notificações da PayU
  
 ## Parâmetros {#parameters}
 
-A página de confirmação transmite os seguintes parâmetros via HTTP POST para o seu servidor:
+A URL de confirmação transmite os seguintes parâmetros via HTTP POST para o seu servidor:
 
 <details>
 
@@ -52,9 +52,9 @@ A página de confirmação transmite os seguintes parâmetros via HTTP POST para
 | Campo | Tipo | Tamanho | Descrição |
 |---|---|---|---|
 | `merchant_id`         | Numérico     | 12     | Seu ID de Comerciante no sistema da PayU. Pode ser encontrado no e-mail de criação da conta. |
-| `state_pol`           | Alfanumérico | 32     | Status da transação no sistema da PayU. [Veja os status de transação]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| `state_pol`           | Alfanumérico | 32     | Status da transação no sistema da PayU. [Veja os status de transação]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-url" >}}). |
 | `risk`                | Decimal      | —      | Pontuação de risco associada à transação, variando de 0 a 1. Um valor mais alto indica maior risco. Formato: `###.00`. |
-| `response_code_pol`   | Alfanumérico | 255    | Código interno de resposta da PayU para a transação. [Veja os códigos de resposta]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| `response_code_pol`   | Alfanumérico | 255    | Código interno de resposta da PayU para a transação. [Veja os códigos de resposta]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-url" >}}). |
 | `reference_sale`      | Alfanumérico | 255    | Sua referência única para a venda ou pedido. Deve ser distinta para cada transação enviada à PayU. |
 | `reference_pol`       | Alfanumérico | 255    | Referência única ou número de transação gerado pela PayU. |
 | `sign`                | Alfanumérico | 255    | Assinatura digital gerada pela PayU para esta transação específica, usada para validar a integridade dos dados. |
@@ -103,7 +103,7 @@ A página de confirmação transmite os seguintes parâmetros via HTTP POST para
 | `pse_reference1`      | Alfanumérico | 255    | Informação de referência adicional para pagamentos PSE. |
 | `pse_reference2`      | Alfanumérico | 255    | Informação adicional complementar para pagamentos PSE. |
 | `pse_reference3`      | Alfanumérico | 255    | Informação de referência adicional extra para pagamentos PSE. |
-| `response_message_pol`| Alfanumérico | 255    | Mensagem legível da PayU referente à transação. [Veja as mensagens de resposta]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-page" >}}). |
+| `response_message_pol`| Alfanumérico | 255    | Mensagem legível da PayU referente à transação. [Veja as mensagens de resposta]({{< ref "response-codes-and-variables.html#response-codes-sent-to-the-confirmation-url" >}}). |
 | `shipping_city`       | Alfanumérico | 50     | Cidade para onde a mercadoria será entregue. |
 | `shipping_country`    | Alfanumérico | 2      | Código ISO 3166-1 alpha-2 do país de destino da entrega (ex: CO, US). |
 | `transaction_bank_id` | Alfanumérico | 255    | Identificador único atribuído à transação pelo banco. |
@@ -112,9 +112,9 @@ A página de confirmação transmite os seguintes parâmetros via HTTP POST para
 
 </details>
 
-## Exemplo de requisição POST para a página de confirmação {#post-request-example-for-the-confirmation-page}
+## Exemplo de requisição POST para a URL de confirmação {#post-request-example-for-the-confirmation-url}
 
-O exemplo a seguir mostra como nosso sistema envia os parâmetros para sua página de confirmação usando uma requisição HTTP POST:
+O exemplo a seguir mostra como nosso sistema envia os parâmetros para sua URL de confirmação usando uma requisição HTTP POST:
 
 ```HTML
 response_code_pol=5
@@ -178,13 +178,13 @@ pse_reference2=
 
 ## Validação da assinatura {#signature-validation}
 
-A validação da assinatura garante a integridade dos dados recebidos na sua página de confirmação. Você deve gerar a assinatura utilizando os parâmetros fornecidos pela PayU e compará-la com o parâmetro `sign` enviado na requisição HTTP POST.
+A validação da assinatura garante a integridade dos dados recebidos na sua URL de confirmação. Você deve gerar a assinatura utilizando os parâmetros fornecidos pela PayU e compará-la com o parâmetro `sign` enviado na requisição HTTP POST.
 
 ### Considerações importantes {#important-considerations}
 
 * Se o segundo decimal do valor (`value`) for zero, formate o `new_value` com **uma casa decimal** (ex.: `150.00` → `150.0`).
 * Se o segundo decimal **não** for zero, mantenha duas casas decimais no `new_value` (ex.: `150.25` → `150.25`).
-* Sempre utilize os valores recebidos na página de confirmação (`merchant_id`, `reference_sale`, `value`, `currency` e `state_pol`) para gerar a assinatura. **Não** use os valores armazenados em sua própria base de dados.
+* Sempre utilize os valores recebidos na URL de confirmação (`merchant_id`, `reference_sale`, `value`, `currency` e `state_pol`) para gerar a assinatura. **Não** use os valores armazenados em sua própria base de dados.
 * Armazene sua chave de API com segurança.
 * Construa a string da assinatura no seguinte formato:
 
@@ -220,7 +220,7 @@ Use o exemplo a seguir quando o segundo decimal do `value` **não** for `0`. For
 
 ### Valide sua assinatura {#validate-your-signature}
 
-Use este gerador para criar uma assinatura com qualquer um dos métodos de criptografia disponíveis. Esta funcionalidade ajuda você a verificar o valor do `sign` que a PayU envia para sua página de confirmação.
+Use este gerador para criar uma assinatura com qualquer um dos métodos de criptografia disponíveis. Esta funcionalidade ajuda você a verificar o valor do `sign` que a PayU envia para sua URL de confirmação.
 
 <div>
 {{< confirmationpage/signaturegen_conf_en >}}
@@ -228,9 +228,9 @@ Use este gerador para criar uma assinatura com qualquer um dos métodos de cript
 
 ## Novas tentativas de pagamento {#payment-retries}
 
-Quando uma transação é rejeitada, o pagador tem a opção de tentar novamente o pagamento utilizando o mesmo ou um método de pagamento diferente. Lembre-se de que, para cada tentativa, a PayU envia uma requisição para a página de confirmação com o respectivo status da transação.
+Quando uma transação é rejeitada, o pagador tem a opção de tentar novamente o pagamento utilizando o mesmo ou um método de pagamento diferente. Lembre-se de que, para cada tentativa, a PayU envia uma requisição para a URL de confirmação com o respectivo status da transação.
 
-Cada uma dessas requisições utiliza a mesma referência de pagamento (`reference_sale`) e o mesmo identificador de pedido (`reference_pol`), mas inclui um identificador de transação (`transaction_id`) diferente. Como resultado, você pode receber múltiplas chamadas à página de confirmação para a mesma venda.
+Cada uma dessas requisições utiliza a mesma referência de pagamento (`reference_sale`) e o mesmo identificador de pedido (`reference_pol`), mas inclui um identificador de transação (`transaction_id`) diferente. Como resultado, você pode receber múltiplas chamadas à URL de confirmação para a mesma venda.
 
 Abaixo está um exemplo mostrando uma tentativa rejeitada seguida de uma nova tentativa aprovada:
 
@@ -248,6 +248,6 @@ state_pol=4
 
 {{% alert title="Observação" color="info"%}}
 
-Se qualquer uma das requisições à página de confirmação indicar que uma referência de pagamento (`reference_sale`) foi aprovada, você pode ter certeza de que nenhum outro relatório será enviado para essa mesma referência.
+Se qualquer uma das requisições à URL de confirmação indicar que uma referência de pagamento (`reference_sale`) foi aprovada, você pode ter certeza de que nenhum outro relatório será enviado para essa mesma referência.
 
 {{% /alert %}}

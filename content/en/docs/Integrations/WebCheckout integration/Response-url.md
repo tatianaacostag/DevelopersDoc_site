@@ -1,19 +1,19 @@
 ---
-title: "Response Page"
-linkTitle: "Response Page"
+title: "Response URL"
+linkTitle: "Response URL"
 date: 2021-03-29T12:15:39-05:00
 description: >  
-  The response page displays the transaction result to the payer. Although optional for the transaction flow, this page improves the payer's experience by redirecting them back to your site and concluding the payment journey. However, keep in mind that the payer might close the checkout before visiting this page.
+  The response URL is used to display the transaction result to the payer. Although this URL is optional within the transaction flow, it enhances the payer’s experience by redirecting them back to your site and completing the payment journey. Keep in mind, however, that the payer may close the checkout before reaching the result page.
 weight: 20
 tags: ["subtopic"]
 ---
 
-The integration can transmit payment result data via HTTP GET, and your platform can trigger the response page for all transaction statuses, including approved, rejected, in validation, and awaiting payment (for cash).
+Your integration can send the payment result data through an HTTP GET request, and your platform can invoke the response URL for all transaction statuses, including approved, rejected, under validation, and pending payment (for cash transactions).
 
 ## Considerations
 
 * Some hosting providers may have settings that block sending URLs as parameter values. For example: `&merchant_url=http%3A%2F%2Fwww.myshop.com`.
-* Avoid relying on the response page to update your database or trigger processes, as users may not always return to it. Use the confirmation page for these operations instead.
+* Avoid relying on the response URL to update your database or trigger processes, as users may not always return to it. Use the confirmation URL for these operations instead.
 * If you want to display transaction-related information, we recommend showing at least the following details: status, reference, value, currency, and date.
 * It is recommended to include the `responseUrl` parameter in the payment form or set it in the PayU Module. The value sent in the parameter takes priority. If the integration does not find a `responseUrl`, the payment process ends at the webcheckout.
 
@@ -25,7 +25,7 @@ If you want PayU to always display the transaction information, leave the `respo
 
 ## Parameters
 
-Below, the parameters sent to the response page.
+Below, the parameters sent to the response URL.
 
 <details>
 
@@ -88,9 +88,9 @@ Below, the parameters sent to the response page.
 
 </details>
 
-## Integrating the Response Page
+## Integrating the Response URL
 
-The following PHP example shows how to integrate the response page:
+The following PHP example shows how to integrate the response URL:
 
 ```PHP
 <?php
@@ -198,7 +198,7 @@ else
 
 <br>
 
-**Example of GET Request Sent to the Response Page:**
+**Example of GET Request Sent to the Response URL:**
 
 ```HTML
 http://mytestsite.com/response.php?&merchantId=508029&merchant_name=Test+PayU+Test&merchant_address=Av+123+Calle+12&telephone=7512354&merchant_url=http%3A%2F%2Fpruebaslapv.xtrweb.com&transactionState=6&lapTransactionState=DECLINED&message=Declinada&referenceCode=2015-05-27+13%3A04%3A37&reference_pol=7069375&transactionId=f5e668f1-7ecc-4b83-a4d1-0aaa68260862&description=test_payu_01&trazabilityCode=&cus=&orderLanguage=es&extra1=&extra2=&extra3=&polTransactionState=6&signature=e1b0939bbdc99ea84387bee9b90e4f5c&polResponseCode=5&lapResponseCode=ENTITY_DECLINED&risk=1.00&polPaymentMethod=10&lapPaymentMethod=VISA&polPaymentMethodType=2&lapPaymentMethodType=CREDIT_CARD&installmentsNumber=1&TX_VALUE=100.00&TX_TAX=.00&currency=USD&lng=es&pseCycle=&buyerEmail=test%40payulatam.com&pseBank=&pseReference1=&pseReference2=&pseReference3=&authorizationCode=&TX_ADMINISTRATIVE_FEE=.00&TX_TAX_ADMINISTRATIVE_FEE=.00&TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE=.00
@@ -206,7 +206,7 @@ http://mytestsite.com/response.php?&merchantId=508029&merchant_name=Test+PayU+Te
 
 ## Signature Validation
 
-Signature validation allows you to verify the integrity of the data. You must generate a signature using the information provided on the response page and compare it to the value in the `signature` parameter.
+Signature validation allows you to verify the integrity of the data. You must generate a signature using the information provided on the response URL and compare it to the value in the `signature` parameter.
 
 ### Important Considerations
 
@@ -214,7 +214,7 @@ Signature validation allows you to verify the integrity of the data. You must ge
   - If the first decimal digit is even and the second is `5`, round down.
   - If the first decimal digit is odd and the second is `5`, round up.
   - In all other cases, round to the nearest decimal normally.
-* Always use the values from the response page (`merchantId`, `referenceCode`, `TX_VALUE`, `currency`, and `transactionState`) to generate the signature. **Do not** use the values from your database. 
+* Always use the values from the response URL (`merchantId`, `referenceCode`, `TX_VALUE`, `currency`, and `transactionState`) to generate the signature. **Do not** use the values from your database. 
 * Store your API key securely.
 * Construct the signature string in the following format:
 
@@ -256,7 +256,7 @@ The following examples illustrate how to generate a signature, in this case, usi
 
 ### Validate Your Signature
 
-Use this generator to create a signature with any of the available encryption methods. This functionality assists you in verifying the `signature` value that PayU sends to your response page.
+Use this generator to create a signature with any of the available encryption methods. This functionality assists you in verifying the `signature` value that PayU sends to your response URL.
 
 <div>
 {{< responsepage/signaturegen_resp_en >}}

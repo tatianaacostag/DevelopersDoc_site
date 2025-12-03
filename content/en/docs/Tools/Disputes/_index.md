@@ -77,7 +77,7 @@ The maximum days for evidence submission vary by country:
 | Argentina | 5 working days           |
 | Brazil    | 12 working days          |
 | Chile     | 5 working days           |
-| Colombia  | 2 working days           |
+| Colombia  | 3 working days           |
 | Mexico    | 12 calendar days         |
 | Panama    | 8 working days           |
 | Peru      | 6 working days           |

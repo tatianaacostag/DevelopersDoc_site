@@ -1135,17 +1135,18 @@ This feature allows you to process multiple payments using stored tokens from a 
 
 * Each record in the file must follow the specified structure and order, with values separated by commas:
     - Account ID – The identifier of your PayU account.
-    - Credit Card Token
-    - Credit Card Security Code
-    - Number of Installments
-    - Sale Reference
-    - Sale Description
-    - Buyer’s Email
-    - Currency ISO Code – [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}).
-    - Total Amount (including taxes)
-    - Base Value for Reimbursement
-    - Additional Value
-    - Email Language – Language used in emails sent to the buyer and seller. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}).
+    - Credit card token
+    - Credit card security code
+    - Number of installments
+    - Sale reference
+    - Sale description
+    - Buyer’s email
+    - Currency ISO code – [See accepted currencies]({{< ref "response-codes-and-variables.html#accepted-currencies" >}}).
+    - Total amount (including taxes)
+    - Tax value
+    - Base value for reimbursement
+    - Additional value
+    - Email language – Language used in emails sent to the buyer and seller. [See supported languages]({{< ref "response-codes-and-variables.html#supported-languages" >}}).
 * The file must not include a header.
 * The file must be encoded in UTF-8. You need to implement a functionality to encode the content and send the encoded string in the `contentFile` parameter.
 * The file cannot contain more than 10,000 records.

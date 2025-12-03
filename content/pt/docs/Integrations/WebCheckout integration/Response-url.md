@@ -1,20 +1,20 @@
 ---
-title: "Página de Resposta"
-linkTitle: "Página de Resposta"
+title: "URL de Resposta"
+linkTitle: "URL de Resposta"
 date: 2021-03-29T12:15:39-05:00
 description: >
-  A página de resposta exibe o resultado da transação para o pagador. Embora seja opcional no fluxo da transação, essa página melhora a experiência do pagador ao redirecioná-lo de volta ao seu site e concluir a jornada de pagamento. No entanto, tenha em mente que o pagador pode fechar o checkout antes de visitar essa página.
+  A URL de resposta é usada para exibir o resultado da transação ao pagador. Embora essa URL seja opcional no fluxo da transação, ela melhora a experiência do pagador ao redirecioná-lo de volta ao seu site e concluir a jornada de pagamento. No entanto, lembre-se de que o pagador pode fechar o checkout antes de acessar a página de resultado.
 weight: 20
 tags: ["subtopic"]
 ---
 
-A integração pode transmitir os dados do resultado do pagamento via HTTP GET, e sua plataforma pode acionar a página de resposta para todos os status da transação, incluindo aprovada, rejeitada, em validação e aguardando pagamento (para dinheiro em espécie).
+Sua integração pode enviar os dados do resultado do pagamento por meio de uma solicitação HTTP GET, e sua plataforma pode acionar a URL de resposta para todos os status da transação, incluindo aprovado, rejeitado, em validação e pendente de pagamento (para transações em dinheiro).
 
 
 ## Observações {#considerations}
 
 * Alguns provedores de hospedagem podem ter configurações que bloqueiam o envio de URLs como valores de parâmetros. Por exemplo: `&merchant_url=http%3A%2F%2Fwww.minhaloja.com`.
-* Evite depender da página de resposta para atualizar seu banco de dados ou acionar processos, pois os usuários podem não retornar a ela. Use a página de confirmação para essas operações.
+* Evite depender da URL de resposta para atualizar seu banco de dados ou acionar processos, pois os usuários podem não retornar a ela. Use a URL de confirmação para essas operações.
 * Se você quiser exibir informações relacionadas à transação, recomendamos mostrar pelo menos os seguintes dados: status, referência, valor, moeda e data.
 * É recomendável incluir o parâmetro `responseUrl` no formulário de pagamento ou defini-lo no Módulo PayU. O valor enviado no parâmetro tem prioridade. Se a integração não encontrar um `responseUrl`, o processo de pagamento termina no webcheckout.
 
@@ -26,7 +26,7 @@ Se você quiser que a PayU exiba sempre as informações da transação, deixe o
 
 ## Parâmetros {#parameters}
 
-Abaixo, os parâmetros enviados para a página de resposta.
+Abaixo, os parâmetros enviados para a URL de resposta.
 
 <details>
 
@@ -89,9 +89,9 @@ Abaixo, os parâmetros enviados para a página de resposta.
 
 </details>
 
-## Integrar a página de resposta {#integrating-the-response-page}
+## Integrar a URL de resposta {#integrating-the-response-url}
 
-A seguir está um exemplo em PHP de como você pode integrar a página de resposta:
+A seguir está um exemplo em PHP de como você pode integrar a URL de resposta:
 
 ```PHP
 <?php
@@ -199,7 +199,7 @@ else
 
 <br>
 
-**Exemplo de requisição GET enviada para a página de resposta:**
+**Exemplo de requisição GET enviada para a URL de resposta:**
 
 ```HTML
 http://mytestsite.com/response.php?&merchantId=508029&merchant_name=Test+PayU+Test&merchant_address=Av+123+Calle+12&telephone=7512354&merchant_url=http%3A%2F%2Fpruebaslapv.xtrweb.com&transactionState=6&lapTransactionState=DECLINED&message=Declinada&referenceCode=2015-05-27+13%3A04%3A37&reference_pol=7069375&transactionId=f5e668f1-7ecc-4b83-a4d1-0aaa68260862&description=test_payu_01&trazabilityCode=&cus=&orderLanguage=es&extra1=&extra2=&extra3=&polTransactionState=6&signature=e1b0939bbdc99ea84387bee9b90e4f5c&polResponseCode=5&lapResponseCode=ENTITY_DECLINED&risk=1.00&polPaymentMethod=10&lapPaymentMethod=VISA&polPaymentMethodType=2&lapPaymentMethodType=CREDIT_CARD&installmentsNumber=1&TX_VALUE=100.00&TX_TAX=.00&currency=USD&lng=es&pseCycle=&buyerEmail=test%40payulatam.com&pseBank=&pseReference1=&pseReference2=&pseReference3=&authorizationCode=&TX_ADMINISTRATIVE_FEE=.00&TX_TAX_ADMINISTRATIVE_FEE=.00&TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE=.00
@@ -207,7 +207,7 @@ http://mytestsite.com/response.php?&merchantId=508029&merchant_name=Test+PayU+Te
 
 ## Validação da assinatura {#signature-validation}
 
-A validação da assinatura permite verificar a integridade dos dados. Você deve gerar uma assinatura utilizando as informações fornecidas na página de resposta e compará-la com o valor presente no parâmetro `signature`.
+A validação da assinatura permite verificar a integridade dos dados. Você deve gerar uma assinatura utilizando as informações fornecidas na URL de resposta e compará-la com o valor presente no parâmetro `signature`.
 
 ### Considerações importantes
 
@@ -215,7 +215,7 @@ A validação da assinatura permite verificar a integridade dos dados. Você dev
   - Se o primeiro dígito decimal for par e o segundo for `5`, arredonde para baixo.
   - Se o primeiro dígito decimal for ímpar e o segundo for `5`, arredonde para cima.
   - Em todos os outros casos, arredonde normalmente para o decimal mais próximo.
-* Utilize sempre os valores da página de resposta (`merchantId`, `referenceCode`, `TX_VALUE`, `currency` e `transactionState`) para gerar a assinatura. **Não** utilize os valores do seu banco de dados.
+* Utilize sempre os valores da URL de resposta (`merchantId`, `referenceCode`, `TX_VALUE`, `currency` e `transactionState`) para gerar a assinatura. **Não** utilize os valores do seu banco de dados.
 * Armazene sua chave da API de forma segura.
 * Construa a string da assinatura no seguinte formato:
 
@@ -256,7 +256,7 @@ Os exemplos a seguir ilustram como gerar uma assinatura, neste caso, utilizando 
 
 ### Valide sua assinatura {#validate-your-signature}
 
-Use este gerador para criar uma assinatura com qualquer um dos métodos de criptografia disponíveis. Esta funcionalidade auxilia você a verificar o valor da `signature` que a PayU envia para sua página de resposta.
+Use este gerador para criar uma assinatura com qualquer um dos métodos de criptografia disponíveis. Esta funcionalidade auxilia você a verificar o valor da `signature` que a PayU envia para sua URL de resposta.
 
 <div>
 {{< responsepage/signaturegen_resp_en >}}

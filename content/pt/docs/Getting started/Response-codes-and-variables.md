@@ -13,7 +13,7 @@ weight: 50
 
 ## Códigos de Resposta para Transações {#response-codes-for-transactions}  
 
-| Código de Resposta | Descrição |
+| Código de resposta | Descrição |
 |-|-|
 | `ERROR` | Erro geral. |
 | `APPROVED` | A transação foi aprovada. |
@@ -55,126 +55,127 @@ weight: 50
 | `ERROR_FIXING_INCOMPLETE_DATA` | Clínica de transações: código de tratamento interno. Consulta de API. |
 | `THREEDS_REJECTED` | A transação foi rejeitada devido a uma falha na autenticação 3DS. |
 
-## Códigos de Resposta Enviados para a Página de Resposta {#response-codes-sent-to-the-response-page}
+## Códigos de resposta enviados para a URL de Resposta {#response-codes-sent-to-the-response-url}
 
 <div class="variables"></div>
 
 | lap Transaction State | transaction State | pol Transaction State | lapResponseCode | pol Response Code | Descrição |
 |-|-|-|-|-|-|
-|  APPROVED  |  4 (Aprovada) |  4 (Aprovada) |  APPROVED  | 1 | Transação aprovada |
-|  DECLINED  |  6 (Rejeitada)  |  6 (Rejeitada)  |  PAYMENT_NETWORK_REJECTED  | 4 | Transação rejeitada pela rede de pagamento |
-|   |   |   |  ENTITY_DECLINED  | 5 | A transação foi recusada pelo banco |
-|   |   |   |  INSUFFICIENT_FUNDS  | 6 | Fundos insuficientes |
-|   |   |   |  INVALID_CARD  | 7 | Cartão inválido |
-|   |   |   |  CONTACT_THE_ENTITY  | 8 | Entre em contato com sua entidade financeira |
-|   |   |   |  BANK_ACCOUNT_ACTIVATION _ERROR  | 8 | Débito automático não permitido |
-|   |   |   |  BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT  | 8 | Débito automático não permitido |
-|   |   |   |  INVALID_AGENCY_BANK_ACCOUNT  | 8 | Débito automático não permitido |
-|   |   |   |  INVALID_BANK_ACCOUNT  | 8 | Débito automático não permitido |
-|   |   |   |  INVALID_BANK  | 8 | Débito automático não permitido |
-|   |   |   |  EXPIRED_CARD  | 9 | Cartão vencido |
-|   |   |   |  RESTRICTED_CARD  | 10 | Cartão restrito |
-|   |   |   |  INVALID_EXPIRATION_DATE_OR _SECURITY_CODE  | 12 | Data de vencimento ou código de segurança inválido |
-|   |   |   |  REPEAT_TRANSACTION  | 13 | Repita a transação |
-|   |   |   |  INVALID_TRANSACTION  | 14 | Transação inválida |
-|   |   |   |  EXCEEDED_AMOUNT  | 17 | O valor excede o máximo permitido por esta entidade |
-|   |   |   |  ABANDONED_TRANSACTION  | 19 | Transação abandonada pelo pagador |
-|   |   |   |  CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS  | 22 | O cartão não está autorizado para compras na Internet |
-|   |   |   |  ANTIFRAUD_REJECTED  | 23 | A transação foi rejeitada pelo módulo antifraude |
-|   |   |   |  BANK_FRAUD_REJECTED  | 23 | A transação foi rejeitada devido a suspeita de fraude na instituição financeira |
-|   |   |   |  DIGITAL_CERTIFICATE_ NOT_FOUND  | 9995 | Certificado digital não encontrado |
-|   |   |   |  BANK_UNREACHABLE  | 9996 | Erro ao tentar se comunicar com o banco |
-|   |   |   |  ENTITY_MESSAGING _ERROR  | 9997 | Erro de comunicação com a instituição financeira |
-|   |   |   |  NOT_ACCEPTED_ TRANSACTION  | 9998 | Transação não permitida ao titular do cartão |
-|   |   |   |  INTERNAL_PAYMENT _PROVIDER_ERROR  | 9999 | Erro interno |
-|   |   |   |  INACTIVE_PAYMENT_ PROVIDER  | 9999 | Erro interno |
-|  ERROR  |  104 (Erro)  |  6 (Rejeitada)  |  ERROR  | 9999 | Erro interno |
-|   |   |   |  ERROR_CONVERTING_TRANSACTION _AMOUNTS  | 9999 | Erro interno |
-|   |   |   |  BANK_ACCOUNT_ACTIVATION_ERROR  | 9999 | Erro interno |
-|   |   |   |  FIX_NOT_REQUIRED  | 9999 | Erro interno |
-|   |   |   |  AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL  | 9999 | Erro interno |
-|   |   |   |  AUTOMATICALLY_FIXED _AND_UNSUCCESS _REVERSAL  | 9999 | Erro interno |
-|   |   |   |  AUTOMATIC_FIXED_ NOT_SUPPORTED  | 9999 | Erro interno |
-|   |   |   |  NOT_FIXED_FOR_ ERROR_STATE  | 9999 | Erro interno |
-|   |   |   |  ERROR_FIXING_AND _REVERSING  | 9999 | Erro interno |
-|   |   |   |  ERROR_FIXING_ INCOMPLETE_DATA  | 9999 | Erro interno |
-|   |   |   |  PAYMENT_NETWORK_ BAD_RESPONSE  | 9999 | Erro interno |
-|   |   |   |  PAYMENT_NETWORK_ NO_CONNECTION  | 9996 | Não foi possível contatar a instituição financeira |
-|   |   |   |  PAYMENT_NETWORK_ NO_RESPONSE  | 9996 | Sem resposta da instituição financeira |
-|  EXPIRED  |  5 (Expirada)  |  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | Transação expirada |
-|  PENDING  |  7 (Pendente)  |  7 (Pendente)  |  PENDING_TRANSACTION_ REVIEW  | 15 | A transação está com aprovação pendente |
-|   |   |  14 (Pendente)  |  PENDING_TRANSACTION_ CONFIRMATION  | 25 | Recibo de pagamento gerado. Pagamento Pendente |
-|   |   |  7 (Pendente)  |  PENDING_TRANSACTION_ TRANSMISSION  | 9998 | Transação não permitida |
-|   |   |  14 (Pendente)  |  PENDING_PAYMENT_IN_ENTITY  | 25 | Recibo de pagamento gerado. Pagamento Pendente |
-|   |   |  15 (Pendente)  |  PENDING_PAYMENT_IN_BANK  | 26 | Recibo de pagamento gerado. Pagamento Pendente |
-|   |   |  10 (Pendente)  |  PENDING_SENT_TO_FINANCIAL _ENTITY  | 29 |                        |
-|   |   |  12 (Pendente)  |  PENDING_AWAITING_PSE _CONFIRMATION  | 9994 | Confirmação de PSE pendente |
-|   |   |  18 (Pendente)  |  PENDING_NOTIFYING_ENTITY  | 25 | Recibo de pagamento gerado. Pagamento Pendente |
-| DECLINED | 6 | 6 | THREEDS_REJECTED | 23 | Transação recusada devido a uma falha na autenticação 3DS |
+| `APPROVED` | `4` (Approved) | `4` (Approved) | `APPROVED` | `1` | Transação aprovada |
+| `DECLINED` | `6` (Declined) | `6` (Rejected) | `PAYMENT_NETWORK_REJECTED` | `4` | Transação rejeitada pela rede de pagamentos |
+|  |  |  | `ENTITY_DECLINED` | `5` | A transação foi rejeitada pelo banco |
+|  |  |  | `INSUFFICIENT_FUNDS` | `6` | Fundos insuficientes |
+|  |  |  | `INVALID_CARD` | `7` | Cartão inválido |
+|  |  |  | `CONTACT_THE_ENTITY` | `8` | Por favor, entre em contato com sua instituição financeira |
+|  |  |  | `BANK_ACCOUNT_ACTIVATION _ERROR` | `8` | Débito automático não permitido |
+|  |  |  | `BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT` | `8` | Débito automático não permitido |
+|  |  |  | `INVALID_AGENCY_BANK_ACCOUNT` | `8` | Débito automático não permitido |
+|  |  |  | `INVALID_BANK_ACCOUNT` | `8` | Débito automático não permitido |
+|  |  |  | `INVALID_BANK` | `8` | Débito automático não permitido |
+|  |  |  | `EXPIRED_CARD` | `9` | Cartão expirado |
+|  |  |  | `RESTRICTED_CARD` | `10` | Cartão restrito |
+|  |  |  | `INVALID_EXPIRATION_DATE_OR _SECURITY_CODE` | `12` | Data de expiração ou código de segurança inválido |
+|  |  |  | `REPEAT_TRANSACTION` | `13` | Repetir a transação |
+|  |  |  | `INVALID_TRANSACTION` | `14` | Transação inválida |
+|  |  |  | `EXCEEDED_AMOUNT` | `17` | Valor excede o máximo permitido pela entidade |
+|  |  |  | `ABANDONED_TRANSACTION` | `19` | Transação abandonada pelo pagador |
+|  |  |  | `CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS` | `22` | Cartão não autorizado para compras na internet |
+|  |  |  | `ANTIFRAUD_REJECTED` | `23` | Transação rejeitada pelo módulo antifraude |
+|  |  |  | `BANK_FRAUD_REJECTED` | `23` | Transação rejeitada por suspeita de fraude na instituição financeira |
+|  |  |  | `DIGITAL_CERTIFICATE_ NOT_FOUND` | `9995` | Certificado digital não encontrado |
+|  |  |  | `BANK_UNREACHABLE` | `9996` | Erro ao tentar se comunicar com o banco |
+|  |  |  | `ENTITY_MESSAGING _ERROR` | `9997` | Erro de comunicação com a instituição financeira |
+|  |  |  | `NOT_ACCEPTED_ TRANSACTION` | `9998` | Transação não permitida ao portador |
+|  |  |  | `INTERNAL_PAYMENT _PROVIDER_ERROR` | `9999` | Erro interno |
+|  |  |  | `INACTIVE_PAYMENT_ PROVIDER` | `9999` | Erro interno |
+| `ERROR` | `104` (Error) | `6` (Rejected) | `ERROR` | `9999` | Erro interno |
+|  |  |  | `ERROR_CONVERTING_TRANSACTION _AMOUNTS` | `9999` | Erro interno |
+|  |  |  | `BANK_ACCOUNT_ACTIVATION_ERROR` | `9999` | Erro interno |
+|  |  |  | `FIX_NOT_REQUIRED` | `9999` | Erro interno |
+|  |  |  | `AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL` | `9999` | Erro interno |
+|  |  |  | `AUTOMATICALLY_FIXED _AND_UNSUCCESS _REVERSAL` | `9999` | Erro interno |
+|  |  |  | `AUTOMATIC_FIXED_ NOT_SUPPORTED` | `9999` | Erro interno |
+|  |  |  | `NOT_FIXED_FOR_ ERROR_STATE` | `9999` | Erro interno |
+|  |  |  | `ERROR_FIXING_AND _REVERSING` | `9999` | Erro interno |
+|  |  |  | `ERROR_FIXING_ INCOMPLETE_DATA` | `9999` | Erro interno |
+|  |  |  | `PAYMENT_NETWORK_ BAD_RESPONSE` | `9999` | Erro interno |
+|  |  |  | `PAYMENT_NETWORK_ NO_CONNECTION` | `9996` | Não foi possível se comunicar com a instituição financeira |
+|  |  |  | `PAYMENT_NETWORK_ NO_RESPONSE` | `9996` | Sem resposta da instituição financeira |
+| `EXPIRED` | `5` (Expired) | `5` (Expired) | `EXPIRED_TRANSACTION` | `20` | Tempo da transação expirado |
+| `PENDING` | `7` (Pending) | `7` (Pending) | `PENDING_TRANSACTION_ REVIEW` | `15` | Transação pendente de aprovação |
+|  |  | `14` (Pending) | `PENDING_TRANSACTION_ CONFIRMATION` | `25` | Recibo de pagamento gerado. Pagamento pendente |
+|  |  | `7` (Pending) | `PENDING_TRANSACTION_ TRANSMISSION` | `9998` | Transação não permitida |
+|  |  | `14` (Pending) | `PENDING_PAYMENT_IN_ENTITY` | `25` | Recibo de pagamento gerado. Pagamento pendente |
+|  |  | `15` (Pending) | `PENDING_PAYMENT_IN_BANK` | `26` | Recibo de pagamento gerado. Pagamento pendente |
+|  |  | `10` (Pending) | `PENDING_SENT_TO_FINANCIAL _ENTITY` | `29` |  |
+|  |  | `12` (Pending) | `PENDING_AWAITING_PSE _CONFIRMATION` | `9994` | Aguardando confirmação do PSE |
+|  |  | `18` (Pending) | `PENDING_NOTIFYING_ENTITY` | `25` | Recibo de pagamento gerado. Pagamento pendente |
+| `DECLINED` | `6` | `6` | `THREEDS_REJECTED` | `23` | Transação rejeitada devido a falha na autenticação 3DS |
 
-## Códigos de Resposta Enviados para a Página de Confirmação {#response-codes-sent-to-the-confirmation-page}
+## Códigos de resposta enviados para a URL de Confirmação {#response-codes-sent-to-the-confirmation-url}
 
 <div class="variables"></div>
 
 | state_pol | response_message_pol | response_code_pol | Descrição |
 |-|-|-|-|
-|  4 (Aprovada) |  APPROVED  | 1 | Transação aprovada |
-|  6 (Rejeitada)  |  PAYMENT_NETWORK_REJECTED  | 4 | Transação rejeitada pela instituição financeira |
-|   |  ENTITY_DECLINED  | 5 | Transação rejeitada pelo banco |
-|   |  INSUFFICIENT_FUNDS  | 6 | Fundos insuficientes |
-|   |  INVALID_CARD  | 7 | Cartão inválido |
-|   |  CONTACT_THE_ENTITY  | 8 | Entre em contato com a instituição financeira |
-|   |  BANK_ACCOUNT_ACTIVATION_ERROR  | 8 | Débito automático não permitido |
-|   |  BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT  | 8 | Débito automático não permitido |
-|   |  INVALID_AGENCY_BANK_ACCOUNT  | 8 | Débito automático não permitido |
-|   |  INVALID_BANK_ACCOUNT  | 8 | Débito automático não permitido |
-|   |  INVALID_BANK  | 8 | Débito automático não permitido |
-|   |  EXPIRED_CARD  | 9 | Cartão vencido |
-|   |  RESTRICTED_CARD  | 10 | Cartão restrito |
-|   |  INVALID_EXPIRATION_DATE_OR _SECURITY_CODE  | 12 | Data de validade ou código de segurança inválido |
-|   |  REPEAT_TRANSACTION  | 13 | Tente novamente o pagamento |
-|   |  INVALID_TRANSACTION  | 14 | Transação inválida |
-|   |  EXCEEDED_AMOUNT  | 17 | O valor ultrapassa o máximo permitido pela entidade |
-|   |  ABANDONED_TRANSACTION  | 19 | Transação abandonada pelo pagador |
-|   |  CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS  | 22 | Cartão não autorizado a comprar online |
-|   |  ANTIFRAUD_REJECTED  | 23 | Transação recusada devido a suspeita de fraude |
-|   |  BANK_FRAUD_REJECTED  | 23 | A transação foi rejeitada devido a suspeita de fraude na instituição financeira |
-|   |  DIGITAL_CERTIFICATE_NOT_FOUND  | 9995 | Certificado digital não encontrado |
-|   |  BANK_UNREACHABLE  | 9996 | Erro ao tentar se comunicar com o banco |
-|   |  PAYMENT_NETWORK_NO_CONNECTION  | 9996 | Não foi possível contatar a instituição financeira |
-|   |  PAYMENT_NETWORK_NO_RESPONSE  | 9996 | Nenhuma resposta recebida da instituição financeira |
-|   |  ENTITY_MESSAGING_ERROR  | 9997 | Erro de comunicação com a instituição financeira |
-|   |  NOT_ACCEPTED_TRANSACTION  | 9998 | Transação não permitida |
-|   |  INTERNAL_PAYMENT_PROVIDER_ERROR  | 9999 | Erro |
-|   |  INACTIVE_PAYMENT_PROVIDER  | 9999 | Erro |
-|   |  ERROR  | 9999 | Erro |
-|   |  ERROR_CONVERTING_TRANSACTION _AMOUNTS  | 9999 | Erro |
-|   |  BANK_ACCOUNT_ACTIVATION_ERROR  | 9999 | Erro |
-|   |  FIX_NOT_REQUIRED  | 9999 | Erro |
-|   |  AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL  | 9999 | Erro |
-|   |  AUTOMATICALLY_FIXED_AND_UNSUCCESS _REVERSAL  | 9999 | Erro |
-|   |  AUTOMATIC_FIXED_NOT_SUPPORTED  | 9999 | Erro |
-|   |  NOT_FIXED_FOR_ERROR_STATE  | 9999 | Erro |
-|   |  ERROR_FIXING_AND_REVERSING  | 9999 | Erro |
-|   |  ERROR_FIXING_INCOMPLETE_DATA  | 9999 | Erro |
-|   |  PAYMENT_NETWORK_BAD_RESPONSE  | 9999 | Erro |
-|  5 (Expirada)  |  EXPIRED_TRANSACTION  | 20 | A transação excedeu o tempo limite. A integração pode retornar essa resposta para alguns métodos de pagamento alternativos que possuem processos com restrição de tempo. No caso de transações com cartão, isso também pode ocorrer se o usuário não concluir o processo de autenticação 3DS antes que a sessão expire. |
+| `4` (Approved) | `APPROVED` | `1` | Transação aprovada |
+| `6` (Declined) | `PAYMENT_NETWORK_REJECTED` | `4` | Transação rejeitada pela instituição financeira |
+|  | `ENTITY_DECLINED` | `5` | Transação rejeitada pelo banco |
+|  | `INSUFFICIENT_FUNDS` | `6` | Fundos insuficientes |
+|  | `INVALID_CARD` | `7` | Cartão inválido |
+|  | `CONTACT_THE_ENTITY` | `8` | Contate a instituição financeira |
+|  | `BANK_ACCOUNT_ACTIVATION_ERROR` | `8` | Débito automático não permitido |
+|  | `BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT` | `8` | Débito automático não permitido |
+|  | `INVALID_AGENCY_BANK_ACCOUNT` | `8` | Débito automático não permitido |
+|  | `INVALID_BANK_ACCOUNT` | `8` | Débito automático não permitido |
+|  | `INVALID_BANK` | `8` | Débito automático não permitido |
+|  | `EXPIRED_CARD` | `9` | Cartão expirado |
+|  | `RESTRICTED_CARD` | `10` | Cartão restrito |
+|  | `INVALID_EXPIRATION_DATE_OR _SECURITY_CODE` | `12` | Data de expiração ou código de segurança inválido |
+|  | `REPEAT_TRANSACTION` | `13` | Tentar o pagamento novamente |
+|  | `INVALID_TRANSACTION` | `14` | Transação inválida |
+|  | `EXCEEDED_AMOUNT` | `17` | O valor excede o máximo permitido pela entidade |
+|  | `ABANDONED_TRANSACTION` | `19` | Transação abandonada pelo pagador |
+|  | `CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS` | `22` | Cartão não autorizado para compras online |
+|  | `ANTIFRAUD_REJECTED` | `23` | Transação recusada por suspeita de fraude |
+|  | `BANK_FRAUD_REJECTED` | `23` | Transação rejeitada por suspeita de fraude na instituição financeira |
+|  | `DIGITAL_CERTIFICATE_NOT_FOUND` | `9995` | Certificado digital não encontrado |
+|  | `BANK_UNREACHABLE` | `9996` | Erro ao tentar se comunicar com o banco |
+|  | `PAYMENT_NETWORK_NO_CONNECTION` | `9996` | Não foi possível se comunicar com a instituição financeira |
+|  | `PAYMENT_NETWORK_NO_RESPONSE` | `9996` | Nenhuma resposta recebida da instituição financeira |
+|  | `ENTITY_MESSAGING_ERROR` | `9997` | Erro ao se comunicar com a instituição financeira |
+|  | `NOT_ACCEPTED_TRANSACTION` | `9998` | Transação não permitida |
+|  | `INTERNAL_PAYMENT_PROVIDER_ERROR` | `9999` | Erro |
+|  | `INACTIVE_PAYMENT_PROVIDER` | `9999` | Erro |
+|  | `ERROR` | `9999` | Erro |
+|  | `ERROR_CONVERTING_TRANSACTION _AMOUNTS` | `9999` | Erro |
+|  | `BANK_ACCOUNT_ACTIVATION_ERROR` | `9999` | Erro |
+|  | `FIX_NOT_REQUIRED` | `9999` | Erro |
+|  | `AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL` | `9999` | Erro |
+|  | `AUTOMATICALLY_FIXED_AND_UNSUCCESS _REVERSAL` | `9999` | Erro |
+|  | `AUTOMATIC_FIXED_NOT_SUPPORTED` | `9999` | Erro |
+|  | `NOT_FIXED_FOR_ERROR_STATE` | `9999` | Erro |
+|  | `ERROR_FIXING_AND_REVERSING` | `9999` | Erro |
+|  | `ERROR_FIXING_INCOMPLETE_DATA` | `9999` | Erro |
+|  | `PAYMENT_NETWORK_BAD_RESPONSE` | `9999` | Erro |
+| `5` (Expired) | `EXPIRED_TRANSACTION` | `20` | A transação expirou. A integração pode retornar esta resposta para alguns meios de pagamento alternativos que possuem processos sensíveis ao tempo. Para transações com cartão, também pode ocorrer quando o usuário não conclui a autenticação 3DS antes do fim da sessão. |
 
-## Códigos dos Métodos de Pagamento {#codes-of-the-payment-methods}
-Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmação), `payment_method_id` (Página de confirmação) e `polPaymentMethodType` (Página de resposta).
+## Códigos dos métodos de pagamento {#payment-methods-codes}
 
-| Código | lapPaymentMethodType<br>(Página de resposta) | Descrição                     |
+Os seguintes códigos se aplicam a `payment_method_type` (URL de Confirmação), `payment_method_id` (URL de Confirmação) e `polPaymentMethodType` (URL de Resposta).
+
+| Código | lapPaymentMethodType<br>(URL de Resposta) | Descrição                     |
 |:------:|----------------------------------------------|-------------------------------|
-|    2   | CREDIT_CARD                                  | Cartões de crédito            |
-|    4   | PSE                                          | Transferências bancárias PSE  |
-|    5   | ACH                                          | Débitos ACH                   |
-|    6   | DEBIT_CARD                                   | Cartões de débito             |
-|    7   | CASH                                         | Dinheiro                      |
-|    8   | REFERENCED                                   | Pagamento referenciado        |
-|   10   | BANK_REFERENCED                              | Pagamento em bancos           |
-|   14   | SPEI                                         | Transferências bancárias SPEI |
+|    `2`   | `CREDIT_CARD`                              | Cartões de crédito            |
+|    `4`   | `PSE`                                      | Transferências bancárias PSE  |
+|    `5`   | `ACH`                                      | Débitos ACH                   |
+|    `6`   | `DEBIT_CARD`                               | Cartões de débito             |
+|    `7`   | `CASH`                                     | Dinheiro                      |
+|    `8`   | `REFERENCED`                               | Pagamento referenciado        |
+|   `10`   | `BANK_REFERENCED`                          | Pagamento em bancos           |
+|   `14`   | `SPEI`                                     | Transferências bancárias SPEI |
 
-## Comandos Aceitos pela API de Pagamentos {#commands-accepted-by-the-payments-api}
+## Comandos aceitos pela API de Pagamentos {#commands-accepted-by-the-payments-api}
 
 | Comando               | Descrição                            |
 |-----------------------|-------------------------------|
@@ -192,9 +193,9 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `ORDER_DETAIL_BY_REFERENCE_CODE` | Usado para consultar uma ordem usando seu código de referência. |
 | `TRANSACTION_RESPONSE_DETAIL`    | Usado para verificar a resposta de uma transação.     |
 
-## Moedas Aceitas {#accepted-currencies}
+## Moedas aceitas {#accepted-currencies}
 
-| Moeda   | Nome da Moeda         | Decimais Aceitos (Cartões) | Decimais Aceitos (Transferências Bancárias) | Decimais Aceitos (Dinheiro, Carteiras Digitais, Referências Bancárias) |
+| Moeda   | Nome da moeda         | Decimais aceitos (cartões) | Decimais aceitos (transferências bancárias) | Decimais aceitos (dinheiro, carteiras digitais, referências bancárias) |
 |---------|-----------------------|:--------------------------:|:-------------------------------------------:|:------------------------------:|
 | `ARS`   | Peso Argentino        | 2                          | -                                           | 0                                        |
 | `BRL`   | Real Brasileiro       | 2                          | 2                                           | 0                                        |
@@ -221,7 +222,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `REFUNDED`    | A última transação da ordem é um reembolso aprovado.            |
 | `CHARGEBACK`  | A última transação da ordem é um estorno. Ou seja, corresponde a uma [Disputa]({{< ref "Disputes.md" >}}) perdida. |
 
-## Estados de Transação {#transaction-states}
+## Estados de transação {#transaction-states}
 
 | Estado      | Descrição                          |
 |-------------|-------------------------------------|
@@ -232,7 +233,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `PENDING`   | Transação pendente ou em validação                |
 | `SUBMITTED` | Transação enviada para a instituição financeira, mas o processamento não foi concluído.<br>API de consulta. |
 
-## Tipos de Transações {#transaction-types} 
+## Tipos de transações {#transaction-types} 
 
 | Tipo                    | Descrição |
 |-------------------------|-----------|
@@ -244,9 +245,9 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `REFUND`                | Devolve o valor total de uma transação capturada ao portador do cartão. |
 | `PARTIAL_REFUND`        | Devolve uma parte do valor da transação capturada ao portador do cartão. |
 
-## Países de Processamento {#processing-countries}
+## Países de orocessamento {#processing-countries}
 
-| Código do País | País         |
+| Código do país | País         |
 |----------------|--------------|
 | `AR`           | Argentina    |
 | `BR`           | Brasil       |
@@ -260,7 +261,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `PE`           | Peru         |
 | `SV`           | El Salvador  |
 
-## Idiomas Disponíveis {#supported-languages}
+## Idiomas disponíveis {#supported-languages}
 
 | Código ISO 639 | Idioma    |
 |----------------|-----------|
@@ -268,7 +269,7 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | `es`           | Espanhol  |
 | `pt`           | Português |
 
-## Tipos de Documentos {#document-types}
+## Tipos de documentos {#document-types}
 
 | ISO  | Descrição              | País                   |
 |------|------------------------|------------------------|
@@ -311,7 +312,8 @@ Os seguintes códigos se aplicam a `payment_method_type` (Página de confirmaç�
 | SSN  | Número de Previdência Social                  |                        |
 | TI   | Cartão de identidade.                         | Colômbia               |
 
-## Bancos para Payouts {#banks-for-payouts}
+## Bancos para payouts {#banks-for-payouts}
+
 Envie o valor exato exibido na coluna `Código` na variável `transfers[n].bankAccount.bankCode`. Consulte [Payouts]({{< ref "Payouts-API.md" >}}) para obter mais informações.
 
 ### Colômbia {#colombia}

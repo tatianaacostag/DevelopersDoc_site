@@ -77,7 +77,7 @@ Os dias máximos para envio de evidências variam por país:
 | Argentina  | 5 dias úteis                |
 | Brasil     | 12 dias úteis               |
 | Chile      | 5 dias úteis                |
-| Colômbia   | 2 dias úteis                |
+| Colômbia   | 3 dias úteis                |
 | México     | 12 dias corridos            |
 | Panamá     | 8 dias úteis                |
 | Peru       | 6 dias úteis                |

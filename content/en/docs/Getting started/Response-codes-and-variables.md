@@ -55,124 +55,124 @@ weight: 60
 | `ERROR_FIXING_INCOMPLETE_DATA` | Transactions clinic: internal handling code. Query API. |
 | `THREEDS_REJECTED` | The transaction was rejected due to 3DS authentication failure. |
 
-## Response Codes Sent to the Response Page
+## Response Codes Sent to the Response URL
 
 <div class="variables"></div>
 
 | lap Transaction State | transaction State | pol Transaction State | lapResponseCode | pol Response Code | Description |
 |-|-|-|-|-|-|
-| APPROVED | 4 (Approved) | 4 (Approved) | APPROVED | 1 | Transaction approved |
-| DECLINED | 6 (Declined) | 6 (Rejected) | PAYMENT_NETWORK_REJECTED | 4 | Transaction rejected by payment network |
-|  |  |  | ENTITY_DECLINED | 5 | Transaction has been declined by the bank |
-|  |  |  | INSUFFICIENT_FUNDS | 6 | Insufficient funds |
-|  |  |  | INVALID_CARD | 7 | Invalid Card |
-|  |  |  | CONTACT_THE_ENTITY | 8 | Please contact your financial entity |
-|  |  |  | BANK_ACCOUNT_ACTIVATION _ERROR | 8 | Automatic debit not allowed |
-|  |  |  | BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT | 8 | Automatic debit not allowed |
-|  |  |  | INVALID_AGENCY_BANK_ACCOUNT | 8 | Automatic debit not allowed |
-|  |  |  | INVALID_BANK_ACCOUNT | 8 | Automatic debit not allowed |
-|  |  |  | INVALID_BANK | 8 | Automatic debit not allowed |
-|  |  |  | EXPIRED_CARD | 9 | Expired card |
-|  |  |  | RESTRICTED_CARD | 10 | Restricted card |
-|  |  |  | INVALID_EXPIRATION_DATE_OR _SECURITY_CODE | 12 | Date of expiration or security code is invalid |
-|  |  |  | REPEAT_TRANSACTION | 13 | Retry the transaction |
-|  |  |  | INVALID_TRANSACTION | 14 | Transaction invalid |
-|  |  |  | EXCEEDED_AMOUNT | 17 | Value exceeds maximum allowed by this entity |
-|  |  |  | ABANDONED_TRANSACTION | 19 | Transaction abandoned by the payer |
-|  |  |  | CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS | 22 | Card is not authorized for internet purchases |
-|  |  |  | ANTIFRAUD_REJECTED | 23 | Transaction has been rejected by the anti-fraud module |
-|  |  |  | BANK_FRAUD_REJECTED | 23 | The transaction was rejected due to suspected fraud at the financial institution |
-|  |  |  | DIGITAL_CERTIFICATE_ NOT_FOUND | 9995 | Digital certificate not found |
-|  |  |  | BANK_UNREACHABLE | 9996 | Error trying to communicate with the bank |
-|  |  |  | ENTITY_MESSAGING _ERROR | 9997 | Error communicating with the financial institution |
-|  |  |  | NOT_ACCEPTED_ TRANSACTION | 9998 | Transaction not permitted to cardholder |
-|  |  |  | INTERNAL_PAYMENT _PROVIDER_ERROR | 9999 | Internal error |
-|  |  |  | INACTIVE_PAYMENT_ PROVIDER | 9999 | Internal error |
-| ERROR | 104 (Error) | 6 (Rejected) | ERROR | 9999 | Internal error |
-|  |  |  | ERROR_CONVERTING_TRANSACTION _AMOUNTS | 9999 | Internal error |
-|  |  |  | BANK_ACCOUNT_ACTIVATION_ERROR | 9999 | Internal error |
-|  |  |  | FIX_NOT_REQUIRED | 9999 | Internal error |
-|  |  |  | AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL | 9999 | Internal error |
-|  |  |  | AUTOMATICALLY_FIXED _AND_UNSUCCESS _REVERSAL | 9999 | Internal error |
-|  |  |  | AUTOMATIC_FIXED_ NOT_SUPPORTED | 9999 | Internal error |
-|  |  |  | NOT_FIXED_FOR_ ERROR_STATE | 9999 | Internal error |
-|  |  |  | ERROR_FIXING_AND _REVERSING | 9999 | Internal error |
-|  |  |  | ERROR_FIXING_ INCOMPLETE_DATA | 9999 | Internal error |
-|  |  |  | PAYMENT_NETWORK_ BAD_RESPONSE | 9999 | Internal error |
-|  |  |  | PAYMENT_NETWORK_ NO_CONNECTION | 9996 | Unable to communicate with the financial institution |
-|  |  |  | PAYMENT_NETWORK_ NO_RESPONSE | 9996 | No response from the financial institution |
-| EXPIRED | 5 (Expired) | 5 (Expired) | EXPIRED_TRANSACTION | 20 | Transaction timed out |
-| PENDING | 7 (Pending) | 7 (Pending) | PENDING_TRANSACTION_ REVIEW | 15 | Transaction is pending approval |
-|  |  | 14 (Pending) | PENDING_TRANSACTION_ CONFIRMATION | 25 | Receipt of payment generated. Pending payment |
-|  |  | 7 (Pending) | PENDING_TRANSACTION_ TRANSMISSION | 9998 | Not permitted transaction |
-|  |  | 14 (Pending) | PENDING_PAYMENT_IN_ENTITY | 25 | Receipt of payment generated. Pending payment |
-|  |  | 15 (Pending) | PENDING_PAYMENT_IN_BANK | 26 | Receipt of payment generated. Pending payment |
-|  |  | 10 (Pending) | PENDING_SENT_TO_FINANCIAL _ENTITY | 29 |   |
-|  |  | 12 (Pending) | PENDING_AWAITING_PSE _CONFIRMATION | 9994 | Pending confirmation from PSE |
-|  |  | 18 (Pending) | PENDING_NOTIFYING_ENTITY | 25 | Receipt of payment generated. Pending payment |
-| DECLINED | 6 | 6 | THREEDS_REJECTED | 23 | Transaction rejected due to 3DS authentication failure |
+| `APPROVED` | `4` (Approved) | `4` (Approved) | `APPROVED` | `1` | Transaction approved |
+| `DECLINED` | `6` (Declined) | `6` (Rejected) | `PAYMENT_NETWORK_REJECTED` | `4` | Transaction rejected by payment network |
+|  |  |  | `ENTITY_DECLINED` | `5` | Transaction has been declined by the bank |
+|  |  |  | `INSUFFICIENT_FUNDS` | `6` | Insufficient funds |
+|  |  |  | `INVALID_CARD` | `7` | Invalid Card |
+|  |  |  | `CONTACT_THE_ENTITY` | `8` | Please contact your financial entity |
+|  |  |  | `BANK_ACCOUNT_ACTIVATION _ERROR` | `8` | Automatic debit not allowed |
+|  |  |  | `BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT` | `8` | Automatic debit not allowed |
+|  |  |  | `INVALID_AGENCY_BANK_ACCOUNT` | `8` | Automatic debit not allowed |
+|  |  |  | `INVALID_BANK_ACCOUNT` | `8` | Automatic debit not allowed |
+|  |  |  | `INVALID_BANK` | `8` | Automatic debit not allowed |
+|  |  |  | `EXPIRED_CARD` | `9` | Expired card |
+|  |  |  | `RESTRICTED_CARD` | `10` | Restricted card |
+|  |  |  | `INVALID_EXPIRATION_DATE_OR _SECURITY_CODE` | `12` | Date of expiration or security code is invalid |
+|  |  |  | `REPEAT_TRANSACTION` | `13` | Retry the transaction |
+|  |  |  | `INVALID_TRANSACTION` | `14` | Transaction invalid |
+|  |  |  | `EXCEEDED_AMOUNT` | `17` | Value exceeds maximum allowed by this entity |
+|  |  |  | `ABANDONED_TRANSACTION` | `19` | Transaction abandoned by the payer |
+|  |  |  | `CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS` | `22` | Card is not authorized for internet purchases |
+|  |  |  | `ANTIFRAUD_REJECTED` | `23` | Transaction has been rejected by the anti-fraud module |
+|  |  |  | `BANK_FRAUD_REJECTED` | `23` | The transaction was rejected due to suspected fraud at the financial institution |
+|  |  |  | `DIGITAL_CERTIFICATE_ NOT_FOUND` | `9995` | Digital certificate not found |
+|  |  |  | `BANK_UNREACHABLE` | `9996` | Error trying to communicate with the bank |
+|  |  |  | `ENTITY_MESSAGING _ERROR` | `9997` | Error communicating with the financial institution |
+|  |  |  | `NOT_ACCEPTED_ TRANSACTION` | `9998` | Transaction not permitted to cardholder |
+|  |  |  | `INTERNAL_PAYMENT _PROVIDER_ERROR` | `9999` | Internal error |
+|  |  |  | `INACTIVE_PAYMENT_ PROVIDER` | `9999` | Internal error |
+| `ERROR` | `104` (Error) | `6` (Rejected) | `ERROR` | `9999` | Internal error |
+|  |  |  | `ERROR_CONVERTING_TRANSACTION _AMOUNTS` | `9999` | Internal error |
+|  |  |  | `BANK_ACCOUNT_ACTIVATION_ERROR` | `9999` | Internal error |
+|  |  |  | `FIX_NOT_REQUIRED` | `9999` | Internal error |
+|  |  |  | `AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL` | `9999` | Internal error |
+|  |  |  | `AUTOMATICALLY_FIXED _AND_UNSUCCESS _REVERSAL` | `9999` | Internal error |
+|  |  |  | `AUTOMATIC_FIXED_ NOT_SUPPORTED` | `9999` | Internal error |
+|  |  |  | `NOT_FIXED_FOR_ ERROR_STATE` | `9999` | Internal error |
+|  |  |  | `ERROR_FIXING_AND _REVERSING` | `9999` | Internal error |
+|  |  |  | `ERROR_FIXING_ INCOMPLETE_DATA` | `9999` | Internal error |
+|  |  |  | `PAYMENT_NETWORK_ BAD_RESPONSE` | `9999` | Internal error |
+|  |  |  | `PAYMENT_NETWORK_ NO_CONNECTION` | `9996` | Unable to communicate with the financial institution |
+|  |  |  | `PAYMENT_NETWORK_ NO_RESPONSE` | `9996` | No response from the financial institution |
+| `EXPIRED` | `5` (Expired) | `5` (Expired) | `EXPIRED_TRANSACTION` | `20` | Transaction timed out |
+| `PENDING` | `7` (Pending) | `7` (Pending) | `PENDING_TRANSACTION_ REVIEW` | `15` | Transaction is pending approval |
+|  |  | `14` (Pending) | `PENDING_TRANSACTION_ CONFIRMATION` | `25` | Receipt of payment generated. Pending payment |
+|  |  | `7` (Pending) | `PENDING_TRANSACTION_ TRANSMISSION` | `9998` | Not permitted transaction |
+|  |  | `14` (Pending) | `PENDING_PAYMENT_IN_ENTITY` | `25` | Receipt of payment generated. Pending payment |
+|  |  | `15` (Pending) | `PENDING_PAYMENT_IN_BANK` | `26` | Receipt of payment generated. Pending payment |
+|  |  | `10` (Pending) | `PENDING_SENT_TO_FINANCIAL _ENTITY` | `29` |   |
+|  |  | `12` (Pending) | `PENDING_AWAITING_PSE _CONFIRMATION` | `9994` | Pending confirmation from PSE |
+|  |  | `18` (Pending) | `PENDING_NOTIFYING_ENTITY` | `25` | Receipt of payment generated. Pending payment |
+| `DECLINED` | `6` | `6` | `THREEDS_REJECTED` | `23` | Transaction rejected due to 3DS authentication failure |
 
-##  Response Codes Sent to the Confirmation Page
+##  Response Codes Sent to the Confirmation URL
 
 <div class="variables"></div>
 
 | state_pol | response_message_pol | response_code_pol | Description |
 |-|-|-|-|
-| 4 (Approved) | APPROVED | 1 | Transaction approved |
-| 6 (Declined) | PAYMENT_NETWORK_REJECTED | 4 | Transaction rejected by financial institution |
-|  | ENTITY_DECLINED | 5 | Transaction rejected by the bank |
-|  | INSUFFICIENT_FUNDS | 6 | Insufficient funds |
-|  | INVALID_CARD | 7 | Invalid card |
-|  | CONTACT_THE_ENTITY | 8 | Contact the financial institution |
-|  | BANK_ACCOUNT_ACTIVATION_ERROR | 8 | Automatic debit is not allowed |
-|  | BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT | 8 | Automatic debit is not allowed |
-|  | INVALID_AGENCY_BANK_ACCOUNT | 8 | Automatic debit is not allowed |
-|  | INVALID_BANK_ACCOUNT | 8 | Automatic debit is not allowed |
-|  | INVALID_BANK | 8 | Automatic debit is not allowed |
-|  | EXPIRED_CARD | 9 | Expired card |
-|  | RESTRICTED_CARD | 10 | Restricted card |
-|  | INVALID_EXPIRATION_DATE_OR _SECURITY_CODE | 12 | Invalid expiration date or security code |
-|  | REPEAT_TRANSACTION | 13 | Retry payment |
-|  | INVALID_TRANSACTION | 14 | Invalid transaction |
-|  | EXCEEDED_AMOUNT | 17 | The value exceeds the maximum allowed by the entity |
-|  | ABANDONED_TRANSACTION | 19 | Transaction abandoned by the payer |
-|  | CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS | 22 | Card not authorized to buy online |
-|  | ANTIFRAUD_REJECTED | 23 | Transaction refused because of suspected fraud |
-|  | BANK_FRAUD_REJECTED | 23 | The transaction was rejected due to suspected fraud at the financial institution |
-|  | DIGITAL_CERTIFICATE_NOT_FOUND | 9995 | Digital certificate not found |
-|  | BANK_UNREACHABLE | 9996 | Error trying to communicate with the bank |
-|  | PAYMENT_NETWORK_NO_CONNECTION | 9996 | Unable to communicate with the financial institution |
-|  | PAYMENT_NETWORK_NO_RESPONSE | 9996 | No response was received from the financial institution |
-|  | ENTITY_MESSAGING_ERROR | 9997 | Error communicating with the financial institution |
-|  | NOT_ACCEPTED_TRANSACTION | 9998 | Transaction not permitted |
-|  | INTERNAL_PAYMENT_PROVIDER_ERROR | 9999 | Error |
-|  | INACTIVE_PAYMENT_PROVIDER | 9999 | Error |
-|  | ERROR | 9999 | Error |
-|  | ERROR_CONVERTING_TRANSACTION _AMOUNTS | 9999 | Error |
-|  | BANK_ACCOUNT_ACTIVATION_ERROR | 9999 | Error |
-|  | FIX_NOT_REQUIRED | 9999 | Error |
-|  | AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL | 9999 | Error |
-|  | AUTOMATICALLY_FIXED_AND_UNSUCCESS _REVERSAL | 9999 | Error |
-|  | AUTOMATIC_FIXED_NOT_SUPPORTED | 9999 | Error |
-|  | NOT_FIXED_FOR_ERROR_STATE | 9999 | Error |
-|  | ERROR_FIXING_AND_REVERSING | 9999 | Error |
-|  | ERROR_FIXING_INCOMPLETE_DATA | 9999 | Error |
-|  | PAYMENT_NETWORK_BAD_RESPONSE | 9999 | Error |
-| 5 (Expired) | EXPIRED_TRANSACTION | 20 | The transaction timed out. The integration may return this response for some alternative payment methods that have time-sensitive processes. For card transactions, it can also occur if the user fails to complete the 3DS authentication process before the session expires. |
+| `4` (Approved) | `APPROVED` | `1` | Transaction approved |
+| `6` (Declined) | `PAYMENT_NETWORK_REJECTED` | `4` | Transaction rejected by financial institution |
+|  | `ENTITY_DECLINED` | `5` | Transaction rejected by the bank |
+|  | `INSUFFICIENT_FUNDS` | `6` | Insufficient funds |
+|  | `INVALID_CARD` | `7` | Invalid card |
+|  | `CONTACT_THE_ENTITY` | `8` | Contact the financial institution |
+|  | `BANK_ACCOUNT_ACTIVATION_ERROR` | `8` | Automatic debit is not allowed |
+|  | `BANK_ACCOUNT_NOT_AUTHORIZED _FOR_AUTOMATIC_DEBIT` | `8` | Automatic debit is not allowed |
+|  | `INVALID_AGENCY_BANK_ACCOUNT` | `8` | Automatic debit is not allowed |
+|  | `INVALID_BANK_ACCOUNT` | `8` | Automatic debit is not allowed |
+|  | `INVALID_BANK` | `8` | Automatic debit is not allowed |
+|  | `EXPIRED_CARD` | `9` | Expired card |
+|  | `RESTRICTED_CARD` | `10` | Restricted card |
+|  | `INVALID_EXPIRATION_DATE_OR _SECURITY_CODE` | `12` | Invalid expiration date or security code |
+|  | `REPEAT_TRANSACTION` | `13` | Retry payment |
+|  | `INVALID_TRANSACTION` | `14` | Invalid transaction |
+|  | `EXCEEDED_AMOUNT` | `17` | The value exceeds the maximum allowed by the entity |
+|  | `ABANDONED_TRANSACTION` | `19` | Transaction abandoned by the payer |
+|  | `CREDIT_CARD_NOT_AUTHORIZED_FOR _INTERNET_TRANSACTIONS` | `22` | Card not authorized to buy online |
+|  | `ANTIFRAUD_REJECTED` | `23` | Transaction refused because of suspected fraud |
+|  | `BANK_FRAUD_REJECTED` | `23` | The transaction was rejected due to suspected fraud at the financial institution |
+|  | `DIGITAL_CERTIFICATE_NOT_FOUND` | `9995` | Digital certificate not found |
+|  | `BANK_UNREACHABLE` | `9996` | Error trying to communicate with the bank |
+|  | `PAYMENT_NETWORK_NO_CONNECTION` | `9996` | Unable to communicate with the financial institution |
+|  | `PAYMENT_NETWORK_NO_RESPONSE` | `9996` | No response was received from the financial institution |
+|  | `ENTITY_MESSAGING_ERROR` | `9997` | Error communicating with the financial institution |
+|  | `NOT_ACCEPTED_TRANSACTION` | `9998` | Transaction not permitted |
+|  | `INTERNAL_PAYMENT_PROVIDER_ERROR` | `9999` | Error |
+|  | `INACTIVE_PAYMENT_PROVIDER` | `9999` | Error |
+|  | `ERROR` | `9999` | Error |
+|  | `ERROR_CONVERTING_TRANSACTION _AMOUNTS` | `9999` | Error |
+|  | `BANK_ACCOUNT_ACTIVATION_ERROR` | `9999` | Error |
+|  | `FIX_NOT_REQUIRED` | `9999` | Error |
+|  | `AUTOMATICALLY_FIXED_AND_SUCCESS _REVERSAL` | `9999` | Error |
+|  | `AUTOMATICALLY_FIXED_AND_UNSUCCESS _REVERSAL` | `9999` | Error |
+|  | `AUTOMATIC_FIXED_NOT_SUPPORTED` | `9999` | Error |
+|  | `NOT_FIXED_FOR_ERROR_STATE` | `9999` | Error |
+|  | `ERROR_FIXING_AND_REVERSING` | `9999` | Error |
+|  | `ERROR_FIXING_INCOMPLETE_DATA` | `9999` | Error |
+|  | `PAYMENT_NETWORK_BAD_RESPONSE` | `9999` | Error |
+| `5` (Expired) | `EXPIRED_TRANSACTION` | `20` | The transaction timed out. The integration may return this response for some alternative payment methods that have time-sensitive processes. For card transactions, it can also occur if the user fails to complete the 3DS authentication process before the session expires. |
 
-## Codes of the Payment Methods
-The following codes applies for `payment_method_type` (Confirmation Page), `payment_method_id` (Confirmation Page), and `polPaymentMethodType` (Response Page).
+## Payment Methods Codes
+The following codes applies for `payment_method_type` (Confirmation URL), `payment_method_id` (Confirmation URL), and `polPaymentMethodType` (Response URL).
 
-| Code | lapPaymentMethodType<br>(Response Page) | Description         |
+| Code | lapPaymentMethodType<br>(Response URL) | Description         |
 |:----:|-----------------------------------------|---------------------|
-|   2  | CREDIT_CARD                             | Credit Cards        |
-|   4  | PSE                                     | PSE Bank transfers  |
-|   5  | ACH                                     | ACH debits          |
-|   6  | DEBIT_CARD                              | Debit cards         |
-|   7  | CASH                                    | Cash                |
-|   8  | REFERENCED                              | Referenced payment  |
-|  10  | BANK_REFERENCED                         | Payment in banks    |
-|  14  | SPEI                                    | SPEI Bank transfers |
+|   `2`  | `CREDIT_CARD`                             | Credit Cards        |
+|   `4`  | `PSE`                                     | PSE Bank transfers  |
+|   `5`  | `ACH`                                     | ACH debits          |
+|   `6`  | `DEBIT_CARD`                              | Debit cards         |
+|   `7`  | `CASH`                                    | Cash                |
+|   `8`  | `REFERENCED`                              | Referenced payment  |
+|  `10`  | `BANK_REFERENCED`                         | Payment in banks    |
+|  `14`  | `SPEI`                                    | SPEI Bank transfers |
 
 ## Commands Accepted by the Payments API
 
