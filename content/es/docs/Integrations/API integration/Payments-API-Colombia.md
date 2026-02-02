@@ -178,11 +178,16 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | `transactionResponse > operationDate` | Fecha | | Fecha de creación de la respuesta en el sistema de PayU. |
 | `transactionResponse > extraParameters` | Objeto | | Parámetros adicionales o datos asociados con la respuesta. <br>En JSON, el parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, el parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 | `transactionResponse > additionalInfo` | Objeto | | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+| `transactionResponse > additionalInfo > rejectionType` | Alfanumérico | Máx: 4 | Indica la categoría del rechazo. Valores posibles: `SOFT` o `HARD`. Para más información, consulta [Consideraciones]({{< ref "Payments-API-Colombia.md#considerations" >}}). |
+
 
 </details>
 
 #### Consideraciones {#considerations}
 
+* **Manejo de Rechazos (`rejectionType`):** Cuando se rechaza una transacción, el campo `additionalInfo.rejectionType` ayuda a determinar la estrategia de reintento:
+    * **HARD**: Indica un rechazo permanente. Según las regulaciones de la red, **el comercio no debe reintentar la transacción** utilizando los mismos datos de la tarjeta. Los reintentos frecuentes de rechazos tipo "Hard" pueden resultar en penalizaciones o multas por parte de las redes financieras.
+    * **SOFT**: Indica un problema temporal (por ejemplo, fondos insuficientes). La transacción puede reintentarse en un momento posterior.
 * Para pagos con tókenes de tarjeta, incluya los parámetros `transaction.creditCardTokenId` y `transaction.creditCard.securityCode` (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el [API de Tokenización]({{< ref "Tokenization-API.md" >}}).
 * Por defecto, el procesamiento de tarjetas de crédito sin código de seguridad no está activo. Si lo quieres activar, contacta a tu representante de ventas. Luego de que esté activado, envía en la petición la variable `creditCard.processWithoutCvv2` con valor true y elimina la variable `creditCard.securityCode`.
 * La variable `transaction.threeDomainSecure` no reemplaza la información de la tarjeta o ninguno de los campos obligatorios de la transacción. Este objeto es adicional y no es obligatorio.
@@ -3245,7 +3250,6 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 | **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
 |-|-|-|-|-|
-| `transaction > order > airlineCode` | Alfanumérico | 4 | Código de la aerolínea. | 29 |
 | `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12,2 | Monto total de la transacción. Puede contener hasta dos decimales. | 119000 |
 | `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12,2 | Valor del IVA. Si no se especifica, el sistema aplica una tasa del 19% por defecto en Colombia. Usa 0 para artículos exentos de IVA. | 19000 |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12,2 | Valor base para el cálculo del IVA. Configura en 0 si el producto o servicio está exento de IVA. | 100000 |
@@ -3267,8 +3271,7 @@ A continuación, se presentan ejemplos de una solicitud para este método.
   ...
   "transaction": {
     "order": {
-      ...
-      "airlineCode": "29",
+      ...      
       "additionalValues": {
         "TX_VALUE": {
           "value": 119000,
@@ -3313,8 +3316,7 @@ A continuación, se presentan ejemplos de una solicitud para este método.
   ...
   <transaction>
     <order>
-      ...
-      <airlineCode>29</airlineCode>
+      ...      
       <additionalValues>
         <entry>
           <string>TX_VALUE</string>

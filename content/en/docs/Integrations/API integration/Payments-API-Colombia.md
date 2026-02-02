@@ -184,11 +184,15 @@ Two-step flow is available under request, contact your sales representative.
 | `transactionResponse > operationDate` | Date | | Creation date of the response in the PayU´s system. |
 | `transactionResponse > extraParameters` | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 | `transactionResponse > additionalInfo` | Object | | Additional information associated with the response. This object follows the same structure than `transactionResponse.extraParameters`. |
+| `transactionResponse > additionalInfo > rejectionType` | Alphanumeric | Max: 4 | Indicates the category of the decline. Possible values: `SOFT` or `HARD`. For more information, refer to [Considerations]({{< ref "Payments-API-Colombia.md#considerations" >}}). |
 
 </details>
 
 #### Considerations {#considerations}
 
+* **Decline Handling (`rejectionType`):** When a transaction is declined, the `additionalInfo.rejectionType` field helps determine the retry strategy:
+    * **HARD**: Indicates a permanent decline. Per network regulations, **the merchant should not retry the transaction** using the same card data. Frequent retries of "Hard" declines may result in penalties or fines from the financial networks.
+    * **SOFT**: Indicates a temporary issue (e.g., insufficient funds). The transaction may be retried at a later time.
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).
 * By default, processing credit cards without security code is not enabled. If you want to enable this feature, contact your Sales representative. After this feature is enabled for you, send in the request the variable `creditCard.processWithoutCvv2` as true and remove the variable `creditCard.securityCode`.
 * The variable `transaction.threeDomainSecure` does not replace the card information nor any of the mandatory fields of the transaction. This object is additional and not mandatory.
@@ -3249,7 +3253,6 @@ To complete a successful transaction request, you must include the specific para
 
 | **Field** | **Type** | **Size** | **Description** | **Example** |
 |-|-|-|-|-|
-| `transaction > order > airlineCode` | Alphanumeric | 4 | Airline code. | 29 |
 | `transaction > order > additionalValues > TX_VALUE > value` | Number | 12.2 | Total transaction amount. Can contain up to two decimal places. | 119000 |
 | `transaction > order > additionalValues > TX_TAX > value` | Number | 12.2 | VAT value. If unspecified, the system applies a 19% rate by default in Colombia. Use 0 for VAT-exempt items. | 19000 |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Number | 12.2 | Base value for VAT calculation. Set to 0 if the product or service is VAT-exempt. | 100000 |
@@ -3271,8 +3274,7 @@ The following are examples of the request for this method.
   ...
   "transaction": {
     "order": {
-      ...
-      "airlineCode": "29",
+      ...      
       "additionalValues": {
         "TX_VALUE": {
           "value": 119000,
@@ -3317,8 +3319,7 @@ The following are examples of the request for this method.
   ...
   <transaction>
     <order>
-      ...
-      <airlineCode>29</airlineCode>
+      ...      
       <additionalValues>
         <entry>
           <string>TX_VALUE</string>
