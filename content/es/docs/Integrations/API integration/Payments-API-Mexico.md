@@ -178,11 +178,15 @@ El flujo de dos pasos solo está soportados para Mastercard y Visa.
 | `transactionResponse > operationDate` | Fecha |  | Fecha de creación de la respuesta en el sistema de PayU. |
 | `transactionResponse > extraParameters` | Objeto |  | Parámetros adicionales o datos asociados a la respuesta. <br>En JSON, El parámetro _extraParameters_ sigue esta estructura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>En XML, El parámetro _extraParameters_ sigue esta estructura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
 | `transactionResponse > additionalInfo` | Objeto |  | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
+| `transactionResponse > additionalInfo > rejectionType` | Alfanumérico | Máx: 4 | Indica la categoría del rechazo. Valores posibles: `SOFT` o `HARD`. Para más información, consulta [Consideraciones]({{< ref "Payments-API-Mexico.md#considerations" >}}). |
 
 </details>
 
 #### Consideraciones {#considerations}
 
+* **Manejo de Rechazos (`rejectionType`):** Esta funcionalidad solo aplica a transacciones de tipo `AUTHORIZATION` y `AUTHORIZATION_AND_CAPTURE`. Cuando se rechaza una transacción, el campo `additionalInfo.rejectionType` ayuda a determinar la estrategia de reintento:
+    * **HARD**: Indica un rechazo permanente. Según las regulaciones de la red, **el comercio no debe reintentar la transacción** utilizando los mismos datos de la tarjeta. Los reintentos frecuentes de rechazos tipo "Hard" pueden resultar en penalizaciones o multas por parte de las redes financieras.
+    * **SOFT**: Indica un problema temporal (por ejemplo, fondos insuficientes). La transacción puede reintentarse en un momento posterior.
 * El flujo de dos pasos solo está soportados para Mastercard y Visa.
 * Para pagos con Promociones, envía los parámetros `INSTALLMENTS_NUMBER` y `PROMOTION_ID` con el número de cuotas seleccionado y el ID de la promoción. Consulta el [API de Promociones]({{< ref "Promotions.md" >}}) para más información.
 * Para pagos con Meses Sin Intereses - MSI, envía el extra parámetro `INSTALLMENTS_NUMBER` con el número de meses. Consulta [MSI]({{< ref "Promotions.md#months-without-interests-msi---meses-sin-intereses" >}}) para más información.

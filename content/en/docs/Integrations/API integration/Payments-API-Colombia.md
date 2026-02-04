@@ -190,7 +190,7 @@ Two-step flow is available under request, contact your sales representative.
 
 #### Considerations {#considerations}
 
-* **Decline Handling (`rejectionType`):** When a transaction is declined, the `additionalInfo.rejectionType` field helps determine the retry strategy:
+* **Decline Handling (`rejectionType`):** This feature only applies to `AUTHORIZATION` and `AUTHORIZATION_AND_CAPTURE` transactions. When a transaction is declined, the `additionalInfo.rejectionType` field helps determine the retry strategy:
     * **HARD**: Indicates a permanent decline. Per network regulations, **the merchant should not retry the transaction** using the same card data. Frequent retries of "Hard" declines may result in penalties or fines from the financial networks.
     * **SOFT**: Indicates a temporary issue (e.g., insufficient funds). The transaction may be retried at a later time.
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).

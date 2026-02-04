@@ -371,11 +371,16 @@ Find the description of the object `transaction.networkToken` and its parameters
 | `transactionResponse > responseMessage` | Alphanumeric | Max:2048 | Message associated with the response code. |
 | `transactionResponse > operationDate` | Date |  | Creation date of the response in the PayU´s system. |
 | `transactionResponse > extraParameters` | Object |  | Additional parameters or data associated with the response. <br>In JSON, the _extraParameters_ parameter follows this structure: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>In XML, the _extraParameters_ parameter follows this structure: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| `transactionResponse > additionalInfo` | Object | | Additional information associated with the response. This object follows the same structure than `transactionResponse.extraParameters`. |
+| `transactionResponse > additionalInfo > rejectionType` | Alphanumeric | Max: 4 | Indicates the category of the decline. Possible values: `SOFT` or `HARD`. For more information, refer to [Considerations]({{< ref "Payments-API-Argentina.md#considerations" >}}). |
 
 </details>
 
 #### Considerations
 
+* **Decline Handling (`rejectionType`):** This feature only applies to `AUTHORIZATION` and `AUTHORIZATION_AND_CAPTURE` transactions. When a transaction is declined, the `additionalInfo.rejectionType` field helps determine the retry strategy:
+    * **HARD**: Indicates a permanent decline. Per network regulations, **the merchant should not retry the transaction** using the same card data. Frequent retries of "Hard" declines may result in penalties or fines from the financial networks.
+    * **SOFT**: Indicates a temporary issue (e.g., insufficient funds). The transaction may be retried at a later time.
 * For payments with Promotions, send the parameters `INSTALLMENTS_NUMBER` and `PROMOTION_ID` with the number of installments selected and the Id of the promotion. Refer to [Promotions API]({{< ref "Promotions.md" >}}) for more information.
 * Promotions feature is only available for [one-step flows]({{< ref "Payments.md#payment-flows" >}}).
 * For payments with credit card tokens, include the parameters `transaction.creditCardTokenId` and `transaction.creditCard.securityCode` (if you process with security code) replacing the information of the credit card. For more information, refer to [Tokenization API]({{< ref "Tokenization-API.md" >}}).

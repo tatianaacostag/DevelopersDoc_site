@@ -180,12 +180,11 @@ El flujo de dos pasos está disponible únicamente bajo solicitud, contacta a tu
 | `transactionResponse > additionalInfo` | Objeto | | Información adicional de la respuesta. Este objeto tiene la misma estructura de `transactionResponse.extraParameters`. |
 | `transactionResponse > additionalInfo > rejectionType` | Alfanumérico | Máx: 4 | Indica la categoría del rechazo. Valores posibles: `SOFT` o `HARD`. Para más información, consulta [Consideraciones]({{< ref "Payments-API-Colombia.md#considerations" >}}). |
 
-
 </details>
 
 #### Consideraciones {#considerations}
 
-* **Manejo de Rechazos (`rejectionType`):** Cuando se rechaza una transacción, el campo `additionalInfo.rejectionType` ayuda a determinar la estrategia de reintento:
+* **Manejo de Rechazos (`rejectionType`):** Esta funcionalidad solo aplica a transacciones de tipo `AUTHORIZATION` y `AUTHORIZATION_AND_CAPTURE`. Cuando se rechaza una transacción, el campo `additionalInfo.rejectionType` ayuda a determinar la estrategia de reintento:
     * **HARD**: Indica un rechazo permanente. Según las regulaciones de la red, **el comercio no debe reintentar la transacción** utilizando los mismos datos de la tarjeta. Los reintentos frecuentes de rechazos tipo "Hard" pueden resultar en penalizaciones o multas por parte de las redes financieras.
     * **SOFT**: Indica un problema temporal (por ejemplo, fondos insuficientes). La transacción puede reintentarse en un momento posterior.
 * Para pagos con tókenes de tarjeta, incluya los parámetros `transaction.creditCardTokenId` y `transaction.creditCard.securityCode` (Si procesas con código de seguridad) reemplazando la información de la tarjeta de crédito. Para más información, consulta el [API de Tokenización]({{< ref "Tokenization-API.md" >}}).

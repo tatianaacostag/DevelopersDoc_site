@@ -165,11 +165,16 @@ Este método permite processar os pagamentos efetuados pelos seus clientes com c
 | transactionResponse > responseMessage | Alfanumérico | Máx:2048 | Mensagem associada ao código de resposta. |
 | transactionResponse > operationDate | Date |  | Data de criação da resposta no sistema PayU. |
 | transactionResponse > extraParameters | Objeto |  | Parâmetros ou dados adicionais associados à resposta. <br>Em JSON, o parâmetro _extraParameters_ segue esta estrutura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<br><br>Em XML, o parâmetro _extraParameters_ segue esta estrutura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| transactionResponse > additionalInfo | Objeto | | Informações adicionais associadas à resposta. Este objeto segue a mesma estrutura que `transactionResponse.extraParameters`. |
+| transactionResponse > additionalInfo > rejectionType | Alfanumérico | Máx: 4 | Indica a categoria da recusa. Valores possíveis: `SOFT` ou `HARD`. Para mais informações, consulte [Considerações]({{< ref "Payments-API-Peru.md#considerations" >}}). |
 
 </details>
 
 #### Considerações {#considerations}
 
+* **Tratamento de Recusas (`rejectionType`):** Este recurso aplica-se apenas a transações de `AUTHORIZATION` e `AUTHORIZATION_AND_CAPTURE`. Quando uma transação é recusada, o campo `additionalInfo.rejectionType` ajuda a determinar a estratégia de reativação (reentrada):
+    * **HARD**: Indica uma recusa permanente. De acordo com as regulamentações das bandeiras, **o lojista não deve tentar a transação novamente** usando os mesmos dados do cartão. Reclamações frequentes de recusas "Hard" podem resultar em penalidades ou multas das redes financeiras.
+    * **SOFT**: Indica um problema temporário (ex: saldo insuficiente). A transação pode ser tentada novamente em um momento posterior.
 * Para pagamentos com tokens de cartão de crédito, inclua os parâmetros `transaction.creditCardTokenId` e `transaction.creditCard.securityCode` (se processar com código de segurança) substituindo as informações do cartão de crédito. Para obter mais informações, consulte [API de tokenização]({{< ref "Tokenization-API.md" >}}).
 * Por padrão, o processamento de cartões de crédito sem código de segurança não está habilitado. Se você deseja habilitar este recurso, entre em contato com seu representante de vendas. Depois que esse recurso for habilitado para você, envie no pedido a variável `creditCard.processWithoutCvv2` como true e remova a variável `creditCard.securityCode`.
 * No Peru, você pode selecionar 0 ou 2 a 36x no pagamento com cartão de crédito. Se você selecionar uma (1) parcela, o PayU envia zero (0) como valor padrão.

@@ -173,11 +173,16 @@ O fluxo de duas etapas está disponível sob solicitação. Entre em contato com
 | `transactionResponse > responseMessage` | Alfanumérico | Máx:2048 | Mensagem associada ao código de resposta. |
 | `transactionResponse > operationDate` | Date |  | Data de criação da resposta no sistema PayU. |
 | `transactionResponse > extraParameters` | Objeto |  | Parâmetros ou dados adicionais associados à resposta. <li>Em JSON, o parâmetro _extraParameters_ segue esta estrutura: <br>`"extraParameters": {`<br>&emsp;`"BANK_REFERENCED_CODE": "CREDIT"`<br>`}`<li>Em XML, o parâmetro _extraParameters_ segue esta estrutura: <br>`<extraParameters>`<br>&emsp;`<entry>`<br>&emsp;&emsp;`<string>BANK_REFERENCED_CODE</string>`<br>&emsp;&emsp;`<string>CREDIT</string>`<br>&emsp;`</entry>`<br>`</extraParameters>` |
+| `transactionResponse > additionalInfo` | Objeto | | Informações adicionais associadas à resposta. Este objeto segue a mesma estrutura que `transactionResponse.extraParameters`. |
+| `transactionResponse > additionalInfo > rejectionType` | Alfanumérico | Máx: 4 | Indica a categoria da recusa. Valores possíveis: `SOFT` ou `HARD`. Para mais informações, consulte [Considerações]({{< ref "Payments-API-Chile.md#considerations" >}}). |
 
 </details>
 
 #### Considerações {#considerations}
 
+* **Tratamento de Recusas (`rejectionType`):** Este recurso aplica-se apenas a transações de `AUTHORIZATION` e `AUTHORIZATION_AND_CAPTURE`. Quando uma transação é recusada, o campo `additionalInfo.rejectionType` ajuda a determinar a estratégia de reativação (reentrada):
+    * **HARD**: Indica uma recusa permanente. De acordo com as regulamentações das bandeiras, **o lojista não deve tentar a transação novamente** usando os mesmos dados do cartão. Reclamações frequentes de recusas "Hard" podem resultar em penalidades ou multas das redes financeiras.
+    * **SOFT**: Indica um problema temporário (ex: saldo insuficiente). A transação pode ser tentada novamente em um momento posterior.
 * **Tokens de cartão de crédito:** Ao usar tokens de cartões de crédito para pagamentos, inclua os seguintes parâmetros:
   * `transaction.creditCardTokenId:` Identificador do token do cartão de crédito armazenado.
   * `transaction.creditCard.securityCode` (Opcional): Código de segurança do cartão (CVV), se for exigido conforme sua configuração de processamento. Para mais informações sobre a criação e uso de tokens, consulte a [API de Tokenização]({{< ref "Tokenization-API.md" >}}).
