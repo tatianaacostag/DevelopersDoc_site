@@ -366,7 +366,6 @@ Send the exact value displayed in the `Code` column in the variable `transfers[n
 | `683`     | DGCPTN                                            |
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
-| `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |
 | `1069`    | BANCO SERFINANZA S.A.                             |
 | `1283`    | COOPERATIVA FINANCIERA DE ANTIOQUIA               |

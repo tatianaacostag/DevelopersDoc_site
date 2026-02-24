@@ -96,7 +96,6 @@ Before requesting a refund, take into account the following country-specific con
 - For most transactions, request refunds up to **175 days** after the transaction.
 - For transactions processed by **Bancomer**, request refunds up to **40 days** after the transaction.
 - Once approved, the payer receives the funds within **30 working days**.
-- Do not include decimal amounts in refunds.
 - You can request more than one partial refund for payments made through **AMEX, Mastercard, or Visa**.
 
 ### Panama

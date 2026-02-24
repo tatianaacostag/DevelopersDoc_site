@@ -79,11 +79,11 @@ Antes de solicitar um reembolso, leve em conta as seguintes considerações espe
 - **Reembolsos parciais não estão disponíveis** para cartões de crédito internacionais.
 
 ### México
-- Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até:
-  - **175 dias** para a maioria das transações.
-  - **40 dias** se processadas pelo **Bancomer**.
-- Uma vez aprovado o reembolso, o pagador recebe os fundos **dentro de 30 dias úteis**.
-- Reembolsos com valores decimais **não são suportados**.
+- Solicite um reembolso **pelo menos 10 minutos após a aprovação**.
+- Para a maioria das transações, solicite reembolsos em até **175 dias** após a transação.
+- Para transações processadas pelo **Bancomer**, solicite reembolsos em até **40 dias** após a transação.
+- Uma vez aprovado, o pagador recebe os fundos em até **30 dias úteis**.
+- Você pode solicitar mais de um reembolso parcial para pagamentos feitos com **AMEX, Mastercard ou Visa**.
 
 ### Panamá
 - Os reembolsos podem ser solicitados **pelo menos 10 minutos após a aprovação** e até **357 dias**.

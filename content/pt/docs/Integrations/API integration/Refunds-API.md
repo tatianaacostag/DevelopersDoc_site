@@ -64,7 +64,7 @@ Antes de usar a API de Anulações e Reembolsos, leve em conta as seguintes cons
 
 | Anulações | Reembolsos |
 |-----------|------------|
-| <ul><li>Envie a solicitação **pelo menos 10 minutos após a autorização** e em até **7 dias**.</li><li>Se você não enviar uma anulação ou captura dentro desse prazo, o sistema anula automaticamente a transação.</li></ul> | <ul><li>Solicite um reembolso **pelo menos 10 minutos após a aprovação**.</li><li>Para a maioria das transações, solicite reembolsos em até **175 dias** após a transação.</li><li>Para transações processadas pelo **Bancomer**, solicite reembolsos em até **40 dias** após a transação.</li><li>Uma vez aprovado, o pagador recebe os fundos em até **30 dias úteis**.</li><li>Não inclua valores decimais nos reembolsos.</li><li>Você pode solicitar mais de um reembolso parcial para pagamentos feitos com **AMEX, Mastercard ou Visa**.</li></ul> |
+| <ul><li>Envie a solicitação **pelo menos 10 minutos após a autorização** e em até **7 dias**.</li><li>Se você não enviar uma anulação ou captura dentro desse prazo, o sistema anula automaticamente a transação.</li></ul> | <ul><li>Solicite um reembolso **pelo menos 10 minutos após a aprovação**.</li><li>Para a maioria das transações, solicite reembolsos em até **175 dias** após a transação.</li><li>Para transações processadas pelo **Bancomer**, solicite reembolsos em até **40 dias** após a transação.</li><li>Uma vez aprovado, o pagador recebe os fundos em até **30 dias úteis**.</li><li>Você pode solicitar mais de um reembolso parcial para pagamentos feitos com **AMEX, Mastercard ou Visa**.</li></ul> |
 
 </details>
 

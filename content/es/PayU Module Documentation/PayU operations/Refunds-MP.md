@@ -83,11 +83,11 @@ Antes de solicitar un reembolso, ten en cuenta las siguientes consideraciones es
 
 ### México
 
-- Los reembolsos pueden solicitarse **al menos 10 minutos después de la aprobación** y hasta:
-  - **175 días** para la mayoría de las transacciones.
-  - **40 días** si son procesadas por **Bancomer**.
-- Una vez aprobado un reembolso, el pagador recibe los fondos **dentro de 30 días hábiles**.
-- Los reembolsos con montos decimales **no están soportados**.
+- Solicita un reembolso **al menos 10 minutos después de la aprobación**.
+- Para la mayoría de las transacciones, solicita reembolsos hasta **175 días** después de la transacción.
+- Para transacciones procesadas por **Bancomer**, solicita reembolsos hasta **40 días** después de la transacción.
+- Una vez aprobado, el pagador recibe los fondos dentro de **30 días hábiles**.
+- Puedes solicitar más de un reembolso parcial para pagos realizados con **AMEX, Mastercard o Visa**.
 
 ### Panamá
 

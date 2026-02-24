@@ -367,7 +367,6 @@ Envía el valor exacto mostrado en la columna `Código` en la variable `transfer
 | `683`     | DGCPTN                                            |
 | `685`     | DGCPTN-REGALIAS                                   |
 | `801`     | MOVII                                             |
-| `1062`    | BANCO FALABELLA S.A.                              |
 | `1063`    | BANCO FINANDINA S.A.                              |
 | `1069`    | BANCO SERFINANZA S.A.                             |
 | `1283`    | COOPERATIVA FINANCIERA DE ANTIOQUIA               |

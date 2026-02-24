@@ -64,7 +64,7 @@ Before using the Voids and Refunds API, keep in mind the following country-speci
 
 | Voids | Refunds |
 |-------|---------|
-| <ul><li>Send the request **at least 10 minutes after authorization** and up to **7 days**.</li><li>If you do not send a void or capture within this timeframe, the system automatically voids the transaction.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval**.</li><li>For most transactions, request refunds up to **175 days** after the transaction.</li><li>For transactions processed by **Bancomer**, request refunds up to **40 days** after the transaction.</li><li>Once approved, the payer receives the funds within **30 working days**.</li><li>Do not include decimal amounts in refunds.</li><li>You can request more than one partial refund for payments made through **AMEX, Mastercard, or Visa**.</li></ul> |
+| <ul><li>Send the request **at least 10 minutes after authorization** and up to **7 days**.</li><li>If you do not send a void or capture within this timeframe, the system automatically voids the transaction.</li></ul> | <ul><li>Request a refund **at least 10 minutes after approval**.</li><li>For most transactions, request refunds up to **175 days** after the transaction.</li><li>For transactions processed by **Bancomer**, request refunds up to **40 days** after the transaction.</li><li>Once approved, the payer receives the funds within **30 working days**.</li><li>You can request more than one partial refund for payments made through **AMEX, Mastercard, or Visa**.</li></ul> |
 
 </details>
 
