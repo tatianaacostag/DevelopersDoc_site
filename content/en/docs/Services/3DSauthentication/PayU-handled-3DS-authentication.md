@@ -21,8 +21,8 @@ To enable 3DS authentication, contact your PayU representative or technical supp
 
 This parameter enables you to specify whether a transaction requires 3DS authentication. The parameter supports the following values:
 
-* `"true"`: Enforces 3DS authentication for the transaction.
-* `"false"`: Disables 3DS authentication for the transaction.
+* `true`: Enforces 3DS authentication for the transaction.
+* `false`: Disables 3DS authentication for the transaction.
 
 **If your request doesn't include `req3DSAuthentication`**, PayU's risk engine will determine whether the transaction requires 3DS authentication based on its risk assessment.
 
@@ -138,7 +138,7 @@ In the following request example, `req3DSAuthentication` is set to `true` to req
         "cookie": "sefejihsxeai037qhkwa3jex9",
         "deviceSessionId": "cb066830a3dcbdaf7234fd230d1959b0c6b3ae3ad5265490d55802a61738b537",
         "integrationMethod": "POST_API_v4_0",
-        "req3DSAuthentication": "true",
+        "req3DSAuthentication": true,
         "source": "WEB"  
     },
     "test": false

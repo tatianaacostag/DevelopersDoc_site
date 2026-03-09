@@ -17,7 +17,7 @@ If you are already familiar with 3DS, check our integration methods:
 3DS (Three-Domain Secure) is a security protocol that adds an extra layer of verification during online payments. It works by securely communicating with the cardholder's issuing bank to confirm their identity before authorizing the transaction. This significantly reduces the risk of unauthorized card usage and fraud.
 
 {{% alert title="Note" color="info"%}}
-3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, and **Peru**.
+3DS authentication for PayU Latam is only available for **Argentina**, **Brazil**, **Colombia**, **Mexico**, and **Peru**.
 {{% /alert %}}
 
 The diagram below describes the protocol flow:

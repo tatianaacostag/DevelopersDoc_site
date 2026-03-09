@@ -3114,151 +3114,54 @@ A seguir estão o corpo do pedido e da resposta deste meio de pagamento.
 
 ## Processar pagamentos como companhia aérea ou agência de viagens {#process-payments-as-an-airline-or-travel-agency}
 
-Esta seção foi criada para facilitar a integração dos serviços PayU, especificamente adaptados às necessidades de companhias aéreas e agências de viagens na Colômbia.
+Esta seção foi projetada para facilitar a integração dos serviços do PayU, adaptada especificamente às necessidades das companhias aéreas e agências de viagens na Colômbia.
 
-### Observações {#considerations-5}
+### Considerações {#considerations-5}
 
-* Disponível exclusivamente na Colômbia para transações em moeda COP.
-* Permite o processamento de pagamentos através do modelo TSP/Gateway.
-* Requer registro de códigos IATA junto aos adquirentes.
-* Suporta pagamentos com cartões de crédito ou débito, incluindo AMEX, DINERS, MASTERCARD e VISA.
-* Permite a dispersão de fundos, possibilitando que agências de viagens e companhias aéreas recebam seus pagamentos na mesma transação.
-* Requer processamento em uma única etapa: o sistema transfere os fundos da conta do cliente para o banco adquirente assim que o pagamento é autorizado.
+* Disponível exclusivamente na Colômbia para transações na moeda COP.
+* Permite o processamento de pagamentos por meio do modelo TSP/Gateway.
+* Requer o registro de códigos IATA nos adquirentes.
+* Suporta pagamentos com cartão de crédito ou débito, incluindo AMEX, DINERS, MASTERCARD e VISA.
+* Suporta a dispersão de fundos, permitindo que agências de viagens e companhias aéreas recebam seus pagamentos na mesma transação.
+* Requer processamento em etapa única: o sistema transfere os fundos da conta do cliente para o seu banco adquirente assim que o pagamento é autorizado.
 
-### Considerações de integração:
-Esta integração permite que companhias aéreas e agências de viagens na Colômbia otimizem os processos de pagamento, fornecendo informações essenciais em cada transação para apoiar a identificação e a distribuição precisa de fundos. Além disso, ao enviar detalhes específicos da transação, é possível que elas se qualifiquem para isenção do imposto 4 x 1000 (confirme com seu banco adquirente).
+### Credenciais de teste Sandbox {#sandbox-test-credentials}
 
-**Passos para integração:** 
+Para ajudar você a testar sua integração com segurança antes de entrar em produção, o PayU fornece um ambiente sandbox dedicado. Você pode usar as seguintes credenciais de teste para autenticar suas requisições de API e simular transações tanto para companhias aéreas quanto para agências de viagens.
 
-1. Recupere a lista de companhias aéreas disponíveis.
-2. Envie a transação pela API de Pagamentos PayU.
-3. Inclua informações do Registro de Nome de Passageiro (PNR) (opcional).
-
-| **Funcionalidade** | **Companhias aéreas** | **Agências de viagens** |
-|-|-|-|
-| **Inclusão de taxas** | As companhias aéreas podem enviar seu ID de companhia aérea, junto com taxas aeroportuárias e outros impostos associados. | As agências de viagens podem enviar suas taxas de transação junto com as taxas das companhias aéreas, taxas aeroportuárias, taxas administrativas e outros encargos. |
-| **Identificação** | Os adquirentes podem identificar a companhia aérea especificamente através do ID da companhia aérea para uma distribuição direcionada. | Permite que o adquirente identifique tanto a agência de viagens quanto a companhia aérea para distribuição precisa de fundos. |
-| **Elegibilidade para isenção do imposto 4 x 1000** | Companhias aéreas colombianas podem se qualificar se fornecerem seu ID de companhia aérea e informações relevantes sobre taxas. | Agências de viagens colombianas podem se qualificar se fornecerem detalhes abrangentes da transação. |
+| **Credencial** | **Valor** |
+| - | - |
+| **ID da conta** | `513128` (Companhias aéreas)<hr>`512548` (Agências de viagens) |
+| **ID do comerciante** | `508029` |
+| **API Login** | `pRRXKOl8ikMmt9u` |
+| **API Key** | `4Vj8eK4rloUd272L48hsrarnUA` |
+| **Public Key** | `PKaC6H4cEDJD919n705L544kSU` |
 
 {{% alert title="Nota" color="info"%}}
 
-Consulte o seu banco adquirente para verificar se o seu negócio atende aos requisitos para a isenção do imposto 4 x 1000. A elegibilidade depende das informações fornecidas em cada transação e das regulamentações vigentes.
+Para obter informações mais detalhadas sobre como testar sua integração com segurança, utilizando cartões de crédito de teste e simulando diferentes estados de pagamento, consulte o guia [Teste sua solução](https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html).
 
 {{% /alert %}}
 
-### Recuperar a lista de companhias aéreas disponíveis
+### Enviar transações como companhia aérea {#submit-transactions-as-an-airline}
 
-Para integrar-se ao PayU, tanto agências de viagens quanto companhias aéreas precisam recuperar os códigos das companhias aéreas elegíveis para a coleta de pagamentos e enviá-los através da API de Pagamentos. Isso pode ser feito consultando o sistema PayU para obter a lista de companhias aéreas disponíveis e seus respectivos códigos. O endpoint para recuperar códigos de companhias aéreas é o mesmo para ambos os tipos de comerciantes, embora o uso específico possa variar:
-  
-- **Companhias aéreas**:
-  - As companhias aéreas recuperam e enviam seus próprios códigos para possibilitar identificação precisa e benefícios fiscais potenciais.
-  - Ao fornecer o código da companhia aérea, garantem transações simplificadas para suas taxas e encargos associados.
+Para concluir uma requisição de transação, você deve incluir os parâmetros específicos para companhias aéreas além dos parâmetros padrão para [pagamentos com cartão de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). 
 
-- **Agências de viagens**:
-  - As agências recuperam o código da companhia aérea associado a cada pagamento para garantir a alocação correta de taxas e impostos.
-  - Essa integração ajuda a identificar a companhia aérea envolvida na transação para uma distribuição adequada dos fundos.
+Com base nas regras de processamento do adquirente, você deve enviar um valor adicional na requisição da API especificamente para tarifas aeroportuárias e outros impostos relacionados (`TX_ADDITIONAL_VALUE`). Ele é enviado junto com os valores padrão da API do PayU (`TX_VALUE`, `TX_TAX` e `TX_TAX_RETURN_BASE`). 
 
-Para recuperar a lista, use os seguintes endpoints com base no seu ambiente:
-
-- **Sandbox**: `https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline`
-- **Produção**: `https://api.payulatam.com/payments-api/rest/v4.3/payments/airline`
-
-| **Parâmetro de consulta** | **Descrição** |
-|-|-|
-| `accountID` | Código de identificação que a PayU Latam atribuiu à conta. |
-
-| **Parâmetro de cabeçalho** | **Descrição** |
-|-|-|
-| `Authorization` | Valor do cabeçalho de autenticação para realizar uma solicitação válida. |
-
-Exemplo de código em JavaScript para gerar o cabeçalho de autenticação:
-
-```javascript
-var contentToSign = "pRRXKOl8ikMmt9u" + ":" + "4Vj8eK4rloUd272L48hsrarnUA";
-var base64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(contentToSign));
-var authenticationHeader = "Basic " + base64.toString();
-```
-
-{{% alert title="Nota" color="info"%}}
-
-Embora seja improvável que os códigos de companhias aéreas mudem, ainda existe essa possibilidade. Recomendamos usar a consulta para armazenar o código da companhia aérea e utilizá-lo nos pagamentos com nossa API de Pagamentos.
-
-{{% /alert %}}
-
-| Parâmetro de consulta | Descrição |
-|-|-|
-| `airlines` | Array de companhias aéreas. |
-| `airlines > code` | Código da companhia aérea. |
-| `airlines > description` | Descrição da companhia aérea. |
-
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-
-**Exemplo de uma resposta:**
-```JSON
-{
-  "airlines": [
-    {
-      "code": "81",
-      "description": "AVIA MARKETING LTDA NAL Nacional"
-    },
-    .
-    .
-    .
-    {
-      "code": "65",
-      "description": "OCEANAIR LINHAS AEREAS S.A Nacional"
-    }
-  ]
-}
-```
-<br>
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-**Exemplo de uma resposta:**
-```XML
-<com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
- <airlines>
- <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- <code>80</code>
- <description>AVIATUR S.A. BOG Internacional</description>
- </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- .
- .
- .
- <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- <code>87</code>
- <description>LAN AIRLINES Nacional</description>
- </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- </airlines>
-</com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
-```
-
-{{< /tab >}}
-
-{{< /tabs >}}
-
-### Enviar transações como uma companhia aérea
-
-Para concluir uma solicitação de transação com sucesso, é necessário incluir os parâmetros específicos para companhias aéreas, além dos parâmetros padrão para [pagamentos com cartão de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, você também pode incluir [dados PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Utilize o código da companhia aérea recuperado do endpoint anterior e inclua quaisquer taxas e impostos aeroportuários aplicáveis.
+Opcionalmente, você também pode incluir [dados PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}) para aprimorar a prevenção de fraudes.
 
 <details>
-<summary><b>Solicitação</b></summary>
+<summary><b>Requisição</b></summary>
 <br>
 <div class="variables"></div>
 
 | **Campo** | **Tipo** | **Tamanho** | **Descrição** | **Exemplo** |
 |-|-|-|-|-|
-| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12,2 | Valor total da transação. Pode conter até duas casas decimais. | 119000 |
-| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12,2 | Valor do IVA. Se não especificado, o sistema aplica uma taxa padrão de 19% na Colômbia. Use 0 para itens isentos de IVA. | 19000 |
-| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12,2 | Valor base para cálculo do IVA. Defina como 0 se o produto ou serviço for isento de IVA. | 100000 |
-| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12,2 | Tarifas aeroportuárias e outros impostos aplicáveis. | 25000 |
+| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12.2 | Valor total da transação. Pode conter até duas casas decimais. | 119000 |
+| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12.2 | Valor do IVA. Se não for especificado, o sistema aplicará uma taxa de 19% por padrão na Colômbia. Use 0 para itens isentos de IVA. | 19000 |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12.2 | Valor base para o cálculo do IVA. Defina como 0 se o produto ou serviço for isento de IVA. | 100000 |
+| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12.2 | Campo adicional obrigatório para companhias aéreas. Representa tarifas aeroportuárias e outros impostos aplicáveis. | 25000 |
 
 </details>
 
@@ -3374,25 +3277,136 @@ A seguir, exemplos de solicitação deste método.
 
 {{< /tabs >}}
 
-### Enviar transações como uma agência de viagens
+### Enviar transações como agência de viagens {#submit-transactions-as-a-travel-agency}
 
-Para concluir uma solicitação de transação com sucesso, é necessário incluir os parâmetros específicos para agências de viagens, além dos parâmetros padrão para [pagamentos com cartão de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, você também pode incluir [dados PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Utilize o código da companhia aérea recuperado do endpoint anterior e inclua quaisquer taxas e impostos aeroportuários aplicáveis.
+Para concluir uma transação, as agências de viagens devem incluir parâmetros específicos além do payload padrão de [pagamento com cartão de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}).
+
+Como as agências de viagens atuam como intermediárias, o adquirente exige o ID da companhia aérea parceira (`airlineCode`) para dividir o pagamento automaticamente.  Sua requisição deve separar explicitamente as tarifas aeroportuárias e os impostos da companhia aérea (`TX_ADDITIONAL_VALUE`) das taxas administrativas da sua agência (`TX_ADMINISTRATIVE_FEE`, `TX_TAX_ADMINISTRATIVE_FEE` e `TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE`). 
+
+Opcionalmente, você também pode incluir [dados PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}) para aprimorar a prevenção de fraudes.
+
+**Passos para processar as transações:** 
+
+1. [Recuperar a lista de companhias aéreas disponíveis e seus códigos]({{< ref "Payments-API-Colombia.md#1-retrieve-available-airlines" >}}).
+2. [Enviar o payload da transação]({{< ref "Payments-API-Colombia.md#2-submit-the-transaction-payload" >}}).
+
+#### 1. Recuperar companhias aéreas disponíveis {#1-retrieve-available-airlines}
+
+Para garantir a distribuição correta de fundos, você deve anexar o código da companhia aérea parceira a cada transação. Use os seguintes endpoints para recuperar a lista completa de companhias aéreas elegíveis e seus códigos correspondentes:
+
+- **Sandbox**: `https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline`
+- **Produção**: `https://api.payulatam.com/payments-api/rest/v4.3/payments/airline`
+
+| **Parâmetro de consulta** | **Descrição** |
+|-|-|
+| `accountID` | O código de ID que o PayU atribuiu à sua conta. |
+
+| **Parâmetro de cabeçalho** | **Descrição** |
+|-|-|
+| `Authorization` | Valor do cabeçalho de autenticação para realizar uma requisição GET válida. |
+
+**Exemplo de código JavaScript para gerar o cabeçalho de autenticação:**
+
+```javascript
+var contentToSign = "pRRXKOl8ikMmt9u" + ":" + "4Vj8eK4rloUd272L48hsrarnUA";
+var base64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(contentToSign));
+var authenticationHeader = "Basic " + base64.toString();
+```
+
+| **Campo de resposta** | **Descrição** |
+|-|-|
+| `airlines` | Array contendo as companhias aéreas disponíveis. | 
+| `airlines > code` | O ID exclusivo da companhia aérea exigido para o payload da transação. |
+| `airlines > description` | O nome da companhia aérea e o tipo de fluxo (Nacional/Internacional). |
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+**Exemplo de uma resposta:**
+```JSON
+{
+  "airlines": [
+    {
+      "code": "81",
+      "description": "AVIA MARKETING LTDA NAL Nacional"
+    },
+    .
+    .
+    .
+    {
+      "code": "65",
+      "description": "OCEANAIR LINHAS AEREAS S.A Nacional"
+    }
+  ]
+}
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+**Exemplo de uma resposta:**
+```XML
+<com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
+ <airlines>
+ <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ <code>80</code>
+ <description>AVIATUR S.A. BOG Internacional</description>
+ </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ .
+ .
+ .
+ <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ <code>87</code>
+ <description>LAN AIRLINES Nacional</description>
+ </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ </airlines>
+</com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+##### Estratégia de cache recomendada {#recommended-caching-strategy}
+
+Como os códigos das companhias aéreas mudam com muito pouca frequência, **não consulte a lista de companhias aéreas para cada pagamento individual**. Fazer isso é ineficiente, especialmente para agências de viagens que lidam com altos volumes de transações em várias companhias aéreas. 
+
+Com base nas diretrizes do adquirente, recomendamos fortemente a implementação da seguinte estratégia de cache:
+
+* **Sincronização diária:** Consulte a API do PayU uma vez ao dia para recuperar a lista de companhias aéreas e armazená-la localmente.
+* **Reutilizar dados em cache:** Extraia o ID da companhia aérea necessário diretamente do seu cache local quando um usuário finalizar a compra.
+* **Atualização inteligente:** Atualize seu banco de dados/cache apenas quando a resposta da API contiver alterações reais em comparação com sua consulta anterior.
+* **Mecanismo de contingência:** Se a sua consulta diária falhar, recorra à sua lista armazenada anteriormente para evitar interrupções no checkout.
+
+#### 2. Enviar o payload da transação {#submit-the-transaction-payload}
+
+Assim que tiver o `airlineCode`, você pode enviar a requisição de pagamento. O envio de detalhes precisos da transação aciona as regras de dispersão de fundos do adquirente e sinaliza a transação para possíveis isenções do imposto 4x1000 (consulte seu banco adquirente para confirmar sua elegibilidade).
+
+{{% alert title="Importante" color="warning"%}}
+
+Certifique-se de que o `airlineCode` seja perfeitamente preciso. Ele é mapeado diretamente para códigos de comerciantes oficiais; o envio de um ID incorreto roteará a parte dos fundos da companhia aérea para a empresa errada.
+
+{{% /alert %}}
 
 <details>
-<summary><b>Solicitação</b></summary>
+<summary><b>Requisição</b></summary>
 <br>
 <div class="variables"></div>
 
 | **Campo** | **Tipo** | **Tamanho** | **Descrição** | **Exemplo** |
 |-|-|-|-|-|
-| `transaction > order > airlineCode` | Alfanumérico | 4 | Código da companhia aérea. | 29 |
-| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12,2 | Valor total da transação. Pode conter até duas casas decimais (ex.: 10000.00 ou 10000). | 119000 |
-| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12,2 | Valor do IVA da transação. Se não especificado, o sistema aplica automaticamente uma taxa de 19% na Colômbia. Se isento de IVA, defina como 0. | 19000 |
-| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12,2 | Valor base para cálculo do IVA. Se isento de IVA, atribua 0 a esta variável. | 100000 |
-| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12,2 | Tarifas aeroportuárias e outros impostos. | 25000 |
-| `transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value` | Numérico | 12,2 | Valor da taxa administrativa da agência de viagens. | 5950 |
-| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value` | Numérico | 12,2 | Valor do imposto sobre a taxa administrativa da agência de viagens. | 950 |
-| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE > value` | Numérico | 12,2 | Valor base para cálculo do imposto sobre a taxa administrativa da agência de viagens. | 5000 |
+| `transaction > order > airlineCode` | alfanumérico | 4 | O ID da companhia aérea parceira. Crítico para a dispersão de fundos do adquirente. | 29 |
+| `transaction > order > additionalValues > TX_VALUE > value` | numérico | 12.2 | Valor total da transação. Pode conter até duas casas decimais (ex., 10000.00 ou 10000). | 119000 |
+| `transaction > order > additionalValues > TX_TAX > value` | numérico | 12.2 | Valor do IVA da transação. Se não for especificado, o sistema aplica automaticamente uma taxa de 19% na Colômbia. Se isento de IVA, defina como 0. | 19000 |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | numérico | 12.2 | Valor base para calcular o IVA. Se isento de IVA, atribua 0 a esta variável. | 100000 |
+| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | numérico | 12.2 | As tarifas aeroportuárias correspondentes da companhia aérea e outros impostos. | 25000 |
+| `transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value` | numérico | 12.2 | Valor da taxa administrativa da agência de viagens. | 5950 |
+| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value` | numérico | 12.2 | Valor do imposto da taxa administrativa da agência de viagens. | 950 |
+| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE > value` | numérico | 12.2 | Valor base para calcular o imposto da taxa administrativa da agência de viagens. | 5000 |
 
 </details>
 

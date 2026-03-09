@@ -3119,128 +3119,32 @@ Esta sección está diseñada para facilitar la integración de los servicios de
 * Admite la dispersión de fondos, permitiendo que las agencias de viajes y aerolíneas reciban sus pagos dentro de la misma transacción.
 * Requiere un procesamiento en un solo paso: el sistema transfiere los fondos de la cuenta del cliente a tu banco adquirente tan pronto como se autoriza el pago.
 
-### Consideraciones para la integración:
+### Credenciales de prueba Sandbox {#sandbox-test-credentials}
 
-Esta integración permite a las aerolíneas y agencias de viajes en Colombia optimizar los procesos de pago, proporcionando información esencial con cada transacción para apoyar la identificación y distribución precisa de los fondos. Además, el envío de detalles específicos de la transacción puede calificarlos para la exención del impuesto 4 x 1000 (confirma con tu banco adquirente).
 
-**Pasos para la integración:** 
+Para ayudarte a probar de forma segura tu integración antes de salir a producción, PayU proporciona un entorno sandbox dedicado. Puedes utilizar las siguientes credenciales de prueba para autenticar tus peticiones a la API y simular transacciones tanto para aerolíneas como para agencias de viajes.
 
-1. Obtén la lista de aerolíneas disponibles.
-2. Envía la transacción a través de la API de Pagos de PayU.
-3. Incluye la información del Passenger Name Record (PNR) (opcional).
-
-| **Funcionalidad** | **Aerolíneas** | **Agencias de viajes** |
-|-|-|-|
-| **Inclusión de tarifas** | Las aerolíneas pueden enviar su ID de aerolínea, junto con tarifas aeroportuarias y otros impuestos asociados. | Las agencias de viajes pueden enviar sus tarifas de transacción junto con tarifas de aerolíneas, tarifas aeroportuarias, tarifas administrativas y otros cargos. |
-| **Identificación** | Los adquirentes pueden identificar específicamente la aerolínea mediante el ID de aerolínea para una distribución dirigida. | Permite al adquirente identificar tanto a la agencia de viajes como a la aerolínea para una distribución precisa de fondos. |
-| **Elegibilidad para la exención del impuesto 4 x 1000** | Las aerolíneas colombianas pueden calificar si proporcionan su ID de aerolínea e información de tarifas relevante. | Las agencias de viajes colombianas pueden calificar si proporcionan detalles completos de la transacción. |
+| **Credencial** | **Valor** |
+| - | - |
+| **ID de la cuenta** | `513128` (Aerolíneas)<hr>`512548` (Agencias de viajes) |
+| **ID del comercio** | `508029` |
+| **API Login** | `pRRXKOl8ikMmt9u` |
+| **API Key** | `4Vj8eK4rloUd272L48hsrarnUA` |
+| **Public Key** | `PKaC6H4cEDJD919n705L544kSU` |
 
 {{% alert title="Nota" color="info"%}}
 
-Verifica con tu banco adquirente si tu negocio cumple con los requisitos para la exención del impuesto 4 x 1000. La elegibilidad depende de la información proporcionada en cada transacción y de la normativa vigente.
+Para obtener información más detallada sobre cómo probar de forma segura tu integración, utilizar tarjetas de crédito de prueba y simular diferentes estados de pago, consulta la guía [Prueba tu solución](https://developers.payulatam.com/latam/es/docs/getting-started/test-your-solution.html).
 
 {{% /alert %}}
 
-### Obtener la lista de aerolíneas disponibles
+### Enviar transacciones como aerolínea {#submit-transactions-as-an-airline}
 
-Para integrarse con PayU, tanto las agencias de viajes como las aerolíneas necesitan obtener los códigos de aerolíneas elegibles para la recolección de pagos y enviarlos a través de la API de Pagos. Esto se puede hacer consultando el sistema de PayU para obtener la lista de aerolíneas disponibles y sus respectivos códigos. El endpoint para obtener los códigos de aerolíneas es el mismo para ambos tipos de comerciantes, aunque el uso específico puede diferir:
+Para completar una petición de transacción, debes incluir los parámetros específicos para aerolíneas además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). 
 
-- **Aerolíneas**:
-  - Las aerolíneas obtienen y envían sus propios códigos para habilitar una identificación precisa y posibles beneficios fiscales.
-  - Al proporcionar el código de aerolínea, aseguran transacciones optimizadas para sus tarifas y cargos asociados.
+Según las reglas de procesamiento del adquirente, debes enviar un valor adicional en la petición a la API específicamente para tarifas aeroportuarias y otros impuestos relacionados (`TX_ADDITIONAL_VALUE`). Este se envía junto con los montos estándar de la API de PayU (`TX_VALUE`, `TX_TAX` y `TX_TAX_RETURN_BASE`). 
 
-- **Agencias de viajes**:
-  - Las agencias obtienen el código de aerolínea asociado con cada pago para garantizar la correcta asignación de tarifas e impuestos.
-  - Esta integración ayuda a identificar la aerolínea involucrada en la transacción para una distribución adecuada de fondos.
-
-Para obtener la lista, utiliza los siguientes endpoints según tu entorno:
-
-- **Sandbox**: `https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline`
-- **Producción**: `https://api.payulatam.com/payments-api/rest/v4.3/payments/airline`
-
-| **Parámetro de consulta** | **Descripción** |
-|-|-|
-| `accountID` | Código de identificación asignado por PayU Latam a la cuenta. |
-
-| **Parámetro de cabecera** | **Descripción** |
-|-|-|
-| `Authorization` | Valor del encabezado de autenticación para realizar una solicitud válida. |
-
-Ejemplo de código en JavaScript para generar el encabezado de autenticación:
-
-```javascript
-var contentToSign = "pRRXKOl8ikMmt9u" + ":" + "4Vj8eK4rloUd272L48hsrarnUA";
-var base64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(contentToSign));
-var authenticationHeader = "Basic " + base64.toString();
-```
-
-{{% alert title="Nota" color="info"%}}
-
-Aunque es poco probable que cambien los códigos de aerolíneas, existe una posibilidad. Recomendamos usar la consulta para almacenar tu código de aerolínea y utilizarlo en pagos con nuestra API de Pagos.
-
-{{% /alert %}}
-
-| Parámetro de consulta | Descripción |
-|-|-|
-| `airlines` | Array de aerolíneas. | 
-| `airlines > code` | Código de la aerolínea. |
-| `airlines > description` | Descripción de la aerolínea. |
-
-{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
-{{< tab tabNum="1" >}}
-<br>
-
-**Ejemplo de una respuesta:**
-```JSON
-{
-  "airlines": [
-    {
-      "code": "81",
-      "description": "AVIA MARKETING LTDA NAL Nacional"
-    },
-    .
-    .
-    .
-    {
-      "code": "65",
-      "description": "OCEANAIR LINHAS AEREAS S.A Nacional"
-    }
-  ]
-}
-```
-<br>
-
-{{< /tab >}}
-
-{{< tab tabNum="2" >}}
-<br>
-
-**Ejemplo de una respuesta:**
-```XML
-<com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
- <airlines>
- <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- <code>80</code>
- <description>AVIATUR S.A. BOG Internacional</description>
- </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- .
- .
- .
- <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- <code>87</code>
- <description>LAN AIRLINES Nacional</description>
- </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
- </airlines>
-</com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
-```
-
-{{< /tab >}}
-
-{{< /tabs >}}
-
-### Enviar transacciones como una aerolínea
-
-Para completar una solicitud de transacción exitosa, debes incluir los parámetros específicos para aerolíneas, además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, también puedes incluir [datos del PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Usa el código de aerolínea obtenido del endpoint anterior e incluye las tarifas aeroportuarias y los impuestos que aplican.
+Opcionalmente, también puedes incluir [datos PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}) para mejorar la prevención de fraude.
 
 <details>
 <summary><b>Solicitud</b></summary>
@@ -3249,10 +3153,10 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 | **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
 |-|-|-|-|-|
-| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12,2 | Monto total de la transacción. Puede contener hasta dos decimales. | 119000 |
-| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12,2 | Valor del IVA. Si no se especifica, el sistema aplica una tasa del 19% por defecto en Colombia. Usa 0 para artículos exentos de IVA. | 19000 |
-| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12,2 | Valor base para el cálculo del IVA. Configura en 0 si el producto o servicio está exento de IVA. | 100000 |
-| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12,2 | Tarifas aeroportuarias y otros impuestos aplicables. | 25000 |
+| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12.2 | Monto total de la transacción. Puede contener hasta dos decimales. | 119000 |
+| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12.2 | Valor del IVA. Si no se especifica, el sistema aplica una tasa del 19% por defecto en Colombia. Usa 0 para artículos exentos de IVA. | 19000 |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12.2 | Valor base para el cálculo del IVA. Establécelo en 0 si el producto o servicio está exento de IVA. | 100000 |
+| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12.2 | Campo adicional obligatorio para aerolíneas. Representa las tarifas aeroportuarias y otros impuestos aplicables. | 25000 |
 
 </details>
 
@@ -3368,9 +3272,120 @@ A continuación, se presentan ejemplos de una solicitud para este método.
 
 {{< /tabs >}}
 
-### Enviar Transacciones como una agencia de viajes
+### Enviar transacciones como agencia de viajes {#submit-transactions-as-a-travel-agency}
 
-Para completar una solicitud de transacción exitosa, debes incluir los parámetros específicos para agencias de viajes, además de los parámetros estándar para [pagos con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}). Opcionalmente, también puedes incluir [datos del PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}). Usa el código de aerolínea obtenido del endpoint anterior e incluye las tarifas aeroportuarias y los impuestos que aplican.
+Para completar una transacción, las agencias de viajes deben incluir parámetros específicos además del payload estándar de [pago con tarjeta de crédito]({{< ref "Payments-API-Colombia.md#submit-transactions-using-credit-or-debit-cards" >}}).
+
+Debido a que las agencias de viajes actúan como intermediarias, el adquirente requiere el ID de la aerolínea asociada (`airlineCode`) para dividir automáticamente el pago. Tu petición debe separar explícitamente las tarifas aeroportuarias y los impuestos de la aerolínea (`TX_ADDITIONAL_VALUE`) de los cargos administrativos de tu agencia (`TX_ADMINISTRATIVE_FEE`, `TX_TAX_ADMINISTRATIVE_FEE` y `TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE`). 
+
+Opcionalmente, también puedes incluir [datos PNR]({{< ref "Payments-API-Colombia.md#include-passenger-name-record-information-optional" >}}) para mejorar la prevención de fraude.
+
+**Pasos para procesar las transacciones:** 
+
+1. [Obtener la lista de aerolíneas disponibles y sus códigos]({{< ref "Payments-API-Colombia.md#1-retrieve-available-airlines" >}}).
+2. [Enviar el payload de la transacción]({{< ref "Payments-API-Colombia.md#2-submit-the-transaction-payload" >}}).
+
+#### 1. Obtener aerolíneas disponibles {#1-retrieve-available-airlines}
+
+Para asegurar la correcta distribución de fondos, debes añadir el código de la aerolínea asociada a cada transacción. Utiliza los siguientes endpoints para recuperar la lista completa de aerolíneas elegibles y sus códigos correspondientes:
+
+- **Sandbox**: `https://sandbox.api.payulatam.com/payments-api/rest/v4.3/payments/airline`
+- **Producción**: `https://api.payulatam.com/payments-api/rest/v4.3/payments/airline`
+
+| **Parámetro de consulta** | **Descripción** |
+|-|-|
+| `accountID` | El código de ID que PayU asignó a tu cuenta. |
+
+| **Parámetro de encabezado** | **Descripción** |
+|-|-|
+| `Authorization` | Valor del encabezado de autenticación para realizar una petición GET válida. |
+
+**Ejemplo de código JavaScript para generar el encabezado de autenticación:**
+
+```javascript
+var contentToSign = "pRRXKOl8ikMmt9u" + ":" + "4Vj8eK4rloUd272L48hsrarnUA";
+var base64 = CryptoJS.enc.Base64.stringify(CryptoJS.enc.Utf8.parse(contentToSign));
+var authenticationHeader = "Basic " + base64.toString();
+```
+
+| **Campo de respuesta** | **Descripción** |
+|-|-|
+| `airlines` | Arreglo que contiene las aerolíneas disponibles. | 
+| `airlines > code` | El ID único de la aerolínea requerido para el payload de la transacción. |
+| `airlines > description` | El nombre de la aerolínea y el tipo de flujo (Nacional/Internacional). |
+
+{{< tabs tabTotal="2" tabID="9" tabName1="JSON" tabName2="XML" >}}
+{{< tab tabNum="1" >}}
+<br>
+
+**Ejemplo de una respuesta:**
+```JSON
+{
+  "airlines": [
+    {
+      "code": "81",
+      "description": "AVIA MARKETING LTDA NAL Nacional"
+    },
+    .
+    .
+    .
+    {
+      "code": "65",
+      "description": "OCEANAIR LINHAS AEREAS S.A Nacional"
+    }
+  ]
+}
+```
+<br>
+
+{{< /tab >}}
+
+{{< tab tabNum="2" >}}
+<br>
+
+**Ejemplo de una respuesta:**
+```XML
+<com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
+ <airlines>
+ <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ <code>80</code>
+ <description>AVIATUR S.A. BOG Internacional</description>
+ </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ .
+ .
+ .
+ <com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ <code>87</code>
+ <description>LAN AIRLINES Nacional</description>
+ </com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlines>
+ </airlines>
+</com.pagosonline.ppp4.web.payments.api.v4.model.ApiAirlinesListResponse>
+```
+
+{{< /tab >}}
+
+{{< /tabs >}}
+
+##### Estrategia de caché recomendada {#recommended-caching-strategy}
+
+Debido a que los códigos de las aerolíneas cambian con muy poca frecuencia, **no consultes la lista de aerolíneas para cada pago individual**. Hacerlo es ineficiente, especialmente para las agencias de viajes que manejan altos volúmenes de transacciones en múltiples aerolíneas. 
+
+Según las pautas del adquirente, recomendamos encarecidamente implementar la siguiente estrategia de caché:
+
+* **Sincronización diaria:** Consulta la API de PayU una vez al día para recuperar la lista de aerolíneas y almacenarla localmente.
+* **Reutilizar datos en caché:** Extrae el ID de la aerolínea requerido directamente de tu caché local cuando un usuario realice el pago.
+* **Actualización inteligente:** Solo actualiza tu base de datos/caché cuando la respuesta de la API contenga cambios reales en comparación con tu consulta anterior.
+* **Mecanismo de contingencia:** Si tu consulta diaria falla, recurre a tu lista almacenada previamente para evitar interrupciones en el proceso de pago.
+
+#### 2. Enviar el payload de la transacción {#submit-the-transaction-payload}
+
+Una vez que tengas el `airlineCode`, puedes enviar la petición de pago. El envío de detalles precisos de la transacción activa las reglas de dispersión de fondos del adquirente y marca la transacción para posibles exenciones del impuesto 4x1000 (consulta a tu banco adquirente para confirmar tu elegibilidad).
+
+{{% alert title="Importante" color="warning"%}}
+
+Asegúrate de que el `airlineCode` sea perfectamente preciso. Está mapeado directamente a códigos de comercio oficiales; enviar un ID incorrecto enrutará la parte de los fondos de la aerolínea a la empresa equivocada.
+
+{{% /alert %}}
 
 <details>
 <summary><b>Solicitud</b></summary>
@@ -3379,14 +3394,14 @@ Para completar una solicitud de transacción exitosa, debes incluir los parámet
 
 | **Campo** | **Tipo** | **Tamaño** | **Descripción** | **Ejemplo** |
 |-|-|-|-|-|
-| `transaction > order > airlineCode` | Alfanumérico | 4 | Código de la aerolínea. | 29 |
-| `transaction > order > additionalValues > TX_VALUE > value` | Numérico | 12,2 | Monto total de la transacción. Puede contener dos decimales (por ejemplo, 10000.00 o 10000). | 119000 |
-| `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12,2 | Valor del IVA de la transacción. Si no se especifica, el sistema aplica automáticamente una tasa del 19% en Colombia. Si está exento de IVA, configura en 0. | 19000 |
-| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12,2 | Valor base para calcular el IVA. Si está exento de IVA, asigna 0 a esta variable. | 100000 |
-| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12,2 | Tarifas aeroportuarias y otros impuestos. | 25000 |
-| `transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value` | Numérico | 12,2 | Monto de la tarifa administrativa de la agencia de viajes. | 5950 |
-| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value` | Numérico | 12,2 | Impuesto de la tarifa administrativa de la agencia de viajes. | 950 |
-| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE_RETURN_BASE > value` | Numérico | 12,2 | Valor base para calcular el impuesto de la tarifa administrativa de la agencia de viajes. | 5000 |
+| `transaction > order > airlineCode` | alfanumérico | 4 | El ID de la aerolínea asociada. Crítico para la dispersión de fondos del adquirente. | 29 |
+| `transaction > order > additionalValues > TX_VALUE > value` | numérico | 12.2 | Monto total de la transacción. Puede contener dos dígitos decimales (ej., 10000.00 o 10000). | 119000 |
+| `transaction > order > additionalValues > TX_TAX > value` | numérico | 12.2 | Valor del IVA de la transacción. Si no se especifica, el sistema aplica automáticamente una tasa del 19% en Colombia. Si está exento de IVA, establécelo en 0. | 19000 |
+| `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | numérico | 12.2 | Valor base para calcular el IVA. Si está exento de IVA, asigna 0 a esta variable. | 100000 |
+| `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | numérico | 12.2 | Las tarifas aeroportuarias correspondientes de la aerolínea y otros impuestos. | 25000 |
+| `transaction > order > additionalValues > TX_ADMINISTRATIVE_FEE > value` | numérico | 12.2 | Monto de la tarifa administrativa de la agencia de viajes. | 5950 |
+| `transaction > order > additionalValues > TX_TAX_ADMINISTRATIVE_FEE > value` | numérico | 12.2 | Monto del impuesto de la tarifa administrativa de la agencia de viajes. | 950 |
+| `transaction >
 
 </details>
 
