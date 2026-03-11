@@ -3120,7 +3120,6 @@ Esta seção foi projetada para facilitar a integração dos serviços do PayU, 
 
 * Disponível exclusivamente na Colômbia para transações na moeda COP.
 * Permite o processamento de pagamentos por meio do modelo TSP/Gateway.
-* Requer o registro de códigos IATA nos adquirentes.
 * Suporta pagamentos com cartão de crédito ou débito, incluindo AMEX, DINERS, MASTERCARD e VISA.
 * Suporta a dispersão de fundos, permitindo que agências de viagens e companhias aéreas recebam seus pagamentos na mesma transação.
 * Requer processamento em etapa única: o sistema transfere os fundos da conta do cliente para o seu banco adquirente assim que o pagamento é autorizado.
@@ -3162,6 +3161,12 @@ Opcionalmente, você também pode incluir [dados PNR]({{< ref "Payments-API-Colo
 | `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12.2 | Valor do IVA. Se não for especificado, o sistema aplicará uma taxa de 19% por padrão na Colômbia. Use 0 para itens isentos de IVA. | 19000 |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12.2 | Valor base para o cálculo do IVA. Defina como 0 se o produto ou serviço for isento de IVA. | 100000 |
 | `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12.2 | Campo adicional obrigatório para companhias aéreas. Representa tarifas aeroportuárias e outros impostos aplicáveis. | 25000 |
+
+{{% alert title="Nota" color="info"%}}
+
+O sistema calcula o valor final cobrado no cartão do cliente somando o `TX_VALUE` e o `TX_ADDITIONAL_VALUE`. 
+
+{{% /alert %}}
 
 </details>
 

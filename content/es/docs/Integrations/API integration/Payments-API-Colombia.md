@@ -3114,7 +3114,6 @@ Esta sección está diseñada para facilitar la integración de los servicios de
 
 * Disponible exclusivamente en Colombia para transacciones en moneda COP.
 * Permite el procesamiento de pagos mediante el modelo TSP/Gateway.
-* Requiere el registro de códigos IATA con los adquirentes.
 * Soporta pagos con tarjeta de crédito o débito, incluyendo AMEX, DINERS, MASTERCARD y VISA.
 * Admite la dispersión de fondos, permitiendo que las agencias de viajes y aerolíneas reciban sus pagos dentro de la misma transacción.
 * Requiere un procesamiento en un solo paso: el sistema transfiere los fondos de la cuenta del cliente a tu banco adquirente tan pronto como se autoriza el pago.
@@ -3157,6 +3156,12 @@ Opcionalmente, también puedes incluir [datos PNR]({{< ref "Payments-API-Colombi
 | `transaction > order > additionalValues > TX_TAX > value` | Numérico | 12.2 | Valor del IVA. Si no se especifica, el sistema aplica una tasa del 19% por defecto en Colombia. Usa 0 para artículos exentos de IVA. | 19000 |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Numérico | 12.2 | Valor base para el cálculo del IVA. Establécelo en 0 si el producto o servicio está exento de IVA. | 100000 |
 | `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Numérico | 12.2 | Campo adicional obligatorio para aerolíneas. Representa las tarifas aeroportuarias y otros impuestos aplicables. | 25000 |
+
+{{% alert title="Nota" color="info"%}}
+
+El sistema calcula el monto final cobrado a la tarjeta del cliente sumando el `TX_VALUE` y el `TX_ADDITIONAL_VALUE`.
+
+{{% /alert %}}
 
 </details>
 

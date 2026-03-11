@@ -3119,7 +3119,6 @@ This section is designed to facilitate the integration of PayU services specific
 
 * Available exclusively in Colombia for transactions in COP currency.
 * Enables payment processing through the TSP/Gateway model.
-* Requires IATA codes registration with the acquirers.
 * Supports credit or debit card payments, including AMEX, DINERS, MASTERCARD, and VISA.
 * Supports funds dispersion, allowing travel agencies and airlines to receive their payments within the same transaction.
 * Requires one-step processing: the system transfers the funds from the customer’s account to your acquiring bank as soon as payment is authorized.
@@ -3161,6 +3160,12 @@ Optionally, you can also include [PNR data]({{< ref "Payments-API-Colombia.md#in
 | `transaction > order > additionalValues > TX_TAX > value` | Number | 12.2 | VAT value. If unspecified, the system applies a 19% rate by default in Colombia. Use 0 for VAT-exempt items. | 19000 |
 | `transaction > order > additionalValues > TX_TAX_RETURN_BASE > value` | Number | 12.2 | Base value for VAT calculation. Set to 0 if the product or service is VAT-exempt. | 100000 |
 | `transaction > order > additionalValues > TX_ADDITIONAL_VALUE > value` | Number | 12.2 | Mandatory additional field for airlines. Represents airport fares and other applicable taxes. | 25000 |
+
+{{% alert title="Note" color="info"%}}
+
+The system calculates the final amount charged to the customer's card by summing the `TX_VALUE` and the `TX_ADDITIONAL_VALUE`. 
+
+{{% /alert %}}
 
 </details>
 
