@@ -2830,11 +2830,8 @@ Este método permite processar pagamentos de clientes em dinheiro ou através de
 #### Observações {#considerations-4}
 
 * O parâmetro `transaction.expirationDate` não é obrigatórionão é obrigatório. Se você não enviar este parâmetro, seu valor padrão será de 7 dias após a data atual.<br>Se você enviar uma data posterior ao número de dias padrão, PayU ignorará esse valor e o vencimento será definido como padrão.
-* Para <!--`BALOTO` e -->`EFECTY`, a confirmação do pagamento leva 15 minutos. Para `BANK_REFERENCED` e `OTHERS_CASH` (Su Red), a confirmação é feita online.
-* Os valores mínimo e máximo para <!--`BALOTO`, -->`EFECTY` e `OTHERS_CASH` (Su Red) são:
-   - `EFECTY` > Mín: $20.000 COP - Máx: $6.000.000 COP
-   - `OTHERS_CASH` (Su Red) > Mín: $1.000 COP - Máx: $4.000.000 COP
-   <!-- - `BALOTO` > Mín: $3.000 COP - Máx: $1.000.000 COP-->
+* Para `EFECTY`, a confirmação do pagamento leva 15 minutos. Para `BANK_REFERENCED`, a confirmação é feita online.
+* Os valores de transação permitidos para `EFECTY` variam de um mínimo de $20.000 COP a um máximo de $6.000.000 COP.  
 * O parâmetro `transactionResponse.extraParameters` tem os seguintes parâmetros relacionados à transação:
    - **EXPIRATION_DATE**: prazo máximo para o pagador fazer o pagamento.   
    - **REFERENCE**: referência interna de pagamento gerada pelo PayU.

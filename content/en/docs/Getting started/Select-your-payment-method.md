@@ -402,13 +402,6 @@ To integrate your solution via API or SDK, review the **`paymentMethod` paramete
       <td><code>REDEBAN_INTEROPERABLE</code><br><code>_QR</code></td>
       <td>Bank transfer</td>
       <td></td>
-    </tr>    
-    <tr>
-      <td><img src="/assets/PaymentMethods/su-red.png" width="80px"/></td>
-      <td>Su Red</td>
-      <td><code>OTHERS_CASH</code></td>
-      <td>Cash</td>
-      <td><b>Payment locations</b>: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER.</td>
     </tr>
     <tr>
       <td><img src="/assets/PaymentMethods/visa.png" width="80px"/></td>

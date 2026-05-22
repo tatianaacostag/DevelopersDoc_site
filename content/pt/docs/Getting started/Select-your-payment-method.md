@@ -402,13 +402,6 @@ Para integrar sua solução por meio de API ou SDK, consulte a coluna **parâmet
       <td><code>REDEBAN_INTEROPERABLE</code><br><code>_QR</code></td>
       <td>Transferência bancária</td>
       <td></td>
-    </tr>    
-    <tr>
-      <td><img src="/assets/PaymentMethods/su-red.png" width="80px"/></td>
-      <td>Su Red</td>
-      <td><code>OTHERS_CASH</code></td>
-      <td>Dinheiro</td>
-      <td><b>Pontos de pagamento</b>: PagaTodo, Gana Gana, Gana, Acertemos, Apuestas Cúcuta 75, Su Chance, La Perla, Apuestas Unidas, JER.</td>
     </tr>
     <tr>
       <td><img src="/assets/PaymentMethods/visa.png" width="80px"/></td>
